@@ -15,5 +15,22 @@
       <guid>https://talentedatai.com/posts/my-first-article/</guid>
       <description>&lt;p&gt;Welcome to TalentedAtAI. This is where we review and explain AI tools.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Privacy Policy</title>
+      <link>https://talentedatai.com/privacy-policy/</link>
+      <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://talentedatai.com/privacy-policy/</guid>
+      <description>&lt;p&gt;Privacy Policy
+Last updated: March 29, 2026&lt;/p&gt;
+&lt;p&gt;Welcome to TalentedAtAI (&amp;ldquo;we&amp;rdquo;, &amp;ldquo;us&amp;rdquo;, or &amp;ldquo;our&amp;rdquo;). This Privacy Policy explains how we collect, use, and protect information when you visit talentedatai.com (the &amp;ldquo;Site&amp;rdquo;). By using the Site you agree to the terms of this policy.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Information we collect
+We may collect the following types of information:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Usage data: Pages visited, time spent on the Site, browser type, device type, and referring URLs — collected automatically via analytics tools.
+Cookies: Small files placed on your device by us or third-party services to help operate the Site and understand how it is used.
+Contact information: If you contact us via email, we collect your name and email address to respond to your enquiry.
+We do not collect sensitive personal data such as financial information, government ID numbers, or health data.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
