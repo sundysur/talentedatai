@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Talented at AI!</title>
-    <link>https://sundysur.github.io/talentedatai/</link>
+    <link>https://talentedatai.com/</link>
     <description>Recent content on Talented at AI!</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Mar 2026 19:15:06 +0530</lastBuildDate>
-    <atom:link href="https://sundysur.github.io/talentedatai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://talentedatai.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The world of AI - making the most of the opportunity</title>
-      <link>https://sundysur.github.io/talentedatai/posts/my-first-article/</link>
+      <link>https://talentedatai.com/posts/my-first-article/</link>
       <pubDate>Sun, 29 Mar 2026 19:15:06 +0530</pubDate>
-      <guid>https://sundysur.github.io/talentedatai/posts/my-first-article/</guid>
+      <guid>https://talentedatai.com/posts/my-first-article/</guid>
       <description>&lt;p&gt;Welcome to TalentedAtAI. This is where we review and explain AI tools.&lt;/p&gt;</description>
     </item>
   </channel>
