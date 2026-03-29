@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Chatgpt on TalentedAtAI</title>
+    <title>ChatGPT on TalentedAtAI</title>
     <link>https://www.talentedatai.com/tags/chatgpt/</link>
-    <description>Recent content in Chatgpt on TalentedAtAI</description>
+    <description>Recent content in ChatGPT on TalentedAtAI</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Mar 2026 12:00:00 +0530</lastBuildDate>
@@ -14,6 +14,20 @@
       <pubDate>Sun, 29 Mar 2026 12:00:00 +0530</pubDate>
       <guid>https://www.talentedatai.com/posts/top-10-ai-productivity-tools-2026/</guid>
       <description>We cut through the hype to rank the 10 AI tools that are actually making people more productive in 2026. No fluff, just honest takes.</description>
+    </item>
+    <item>
+      <title>Top AI Tools for Productivity in 2026: Tested &amp; Ranked</title>
+      <link>https://www.talentedatai.com/pending/top-ai-tools-productivity-2026/</link>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.talentedatai.com/pending/top-ai-tools-productivity-2026/</guid>
+      <description>We spent 6 weeks testing every major AI productivity tool so you don&amp;#39;t have to. Here&amp;#39;s the definitive ranking with real workflow examples, pricing breakdowns, and who each tool is best suited for.</description>
+    </item>
+    <item>
+      <title>ChatGPT vs Claude 2026: Which AI Is Actually Better?</title>
+      <link>https://www.talentedatai.com/pending/chatgpt-vs-claude-2026/</link>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.talentedatai.com/pending/chatgpt-vs-claude-2026/</guid>
+      <description>An in-depth head-to-head comparison of ChatGPT-4o and Claude across writing, coding, reasoning, cost, and real-world tasks. With scoring across 40&#43; tests.</description>
     </item>
   </channel>
 </rss>
