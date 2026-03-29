@@ -1,288 +1,986 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
+<html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.159.1"><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>TalentedAtAI</title>
-<meta name="keywords" content="AI tools, AI reviews, artificial intelligence, AI guides">
-<meta name="description" content="Honest reviews and practical guides for AI tools. Cut through the hype and find what actually works.">
-<meta name="author" content="TalentedAtAI">
-<link rel="canonical" href="https://www.talentedatai.com/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.199042e659bc7245f5609d333d6c044eb554a0640849bb874e1dff8eb0f57209.css" integrity="sha256-GZBC5lm8ckX1YJ0zPWwETrVUoGQISbuHTh3/jrD1cgk=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://www.talentedatai.com/images/favicon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.talentedatai.com/images/favicon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.talentedatai.com/images/favicon.png">
-<link rel="apple-touch-icon" href="https://www.talentedatai.com/apple-touch-icon.png">
-<link rel="mask-icon" href="https://www.talentedatai.com/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://www.talentedatai.com/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="https://www.talentedatai.com/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TalentedAtAI — Master AI Tools &amp; Strategies</title>
+  <meta name="description" content="TalentedAtAI is your guide to the best AI tools, strategies, and insights for productivity, creativity, and business growth in 2026." />
+  <meta name="keywords" content="AI tools, artificial intelligence, ChatGPT, Claude, AI productivity, AI writing tools" />
+  <meta property="og:title" content="TalentedAtAI — Master AI Tools &amp; Strategies" />
+  <meta property="og:description" content="Your guide to the best AI tools, strategies, and insights for 2026." />
+  <meta property="og:url" content="https://talentedatai.com" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://talentedatai.com" />
 
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
 
-            .list {
-                background: var(--theme);
-            }
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-        @media (prefers-color-scheme: light) {
-            .list::-webkit-scrollbar-thumb {
-                border-color: var(--code-bg);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
+    :root {
+      --blue: #0066ff;
+      --blue-light: #e6f0ff;
+      --blue-mid: #3385ff;
+      --dark: #0d0d1a;
+      --gray-900: #1a1a2e;
+      --gray-700: #3d3d5c;
+      --gray-500: #6b6b8a;
+      --gray-300: #b8b8d0;
+      --gray-100: #f4f4f8;
+      --white: #ffffff;
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --radius: 16px;
+      --radius-sm: 8px;
+      --shadow: 0 4px 24px rgba(0, 102, 255, 0.08);
+      --shadow-hover: 0 8px 40px rgba(0, 102, 255, 0.15);
+      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SYQ40F2CXQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    html { scroll-behavior: smooth; }
 
-  gtag('config', 'G-SYQ40F2CXQ');
-</script><meta property="og:url" content="https://www.talentedatai.com/">
-  <meta property="og:site_name" content="TalentedAtAI">
-  <meta property="og:title" content="TalentedAtAI">
-  <meta property="og:description" content="Honest reviews and practical guides for AI tools. Cut through the hype and find what actually works.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
+    body {
+      font-family: var(--font-body);
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="TalentedAtAI">
-  <meta name="twitter:description" content="Honest reviews and practical guides for AI tools. Cut through the hype and find what actually works.">
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "TalentedAtAI",
-  "url": "https://www.talentedatai.com/",
-  "description": "Honest reviews and practical guides for AI tools. Cut through the hype and find what actually works.",
-  "logo": "https://www.talentedatai.com/images/favicon.png",
-  "sameAs": [
-      "mailto:hello@talentedatai.com"
-  ]
-}
-</script>
+    /* ── Nav ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 102, 255, 0.08);
+    }
+    .nav__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .nav__logo {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav__logo span { color: var(--blue); }
+    .nav__logo-dot {
+      width: 8px; height: 8px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav__links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-700);
+      transition: color var(--transition);
+    }
+    .nav__links a:hover { color: var(--blue); }
+    .nav__cta {
+      background: var(--blue) !important;
+      color: var(--white) !important;
+      padding: 10px 20px !important;
+      border-radius: 100px !important;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+      transition: background var(--transition), transform var(--transition) !important;
+    }
+    .nav__cta:hover {
+      background: var(--blue-mid) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 96px 24px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .hero__badge-dot {
+      width: 6px; height: 6px;
+      background: var(--blue);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .hero__title {
+      font-family: var(--font-head);
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+    .hero__title em { font-style: normal; color: var(--blue); }
+    .hero__subtitle {
+      font-size: 17px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+    .hero__actions {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      border: none;
+    }
+    .btn--primary { background: var(--blue); color: var(--white); }
+    .btn--primary:hover {
+      background: var(--blue-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3);
+    }
+    .btn--outline {
+      background: transparent;
+      color: var(--dark);
+      border: 1.5px solid var(--gray-300);
+    }
+    .btn--outline:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Stats */
+    .hero__visual {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .stat-card {
+      background: var(--white);
+      border: 1px solid rgba(0, 102, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .stat-card--accent { background: var(--blue); border-color: transparent; }
+    .stat-card__number {
+      font-family: var(--font-head);
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 4px;
+      color: var(--blue);
+    }
+    .stat-card--accent .stat-card__number { color: var(--white); }
+    .stat-card__label { font-size: 13px; color: var(--gray-500); font-weight: 500; }
+    .stat-card--accent .stat-card__label { color: rgba(255,255,255,0.75); }
+    .hero__featured-pill {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--gray-100);
+      border-radius: 100px;
+      padding: 12px 20px;
+    }
+    .hero__featured-pill-icon {
+      width: 36px; height: 36px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .hero__featured-pill-text { font-size: 13px; color: var(--gray-700); }
+    .hero__featured-pill-text strong { display: block; color: var(--dark); font-weight: 600; }
+
+    /* ── Sections ── */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .section__header { margin-bottom: 48px; }
+    .section__tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .section__title {
+      font-family: var(--font-head);
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .section__subtitle {
+      font-size: 16px;
+      color: var(--gray-500);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ── Article Cards ── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .article-card {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      cursor: pointer;
+    }
+    .article-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(0, 102, 255, 0.2);
+    }
+    .article-card--featured { grid-column: span 2; }
+    .article-card__thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-card__thumb-inner {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+    }
+    .article-card--featured .article-card__thumb { aspect-ratio: 21/9; }
+    .thumb--blue   { background: linear-gradient(135deg, #e6f0ff 0%, #cce0ff 100%); }
+    .thumb--purple { background: linear-gradient(135deg, #f0e6ff 0%, #dcceff 100%); }
+    .thumb--green  { background: linear-gradient(135deg, #e6fff0 0%, #ccffe0 100%); }
+    .thumb--orange { background: linear-gradient(135deg, #fff3e6 0%, #ffe0cc 100%); }
+    .thumb--teal   { background: linear-gradient(135deg, #e6fffc 0%, #ccfff7 100%); }
+    .article-card__body { padding: 24px; }
+    .article-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .category-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      background: var(--blue-light);
+      color: var(--blue);
+    }
+    .category-badge--purple { background: #f0e6ff; color: #6633cc; }
+    .category-badge--green  { background: #e6fff0; color: #00aa55; }
+    .category-badge--orange { background: #fff3e6; color: #cc6600; }
+    .article-card__read-time { font-size: 12px; color: var(--gray-300); }
+    .article-card__title {
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      color: var(--dark);
+      margin-bottom: 10px;
+      transition: color var(--transition);
+    }
+    .article-card:hover .article-card__title { color: var(--blue); }
+    .article-card--featured .article-card__title { font-size: 22px; }
+    .article-card__excerpt {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.65;
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .article-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray-100);
+    }
+    .author { display: flex; align-items: center; gap: 8px; }
+    .author__avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .avatar--blue   { background: var(--blue); }
+    .avatar--purple { background: #6633cc; }
+    .avatar--green  { background: #00aa55; }
+    .author__name { font-size: 13px; font-weight: 500; color: var(--gray-700); }
+    .article-card__date { font-size: 12px; color: var(--gray-300); }
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--blue);
+      transition: gap var(--transition);
+    }
+    .read-more:hover { gap: 10px; }
+
+    /* ── Categories ── */
+    .categories-section { background: var(--gray-100); }
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .category-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition);
+      border: 1px solid transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--blue);
+    }
+    .category-card__icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    .icon--blue   { background: var(--blue-light); }
+    .icon--purple { background: #f0e6ff; }
+    .icon--green  { background: #e6fff0; }
+    .icon--orange { background: #fff3e6; }
+    .icon--pink   { background: #ffe6f0; }
+    .icon--teal   { background: #e6fffc; }
+    .icon--yellow { background: #fffde6; }
+    .icon--red    { background: #ffe6e6; }
+    .category-card__name { font-family: var(--font-head); font-size: 16px; font-weight: 700; color: var(--dark); }
+    .category-card__count { font-size: 13px; color: var(--gray-300); }
+
+    /* ── Tools Spotlight ── */
+    .tools-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+    .tool-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .tool-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(0,102,255,0.2);
+    }
+    .tool-card__icon { font-size: 32px; margin-bottom: 12px; }
+    .tool-card__name { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+    .tool-card__type { font-size: 12px; color: var(--gray-300); }
+    .tool-card__rating {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--gray-700);
+      font-weight: 500;
+    }
+
+    /* ── Newsletter ── */
+    .newsletter { background: var(--blue); padding: 72px 24px; }
+    .newsletter__inner { max-width: 640px; margin: 0 auto; text-align: center; }
+    .newsletter__tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 16px;
+    }
+    .newsletter__title {
+      font-family: var(--font-head);
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+    .newsletter__subtitle {
+      font-size: 16px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+    .newsletter__form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; }
+    .newsletter__input {
+      flex: 1;
+      padding: 14px 20px;
+      border-radius: 100px;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 15px;
+      outline: none;
+      background: rgba(255,255,255,0.15);
+      color: var(--white);
+      backdrop-filter: blur(8px);
+      transition: background var(--transition);
+    }
+    .newsletter__input::placeholder { color: rgba(255,255,255,0.5); }
+    .newsletter__input:focus { background: rgba(255,255,255,0.2); }
+    .newsletter__btn {
+      padding: 14px 28px;
+      background: var(--white);
+      color: var(--blue);
+      border: none;
+      border-radius: 100px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .newsletter__btn:hover { background: var(--dark); color: var(--white); transform: translateY(-2px); }
+    .newsletter__note { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 14px; }
+
+    /* ── Footer ── */
+    .footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 64px 24px 32px; }
+    .footer__inner { max-width: 1200px; margin: 0 auto; }
+    .footer__top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer__brand-logo { font-family: var(--font-head); font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 14px; }
+    .footer__brand-logo span { color: var(--blue); }
+    .footer__brand-desc { font-size: 14px; line-height: 1.7; max-width: 280px; margin-bottom: 24px; }
+    .footer__social { display: flex; gap: 12px; }
+    .footer__social-link {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      transition: border-color var(--transition), background var(--transition), color var(--transition);
+    }
+    .footer__social-link:hover { background: var(--blue); border-color: var(--blue); color: var(--white); }
+    .footer__col-title { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; }
+    .footer__links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer__links a { font-size: 14px; color: rgba(255,255,255,0.55); transition: color var(--transition); }
+    .footer__links a:hover { color: var(--white); }
+    .footer__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+    }
+    .footer__bottom-links { display: flex; gap: 24px; }
+    .footer__bottom-links a { color: rgba(255,255,255,0.4); transition: color var(--transition); }
+    .footer__bottom-links a:hover { color: var(--white); }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; gap: 48px; }
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+      .article-card--featured { grid-column: span 2; }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); }
+      .tools-row { grid-template-columns: repeat(3, 1fr); }
+      .footer__top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .hero { padding: 64px 24px 48px; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .article-card--featured { grid-column: span 1; }
+      .tools-row { grid-template-columns: repeat(2, 1fr); }
+      .newsletter__form { flex-direction: column; }
+      .footer__top { grid-template-columns: 1fr; }
+      .footer__bottom { flex-direction: column; gap: 16px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .categories-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
-<body class="list" id="top">
-    <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://www.talentedatai.com/" accesskey="h" title="TalentedAtAI (Alt + H)">
-                <img src="https://www.talentedatai.com/images/hero.jpg" alt="" aria-label="logo"
-                    height="35">TalentedAtAI</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://www.talentedatai.com/" title="Home">
-                    <span class="active">Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.talentedatai.com/about/" title="About">
-                    <span>About</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.talentedatai.com/contact/" title="Contact">
-                    <span>Contact</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.talentedatai.com/privacy-policy/" title="Privacy Policy">
-                    <span>Privacy Policy</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main"> 
-<article class="first-entry home-info">
-    <header class="entry-header">
-        <h1>Welcome to TalentedAtAI</h1>
-    </header>
-    <div class="entry-content">
-        We research, test and review AI tools so you can make smarter decisions about what to use, what to skip, and what is worth paying for. No hype. No sponsored opinions. Just honest takes.
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+        Talented<span>At</span>AI
+        <span class="nav__logo-dot"></span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#tools">AI Tools</a></li>
+        <li><a href="#newsletter" class="nav__cta">Subscribe Free</a></li>
+      </ul>
     </div>
-    <footer class="entry-footer">
-        <div class="social-icons" >
-    <a href="mailto:hello@talentedatai.com" target="_blank" rel="noopener noreferrer me"
-        title="Email">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-    <polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-    </a>
-</div>
+  </nav>
 
-    </footer>
-</article>
+  <!-- Hero -->
+  <section>
+    <div class="hero">
+      <div class="hero__content">
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          Updated weekly &middot; 2026
+        </div>
+        <h1 class="hero__title">
+          Get <em>Talented</em><br />at AI — fast.
+        </h1>
+        <p class="hero__subtitle">
+          Practical guides, honest tool reviews, and real strategies to help you work smarter with AI. No hype. No jargon. Just results.
+        </p>
+        <div class="hero__actions">
+          <a href="#articles" class="btn btn--primary">
+            Browse Articles
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M3 7h8M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#tools" class="btn btn--outline">Explore AI Tools</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="stats-grid">
+          <div class="stat-card stat-card--accent">
+            <div class="stat-card__number">150+</div>
+            <div class="stat-card__label">AI tools reviewed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number">48K</div>
+            <div class="stat-card__label">Monthly readers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number">92%</div>
+            <div class="stat-card__label">Reader satisfaction</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number" style="color:var(--dark)">3×</div>
+            <div class="stat-card__label">Productivity boost avg.</div>
+          </div>
+        </div>
+        <div class="hero__featured-pill">
+          <div class="hero__featured-pill-icon">🔥</div>
+          <div class="hero__featured-pill-text">
+            <strong>Trending now</strong>
+            ChatGPT vs Claude — the 2026 head-to-head
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">The world of AI - making the most of the opportunity
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Welcome to TalentedAtAI. This is where we review and explain AI tools.
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-03-29 19:15:06 +0530 IST'>March 29, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>12 words</span>&nbsp;·&nbsp;<span>TalentedAtAI</span></footer>
-  <a class="entry-link" aria-label="post link to The world of AI - making the most of the opportunity" href="https://www.talentedatai.com/posts/my-first-article/"></a>
-</article>
+  <!-- Latest Articles -->
+  <section id="articles">
+    <div class="section">
+      <div class="section__header">
+        <span class="section__tag">Latest Articles</span>
+        <h2 class="section__title">Fresh from the AI frontier</h2>
+        <p class="section__subtitle">Hands-on guides, comparisons, and tool reviews published every week by our team of AI practitioners.</p>
+      </div>
+      <div class="articles-grid">
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Top 10 AI Tools for Productivity in 2026
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>We cut through the hype to rank the 10 AI tools that are actually making people more productive in 2026. No fluff, just honest takes.</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-03-29 12:00:00 +0530 IST'>March 29, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>747 words</span>&nbsp;·&nbsp;<span>TalentedAtAI</span></footer>
-  <a class="entry-link" aria-label="post link to Top 10 AI Tools for Productivity in 2026" href="https://www.talentedatai.com/posts/top-10-ai-productivity-tools-2026/"></a>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://www.talentedatai.com/">TalentedAtAI</a></span> · 
+        <article class="article-card article-card--featured">
+          <div class="article-card__thumb thumb--blue">
+            <div class="article-card__thumb-inner">🤖</div>
+          </div>
+          <div class="article-card__body">
+            <div class="article-card__meta">
+              <span class="category-badge">Productivity</span>
+              <span class="article-card__read-time">8 min read</span>
+            </div>
+            <h3 class="article-card__title">Top 15 AI Tools for Productivity in 2026 — Tested &amp; Ranked</h3>
+            <p class="article-card__excerpt">We spent 6 weeks testing every major AI productivity tool so you don't have to. Here's the definitive ranking with real workflow examples, pricing breakdowns, and who each tool is best suited for.</p>
+            <div class="article-card__footer">
+              <div class="author">
+                <div class="author__avatar avatar--blue">SA</div>
+                <span class="author__name">Sarah Ahmed</span>
+              </div>
+              <a href="content/published/top-ai-tools-productivity-2026.html" class="read-more">
+                Read article
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
+        <article class="article-card">
+          <div class="article-card__thumb thumb--purple">
+            <div class="article-card__thumb-inner">⚔️</div>
+          </div>
+          <div class="article-card__body">
+            <div class="article-card__meta">
+              <span class="category-badge category-badge--purple">Comparison</span>
+              <span class="article-card__read-time">6 min read</span>
+            </div>
+            <h3 class="article-card__title">ChatGPT vs Claude 2026: Which AI Is Actually Better?</h3>
+            <p class="article-card__excerpt">A deep-dive comparison across writing, coding, reasoning, and cost. We put both to the test with 40+ real tasks.</p>
+            <div class="article-card__footer">
+              <div class="author">
+                <div class="author__avatar avatar--purple">MK</div>
+                <span class="author__name">Marcus Kim</span>
+              </div>
+              <a href="content/published/chatgpt-vs-claude-2026.html" class="read-more">
+                Read article
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
+        <article class="article-card">
+          <div class="article-card__thumb thumb--green">
+            <div class="article-card__thumb-inner">✍️</div>
+          </div>
+          <div class="article-card__body">
+            <div class="article-card__meta">
+              <span class="category-badge category-badge--green">Writing</span>
+              <span class="article-card__read-time">5 min read</span>
+            </div>
+            <h3 class="article-card__title">Best AI Writing Tools for Bloggers in 2026</h3>
+            <p class="article-card__excerpt">From first draft to SEO-optimized final post — the AI writing stack that top bloggers are actually using this year.</p>
+            <div class="article-card__footer">
+              <div class="author">
+                <div class="author__avatar avatar--green">JR</div>
+                <span class="author__name">Jamie Rivera</span>
+              </div>
+              <a href="content/published/best-ai-writing-tools-bloggers.html" class="read-more">
+                Read article
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-card__thumb thumb--orange">
+            <div class="article-card__thumb-inner">💼</div>
+          </div>
+          <div class="article-card__body">
+            <div class="article-card__meta">
+              <span class="category-badge category-badge--orange">Business</span>
+              <span class="article-card__read-time">7 min read</span>
+            </div>
+            <h3 class="article-card__title">How Solopreneurs Are Using AI to Replace an Entire Team</h3>
+            <p class="article-card__excerpt">Real examples of one-person businesses using AI to handle marketing, ops, customer support, and more in 2026.</p>
+            <div class="article-card__footer">
+              <div class="author">
+                <div class="author__avatar avatar--blue">TN</div>
+                <span class="author__name">Tara Nguyen</span>
+              </div>
+              <a href="#" class="read-more">
+                Read article
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-card__thumb thumb--teal">
+            <div class="article-card__thumb-inner">🎨</div>
+          </div>
+          <div class="article-card__body">
+            <div class="article-card__meta">
+              <span class="category-badge">Design</span>
+              <span class="article-card__read-time">4 min read</span>
+            </div>
+            <h3 class="article-card__title">AI Image Generation in 2026: Midjourney vs DALL-E vs Firefly</h3>
+            <p class="article-card__excerpt">Side-by-side image comparisons and practical use cases for each tool. Which one wins for your workflow?</p>
+            <div class="article-card__footer">
+              <div class="author">
+                <div class="author__avatar avatar--green">LP</div>
+                <span class="author__name">Leo Park</span>
+              </div>
+              <a href="#" class="read-more">
+                Read article
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories-section" id="categories">
+    <div class="section">
+      <div class="section__header">
+        <span class="section__tag">Browse by Category</span>
+        <h2 class="section__title">Find exactly what you need</h2>
+        <p class="section__subtitle">Whether you're a writer, developer, marketer, or entrepreneur — we've got your AI playbook covered.</p>
+      </div>
+      <div class="categories-grid">
+        <div class="category-card"><div class="category-card__icon icon--blue">⚡</div><div class="category-card__name">Productivity</div><div class="category-card__count">24 articles</div></div>
+        <div class="category-card"><div class="category-card__icon icon--purple">✍️</div><div class="category-card__name">AI Writing</div><div class="category-card__count">18 articles</div></div>
+        <div class="category-card"><div class="category-card__icon icon--green">💻</div><div class="category-card__name">Coding &amp; Dev</div><div class="category-card__count">15 articles</div></div>
+        <div class="category-card"><div class="category-card__icon icon--orange">📊</div><div class="category-card__name">Business &amp; Marketing</div><div class="category-card__count">21 articles</div></div>
+        <div class="category-card"><div class="category-card__icon icon--pink">🎨</div><div class="category-card__name">Design &amp; Creative</div><div class="category-card__count">12 articles</div></div>
+        <div class="category-card"><div class="category-card__icon icon--teal">🔬</div><div class="category-card__name">Research &amp; Analysis</div><div class="category-card__count">9 articles</div></div>
+        <div class="category-card"><div class="category-card__icon icon--yellow">🎓</div><div class="category-card__name">Learning &amp; Education</div><div class="category-card__count">11 articles</div></div>
+        <div class="category-card"><div class="category-card__icon icon--red">⚔️</div><div class="category-card__name">AI Comparisons</div><div class="category-card__count">16 articles</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Spotlight -->
+  <section id="tools">
+    <div class="section">
+      <div class="section__header">
+        <span class="section__tag">Tools Spotlight</span>
+        <h2 class="section__title">AI tools worth your time</h2>
+        <p class="section__subtitle">Curated picks from our editors — tested, rated, and recommended for real workflows.</p>
+      </div>
+      <div class="tools-row">
+        <div class="tool-card">
+          <div class="tool-card__icon">🧠</div>
+          <div class="tool-card__name">Claude</div>
+          <div class="tool-card__type">AI Assistant</div>
+          <div class="tool-card__rating">⭐ 4.9 &middot; Editor's Pick</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-card__icon">💬</div>
+          <div class="tool-card__name">ChatGPT</div>
+          <div class="tool-card__type">AI Chatbot</div>
+          <div class="tool-card__rating">⭐ 4.7</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-card__icon">✏️</div>
+          <div class="tool-card__name">Notion AI</div>
+          <div class="tool-card__type">Writing + Notes</div>
+          <div class="tool-card__rating">⭐ 4.5</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-card__icon">🎯</div>
+          <div class="tool-card__name">Perplexity</div>
+          <div class="tool-card__type">AI Search</div>
+          <div class="tool-card__rating">⭐ 4.6</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-card__icon">🖼️</div>
+          <div class="tool-card__name">Midjourney</div>
+          <div class="tool-card__type">Image Gen</div>
+          <div class="tool-card__rating">⭐ 4.8</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter" id="newsletter">
+    <div class="newsletter__inner">
+      <span class="newsletter__tag">📬 Free Weekly Newsletter</span>
+      <h2 class="newsletter__title">Stay ahead of the AI curve</h2>
+      <p class="newsletter__subtitle">Every Tuesday: the 3 best AI tools, 1 workflow tip, and 1 must-read article — curated for people who actually use AI to get work done.</p>
+      <form class="newsletter__form" onsubmit="handleSubscribe(event)">
+        <input type="email" class="newsletter__input" placeholder="your@email.com" required />
+        <button type="submit" class="newsletter__btn">Subscribe →</button>
+      </form>
+      <p class="newsletter__note">No spam. Unsubscribe anytime. Join 48,000+ readers.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand-logo">Talented<span>At</span>AI</div>
+          <p class="footer__brand-desc">Your practical guide to the best AI tools, strategies, and workflows. We test so you can implement.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link">𝕏</a>
+            <a href="#" class="footer__social-link">in</a>
+            <a href="#" class="footer__social-link">▶</a>
+            <a href="#" class="footer__social-link">f</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Content</div>
+          <ul class="footer__links">
+            <li><a href="#">Latest Articles</a></li>
+            <li><a href="#">AI Tools Reviews</a></li>
+            <li><a href="#">Comparisons</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Newsletter</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Topics</div>
+          <ul class="footer__links">
+            <li><a href="#">Productivity</a></li>
+            <li><a href="#">AI Writing</a></li>
+            <li><a href="#">Coding</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">Design</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Company</div>
+          <ul class="footer__links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Write for Us</a></li>
+            <li><a href="#">Advertise</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">RSS Feed</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 TalentedAtAI. All rights reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const input = e.target.querySelector('input');
+      const btn = e.target.querySelector('button');
+      btn.textContent = "✓ You're in!";
+      btn.style.background = '#00cc66';
+      btn.style.color = '#fff';
+      input.value = '';
+      setTimeout(() => {
+        btn.textContent = 'Subscribe →';
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 3000);
     }
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.article-card, .category-card, .tool-card, .stat-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s cubic-bezier(0.4,0,0.2,1), border-color 0.25s cubic-bezier(0.4,0,0.2,1)';
+      observer.observe(el);
     });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
+  </script>
 </body>
-
 </html>
