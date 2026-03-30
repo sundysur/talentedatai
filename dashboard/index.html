@@ -7,749 +7,1120 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
   <style>
+    /* ── Reset & Tokens ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --blue: #0066ff;
-      --blue-light: #e6f0ff;
-      --green: #00cc66;
+      --blue:        #0066ff;
+      --blue-mid:    #3385ff;
+      --blue-light:  #e6f0ff;
+      --green:       #00cc66;
       --green-light: #e6fff0;
-      --red: #ff3355;
-      --red-light: #ffe6ea;
-      --orange: #ff9900;
-      --orange-light: #fff3e0;
-      --dark: #0d0d1a;
-      --gray-700: #3d3d5c;
-      --gray-500: #6b6b8a;
-      --gray-300: #b8b8d0;
-      --gray-100: #f4f4f8;
-      --white: #ffffff;
-      --font-head: 'Syne', sans-serif;
-      --font-body: 'DM Sans', sans-serif;
-      --radius: 14px;
-      --shadow: 0 2px 16px rgba(0,0,0,0.06);
+      --red:         #ff3355;
+      --red-light:   #ffe6ea;
+      --orange:      #ff9900;
+      --orange-light:#fff3e0;
+      --dark:        #0a0a0a;
+      --sidebar-bg:  #0a0a0a;
+      --gray-700:    #3d3d5c;
+      --gray-500:    #6b6b8a;
+      --gray-300:    #b8b8d0;
+      --gray-100:    #f4f4f8;
+      --white:       #fafaf8;
+      --font-head:   'Syne', sans-serif;
+      --font-body:   'DM Sans', sans-serif;
+      --radius:      14px;
+      --shadow:      0 2px 16px rgba(0,0,0,0.06);
     }
-    body {
-      font-family: var(--font-body);
-      background: var(--gray-100);
-      color: var(--dark);
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
+    body { font-family: var(--font-body); background: var(--gray-100); color: var(--dark); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+
+    /* ── Login Screen ── */
+    #login-screen {
+      display: none; position: fixed; inset: 0;
+      background: var(--sidebar-bg);
+      align-items: center; justify-content: center;
+      z-index: 9999;
     }
+    .login-card {
+      background: var(--white); border-radius: 24px;
+      padding: 48px 40px; max-width: 460px; width: 92%;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+    }
+    .login-logo { font-family: var(--font-head); font-size: 22px; font-weight: 800; color: var(--dark); margin-bottom: 2px; }
+    .login-logo span { color: var(--blue); }
+    .login-subtitle { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 28px; }
+    .login-title { font-family: var(--font-head); font-size: 26px; font-weight: 800; color: var(--dark); margin-bottom: 10px; letter-spacing: -0.02em; }
+    .login-desc { font-size: 14px; color: var(--gray-500); line-height: 1.6; margin-bottom: 28px; }
+    .login-label { font-size: 12px; font-weight: 600; color: var(--gray-700); margin-bottom: 8px; display: block; }
+    .login-input {
+      width: 100%; padding: 13px 16px; border-radius: 10px;
+      border: 1.5px solid var(--gray-300); font-family: var(--font-body);
+      font-size: 14px; font-family: monospace; outline: none;
+      transition: border-color 0.2s; background: var(--white);
+      color: var(--dark); margin-bottom: 14px;
+    }
+    .login-input:focus { border-color: var(--blue); }
+    .login-input::placeholder { color: var(--gray-300); font-family: var(--font-body); }
+    .login-btn {
+      width: 100%; padding: 14px; border-radius: 100px; border: none;
+      background: var(--blue); color: var(--white); font-family: var(--font-body);
+      font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s;
+    }
+    .login-btn:hover:not(:disabled) { background: var(--blue-mid); transform: translateY(-1px); }
+    .login-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .login-error { background: var(--red-light); color: var(--red); padding: 12px 16px; border-radius: 10px; font-size: 13px; margin-top: 14px; display: none; line-height: 1.5; }
+    .login-help { display: block; text-align: center; font-size: 12px; color: var(--gray-500); margin-top: 16px; text-decoration: none; }
+    .login-help:hover { color: var(--blue); text-decoration: underline; }
+
+    /* ── Dashboard Layout ── */
+    #dashboard { display: none; }
+    .layout { display: flex; min-height: 100vh; }
 
     /* Sidebar */
-    .layout { display: flex; min-height: 100vh; }
     .sidebar {
-      width: 240px;
-      background: var(--dark);
-      padding: 28px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-      position: fixed;
-      top: 0; left: 0; bottom: 0;
-      z-index: 10;
+      width: 240px; background: var(--sidebar-bg); padding: 28px 18px;
+      display: flex; flex-direction: column; gap: 28px;
+      position: fixed; top: 0; left: 0; bottom: 0; z-index: 10;
     }
-    .sidebar__logo {
-      font-family: var(--font-head);
-      font-size: 17px;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.02em;
-    }
+    .sidebar__logo { font-family: var(--font-head); font-size: 17px; font-weight: 800; color: var(--white); letter-spacing: -0.02em; }
     .sidebar__logo span { color: var(--blue); }
-    .sidebar__subtitle {
-      font-size: 11px;
-      color: rgba(255,255,255,0.4);
-      margin-top: 2px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    .sidebar__nav { display: flex; flex-direction: column; gap: 4px; }
+    .sidebar__subtitle { font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 3px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .sidebar__nav { display: flex; flex-direction: column; gap: 3px; }
     .sidebar__nav-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.55);
-      cursor: pointer;
-      transition: all 0.2s;
-      border: none;
-      background: none;
-      text-align: left;
-      width: 100%;
+      display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+      border-radius: 10px; font-size: 13.5px; font-weight: 500;
+      color: rgba(255,255,255,0.5); cursor: pointer; transition: all 0.18s;
+      border: none; background: none; text-align: left; width: 100%;
     }
     .sidebar__nav-item:hover { background: rgba(255,255,255,0.06); color: var(--white); }
     .sidebar__nav-item.active { background: var(--blue); color: var(--white); }
-    .sidebar__nav-item .badge {
-      margin-left: auto;
-      background: var(--orange);
-      color: var(--white);
-      font-size: 10px;
-      font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 100px;
+    .badge {
+      margin-left: auto; background: var(--orange); color: var(--white);
+      font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 100px; min-width: 20px; text-align: center;
     }
-    .sidebar__footer {
-      margin-top: auto;
-      font-size: 12px;
-      color: rgba(255,255,255,0.25);
+    .badge--green { background: var(--green); }
+    .badge--red   { background: var(--red);   }
+    .sidebar__footer { margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
+    .logout-btn {
+      width: 100%; padding: 9px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12);
+      background: none; color: rgba(255,255,255,0.45); font-family: var(--font-body);
+      font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.18s; text-align: left;
     }
+    .logout-btn:hover { background: rgba(255,255,255,0.06); color: var(--white); border-color: rgba(255,255,255,0.25); }
+    .sidebar__footer-note { font-size: 11px; color: rgba(255,255,255,0.2); padding-left: 4px; }
 
     /* Main */
-    .main {
-      margin-left: 240px;
-      flex: 1;
-      padding: 36px 40px;
-      max-width: calc(100% - 240px);
-    }
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 36px;
-    }
-    .topbar__title {
-      font-family: var(--font-head);
-      font-size: 26px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-    .topbar__meta { font-size: 13px; color: var(--gray-500); margin-top: 2px; }
-    .topbar__actions { display: flex; gap: 10px; }
+    .main { margin-left: 240px; flex: 1; padding: 36px 40px; max-width: calc(100% - 240px); }
+    .topbar { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 32px; }
+    .topbar__title { font-family: var(--font-head); font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
+    .topbar__meta { font-size: 13px; color: var(--gray-500); margin-top: 3px; }
+    .topbar__actions { display: flex; gap: 10px; padding-top: 4px; }
+
+    /* Buttons */
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 10px 18px;
-      border-radius: 100px;
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-      border: none;
+      display: inline-flex; align-items: center; gap: 6px; padding: 10px 18px;
+      border-radius: 100px; font-family: var(--font-body); font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: all 0.18s; border: none;
     }
     .btn--primary { background: var(--blue); color: var(--white); }
-    .btn--primary:hover { background: #3385ff; transform: translateY(-1px); }
+    .btn--primary:hover { background: var(--blue-mid); transform: translateY(-1px); }
     .btn--ghost { background: var(--white); color: var(--gray-700); border: 1px solid #e0e0ee; }
     .btn--ghost:hover { border-color: var(--blue); color: var(--blue); }
-
-    /* Stats Bar */
-    .stats-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-    .stat-tile {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 20px 22px;
-      box-shadow: var(--shadow);
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .stat-tile__icon {
-      width: 44px; height: 44px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      flex-shrink: 0;
-    }
-    .stat-tile__number { font-family: var(--font-head); font-size: 26px; font-weight: 800; line-height: 1; }
-    .stat-tile__label { font-size: 12px; color: var(--gray-500); margin-top: 2px; }
-
-    /* Tabs */
-    .tabs {
-      display: flex;
-      gap: 4px;
-      background: var(--white);
-      border-radius: 100px;
-      padding: 4px;
-      width: fit-content;
-      margin-bottom: 24px;
-      box-shadow: var(--shadow);
-    }
-    .tab {
-      padding: 8px 20px;
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-      color: var(--gray-500);
-      border: none;
-      background: none;
-    }
-    .tab.active { background: var(--blue); color: var(--white); }
-    .tab:not(.active):hover { color: var(--dark); }
-
-    /* Article Queue */
-    .articles-list { display: flex; flex-direction: column; gap: 14px; }
-    .article-row {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      box-shadow: var(--shadow);
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      border-left: 4px solid transparent;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .article-row:hover { border-left-color: var(--blue); transform: translateX(3px); }
-    .article-row.approved { border-left-color: var(--green); }
-    .article-row.rejected { border-left-color: var(--red); opacity: 0.6; }
-
-    .article-row__emoji {
-      font-size: 28px;
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      background: var(--gray-100);
-    }
-    .article-row__body { flex: 1; min-width: 0; }
-    .article-row__title {
-      font-family: var(--font-head);
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 4px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .article-row__meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .article-row__meta span { font-size: 12px; color: var(--gray-500); }
-    .article-row__meta .dot { color: var(--gray-300); }
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 100px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .status-pill--pending { background: var(--orange-light); color: var(--orange); }
-    .status-pill--approved { background: var(--green-light); color: var(--green); }
-    .status-pill--rejected { background: var(--red-light); color: var(--red); }
-    .status-pill::before { content: '●'; font-size: 8px; }
-
-    .article-row__actions { display: flex; gap: 8px; flex-shrink: 0; align-items: center; }
-    .action-btn {
-      padding: 8px 16px;
-      border-radius: 100px;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      transition: all 0.2s;
-    }
-    .action-btn--approve { background: var(--green-light); color: var(--green); }
-    .action-btn--approve:hover { background: var(--green); color: var(--white); }
-    .action-btn--reject { background: var(--red-light); color: var(--red); }
-    .action-btn--reject:hover { background: var(--red); color: var(--white); }
-    .action-btn--view { background: var(--blue-light); color: var(--blue); }
-    .action-btn--view:hover { background: var(--blue); color: var(--white); }
-    .action-btn--undo { background: var(--gray-100); color: var(--gray-700); }
-    .action-btn--undo:hover { background: var(--gray-300); }
-
-    /* Modal */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(13,13,26,0.6);
-      backdrop-filter: blur(6px);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-overlay.open { display: flex; }
-    .modal {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 36px;
-      max-width: 600px;
-      width: 90%;
-      max-height: 80vh;
-      overflow-y: auto;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.2);
-    }
-    .modal__header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-    .modal__title { font-family: var(--font-head); font-size: 20px; font-weight: 800; line-height: 1.2; }
-    .modal__close {
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      border: none;
-      background: var(--gray-100);
-      cursor: pointer;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: background 0.2s;
-    }
-    .modal__close:hover { background: var(--gray-300); }
-    .modal__meta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
-    .modal__meta-tag {
-      font-size: 12px;
-      padding: 4px 12px;
-      border-radius: 100px;
-      font-weight: 600;
-    }
-    .modal__body {
-      font-size: 14px;
-      color: var(--gray-700);
-      line-height: 1.7;
-      border-top: 1px solid var(--gray-100);
-      padding-top: 20px;
-      margin-bottom: 24px;
-      white-space: pre-line;
-    }
-    .modal__actions { display: flex; gap: 10px; }
-    .modal__actions .btn { flex: 1; justify-content: center; padding: 12px; }
     .btn--approve { background: var(--green); color: var(--white); }
     .btn--approve:hover { background: #00aa55; }
-    .btn--reject { background: var(--red); color: var(--white); }
-    .btn--reject:hover { background: #cc0033; }
+    .btn--reject  { background: var(--red); color: var(--white); }
+    .btn--reject:hover  { background: #cc0033; }
+
+    /* Stats Bar */
+    .stats-bar { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 32px; }
+    .stat-tile {
+      background: var(--white); border-radius: var(--radius);
+      padding: 20px 22px; box-shadow: var(--shadow); display: flex; align-items: center; gap: 14px;
+    }
+    .stat-tile__icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .stat-tile__number { font-family: var(--font-head); font-size: 28px; font-weight: 800; line-height: 1; }
+    .stat-tile__label { font-size: 12px; color: var(--gray-500); margin-top: 3px; }
+
+    /* Article List */
+    .articles-list { display: flex; flex-direction: column; gap: 12px; }
+    .article-row {
+      background: var(--white); border-radius: var(--radius); padding: 18px 22px;
+      box-shadow: var(--shadow); display: flex; align-items: flex-start; gap: 16px;
+      border-left: 4px solid transparent; transition: border-color 0.2s, transform 0.2s;
+    }
+    .article-row:hover { border-left-color: var(--blue); transform: translateX(3px); }
+    .article-row__body { flex: 1; min-width: 0; }
+    .article-row__title { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 6px; line-height: 1.35; }
+    .article-row__meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+    .article-row__meta .dot { color: var(--gray-300); font-size: 11px; }
+    .article-row__meta span:not(.dot):not(.cat-pill) { font-size: 12px; color: var(--gray-500); }
+    .cat-pill { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 100px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .article-row__desc { font-size: 13px; color: var(--gray-500); line-height: 1.55; }
+    .article-row__actions { display: flex; gap: 7px; flex-shrink: 0; align-items: flex-start; padding-top: 2px; flex-wrap: wrap; justify-content: flex-end; }
+    .action-btn {
+      padding: 7px 14px; border-radius: 100px; font-size: 12px; font-weight: 600;
+      cursor: pointer; border: none; transition: all 0.18s; white-space: nowrap;
+    }
+    .action-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .action-btn--approve { background: var(--green-light); color: var(--green); }
+    .action-btn--approve:hover:not(:disabled) { background: var(--green); color: var(--white); }
+    .action-btn--reject  { background: var(--red-light); color: var(--red); }
+    .action-btn--reject:hover:not(:disabled)  { background: var(--red); color: var(--white); }
+    .action-btn--view    { background: var(--blue-light); color: var(--blue); }
+    .action-btn--view:hover    { background: var(--blue); color: var(--white); }
+    .action-btn--undo    { background: var(--gray-100); color: var(--gray-700); }
+    .action-btn--undo:hover    { background: var(--gray-300); }
+
+    /* Loading State */
+    .loading-state { text-align: center; padding: 72px 24px; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .spinner {
+      width: 40px; height: 40px; border: 3px solid var(--blue-light); border-top-color: var(--blue);
+      border-radius: 50%; margin: 0 auto 16px; animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading-text { font-size: 14px; color: var(--gray-500); }
+
+    /* Empty / Error States */
+    .empty-state, .error-state {
+      text-align: center; padding: 64px 24px; background: var(--white);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .empty-state__icon, .error-state__icon { font-size: 48px; margin-bottom: 14px; }
+    .empty-state__title, .error-state__title { font-family: var(--font-head); font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .empty-state__subtitle { font-size: 14px; color: var(--gray-500); }
+    .error-state__msg { font-size: 13px; color: var(--red); background: var(--red-light); padding: 12px 16px; border-radius: 10px; margin: 12px auto; max-width: 480px; line-height: 1.55; }
+
+    /* Modal */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(10,10,10,0.65); backdrop-filter: blur(6px); z-index: 1000; align-items: center; justify-content: center; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: var(--white); border-radius: 20px; padding: 36px; max-width: 600px; width: 92%; max-height: 84vh; overflow-y: auto; box-shadow: 0 24px 80px rgba(0,0,0,0.25); }
+    .modal__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+    .modal__title { font-family: var(--font-head); font-size: 19px; font-weight: 800; line-height: 1.25; flex: 1; }
+    .modal__close { width: 32px; height: 32px; border-radius: 50%; border: none; background: var(--gray-100); cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.18s; }
+    .modal__close:hover { background: var(--gray-300); }
+    .modal__meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+    .modal__meta-tag { font-size: 12px; padding: 4px 12px; border-radius: 100px; font-weight: 600; }
+    .tag--gray { background: var(--gray-100); color: var(--gray-500); }
+    .modal__desc { font-size: 14px; color: var(--gray-700); line-height: 1.65; margin-bottom: 14px; }
+    .modal__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+    .tag-chip { background: var(--gray-100); color: var(--gray-500); font-size: 11px; padding: 3px 9px; border-radius: 6px; }
+    .modal__preview-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-300); margin-bottom: 10px; border-top: 1px solid var(--gray-100); padding-top: 18px; }
+    .modal__preview { font-size: 13.5px; color: var(--gray-700); line-height: 1.75; white-space: pre-wrap; margin-bottom: 16px; }
+    .modal__file { font-size: 11px; color: var(--gray-300); margin-bottom: 24px; }
+    .modal__file code { background: var(--gray-100); padding: 2px 7px; border-radius: 6px; font-size: 11px; }
+    .modal__actions { display: flex; gap: 10px; }
+    .modal__actions .btn { flex: 1; justify-content: center; padding: 12px; }
 
     /* Toast */
     .toast {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      background: var(--dark);
-      color: var(--white);
-      padding: 14px 20px;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 500;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-      transform: translateY(80px);
-      opacity: 0;
-      transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-      z-index: 2000;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      position: fixed; bottom: 28px; right: 28px; padding: 14px 20px; border-radius: 12px;
+      font-size: 13.5px; font-weight: 500; box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      transform: translateY(80px); opacity: 0; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+      z-index: 3000; display: flex; align-items: center; gap: 10px; max-width: 420px;
     }
     .toast.show { transform: translateY(0); opacity: 1; }
+    .toast--success { background: var(--dark); color: var(--white); }
+    .toast--error   { background: var(--red); color: var(--white); }
 
-    /* Empty state */
-    .empty-state {
-      text-align: center;
-      padding: 60px 24px;
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .empty-state__icon { font-size: 48px; margin-bottom: 16px; }
-    .empty-state__title { font-family: var(--font-head); font-size: 20px; font-weight: 700; margin-bottom: 8px; }
-    .empty-state__subtitle { font-size: 14px; color: var(--gray-500); }
+    /* Confirm Dialog */
+    .confirm-overlay { display: none; position: fixed; inset: 0; background: rgba(10,10,10,0.55); backdrop-filter: blur(4px); z-index: 2000; align-items: center; justify-content: center; }
+    .confirm-overlay.open { display: flex; }
+    .confirm-dialog { background: var(--white); border-radius: 20px; padding: 32px; max-width: 400px; width: 90%; box-shadow: 0 16px 64px rgba(0,0,0,0.2); }
+    .confirm-title { font-family: var(--font-head); font-size: 18px; font-weight: 800; margin-bottom: 10px; }
+    .confirm-text  { font-size: 14px; color: var(--gray-500); line-height: 1.6; margin-bottom: 24px; }
+    .confirm-actions { display: flex; gap: 10px; }
+    .confirm-actions .btn { flex: 1; justify-content: center; }
 
+    /* Responsive */
     @media (max-width: 900px) {
       .sidebar { display: none; }
       .main { margin-left: 0; max-width: 100%; padding: 24px 20px; }
-      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .stats-bar { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 600px) {
+      .article-row { flex-direction: column; }
+      .article-row__actions { width: 100%; justify-content: flex-start; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
-<div class="layout">
 
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div>
-      <div class="sidebar__logo">Talented<span>At</span>AI</div>
-      <div class="sidebar__subtitle">Content Dashboard</div>
-    </div>
-    <nav class="sidebar__nav">
-      <button class="sidebar__nav-item active" onclick="showTab('pending')">
-        📥 Pending Review
-        <span class="badge" id="pending-badge">3</span>
-      </button>
-      <button class="sidebar__nav-item" onclick="showTab('published')">
-        ✅ Published
-      </button>
-      <button class="sidebar__nav-item" onclick="showTab('rejected')">
-        ❌ Rejected
-      </button>
-      <button class="sidebar__nav-item" onclick="window.open('../index.html','_blank')">
-        🌐 View Site
-      </button>
-    </nav>
-    <div class="sidebar__footer">
-      TalentedAtAI v1.0<br />
-      talentedatai.com
-    </div>
-  </aside>
-
-  <!-- Main Content -->
-  <main class="main">
-    <div class="topbar">
-      <div>
-        <div class="topbar__title" id="page-title">Pending Review</div>
-        <div class="topbar__meta" id="page-meta">Articles awaiting your approval</div>
-      </div>
-      <div class="topbar__actions">
-        <button class="btn btn--ghost" onclick="approveAll()">✓ Approve All</button>
-        <button class="btn btn--primary" onclick="refreshDashboard()">↻ Refresh</button>
-      </div>
-    </div>
-
-    <!-- Stats Bar -->
-    <div class="stats-bar">
-      <div class="stat-tile">
-        <div class="stat-tile__icon" style="background:#fff3e0">📥</div>
-        <div>
-          <div class="stat-tile__number" id="stat-pending" style="color:var(--orange)">3</div>
-          <div class="stat-tile__label">Pending</div>
-        </div>
-      </div>
-      <div class="stat-tile">
-        <div class="stat-tile__icon" style="background:#e6fff0">✅</div>
-        <div>
-          <div class="stat-tile__number" id="stat-published" style="color:var(--green)">0</div>
-          <div class="stat-tile__label">Published</div>
-        </div>
-      </div>
-      <div class="stat-tile">
-        <div class="stat-tile__icon" style="background:#ffe6ea">❌</div>
-        <div>
-          <div class="stat-tile__number" id="stat-rejected" style="color:var(--red)">0</div>
-          <div class="stat-tile__label">Rejected</div>
-        </div>
-      </div>
-      <div class="stat-tile">
-        <div class="stat-tile__icon" style="background:var(--blue-light)">📊</div>
-        <div>
-          <div class="stat-tile__number" id="stat-total" style="color:var(--blue)">3</div>
-          <div class="stat-tile__label">Total Articles</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tab Content -->
-    <div id="articles-container">
-      <!-- Populated by JS -->
-    </div>
-  </main>
+<!-- ══════════════════════════════════════════════════════
+     LOGIN SCREEN
+══════════════════════════════════════════════════════ -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">Talented<span>At</span>AI</div>
+    <div class="login-subtitle">Content Dashboard</div>
+    <h1 class="login-title">Connect to GitHub</h1>
+    <p class="login-desc">
+      Enter a GitHub Personal Access Token with <strong>repo</strong> scope to manage your articles.
+      The token is stored only in your browser's localStorage and is sent exclusively to
+      <code style="background:#f4f4f8;padding:2px 6px;border-radius:4px;font-size:12px">api.github.com</code>.
+    </p>
+    <form id="login-form">
+      <label class="login-label" for="token-input">Personal Access Token</label>
+      <input
+        type="password" id="token-input" class="login-input"
+        placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+        autocomplete="off" spellcheck="false" required
+      />
+      <button type="submit" class="login-btn" id="login-btn">Connect →</button>
+    </form>
+    <div class="login-error" id="login-error"></div>
+    <a href="README.md" target="_blank" class="login-help">How to generate a token ↗</a>
+  </div>
 </div>
 
-<!-- Article Preview Modal -->
-<div class="modal-overlay" id="modal">
+<!-- ══════════════════════════════════════════════════════
+     DASHBOARD
+══════════════════════════════════════════════════════ -->
+<div id="dashboard">
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar__logo">Talented<span>At</span>AI</div>
+        <div class="sidebar__subtitle">Content Dashboard</div>
+      </div>
+      <nav class="sidebar__nav">
+        <button class="sidebar__nav-item active" data-tab="pending" onclick="switchTab('pending')">
+          📥 Pending
+          <span class="badge" id="badge-pending">0</span>
+        </button>
+        <button class="sidebar__nav-item" data-tab="published" onclick="switchTab('published')">
+          ✅ Published
+          <span class="badge badge--green" id="badge-published" style="display:none">0</span>
+        </button>
+        <button class="sidebar__nav-item" data-tab="rejected" onclick="switchTab('rejected')">
+          ❌ Rejected
+          <span class="badge badge--red" id="badge-rejected" style="display:none">0</span>
+        </button>
+        <button class="sidebar__nav-item" onclick="window.open('../index.html','_blank')">
+          🌐 View Site
+        </button>
+      </nav>
+      <div class="sidebar__footer">
+        <button class="logout-btn" onclick="logout()">⏻ Disconnect token</button>
+        <div class="sidebar__footer-note">sundysur / talentedatai</div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+      <!-- Topbar -->
+      <div class="topbar">
+        <div>
+          <div class="topbar__title" id="page-title">Pending Review</div>
+          <div class="topbar__meta" id="page-meta">Articles awaiting your approval</div>
+        </div>
+        <div class="topbar__actions">
+          <button class="btn btn--ghost" id="refresh-btn" onclick="refreshCurrentTab()">↻ Refresh</button>
+        </div>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar">
+        <div class="stat-tile">
+          <div class="stat-tile__icon" style="background:#fff3e0">📥</div>
+          <div>
+            <div class="stat-tile__number" id="stat-pending" style="color:var(--orange)">—</div>
+            <div class="stat-tile__label">Pending</div>
+          </div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile__icon" style="background:#e6fff0">✅</div>
+          <div>
+            <div class="stat-tile__number" id="stat-published" style="color:var(--green)">—</div>
+            <div class="stat-tile__label">Published</div>
+          </div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile__icon" style="background:#ffe6ea">❌</div>
+          <div>
+            <div class="stat-tile__number" id="stat-rejected" style="color:var(--red)">—</div>
+            <div class="stat-tile__label">Rejected</div>
+          </div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile__icon" style="background:var(--blue-light)">📊</div>
+          <div>
+            <div class="stat-tile__number" id="stat-total" style="color:var(--blue)">—</div>
+            <div class="stat-tile__label">Total Articles</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Articles Container (rendered by JS) -->
+      <div id="articles-container"></div>
+
+    </main>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     ARTICLE PREVIEW MODAL
+══════════════════════════════════════════════════════ -->
+<div id="modal-overlay" class="modal-overlay" onclick="if(event.target===this)closeModal()">
   <div class="modal">
     <div class="modal__header">
       <div class="modal__title" id="modal-title"></div>
       <button class="modal__close" onclick="closeModal()">✕</button>
     </div>
-    <div class="modal__meta" id="modal-meta"></div>
-    <div class="modal__body" id="modal-body"></div>
+    <div class="modal__meta"    id="modal-meta"></div>
+    <div class="modal__body"    id="modal-body"></div>
     <div class="modal__actions" id="modal-actions"></div>
   </div>
 </div>
 
-<!-- Toast -->
-<div class="toast" id="toast">
-  <span id="toast-icon">✅</span>
-  <span id="toast-text">Article approved!</span>
+<!-- ══════════════════════════════════════════════════════
+     TOAST NOTIFICATION
+══════════════════════════════════════════════════════ -->
+<div id="toast" class="toast toast--success">
+  <span id="toast-text"></span>
 </div>
 
+<!-- ══════════════════════════════════════════════════════
+     CONFIRM DIALOG
+══════════════════════════════════════════════════════ -->
+<div id="confirm-overlay" class="confirm-overlay">
+  <div class="confirm-dialog">
+    <div class="confirm-title" id="confirm-title">Confirm Action</div>
+    <div class="confirm-text"  id="confirm-text"></div>
+    <div class="confirm-actions">
+      <button class="btn btn--ghost"  id="confirm-cancel">Cancel</button>
+      <button class="btn btn--reject" id="confirm-ok">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════════ -->
 <script>
-  // ── Data Store ──
-  // In production, this would read from your content/pending/ and content/published/ directories
-  // via a build script or API. For now, it mirrors the actual markdown files.
+'use strict';
 
-  let articles = [
-    {
-      id: 'top-ai-tools-productivity-2026',
-      title: 'Top AI Tools for Productivity in 2026',
-      description: 'A comprehensive review of the 15 best AI tools that will transform your productivity this year.',
-      category: 'Productivity',
-      author: 'Sarah Ahmed',
-      date: '2026-03-28',
-      tags: ['AI tools', 'productivity', '2026', 'workflow'],
-      readTime: '8 min',
-      emoji: '🤖',
-      status: 'pending',
-      file: '../content/pending/top-ai-tools-productivity-2026.md',
-      excerpt: `This article covers the 15 best AI productivity tools tested extensively in 2026. Topics include: AI assistants (Claude, ChatGPT, Gemini), AI writing tools (Notion AI, Jasper), AI meeting tools (Otter.ai, Fireflies), AI email tools (SaneBox, Superhuman AI), and AI project management tools. Each tool is rated on ease of use, power, and value for money.`
-    },
-    {
-      id: 'chatgpt-vs-claude-2026',
-      title: 'ChatGPT vs Claude 2026: Which AI Is Actually Better?',
-      description: 'An in-depth head-to-head comparison of ChatGPT and Claude across writing, coding, reasoning, and cost.',
-      category: 'Comparison',
-      author: 'Marcus Kim',
-      date: '2026-03-27',
-      tags: ['ChatGPT', 'Claude', 'AI comparison', 'OpenAI', 'Anthropic'],
-      readTime: '6 min',
-      emoji: '⚔️',
-      status: 'pending',
-      file: '../content/pending/chatgpt-vs-claude-2026.md',
-      excerpt: `This comparison puts ChatGPT-4o and Claude Sonnet head-to-head across 40+ real tasks. Categories tested: creative writing, technical writing, code generation, data analysis, reasoning/logic, conversation quality, and speed. Verdict: Claude wins on nuance and long-form writing; ChatGPT wins on plugins and image generation. Full scoring matrix included.`
-    },
-    {
-      id: 'best-ai-writing-tools-bloggers',
-      title: 'Best AI Writing Tools for Bloggers in 2026',
-      description: 'The complete AI writing stack for bloggers — from ideation to SEO-optimized final post.',
-      category: 'AI Writing',
-      author: 'Jamie Rivera',
-      date: '2026-03-26',
-      tags: ['AI writing', 'blogging', 'content creation', 'SEO', 'Jasper'],
-      readTime: '5 min',
-      emoji: '✍️',
-      status: 'pending',
-      file: '../content/pending/best-ai-writing-tools-bloggers.md',
-      excerpt: `Covers the best AI writing tools for bloggers in 2026 including Jasper, Copy.ai, Surfer SEO, Frase.io, Writesonic, and more. The article explains how to build a complete AI writing workflow: ideation → outline → first draft → SEO optimization → final edit. Includes pricing comparison and which tool to use at each stage.`
+// ── CONFIG ───────────────────────────────────────────────────────────────────
+const OWNER     = 'sundysur';
+const REPO      = 'talentedatai';
+const API_BASE  = `https://api.github.com/repos/${OWNER}/${REPO}`;
+const TOKEN_KEY = 'gh_token';
+
+const TABS = {
+  pending:   { folder: 'content/pending',   label: 'Pending Review',    meta: 'Articles awaiting your approval' },
+  published: { folder: 'content/published', label: 'Published Articles', meta: 'Articles live on the site'       },
+  rejected:  { folder: 'content/rejected',  label: 'Rejected Articles',  meta: 'Articles that were declined'     }
+};
+
+const CAT_STYLES = {
+  'Productivity':        'background:#e6f0ff;color:#0055dd',
+  'Comparison':          'background:#f0e6ff;color:#6633cc',
+  'AI Writing':          'background:#e6fff0;color:#008844',
+  'Coding & Dev':        'background:#e6fffc;color:#007766',
+  'Business & Marketing':'background:#fff3e6;color:#cc5500',
+  'Design & Creative':   'background:#ffe6f5;color:#bb0066',
+  'Research & Analysis': 'background:#f4f4f8;color:#444466',
+  'Learning & Education':'background:#fffde6;color:#997700',
+  '_default':            'background:#e6f0ff;color:#0055dd'
+};
+
+// ── STATE ────────────────────────────────────────────────────────────────────
+const S = {
+  token:      null,
+  activeTab:  'pending',
+  articles:   { pending: [], published: [], rejected: [] },
+  loadedTabs: new Set(),
+  busy:       false
+};
+
+// ── GITHUB API LAYER ─────────────────────────────────────────────────────────
+async function ghFetch(endpoint, options = {}) {
+  const url = endpoint.startsWith('http') ? endpoint : `${API_BASE}/${endpoint}`;
+  const headers = {
+    'Authorization':      `Bearer ${S.token}`,
+    'Accept':             'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28'
+  };
+  if (options.body) headers['Content-Type'] = 'application/json';
+
+  const res = await fetch(url, { ...options, headers });
+
+  // 401 – bad token
+  if (res.status === 401) {
+    clearToken();
+    throw new Error('Token invalid or expired. Please reconnect.');
+  }
+
+  // 403 – could be rate limit or insufficient scope
+  if (res.status === 403) {
+    const remaining = res.headers.get('X-RateLimit-Remaining');
+    if (remaining === '0') {
+      const reset  = res.headers.get('X-RateLimit-Reset');
+      const resetT = reset
+        ? new Date(parseInt(reset, 10) * 1000).toLocaleTimeString()
+        : 'soon';
+      throw new Error(`GitHub rate limit exceeded. Resets at ${resetT}.`);
     }
-  ];
+    const body = await res.json().catch(() => ({}));
+    throw new Error(body.message || 'GitHub API returned 403 Forbidden. Check token permissions (needs repo scope).');
+  }
 
-  let currentTab = 'pending';
-  let currentArticleId = null;
+  // 404 – not found (folder may not exist yet)
+  if (res.status === 404) return null;
 
-  // ── Render ──
-  function renderArticles() {
-    const container = document.getElementById('articles-container');
-    const filtered = articles.filter(a => a.status === currentTab);
+  // 204 – no content (DELETE success)
+  if (res.status === 204) return {};
 
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    throw new Error(body.message || `GitHub API error: ${res.status}`);
+  }
+
+  return res.json();
+}
+
+/** List .md files in a folder; returns [] if folder doesn't exist. */
+async function listMdFiles(folder) {
+  const data = await ghFetch(`contents/${folder}`);
+  if (!data || !Array.isArray(data)) return [];
+  return data.filter(f => f.type === 'file' && f.name.endsWith('.md'));
+}
+
+/** Get a file's SHA and base64 content. Returns null if not found. */
+async function getFileMeta(path) {
+  const data = await ghFetch(`contents/${encodeFilePath(path)}`);
+  if (!data) return null;
+  return {
+    sha:        data.sha,
+    contentB64: (data.content || '').replace(/\n/g, '')
+  };
+}
+
+/** Create (or update) a file. Pass sha to update an existing file. */
+async function putFile(path, contentB64, message, sha = null) {
+  const body = { message, content: contentB64, branch: 'main' };
+  if (sha) body.sha = sha;
+  return ghFetch(`contents/${encodeFilePath(path)}`, {
+    method: 'PUT',
+    body: JSON.stringify(body)
+  });
+}
+
+/** Delete a file using its current SHA. */
+async function deleteGhFile(path, sha, message) {
+  return ghFetch(`contents/${encodeFilePath(path)}`, {
+    method: 'DELETE',
+    body: JSON.stringify({ message, sha, branch: 'main' })
+  });
+}
+
+/** Encode a file path but preserve forward slashes. */
+function encodeFilePath(p) {
+  return p.split('/').map(encodeURIComponent).join('/');
+}
+
+// ── YAML FRONT MATTER PARSER ─────────────────────────────────────────────────
+/**
+ * Parses YAML front matter delimited by --- from a markdown string.
+ * Returns { data: {}, body: '' }.
+ * Handles: quoted strings, inline arrays, YAML block lists, booleans.
+ */
+function parseFrontMatter(raw) {
+  const match = raw.match(/^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*(\r?\n|$)/);
+  if (!match) return { data: {}, body: raw };
+
+  const yamlStr = match[1];
+  const body    = raw.slice(match[0].length);
+  const data    = {};
+  const lines   = yamlStr.split(/\r?\n/);
+  let i = 0;
+
+  while (i < lines.length) {
+    const line = lines[i];
+    if (!line.trim() || line.trimStart().startsWith('#')) { i++; continue; }
+
+    const colon = line.indexOf(':');
+    if (colon < 1) { i++; continue; }
+
+    const key = line.slice(0, colon).trim();
+    let   val = line.slice(colon + 1).trim();
+    if (!key) { i++; continue; }
+
+    // Inline array: key: ["a","b"] or key: [a, b]
+    if (val.startsWith('[')) {
+      let s = val;
+      let j = i + 1;
+      // Collect continuation lines until we find the closing bracket
+      while (!s.includes(']') && j < lines.length) {
+        s += ' ' + lines[j++].trim();
+      }
+      const closeIdx = s.indexOf(']');
+      const bracket  = s.slice(0, closeIdx + 1);
+      try {
+        data[key] = JSON.parse(bracket);
+      } catch (_) {
+        data[key] = bracket
+          .slice(1, -1)
+          .split(',')
+          .map(x => x.trim().replace(/^["']|["']$/g, ''))
+          .filter(Boolean);
+      }
+      i = j;
+      continue;
+    }
+
+    // Block list:
+    //   key:
+    //   - item 1
+    //   - item 2
+    if (val === '') {
+      const items = [];
+      let j = i + 1;
+      while (j < lines.length && /^\s*-\s+/.test(lines[j])) {
+        items.push(
+          lines[j].replace(/^\s*-\s+/, '').replace(/^["']|["']$/g, '').trim()
+        );
+        j++;
+      }
+      if (items.length) {
+        data[key] = items;
+        i = j;
+        continue;
+      }
+      data[key] = '';
+      i++;
+      continue;
+    }
+
+    // Strip surrounding quotes
+    if ((val.startsWith('"') && val.endsWith('"')) ||
+        (val.startsWith("'") && val.endsWith("'"))) {
+      val = val.slice(1, -1);
+    }
+
+    if (val === 'true')  { data[key] = true;  i++; continue; }
+    if (val === 'false') { data[key] = false; i++; continue; }
+
+    data[key] = val;
+    i++;
+  }
+
+  return { data, body };
+}
+
+/** Safely decode base64 → UTF-8 string (handles emoji/unicode). */
+function decodeB64(b64) {
+  const bin = atob(b64);
+  const bytes = new Uint8Array(bin.length);
+  for (let k = 0; k < bin.length; k++) bytes[k] = bin.charCodeAt(k);
+  return new TextDecoder('utf-8').decode(bytes);
+}
+
+/** Strip markdown syntax and return a plain-text preview. */
+function mkPreview(body, maxLen = 320) {
+  const stripped = body
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/`[^`]+`/g, '')
+    .replace(/^#{1,6}\s+.*/mg, '')
+    .replace(/!\[.*?\]\(.*?\)/g, '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\*{1,3}([^*]+)\*{1,3}/g, '$1')
+    .replace(/^[-*+]\s+/mg, '')
+    .replace(/^\d+\.\s+/mg, '')
+    .replace(/^>{1,}\s*/mg, '')
+    .replace(/^---+$/mg, '')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+  return stripped.length > maxLen
+    ? stripped.slice(0, maxLen).trimEnd() + '…'
+    : stripped;
+}
+
+// ── DATA LOADING ─────────────────────────────────────────────────────────────
+/**
+ * Load one tab: list directory, fetch each file's content, parse front matter.
+ * Skips if already loaded (unless force=true).
+ */
+async function loadTab(tab, force = false) {
+  if (!force && S.loadedTabs.has(tab)) {
+    renderArticles();
+    return;
+  }
+
+  showLoading();
+
+  try {
+    const folder = TABS[tab].folder;
+    const files  = await listMdFiles(folder);
+
+    // Fetch all files in parallel; capture individual failures gracefully
+    const settled = await Promise.allSettled(
+      files.map(async f => {
+        const meta = await getFileMeta(f.path);
+        if (!meta) throw new Error(`Could not load ${f.name}`);
+        const raw = decodeB64(meta.contentB64);
+        const { data: fm, body } = parseFrontMatter(raw);
+        return {
+          filename:    f.name,
+          path:        f.path,
+          sha:         meta.sha,
+          title:       fm.title       || f.name.replace(/\.md$/,'').replace(/-/g,' '),
+          description: fm.description || '',
+          category:    fm.category    || 'General',
+          date:        fm.date        || '',
+          author:      fm.author      || 'TalentedAtAI Team',
+          read_time:   fm.read_time   || '',
+          tags:        Array.isArray(fm.tags) ? fm.tags : [],
+          preview:     mkPreview(body)
+        };
+      })
+    );
+
+    S.articles[tab] = settled
+      .filter(r => r.status === 'fulfilled')
+      .map(r => r.value);
+
+    // Report any per-file failures as a soft warning
+    const failed = settled.filter(r => r.status === 'rejected');
+    if (failed.length) {
+      console.warn(`[Dashboard] ${failed.length} file(s) failed to load:`,
+        failed.map(r => r.reason?.message));
+    }
+
+    S.loadedTabs.add(tab);
+    renderArticles();
     updateStats();
 
-    if (filtered.length === 0) {
-      container.innerHTML = `
-        <div class="empty-state">
-          <div class="empty-state__icon">${currentTab === 'pending' ? '🎉' : currentTab === 'published' ? '📭' : '🗃️'}</div>
-          <div class="empty-state__title">${
-            currentTab === 'pending' ? 'Queue is clear!' :
-            currentTab === 'published' ? 'Nothing published yet' : 'No rejected articles'
-          }</div>
-          <div class="empty-state__subtitle">${
-            currentTab === 'pending' ? 'All articles have been reviewed. Great work!' :
-            currentTab === 'published' ? 'Approve articles from the pending queue to publish them.' :
-            'Rejected articles will appear here.'
-          }</div>
-        </div>`;
-      return;
+  } catch (err) {
+    showError(err.message);
+  }
+}
+
+/**
+ * Fetch just directory listings for all three tabs to populate stat counts
+ * without downloading full file contents.
+ */
+async function fetchAllCounts() {
+  await Promise.allSettled(Object.keys(TABS).map(async tab => {
+    const files = await listMdFiles(TABS[tab].folder);
+    const n = files.length;
+    el(`stat-${tab}`).textContent  = n;
+    el(`badge-${tab}`).textContent = n;
+    el(`badge-${tab}`).style.display = n > 0 ? '' : 'none';
+  }));
+  updateTotalStat();
+}
+
+// ── ACTIONS ───────────────────────────────────────────────────────────────────
+/**
+ * Core move: fetch → create-at-dest → delete-from-src → update state.
+ */
+async function doMove(filename, fromTab, toTab, commitMsg, successMsg) {
+  if (S.busy) {
+    showToast('error', 'Another action is in progress. Please wait.');
+    return;
+  }
+  S.busy = true;
+  setBtnState(filename, true);
+
+  try {
+    const fromPath = `${TABS[fromTab].folder}/${filename}`;
+    const toPath   = `${TABS[toTab].folder}/${filename}`;
+
+    // 1. Fetch fresh content + SHA from source
+    const meta = await getFileMeta(fromPath);
+    if (!meta) throw new Error(`File not found in GitHub: ${fromPath}`);
+
+    // 2. Check if destination file already exists (to get its SHA for update)
+    const existingDest = await getFileMeta(toPath);
+
+    // 3. Create/update at destination
+    await putFile(toPath, meta.contentB64, commitMsg, existingDest?.sha ?? null);
+
+    // 4. Delete from source
+    await deleteGhFile(fromPath, meta.sha, `moved ${filename} → ${toTab}`);
+
+    // 5. Update in-memory state
+    const article = S.articles[fromTab].find(a => a.filename === filename);
+    S.articles[fromTab] = S.articles[fromTab].filter(a => a.filename !== filename);
+
+    if (article) {
+      const moved = { ...article, path: toPath };
+      if (S.loadedTabs.has(toTab)) {
+        S.articles[toTab] = [moved, ...S.articles[toTab]];
+      } else {
+        // Mark dest as needing a reload next visit
+        S.loadedTabs.delete(toTab);
+      }
     }
 
-    container.innerHTML = `<div class="articles-list">${filtered.map(a => renderRow(a)).join('')}</div>`;
+    closeModal();
+    renderArticles();
+    updateStats();
+    showToast('success', successMsg);
+
+  } catch (err) {
+    showToast('error', `Error: ${err.message}`);
+  } finally {
+    S.busy = false;
+    setBtnState(filename, false);
   }
+}
 
-  function renderRow(a) {
-    const categoryColors = {
-      'Productivity': '#e6f0ff; color:#0066ff',
-      'Comparison': '#f0e6ff; color:#6633cc',
-      'AI Writing': '#e6fff0; color:#00aa55',
-      'Business': '#fff3e6; color:#cc6600',
-      'Design': '#e6fff0; color:#00aa55',
-    };
-    const catStyle = categoryColors[a.category] || '#e6f0ff; color:#0066ff';
+async function approveArticle(filename) {
+  const art = S.articles.pending.find(a => a.filename === filename);
+  if (!art) return;
+  await doMove(
+    filename, 'pending', 'published',
+    `publish: ${art.title}`,
+    `✅ Published: "${art.title.slice(0, 60)}"`
+  );
+}
 
-    const pendingActions = `
-      <button class="action-btn action-btn--view" onclick="openModal('${a.id}')">👁 Preview</button>
-      <button class="action-btn action-btn--approve" onclick="approveArticle('${a.id}')">✓ Approve</button>
-      <button class="action-btn action-btn--reject" onclick="rejectArticle('${a.id}')">✗ Reject</button>`;
+async function rejectArticle(filename) {
+  const art = S.articles.pending.find(a => a.filename === filename);
+  if (!art) return;
+  const ok = await showConfirm(
+    'Reject Article?',
+    `"${art.title}" will be moved to content/rejected/. You can re-approve it later.`
+  );
+  if (!ok) return;
+  await doMove(
+    filename, 'pending', 'rejected',
+    `reject: ${art.title}`,
+    `Article rejected and moved to content/rejected/.`
+  );
+}
 
-    const publishedActions = `
-      <button class="action-btn action-btn--view" onclick="openModal('${a.id}')">👁 View</button>
-      <button class="action-btn action-btn--undo" onclick="undoAction('${a.id}')">↩ Unpublish</button>`;
+async function unpublishArticle(filename) {
+  const art = S.articles.published.find(a => a.filename === filename);
+  if (!art) return;
+  const ok = await showConfirm(
+    'Unpublish Article?',
+    `"${art.title}" will be moved back to content/pending/ for further review.`
+  );
+  if (!ok) return;
+  await doMove(
+    filename, 'published', 'pending',
+    `unpublish: ${art.title}`,
+    `Article moved back to pending review.`
+  );
+}
 
-    const rejectedActions = `
-      <button class="action-btn action-btn--view" onclick="openModal('${a.id}')">👁 View</button>
-      <button class="action-btn action-btn--approve" onclick="approveArticle('${a.id}')">✓ Re-approve</button>`;
+async function reapproveArticle(filename) {
+  const art = S.articles.rejected.find(a => a.filename === filename);
+  if (!art) return;
+  await doMove(
+    filename, 'rejected', 'published',
+    `re-approve: ${art.title}`,
+    `✅ Re-approved and published: "${art.title.slice(0, 60)}"`
+  );
+}
 
-    const actions = a.status === 'pending' ? pendingActions :
-                    a.status === 'published' ? publishedActions : rejectedActions;
+// ── RENDERING ─────────────────────────────────────────────────────────────────
+function renderArticles() {
+  const tab  = S.activeTab;
+  const arts = S.articles[tab];
+  const container = el('articles-container');
 
-    return `
-      <div class="article-row ${a.status !== 'pending' ? a.status : ''}" id="row-${a.id}">
-        <div class="article-row__emoji">${a.emoji}</div>
-        <div class="article-row__body">
-          <div class="article-row__title">${a.title}</div>
-          <div class="article-row__meta">
-            <span style="background:${catStyle}; padding:2px 8px; border-radius:100px; font-weight:700; font-size:11px; letter-spacing:0.04em; text-transform:uppercase;">${a.category}</span>
-            <span class="dot">·</span>
-            <span>${a.author}</span>
-            <span class="dot">·</span>
-            <span>${formatDate(a.date)}</span>
-            <span class="dot">·</span>
-            <span>${a.readTime} read</span>
-            <span class="status-pill status-pill--${a.status}">${a.status}</span>
-          </div>
-        </div>
-        <div class="article-row__actions">${actions}</div>
+  if (!arts || arts.length === 0) {
+    const E = {
+      pending:   ['🎉', 'Queue is clear!',        'All articles have been reviewed. Great work!'],
+      published: ['📄', 'Nothing published yet',   'Approve articles from the pending queue to publish them.'],
+      rejected:  ['🗃️', 'No rejected articles',   'Rejected articles will appear here.']
+    }[tab];
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state__icon">${E[0]}</div>
+        <div class="empty-state__title">${E[1]}</div>
+        <div class="empty-state__subtitle">${E[2]}</div>
       </div>`;
+    return;
   }
 
-  function updateStats() {
-    const pending = articles.filter(a => a.status === 'pending').length;
-    const published = articles.filter(a => a.status === 'published').length;
-    const rejected = articles.filter(a => a.status === 'rejected').length;
-    document.getElementById('stat-pending').textContent = pending;
-    document.getElementById('stat-published').textContent = published;
-    document.getElementById('stat-rejected').textContent = rejected;
-    document.getElementById('stat-total').textContent = articles.length;
-    document.getElementById('pending-badge').textContent = pending;
-    document.getElementById('pending-badge').style.display = pending > 0 ? '' : 'none';
+  container.innerHTML = `<div class="articles-list">${arts.map(renderRow).join('')}</div>`;
+}
+
+function renderRow(a) {
+  const tab = S.activeTab;
+  let actions = '';
+
+  if (tab === 'pending') {
+    actions = `
+      <button class="action-btn action-btn--view"    onclick="openModal('${eAttr(a.filename)}')">👁 Preview</button>
+      <button class="action-btn action-btn--approve" id="btn-approve-${eAttr(a.filename)}"
+              onclick="approveArticle('${eAttr(a.filename)}')">✓ Approve</button>
+      <button class="action-btn action-btn--reject"  id="btn-reject-${eAttr(a.filename)}"
+              onclick="rejectArticle('${eAttr(a.filename)}')">✗ Reject</button>`;
+  } else if (tab === 'published') {
+    actions = `
+      <button class="action-btn action-btn--view" onclick="openModal('${eAttr(a.filename)}')">👁 View</button>
+      <button class="action-btn action-btn--undo" onclick="unpublishArticle('${eAttr(a.filename)}')">↩ Unpublish</button>`;
+  } else {
+    actions = `
+      <button class="action-btn action-btn--view"    onclick="openModal('${eAttr(a.filename)}')">👁 View</button>
+      <button class="action-btn action-btn--approve" onclick="reapproveArticle('${eAttr(a.filename)}')">✓ Re-approve</button>`;
   }
 
-  function formatDate(dateStr) {
-    return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  }
+  const catSt = CAT_STYLES[a.category] || CAT_STYLES['_default'];
+  const dateStr = fmtDate(a.date);
 
-  // ── Tab Switching ──
-  function showTab(tab) {
-    currentTab = tab;
-    document.querySelectorAll('.sidebar__nav-item').forEach(el => el.classList.remove('active'));
-    event.currentTarget.classList.add('active');
+  return `
+    <div class="article-row" id="row-${eAttr(a.filename)}">
+      <div class="article-row__body">
+        <div class="article-row__title">${eHtml(a.title)}</div>
+        <div class="article-row__meta">
+          <span class="cat-pill" style="${catSt}">${eHtml(a.category)}</span>
+          <span class="dot">·</span>
+          <span>${eHtml(a.author)}</span>
+          <span class="dot">·</span>
+          <span>${eHtml(dateStr)}</span>
+          ${a.read_time ? `<span class="dot">·</span><span>${eHtml(a.read_time)} read</span>` : ''}
+        </div>
+        ${a.description ? `<div class="article-row__desc">${eHtml(a.description.slice(0, 140))}${a.description.length > 140 ? '…' : ''}</div>` : ''}
+      </div>
+      <div class="article-row__actions">${actions}</div>
+    </div>`;
+}
 
-    const titles = { pending: 'Pending Review', published: 'Published Articles', rejected: 'Rejected Articles' };
-    const metas = {
-      pending: 'Articles awaiting your approval',
-      published: 'Articles live on the site',
-      rejected: 'Articles that were declined'
-    };
-    document.getElementById('page-title').textContent = titles[tab];
-    document.getElementById('page-meta').textContent = metas[tab];
-    renderArticles();
-  }
-
-  // ── Actions ──
-  function approveArticle(id) {
-    const article = articles.find(a => a.id === id);
-    article.status = 'published';
-    showToast('✅', `"${article.title.substring(0,40)}..." approved and published!`);
-    renderArticles();
-    closeModal();
-    // In production: move file from content/pending/ to content/published/
-    // git mv content/pending/${id}.md content/published/${id}.md && git push
-    logAction('APPROVE', id);
-  }
-
-  function rejectArticle(id) {
-    const article = articles.find(a => a.id === id);
-    article.status = 'rejected';
-    showToast('❌', `"${article.title.substring(0,40)}..." has been rejected.`);
-    renderArticles();
-    closeModal();
-    logAction('REJECT', id);
-  }
-
-  function undoAction(id) {
-    const article = articles.find(a => a.id === id);
-    article.status = 'pending';
-    showToast('↩', `"${article.title.substring(0,40)}..." moved back to pending.`);
-    renderArticles();
-    logAction('UNDO', id);
-  }
-
-  function approveAll() {
-    const pending = articles.filter(a => a.status === 'pending');
-    if (pending.length === 0) { showToast('ℹ️', 'No pending articles to approve.'); return; }
-    pending.forEach(a => { a.status = 'published'; logAction('APPROVE', a.id); });
-    showToast('✅', `All ${pending.length} pending articles approved!`);
-    renderArticles();
-  }
-
-  function refreshDashboard() {
-    showToast('↻', 'Dashboard refreshed.');
-    renderArticles();
-  }
-
-  function logAction(action, id) {
-    const log = JSON.parse(localStorage.getItem('talentedatai_log') || '[]');
-    log.unshift({ action, id, timestamp: new Date().toISOString() });
-    localStorage.setItem('talentedatai_log', JSON.stringify(log.slice(0, 100)));
-  }
-
-  // ── Modal ──
-  function openModal(id) {
-    currentArticleId = id;
-    const a = articles.find(a => a.id === id);
-    const categoryColors = {
-      'Productivity': 'background:#e6f0ff; color:#0066ff',
-      'Comparison': 'background:#f0e6ff; color:#6633cc',
-      'AI Writing': 'background:#e6fff0; color:#00aa55',
-    };
-    const catStyle = categoryColors[a.category] || 'background:#e6f0ff; color:#0066ff';
-
-    document.getElementById('modal-title').textContent = `${a.emoji} ${a.title}`;
-    document.getElementById('modal-meta').innerHTML = `
-      <span class="modal__meta-tag" style="${catStyle}; padding:4px 12px; border-radius:100px; font-size:12px; font-weight:700;">${a.category}</span>
-      <span class="modal__meta-tag" style="background:#f4f4f8; color:#6b6b8a; padding:4px 12px; border-radius:100px; font-size:12px;">By ${a.author}</span>
-      <span class="modal__meta-tag" style="background:#f4f4f8; color:#6b6b8a; padding:4px 12px; border-radius:100px; font-size:12px;">${formatDate(a.date)}</span>
-      <span class="modal__meta-tag" style="background:#f4f4f8; color:#6b6b8a; padding:4px 12px; border-radius:100px; font-size:12px;">${a.readTime} read</span>
-    `;
-    document.getElementById('modal-body').innerHTML = `
-      <strong>Description:</strong><br>${a.description}<br><br>
-      <strong>Tags:</strong> ${a.tags.map(t => `<span style="background:#f4f4f8; padding:2px 8px; border-radius:6px; font-size:12px; margin-right:4px;">${t}</span>`).join('')}<br><br>
-      <strong>File:</strong> <code style="background:#f4f4f8; padding:2px 6px; border-radius:4px; font-size:12px;">${a.file}</code><br><br>
-      <strong>Content Preview:</strong><br><br>${a.excerpt}
-    `;
-
-    const actionsEl = document.getElementById('modal-actions');
-    if (a.status === 'pending') {
-      actionsEl.innerHTML = `
-        <button class="btn btn--reject" onclick="rejectArticle('${a.id}')">✗ Reject</button>
-        <button class="btn btn--approve" onclick="approveArticle('${a.id}')">✓ Approve &amp; Publish</button>`;
-    } else if (a.status === 'published') {
-      actionsEl.innerHTML = `
-        <button class="btn btn--ghost" onclick="undoAction('${a.id}')">↩ Unpublish</button>
-        <button class="btn btn--primary" onclick="window.open('../index.html','_blank')">🌐 View on Site</button>`;
-    } else {
-      actionsEl.innerHTML = `
-        <button class="btn btn--ghost" onclick="closeModal()">Close</button>
-        <button class="btn btn--approve" onclick="approveArticle('${a.id}')">✓ Re-approve</button>`;
-    }
-
-    document.getElementById('modal').classList.add('open');
-  }
-
-  function closeModal() {
-    document.getElementById('modal').classList.remove('open');
-  }
-
-  document.getElementById('modal').addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
+function updateStats() {
+  const keys = ['pending', 'published', 'rejected'];
+  keys.forEach(tab => {
+    const n = S.articles[tab].length;
+    el(`stat-${tab}`).textContent  = n;
+    el(`badge-${tab}`).textContent = n;
+    el(`badge-${tab}`).style.display = n > 0 ? '' : 'none';
   });
+  updateTotalStat();
+}
 
-  // ── Toast ──
-  function showToast(icon, text) {
-    const toast = document.getElementById('toast');
-    document.getElementById('toast-icon').textContent = icon;
-    document.getElementById('toast-text').textContent = text;
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 3000);
+function updateTotalStat() {
+  const totals = ['pending','published','rejected'].map(t => {
+    const statEl = el(`stat-${t}`);
+    return parseInt(statEl.textContent, 10) || 0;
+  });
+  el('stat-total').textContent = totals.reduce((s, n) => s + n, 0);
+}
+
+// ── MODAL ─────────────────────────────────────────────────────────────────────
+function openModal(filename) {
+  const tab = S.activeTab;
+  const a   = S.articles[tab].find(x => x.filename === filename);
+  if (!a) return;
+
+  const catSt = CAT_STYLES[a.category] || CAT_STYLES['_default'];
+  const tagsHtml = a.tags.map(t => `<span class="tag-chip">${eHtml(t)}</span>`).join('');
+
+  el('modal-title').textContent = a.title;
+  el('modal-meta').innerHTML = `
+    <span class="modal__meta-tag" style="${catSt}">${eHtml(a.category)}</span>
+    <span class="modal__meta-tag tag--gray">By ${eHtml(a.author)}</span>
+    <span class="modal__meta-tag tag--gray">${eHtml(fmtDate(a.date))}</span>
+    ${a.read_time ? `<span class="modal__meta-tag tag--gray">${eHtml(a.read_time)} read</span>` : ''}
+  `;
+  el('modal-body').innerHTML = `
+    ${a.description ? `<p class="modal__desc">${eHtml(a.description)}</p>` : ''}
+    ${a.tags.length  ? `<div class="modal__tags">${tagsHtml}</div>` : ''}
+    <div class="modal__preview-label">Content preview</div>
+    <div class="modal__preview">${eHtml(a.preview)}</div>
+    <div class="modal__file">File: <code>${eHtml(a.path)}</code></div>
+  `;
+
+  let acts = '';
+  if (tab === 'pending') {
+    acts = `
+      <button class="btn btn--reject"  onclick="rejectArticle('${eAttr(filename)}')">✗ Reject</button>
+      <button class="btn btn--approve" onclick="approveArticle('${eAttr(filename)}')">✓ Approve &amp; Publish</button>`;
+  } else if (tab === 'published') {
+    const htmlFile = filename.replace(/\.md$/, '.html');
+    acts = `
+      <button class="btn btn--ghost"   onclick="unpublishArticle('${eAttr(filename)}')">↩ Unpublish</button>
+      <button class="btn btn--primary" onclick="window.open('/content/published/${eAttr(htmlFile)}','_blank')">🌐 View on Site</button>`;
+  } else {
+    acts = `
+      <button class="btn btn--ghost"   onclick="closeModal()">Close</button>
+      <button class="btn btn--approve" onclick="reapproveArticle('${eAttr(filename)}')">✓ Re-approve</button>`;
   }
+  el('modal-actions').innerHTML = acts;
+  el('modal-overlay').classList.add('open');
+}
 
-  // ── Init ──
-  renderArticles();
+function closeModal() {
+  el('modal-overlay').classList.remove('open');
+}
+
+// ── TAB NAVIGATION ─────────────────────────────────────────────────────────────
+function switchTab(tab) {
+  S.activeTab = tab;
+  document.querySelectorAll('.sidebar__nav-item[data-tab]').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tab === tab);
+  });
+  el('page-title').textContent = TABS[tab].label;
+  el('page-meta').textContent  = TABS[tab].meta;
+  loadTab(tab);
+}
+
+function refreshCurrentTab() {
+  S.loadedTabs.delete(S.activeTab);
+  loadTab(S.activeTab, true);
+}
+
+// ── LOADING / ERROR STATES ────────────────────────────────────────────────────
+function showLoading() {
+  el('articles-container').innerHTML = `
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <div class="loading-text">Loading from GitHub…</div>
+    </div>`;
+}
+
+function showError(msg) {
+  el('articles-container').innerHTML = `
+    <div class="error-state">
+      <div class="error-state__icon">⚠️</div>
+      <div class="error-state__title">GitHub API Error</div>
+      <div class="error-state__msg">${eHtml(msg)}</div>
+      <button class="btn btn--primary" onclick="refreshCurrentTab()" style="margin-top:16px">↻ Try Again</button>
+    </div>`;
+}
+
+function setBtnState(filename, busy) {
+  ['approve', 'reject'].forEach(action => {
+    const btn = document.getElementById(`btn-${action}-${filename}`);
+    if (!btn) return;
+    btn.disabled = busy;
+    if (busy) {
+      btn.dataset.orig = btn.textContent;
+      btn.textContent  = action === 'approve' ? '⏳ Publishing…' : '⏳ Rejecting…';
+    } else {
+      btn.textContent = btn.dataset.orig || btn.textContent;
+    }
+  });
+}
+
+// ── TOAST ─────────────────────────────────────────────────────────────────────
+let toastTimer;
+function showToast(type, msg) {
+  const t = el('toast');
+  t.className = `toast toast--${type} show`;
+  el('toast-text').textContent = msg;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 4500);
+}
+
+// ── CONFIRM DIALOG ────────────────────────────────────────────────────────────
+function showConfirm(title, text) {
+  return new Promise(resolve => {
+    el('confirm-title').textContent = title;
+    el('confirm-text').textContent  = text;
+    el('confirm-overlay').classList.add('open');
+    const cleanup = result => {
+      el('confirm-overlay').classList.remove('open');
+      el('confirm-ok').onclick     = null;
+      el('confirm-cancel').onclick = null;
+      resolve(result);
+    };
+    el('confirm-ok').onclick     = () => cleanup(true);
+    el('confirm-cancel').onclick = () => cleanup(false);
+  });
+}
+
+// ── AUTH ──────────────────────────────────────────────────────────────────────
+function clearToken() {
+  S.token = null;
+  localStorage.removeItem(TOKEN_KEY);
+  showScreen('login');
+}
+
+function logout() {
+  // Reset state
+  S.articles   = { pending: [], published: [], rejected: [] };
+  S.loadedTabs = new Set();
+  clearToken();
+}
+
+async function handleLogin(e) {
+  e.preventDefault();
+  const token = el('token-input').value.trim();
+  if (!token) return;
+
+  const btn    = el('login-btn');
+  const errEl  = el('login-error');
+  btn.textContent = 'Connecting…';
+  btn.disabled    = true;
+  errEl.style.display = 'none';
+
+  S.token = token;
+
+  try {
+    // Validate by fetching the repo itself
+    const repo = await ghFetch('');
+    if (!repo || !repo.id) throw new Error('Repository not found or token lacks repo scope.');
+
+    localStorage.setItem(TOKEN_KEY, token);
+    showScreen('dashboard');
+
+    // Load pending tab and fetch counts for others in parallel
+    await Promise.all([
+      loadTab('pending'),
+      fetchAllCounts()
+    ]);
+
+  } catch (err) {
+    S.token = null;
+    errEl.textContent   = err.message;
+    errEl.style.display = 'block';
+    btn.textContent     = 'Connect →';
+    btn.disabled        = false;
+  }
+}
+
+function showScreen(which) {
+  el('login-screen').style.display  = which === 'login'     ? 'flex'  : 'none';
+  el('dashboard').style.display     = which === 'dashboard' ? 'block' : 'none';
+}
+
+// ── UTILITIES ─────────────────────────────────────────────────────────────────
+function el(id) { return document.getElementById(id); }
+
+function eHtml(s) {
+  return String(s || '')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+function eAttr(s) {
+  // Safe for use inside onclick="..." attribute values
+  return String(s || '').replace(/'/g,"\\'").replace(/"/g,'&quot;');
+}
+
+function fmtDate(d) {
+  if (!d) return '';
+  try {
+    return new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', {
+      month: 'short', day: 'numeric', year: 'numeric'
+    });
+  } catch (_) { return String(d); }
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+(function init() {
+  // Wire login form
+  el('login-form').addEventListener('submit', handleLogin);
+
+  // Auto-login if token already saved
+  const saved = localStorage.getItem(TOKEN_KEY);
+  if (saved) {
+    S.token = saved;
+    showScreen('dashboard');
+    loadTab('pending');
+    fetchAllCounts();
+  } else {
+    showScreen('login');
+  }
+})();
 </script>
 </body>
 </html>
