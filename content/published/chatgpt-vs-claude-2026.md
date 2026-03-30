@@ -4,8 +4,7 @@ description: "An in-depth head-to-head comparison of ChatGPT-4o and Claude acros
 category: "Comparison"
 tags: ["ChatGPT", "Claude", "AI comparison", "OpenAI", "Anthropic", "GPT-4o", "AI assistant"]
 date: "2026-03-27"
-author: "Marcus Kim"
-author_bio: "Marcus is a tech journalist and AI researcher who has been covering language models since GPT-2."
+author: "TalentedAtAI Team"
 slug: "chatgpt-vs-claude-2026"
 featured: false
 status: "pending"

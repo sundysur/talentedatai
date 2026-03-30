@@ -12,6 +12,15 @@
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://talentedatai.com" />
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYQ40F2CXQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SYQ40F2CXQ');
+  </script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -122,12 +131,15 @@
     /* ── Hero ── */
     .hero {
       padding: 96px 24px 80px;
-      max-width: 1200px;
+      max-width: 800px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
+    }
+    .hero__tagline {
+      font-size: 15px;
+      color: var(--gray-500);
+      letter-spacing: 0.04em;
+      font-weight: 500;
+      margin-top: 16px;
     }
     .hero__badge {
       display: inline-flex;
@@ -620,9 +632,9 @@
       </a>
       <ul class="nav__links">
         <li><a href="#articles">Articles</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#tools">AI Tools</a></li>
-        <li><a href="#newsletter" class="nav__cta">Subscribe Free</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
       </ul>
     </div>
   </nav>
@@ -652,31 +664,7 @@
         </div>
       </div>
       <div class="hero__visual">
-        <div class="stats-grid">
-          <div class="stat-card stat-card--accent">
-            <div class="stat-card__number">150+</div>
-            <div class="stat-card__label">AI tools reviewed</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-card__number">48K</div>
-            <div class="stat-card__label">Monthly readers</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-card__number">92%</div>
-            <div class="stat-card__label">Reader satisfaction</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-card__number" style="color:var(--dark)">3×</div>
-            <div class="stat-card__label">Productivity boost avg.</div>
-          </div>
-        </div>
-        <div class="hero__featured-pill">
-          <div class="hero__featured-pill-icon">🔥</div>
-          <div class="hero__featured-pill-text">
-            <strong>Trending now</strong>
-            ChatGPT vs Claude — the 2026 head-to-head
-          </div>
-        </div>
+        <p class="hero__tagline">Independent &middot; Honest &middot; Updated weekly</p>
       </div>
     </div>
   </section>
@@ -704,10 +692,10 @@
             <p class="article-card__excerpt">We spent 6 weeks testing every major AI productivity tool so you don't have to. Here's the definitive ranking with real workflow examples, pricing breakdowns, and who each tool is best suited for.</p>
             <div class="article-card__footer">
               <div class="author">
-                <div class="author__avatar avatar--blue">SA</div>
-                <span class="author__name">Sarah Ahmed</span>
+                <div class="author__avatar avatar--blue">TA</div>
+                <span class="author__name">TalentedAtAI Team</span>
               </div>
-              <a href="content/published/top-ai-tools-productivity-2026.html" class="read-more">
+              <a href="/content/published/top-ai-tools-productivity-2026.html" class="read-more">
                 Read article
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
@@ -728,8 +716,8 @@
             <p class="article-card__excerpt">A deep-dive comparison across writing, coding, reasoning, and cost. We put both to the test with 40+ real tasks.</p>
             <div class="article-card__footer">
               <div class="author">
-                <div class="author__avatar avatar--purple">MK</div>
-                <span class="author__name">Marcus Kim</span>
+                <div class="author__avatar avatar--purple">TA</div>
+                <span class="author__name">TalentedAtAI Team</span>
               </div>
               <a href="content/published/chatgpt-vs-claude-2026.html" class="read-more">
                 Read article
@@ -752,8 +740,8 @@
             <p class="article-card__excerpt">From first draft to SEO-optimized final post — the AI writing stack that top bloggers are actually using this year.</p>
             <div class="article-card__footer">
               <div class="author">
-                <div class="author__avatar avatar--green">JR</div>
-                <span class="author__name">Jamie Rivera</span>
+                <div class="author__avatar avatar--green">TA</div>
+                <span class="author__name">TalentedAtAI Team</span>
               </div>
               <a href="content/published/best-ai-writing-tools-bloggers.html" class="read-more">
                 Read article
@@ -763,53 +751,6 @@
           </div>
         </article>
 
-        <article class="article-card">
-          <div class="article-card__thumb thumb--orange">
-            <div class="article-card__thumb-inner">💼</div>
-          </div>
-          <div class="article-card__body">
-            <div class="article-card__meta">
-              <span class="category-badge category-badge--orange">Business</span>
-              <span class="article-card__read-time">7 min read</span>
-            </div>
-            <h3 class="article-card__title">How Solopreneurs Are Using AI to Replace an Entire Team</h3>
-            <p class="article-card__excerpt">Real examples of one-person businesses using AI to handle marketing, ops, customer support, and more in 2026.</p>
-            <div class="article-card__footer">
-              <div class="author">
-                <div class="author__avatar avatar--blue">TN</div>
-                <span class="author__name">Tara Nguyen</span>
-              </div>
-              <a href="#" class="read-more">
-                Read article
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="article-card__thumb thumb--teal">
-            <div class="article-card__thumb-inner">🎨</div>
-          </div>
-          <div class="article-card__body">
-            <div class="article-card__meta">
-              <span class="category-badge">Design</span>
-              <span class="article-card__read-time">4 min read</span>
-            </div>
-            <h3 class="article-card__title">AI Image Generation in 2026: Midjourney vs DALL-E vs Firefly</h3>
-            <p class="article-card__excerpt">Side-by-side image comparisons and practical use cases for each tool. Which one wins for your workflow?</p>
-            <div class="article-card__footer">
-              <div class="author">
-                <div class="author__avatar avatar--green">LP</div>
-                <span class="author__name">Leo Park</span>
-              </div>
-              <a href="#" class="read-more">
-                Read article
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
 
       </div>
     </div>
@@ -879,19 +820,6 @@
     </div>
   </section>
 
-  <!-- Newsletter -->
-  <section class="newsletter" id="newsletter">
-    <div class="newsletter__inner">
-      <span class="newsletter__tag">📬 Free Weekly Newsletter</span>
-      <h2 class="newsletter__title">Stay ahead of the AI curve</h2>
-      <p class="newsletter__subtitle">Every Tuesday: the 3 best AI tools, 1 workflow tip, and 1 must-read article — curated for people who actually use AI to get work done.</p>
-      <form class="newsletter__form" onsubmit="handleSubscribe(event)">
-        <input type="email" class="newsletter__input" placeholder="your@email.com" required />
-        <button type="submit" class="newsletter__btn">Subscribe →</button>
-      </form>
-      <p class="newsletter__note">No spam. Unsubscribe anytime. Join 48,000+ readers.</p>
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer class="footer">
@@ -900,71 +828,32 @@
         <div>
           <div class="footer__brand-logo">Talented<span>At</span>AI</div>
           <p class="footer__brand-desc">Your practical guide to the best AI tools, strategies, and workflows. We test so you can implement.</p>
-          <div class="footer__social">
-            <a href="#" class="footer__social-link">𝕏</a>
-            <a href="#" class="footer__social-link">in</a>
-            <a href="#" class="footer__social-link">▶</a>
-            <a href="#" class="footer__social-link">f</a>
-          </div>
         </div>
         <div>
-          <div class="footer__col-title">Content</div>
+          <div class="footer__col-title">Articles</div>
           <ul class="footer__links">
-            <li><a href="#">Latest Articles</a></li>
-            <li><a href="#">AI Tools Reviews</a></li>
-            <li><a href="#">Comparisons</a></li>
-            <li><a href="#">Tutorials</a></li>
-            <li><a href="#">Newsletter</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="footer__col-title">Topics</div>
-          <ul class="footer__links">
-            <li><a href="#">Productivity</a></li>
-            <li><a href="#">AI Writing</a></li>
-            <li><a href="#">Coding</a></li>
-            <li><a href="#">Business</a></li>
-            <li><a href="#">Design</a></li>
+            <li><a href="#articles">Latest Articles</a></li>
           </ul>
         </div>
         <div>
           <div class="footer__col-title">Company</div>
           <ul class="footer__links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Write for Us</a></li>
-            <li><a href="#">Advertise</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">RSS Feed</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
         <span>&copy; 2026 TalentedAtAI. All rights reserved.</span>
         <div class="footer__bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
+          <a href="/privacy-policy.html">Privacy Policy</a>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
-    function handleSubscribe(e) {
-      e.preventDefault();
-      const input = e.target.querySelector('input');
-      const btn = e.target.querySelector('button');
-      btn.textContent = "✓ You're in!";
-      btn.style.background = '#00cc66';
-      btn.style.color = '#fff';
-      input.value = '';
-      setTimeout(() => {
-        btn.textContent = 'Subscribe →';
-        btn.style.background = '';
-        btn.style.color = '';
-      }, 3000);
-    }
-
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

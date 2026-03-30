@@ -4,8 +4,7 @@ description: "From ideation to SEO-optimized final post — the AI writing tools
 category: "AI Writing"
 tags: ["AI writing tools", "blogging", "content creation", "SEO", "Jasper", "Copy.ai", "Surfer SEO", "content marketing"]
 date: "2026-03-26"
-author: "Jamie Rivera"
-author_bio: "Jamie is a content strategist and blogger who has grown three niche blogs to 100K+ monthly visitors using AI-assisted workflows."
+author: "TalentedAtAI Team"
 slug: "best-ai-writing-tools-bloggers"
 featured: false
 status: "pending"

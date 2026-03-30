@@ -4,8 +4,7 @@ description: "We spent 6 weeks testing every major AI productivity tool so you d
 category: "Productivity"
 tags: ["AI tools", "productivity", "2026", "workflow automation", "ChatGPT", "Claude", "Notion AI"]
 date: "2026-03-28"
-author: "Sarah Ahmed"
-author_bio: "Sarah is a productivity consultant and AI tools specialist who has worked with 200+ companies to implement AI workflows."
+author: "TalentedAtAI Team"
 slug: "top-ai-tools-productivity-2026"
 featured: true
 status: "pending"
