@@ -1056,8 +1056,8 @@ async function handleLogin(e) {
 
   try {
     // Validate by fetching the repo itself
-    const repo = await ghFetch('');
-    if (!repo || !repo.id) throw new Error('Repository not found or token lacks repo scope.');
+    const repo = await ghFetch('https://api.github.com/user');
+    if (!repo || !repo.login) throw new Error('Token invalid or lacks required scope.');
 
     localStorage.setItem(TOKEN_KEY, token);
     showScreen('dashboard');
