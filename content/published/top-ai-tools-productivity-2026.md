@@ -5,6 +5,7 @@ category: "Productivity"
 tags: ["AI tools", "productivity", "2026", "workflow automation", "ChatGPT", "Claude", "Notion AI"]
 date: "2026-03-28"
 author: "TalentedAtAI Team"
+image: ""
 slug: "top-ai-tools-productivity-2026"
 featured: true
 status: "pending"

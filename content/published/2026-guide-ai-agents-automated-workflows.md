@@ -4,6 +4,7 @@ description: "The era of the prompt is ending. Here's how to move from typing in
 category: "Guides"
 date: "2026-03-31"
 author: "TalentedAtAI Team"
+image: ""
 read_time: "9 min"
 tags: ["ai agents", "automation", "agentic AI", "workflow", "productivity", "cursor", "zapier"]
 slug: "2026-guide-ai-agents-automated-workflows"

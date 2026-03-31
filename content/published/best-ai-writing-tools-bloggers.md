@@ -5,6 +5,7 @@ category: "AI Writing"
 tags: ["AI writing tools", "blogging", "content creation", "SEO", "Jasper", "Copy.ai", "Surfer SEO", "content marketing"]
 date: "2026-03-26"
 author: "TalentedAtAI Team"
+image: ""
 slug: "best-ai-writing-tools-bloggers"
 featured: false
 status: "pending"

@@ -285,6 +285,78 @@ DNS changes can take up to 48 hours to propagate. Verify your CNAME record is se
 
 ---
 
+## Adding Images to Articles
+
+Article pages and homepage cards both support hero images. Images are stored locally and referenced by filename in the article's front matter.
+
+### Where to put images
+
+Drop images into:
+```
+~/talentedatai/static/images/articles/
+```
+
+### Supported formats
+
+`jpg`, `jpeg`, `png`, `webp` — **webp is preferred** for smaller file sizes and faster load times.
+
+### Recommended dimensions
+
+| Use | Dimensions | Minimum |
+|-----|-----------|---------|
+| Article hero image | 1200×630px | — |
+| Homepage card thumbnail | 1200×630px | 800×450px |
+
+Both the article hero and the homepage card use the same image file, so aim for 1200×630px to cover both.
+
+### How to reference in front matter
+
+Add the `image` field to your article's YAML front matter:
+
+```yaml
+---
+title: "Your Article Title"
+description: "..."
+category: "Productivity"
+date: "2026-04-01"
+author: "TalentedAtAI Team"
+image: "your-image-filename.webp"
+slug: "your-article-slug"
+read_time: "6 min"
+---
+```
+
+The filename must match exactly (case-sensitive) what you've placed in `static/images/articles/`.
+
+If `image` is empty or omitted, the card and article page fall back to the coloured gradient background with emoji — no errors, no broken images.
+
+### Free image sources
+
+- **[unsplash.com](https://unsplash.com)** — High-quality photos, free to use
+- **[pexels.com](https://pexels.com)** — Free stock photos and videos
+
+Download the image, rename it clearly (e.g. `ai-productivity-tools-2026.webp`), and drop it into `static/images/articles/`.
+
+### Full workflow for adding an image to an article
+
+1. Find an image on unsplash.com or pexels.com
+2. Download and rename it clearly, e.g. `ai-agents-header.webp`
+3. Move it into `~/talentedatai/static/images/articles/`
+4. Open the article's `.md` file in `content/published/` and add or update the `image` field:
+   ```yaml
+   image: "ai-agents-header.webp"
+   ```
+5. Commit and push:
+   ```bash
+   cd ~/talentedatai
+   git add .
+   git commit -m "add article image"
+   git push
+   ```
+6. GitHub Actions will rebuild the article page and update `articles.json` — the image appears on both the article page and the homepage card automatically within 2–3 minutes.
+
+---
+
 ## Contact & Feedback
 
 Site: [talentedatai.com](https://talentedatai.com)
