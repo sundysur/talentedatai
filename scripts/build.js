@@ -32,7 +32,7 @@ mdFiles.forEach(file => {
     author: fm.author || 'TalentedAtAI Team',
     read_time: fm.read_time || (Math.ceil(content.split(' ').length / 200) + ' min'),
     tags: fm.tags || [],
-    image: fm.image || null
+    image: fm.image ? '/static/images/articles/' + fm.image : null
   });
 
   const readTime = fm.read_time || (Math.ceil(content.split(' ').length / 200) + ' min read');
@@ -141,7 +141,7 @@ mdFiles.forEach(file => {
 ${fm.image ? `
 <div style="margin-top:32px;border-radius:16px;overflow:hidden;max-height:420px;">
   <img
-    src="/images/articles/${fm.image}"
+    src="/static/images/articles/${fm.image}"
     alt="${fm.title || ''}"
     style="width:100%;height:420px;object-fit:cover;display:block;"
   />
