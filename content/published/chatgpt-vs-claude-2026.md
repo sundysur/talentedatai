@@ -5,7 +5,7 @@ category: "Comparison"
 tags: ["ChatGPT", "Claude", "AI comparison", "OpenAI", "Anthropic", "GPT-4o", "AI assistant"]
 date: "2026-03-27"
 author: "TalentedAtAI Team"
-image: ""
+image: "chatgpt-vs-claude-header.jpg"
 slug: "chatgpt-vs-claude-2026"
 featured: false
 status: "pending"
