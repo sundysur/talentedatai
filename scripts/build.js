@@ -79,6 +79,10 @@ mdFiles.forEach(file => {
     .nav-logo span{color:var(--blue)}
     .nav-back{font-size:13px;color:var(--gray-600);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
     .nav-back:hover{color:var(--blue);text-decoration:none}
+    .nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+    .nav-links a{font-size:13px;font-weight:500;color:var(--gray-600);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--dark)}
+    @media(max-width:640px){.nav-links{display:none}}
     .article-hero{max-width:760px;margin:0 auto;padding:64px 24px 48px}
     .category-pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px;background:var(--blue-light);color:var(--blue);margin-bottom:20px}
     .article-meta{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray-400);margin-bottom:24px;flex-wrap:wrap}
@@ -115,8 +119,12 @@ mdFiles.forEach(file => {
 </head>
 <body>
 <nav>
-  <a href="/" class="nav-logo">Talented<span>At</span>AI</a>
-  <a href="/" class="nav-back">← All articles</a>
+  <a href="https://talentedatai.com" class="nav-logo">Talented<span>At</span>AI</a>
+  <ul class="nav-links">
+    <li><a href="https://talentedatai.com" class="nav-back">← All articles</a></li>
+    <li><a href="https://talentedatai.com/about.html">About</a></li>
+    <li><a href="https://talentedatai.com/contact.html">Contact</a></li>
+  </ul>
 </nav>
 <div class="article-hero">
   <span class="category-pill">${fm.category || 'General'}</span>
@@ -135,7 +143,7 @@ ${html}
 </div>
 <footer>
   <div class="footer-logo">Talented<span>At</span>AI</div>
-  <p style="margin-top:8px">&copy; 2026 TalentedAtAI. All rights reserved. &nbsp;·&nbsp; <a href="/">Home</a> &nbsp;·&nbsp; <a href="/about/">About</a> &nbsp;·&nbsp; <a href="/privacy-policy/">Privacy</a></p>
+  <p style="margin-top:8px">&copy; 2026 TalentedAtAI. All rights reserved. &nbsp;·&nbsp; <a href="https://talentedatai.com">Home</a> &nbsp;·&nbsp; <a href="https://talentedatai.com/about.html">About</a> &nbsp;·&nbsp; <a href="https://talentedatai.com/privacy-policy.html">Privacy</a></p>
 </footer>
 </body>
 </html>`;

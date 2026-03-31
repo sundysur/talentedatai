@@ -196,81 +196,7 @@
         <h2 class="section__title">Fresh from the AI frontier</h2>
         <p class="section__subtitle">Hands-on guides, comparisons, and tool reviews published every week.</p>
       </div>
-      <div class="articles-grid">
-
-        <article class="article-card article-card--featured">
-          <div class="article-card__thumb thumb--blue">
-            <div class="article-card__thumb-inner">🤖</div>
-          </div>
-          <div class="article-card__body">
-            <div class="article-card__meta">
-              <span class="category-badge">Productivity</span>
-              <span class="article-card__read-time">8 min read</span>
-            </div>
-            <h3 class="article-card__title">Top AI Tools for Productivity in 2026 — Tested &amp; Ranked</h3>
-            <p class="article-card__excerpt">We spent 6 weeks testing every major AI productivity tool. Here's the definitive ranking with real workflow examples, pricing breakdowns, and who each tool is best suited for.</p>
-            <div class="article-card__footer">
-              <div class="author">
-                <div class="author__avatar avatar--blue">TA</div>
-                <span class="author__name">TalentedAtAI Team</span>
-              </div>
-              <a href="https://talentedatai.com/content/published/top-ai-tools-productivity-2026.html" class="read-more">
-                Read article
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="article-card__thumb thumb--purple">
-            <div class="article-card__thumb-inner">⚔️</div>
-          </div>
-          <div class="article-card__body">
-            <div class="article-card__meta">
-              <span class="category-badge category-badge--purple">Comparison</span>
-              <span class="article-card__read-time">6 min read</span>
-            </div>
-            <h3 class="article-card__title">ChatGPT vs Claude 2026: Which AI Is Actually Better?</h3>
-            <p class="article-card__excerpt">A deep-dive comparison across writing, coding, reasoning, and cost. We put both to the test with 40+ real tasks.</p>
-            <div class="article-card__footer">
-              <div class="author">
-                <div class="author__avatar avatar--purple">TA</div>
-                <span class="author__name">TalentedAtAI Team</span>
-              </div>
-              <a href="https://talentedatai.com/content/published/chatgpt-vs-claude-2026.html" class="read-more">
-                Read article
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="article-card__thumb thumb--green">
-            <div class="article-card__thumb-inner">✍️</div>
-          </div>
-          <div class="article-card__body">
-            <div class="article-card__meta">
-              <span class="category-badge category-badge--green">Writing</span>
-              <span class="article-card__read-time">5 min read</span>
-            </div>
-            <h3 class="article-card__title">Best AI Writing Tools for Bloggers in 2026</h3>
-            <p class="article-card__excerpt">From first draft to SEO-optimized final post — the AI writing stack that top bloggers are actually using this year.</p>
-            <div class="article-card__footer">
-              <div class="author">
-                <div class="author__avatar avatar--green">TA</div>
-                <span class="author__name">TalentedAtAI Team</span>
-              </div>
-              <a href="https://talentedatai.com/content/published/best-ai-writing-tools-bloggers.html" class="read-more">
-                Read article
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-      </div>
+      <div id="articles-grid" class="articles-grid"></div>
     </div>
   </section>
 
@@ -309,20 +235,84 @@
   </footer>
 
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
+    const THUMB_COLORS  = ['blue', 'purple', 'green'];
+    const BADGE_CLASSES = ['', 'category-badge--purple', 'category-badge--green'];
+    const AVATAR_COLORS = ['avatar--blue', 'avatar--purple', 'avatar--green'];
+    const EMOJIS        = ['🤖', '⚔️', '✍️', '🚀', '💡', '🎯'];
+
+    function buildCard(article, index) {
+      const ci          = index % 3;
+      const color       = THUMB_COLORS[ci];
+      const badgeExtra  = BADGE_CLASSES[ci] ? ' ' + BADGE_CLASSES[ci] : '';
+      const avatarClass = AVATAR_COLORS[ci];
+      const emoji       = EMOJIS[index % EMOJIS.length];
+      const featured    = index === 0 ? ' article-card--featured' : '';
+      const readTime    = article.read_time || '';
+      const url         = 'https://talentedatai.com/content/published/' + article.slug + '.html';
+      const arrowSvg    = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+      return `
+        <article class="article-card${featured}">
+          <div class="article-card__thumb thumb--${color}">
+            <div class="article-card__thumb-inner">${emoji}</div>
+          </div>
+          <div class="article-card__body">
+            <div class="article-card__meta">
+              <span class="category-badge${badgeExtra}">${article.category || 'General'}</span>
+              <span class="article-card__read-time">${readTime}</span>
+            </div>
+            <h3 class="article-card__title">${article.title}</h3>
+            <p class="article-card__excerpt">${article.description || ''}</p>
+            <div class="article-card__footer">
+              <div class="author">
+                <div class="author__avatar ${avatarClass}">TA</div>
+                <span class="author__name">${article.author || 'TalentedAtAI Team'}</span>
+              </div>
+              <a href="${url}" class="read-more">Read article ${arrowSvg}</a>
+            </div>
+          </div>
+        </article>`;
+    }
+
+    function setupObserver() {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.article-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(24px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s ease, border-color 0.25s ease';
+        obs.observe(el);
       });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.article-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s ease, border-color 0.25s ease';
-      observer.observe(el);
-    });
+    }
+
+    async function loadArticles() {
+      const grid = document.getElementById('articles-grid');
+      try {
+        const res = await fetch('/content/articles.json');
+        if (!res.ok) throw new Error('load failed');
+        const articles = await res.json();
+        if (!articles || articles.length === 0) {
+          grid.innerHTML = '<p style="color:var(--gray-500);font-size:15px;padding:32px 0;">No articles yet — check back soon.</p>';
+          return;
+        }
+        const sorted = articles
+          .slice()
+          .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
+          .slice(0, 6);
+        grid.innerHTML = sorted.map(buildCard).join('');
+        setupObserver();
+      } catch (err) {
+        grid.innerHTML = '<p style="color:var(--gray-500);font-size:15px;padding:32px 0;">No articles yet — check back soon.</p>';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadArticles);
   </script>
 
 </body>
