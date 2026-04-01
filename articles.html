@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TalentedAtAI — Honest AI Tool Reviews</title>
-  <meta name="description" content="Honest reviews and practical guides for AI tools. Cut through the hype and find what actually works." />
+  <title>All Articles — TalentedAtAI</title>
+  <meta name="description" content="Every guide, review and explainer from TalentedAtAI — honest AI tool reviews and practical guides, newest first." />
   <meta name="keywords" content="AI tools, artificial intelligence, ChatGPT, Claude, AI productivity, AI writing tools" />
-  <meta property="og:title" content="TalentedAtAI — Honest AI Tool Reviews" />
-  <meta property="og:description" content="Honest reviews and practical guides for AI tools. Cut through the hype and find what actually works." />
-  <meta property="og:url" content="https://talentedatai.com" />
+  <meta property="og:title" content="All Articles — TalentedAtAI" />
+  <meta property="og:description" content="Every guide, review and explainer from TalentedAtAI — honest AI tool reviews and practical guides, newest first." />
+  <meta property="og:url" content="https://talentedatai.com/articles.html" />
   <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://talentedatai.com" />
+  <link rel="canonical" href="https://talentedatai.com/articles.html" />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYQ40F2CXQ"></script>
@@ -58,29 +58,6 @@
     .nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
     .nav__links a { font-size: 14px; font-weight: 500; color: var(--gray-700); transition: color var(--transition); }
     .nav__links a:hover { color: var(--blue); }
-
-    /* HERO */
-    .hero { padding: 96px 24px 80px; max-width: 800px; margin: 0 auto; }
-    .hero__badge { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-light); color: var(--blue); font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 100px; margin-bottom: 24px; letter-spacing: 0.04em; text-transform: uppercase; }
-    .hero__badge-dot { width: 6px; height: 6px; background: var(--blue); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);} }
-    .hero__title { font-family: var(--font-head); font-size: clamp(36px,5vw,56px); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: var(--dark); margin-bottom: 20px; }
-    .hero__title em { font-style: normal; color: var(--blue); }
-    .hero__subtitle { font-size: 17px; color: var(--gray-500); line-height: 1.7; max-width: 480px; margin-bottom: 36px; }
-    .hero__actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 48px; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 100px; font-family: var(--font-body); font-size: 15px; font-weight: 600; cursor: pointer; transition: all var(--transition); border: none; }
-    .btn--primary { background: var(--blue); color: var(--white); }
-    .btn--primary:hover { background: var(--blue-mid); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,102,255,0.3); }
-    .btn--outline { background: transparent; color: var(--dark); border: 1.5px solid var(--gray-300); }
-    .btn--outline:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
-    .hero__tagline { font-size: 13px; color: var(--gray-500); letter-spacing: 0.04em; font-weight: 500; padding-top: 32px; border-top: 1px solid var(--gray-100); }
-
-    /* SECTIONS */
-    .section { max-width: 1200px; margin: 0 auto; padding: 80px 24px; }
-    .section__header { margin-bottom: 48px; }
-    .section__tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
-    .section__title { font-family: var(--font-head); font-size: clamp(28px,3.5vw,40px); font-weight: 800; letter-spacing: -0.02em; color: var(--dark); margin-bottom: 12px; }
-    .section__subtitle { font-size: 16px; color: var(--gray-500); max-width: 560px; line-height: 1.7; }
 
     /* ARTICLE CARDS */
     .articles-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
@@ -130,6 +107,148 @@
     .footer__bottom-links a { color: rgba(255,255,255,0.4); transition: color var(--transition); }
     .footer__bottom-links a:hover { color: var(--white); }
 
+    /* ── Newsletter section ───────────────────────────────────── */
+    .newsletter-section {
+      background: #0a0a0a;
+      padding: 72px 24px;
+      margin: 64px 0 0;
+    }
+    .newsletter-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .newsletter-badge {
+      display: inline-block;
+      background: #0066ff;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .newsletter-headline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(24px, 4vw, 34px);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin: 0 0 16px;
+      letter-spacing: -0.02em;
+    }
+    .newsletter-subhead {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: #a0a09a;
+      line-height: 1.6;
+      margin: 0 0 24px;
+    }
+    .newsletter-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px;
+      text-align: left;
+      display: inline-block;
+    }
+    .newsletter-bullets li {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #c8c8c0;
+      padding: 5px 0 5px 22px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .newsletter-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 8px;
+      height: 8px;
+      background: #0066ff;
+      border-radius: 50%;
+    }
+    .newsletter-form-row {
+      display: flex;
+      gap: 10px;
+      max-width: 520px;
+      margin: 0 auto 12px;
+    }
+    .newsletter-input {
+      flex: 1;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #0a0a0a;
+      background: #ffffff;
+      border: 1.5px solid #e8e8e5;
+      border-radius: 12px;
+      padding: 14px 18px;
+      outline: none;
+      transition: border-color 0.2s;
+      min-width: 0;
+    }
+    .newsletter-input::placeholder { color: #9a9a94; }
+    .newsletter-input:focus { border-color: #0066ff; }
+    .newsletter-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #0066ff;
+      color: #ffffff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 22px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.15s;
+      flex-shrink: 0;
+    }
+    .newsletter-btn:hover { background: #0052cc; transform: translateY(-1px); }
+    .newsletter-btn:active { transform: translateY(0); }
+    .newsletter-disclaimer {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: #5a5a55;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ── Articles archive page ────────────────────────────────── */
+    .articles-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+    .articles-header {
+      margin-bottom: 40px;
+    }
+    .articles-page-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      color: #0a0a0a;
+      letter-spacing: -0.02em;
+      margin: 0 0 10px;
+    }
+    .articles-page-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: #5a5a55;
+      margin: 0;
+    }
+
     /* RESPONSIVE */
     @media(max-width:1024px) {
       .articles-grid { grid-template-columns: repeat(2,1fr); }
@@ -138,198 +257,17 @@
     }
     @media(max-width:768px) {
       .nav__links { display: none; }
-      .hero { padding: 64px 24px 48px; }
       .articles-grid { grid-template-columns: 1fr; }
       .article-card--featured { grid-column: span 1; }
       .footer__top { grid-template-columns: 1fr; }
       .footer__bottom { flex-direction: column; gap: 16px; text-align: center; }
     }
-  }
-  
-/* ── Newsletter section ───────────────────────────────────── */
-.newsletter-section {
-  background: #0a0a0a;
-  padding: 72px 24px;
-  margin: 64px 0 0;
-}
-
-.newsletter-inner {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.newsletter-badge {
-  display: inline-block;
-  background: #0066ff;
-  color: #fff;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  padding: 5px 14px;
-  border-radius: 100px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.newsletter-headline {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(24px, 4vw, 34px);
-  font-weight: 800;
-  color: #ffffff;
-  line-height: 1.2;
-  margin: 0 0 16px;
-  letter-spacing: -0.02em;
-}
-
-.newsletter-subhead {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  color: #a0a09a;
-  line-height: 1.6;
-  margin: 0 0 24px;
-}
-
-.newsletter-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 32px;
-  text-align: left;
-  display: inline-block;
-}
-
-.newsletter-bullets li {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #c8c8c0;
-  padding: 5px 0 5px 22px;
-  position: relative;
-  line-height: 1.5;
-}
-
-.newsletter-bullets li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 11px;
-  width: 8px;
-  height: 8px;
-  background: #0066ff;
-  border-radius: 50%;
-}
-
-.newsletter-form-row {
-  display: flex;
-  gap: 10px;
-  max-width: 520px;
-  margin: 0 auto 12px;
-}
-
-.newsletter-input {
-  flex: 1;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  color: #0a0a0a;
-  background: #ffffff;
-  border: 1.5px solid #e8e8e5;
-  border-radius: 12px;
-  padding: 14px 18px;
-  outline: none;
-  transition: border-color 0.2s;
-  min-width: 0;
-}
-
-.newsletter-input::placeholder {
-  color: #9a9a94;
-}
-
-.newsletter-input:focus {
-  border-color: #0066ff;
-}
-
-.newsletter-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #0066ff;
-  color: #ffffff;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  border: none;
-  border-radius: 12px;
-  padding: 14px 22px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.2s, transform 0.15s;
-  flex-shrink: 0;
-}
-
-.newsletter-btn:hover {
-  background: #0052cc;
-  transform: translateY(-1px);
-}
-
-.newsletter-btn:active {
-  transform: translateY(0);
-}
-
-.newsletter-disclaimer {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 300;
-  color: #5a5a55;
-  margin: 0;
-  line-height: 1.5;
-}
-
-@media (max-width: 520px) {
-  .newsletter-section {
-    padding: 52px 20px;
-  }
-  .newsletter-form-row {
-    flex-direction: column;
-  }
-  .newsletter-btn {
-    justify-content: center;
-    width: 100%;
-  }
-}
-
-
-/* ── See all button ───────────────────────────────────────── */
-.see-all-wrap {
-  text-align: center;
-  margin-top: 40px;
-  padding-bottom: 8px;
-}
-
-.see-all-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  color: var(--blue, #0066ff);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  border: 1.5px solid var(--blue, #0066ff);
-  border-radius: 100px;
-  padding: 12px 28px;
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-}
-
-.see-all-btn:hover {
-  background: var(--blue, #0066ff);
-  color: #ffffff;
-}
-
-</style>
+    @media (max-width: 520px) {
+      .newsletter-section { padding: 52px 20px; }
+      .newsletter-form-row { flex-direction: column; }
+      .newsletter-btn { justify-content: center; width: 100%; }
+    }
+  </style>
 </head>
 <body>
 
@@ -341,7 +279,7 @@
         <span class="nav__logo-dot"></span>
       </a>
       <ul class="nav__links">
-        <li><a href="#articles">Articles</a></li>
+        <li><a href="/#articles">Articles</a></li>
         <li><a href="/about.html">About</a></li>
         <li><a href="/contact.html">Contact</a></li>
         <li><a href="/privacy-policy.html">Privacy Policy</a></li>
@@ -349,116 +287,82 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section>
-    <div class="hero">
-      <div class="hero__badge">
-        <span class="hero__badge-dot"></span>
-        Updated daily &middot; 2026
+  <main>
+    <section class="articles-section">
+      <div class="articles-header">
+        <h1 class="articles-page-title">All Articles</h1>
+        <p class="articles-page-sub">Every guide, review and explainer — newest first.</p>
       </div>
-      <h1 class="hero__title">
-        Get <em>Talented</em><br />at AI — fast.
-      </h1>
-      <p class="hero__subtitle">
-        Practical guides, honest tool reviews, and real strategies to help you work smarter with AI. No hype. No jargon. Just results.
+      <div class="articles-grid" id="all-articles-grid">
+        <!-- populated by JS -->
+      </div>
+      <div id="articles-empty" style="display:none; text-align:center; padding:40px; color:#5a5a55;">
+        No articles found.
+      </div>
+    </section>
+  </main>
+
+  <!-- Newsletter Signup Section -->
+  <section class="newsletter-section" id="newsletter">
+    <div class="newsletter-inner">
+
+      <div class="newsletter-badge">FREE GUIDE</div>
+
+      <h2 class="newsletter-headline">
+        Get Your Free AI Dream Team Playbook
+      </h2>
+
+      <p class="newsletter-subhead">
+        A practical 11-page guide to building a team of specialist AI agents
+        that research, write, edit and publish on your behalf —
+        no coding required.
       </p>
-      <div class="hero__actions">
-        <a href="#articles" class="btn btn--primary">
-          Browse Articles
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="/about.html" class="btn btn--outline">About us</a>
-      </div>
-      <p class="hero__tagline">Independent &middot; Honest &middot; Updated daily</p>
+
+      <ul class="newsletter-bullets">
+        <li>5 ready-to-use specialist agents with copy-paste instructions</li>
+        <li>The no-code tools that make real handoffs possible</li>
+        <li>A step-by-step first workflow you can run today</li>
+      </ul>
+
+      <form
+        action="https://us17.list-manage.com/subscribe/post?u=d216d8d113f8f68e40d85652c&amp;id=62c82cee46"
+        method="post"
+        id="newsletter-form"
+        target="_blank"
+        novalidate
+      >
+        <!-- Mailchimp bot protection — do not remove this field -->
+        <div style="position:absolute;left:-5000px" aria-hidden="true">
+          <input type="text" name="b_d216d8d113f8f68e40d85652c_62c82cee46" tabindex="-1" value="">
+        </div>
+
+        <div class="newsletter-form-row">
+          <input
+            type="email"
+            name="EMAIL"
+            id="newsletter-email"
+            class="newsletter-input"
+            placeholder="Your email address"
+            required
+            autocomplete="email"
+          >
+          <button type="submit" class="newsletter-btn">
+            Get the Free Guide
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <p class="newsletter-disclaimer">
+          No spam. Unsubscribe any time. We also send new guides and honest AI tool reviews when published.
+        </p>
+      </form>
+
     </div>
   </section>
 
-  <!-- Latest Articles -->
-  <section id="articles">
-    <div class="section">
-      <div class="section__header">
-        <span class="section__tag">Latest Articles</span>
-        <h2 class="section__title">Fresh from the AI frontier</h2>
-        <p class="section__subtitle">Hands-on guides, comparisons, and tool reviews published every week.</p>
-      </div>
-      <div id="articles-grid" class="articles-grid"></div>
-
-    <!-- See all articles link -->
-    <div class="see-all-wrap">
-      <a href="/articles.html" class="see-all-btn">
-        See all articles
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </div>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
-  
-<!-- Newsletter Signup Section -->
-<section class="newsletter-section" id="newsletter">
-  <div class="newsletter-inner">
-
-    <div class="newsletter-badge">FREE GUIDE</div>
-
-    <h2 class="newsletter-headline">
-      Get Your Free AI Dream Team Playbook
-    </h2>
-
-    <p class="newsletter-subhead">
-      A practical 11-page guide to building a team of specialist AI agents
-      that research, write, edit and publish on your behalf —
-      no coding required.
-    </p>
-
-    <ul class="newsletter-bullets">
-      <li>5 ready-to-use specialist agents with copy-paste instructions</li>
-      <li>The no-code tools that make real handoffs possible</li>
-      <li>A step-by-step first workflow you can run today</li>
-    </ul>
-
-    <form
-      action="https://us17.list-manage.com/subscribe/post?u=d216d8d113f8f68e40d85652c&amp;id=62c82cee46"
-      method="post"
-      id="newsletter-form"
-      target="_blank"
-      novalidate
-    >
-      <!-- Mailchimp bot protection — do not remove this field -->
-      <div style="position:absolute;left:-5000px" aria-hidden="true">
-        <input type="text" name="b_d216d8d113f8f68e40d85652c_62c82cee46" tabindex="-1" value="">
-      </div>
-
-      <div class="newsletter-form-row">
-        <input
-          type="email"
-          name="EMAIL"
-          id="newsletter-email"
-          class="newsletter-input"
-          placeholder="Your email address"
-          required
-          autocomplete="email"
-        >
-        <button type="submit" class="newsletter-btn">
-          Get the Free Guide
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </div>
-
-      <p class="newsletter-disclaimer">
-        No spam. Unsubscribe any time. We also send new guides and honest AI tool reviews when published.
-      </p>
-    </form>
-
-  </div>
-</section>
-
-<footer class="footer">
+  <footer class="footer">
     <div class="footer__inner">
       <div class="footer__top">
         <div>
@@ -554,28 +458,30 @@
       });
     }
 
-    async function loadArticles() {
-      const grid = document.getElementById('articles-grid');
+    async function loadAllArticles() {
+      const grid  = document.getElementById('all-articles-grid');
+      const empty = document.getElementById('articles-empty');
       try {
         const res = await fetch('/content/articles.json');
         if (!res.ok) throw new Error('load failed');
         const articles = await res.json();
         if (!articles || articles.length === 0) {
-          grid.innerHTML = '<p style="color:var(--gray-500);font-size:15px;padding:32px 0;">No articles yet — check back soon.</p>';
+          grid.style.display = 'none';
+          empty.style.display = 'block';
           return;
         }
         const sorted = articles
           .slice()
-          .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
-          .slice(0, 6);
+          .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
         grid.innerHTML = sorted.map(buildCard).join('');
         setupObserver();
       } catch (err) {
-        grid.innerHTML = '<p style="color:var(--gray-500);font-size:15px;padding:32px 0;">No articles yet — check back soon.</p>';
+        grid.style.display = 'none';
+        empty.style.display = 'block';
       }
     }
 
-    document.addEventListener('DOMContentLoaded', loadArticles);
+    document.addEventListener('DOMContentLoaded', loadAllArticles);
   </script>
 
 </body>
