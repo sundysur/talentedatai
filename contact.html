@@ -67,7 +67,162 @@
       .content{padding:32px 20px 64px}
       .contact-card{padding:24px 20px}
     }
-  </style>
+  
+/* ── Newsletter section ───────────────────────────────────── */
+.newsletter-section {
+  background: #0a0a0a;
+  padding: 72px 24px;
+  margin: 64px 0 0;
+}
+
+.newsletter-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsletter-badge {
+  display: inline-block;
+  background: #0066ff;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.newsletter-headline {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.newsletter-subhead {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #a0a09a;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.newsletter-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  text-align: left;
+  display: inline-block;
+}
+
+.newsletter-bullets li {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #c8c8c0;
+  padding: 5px 0 5px 22px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.newsletter-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 8px;
+  height: 8px;
+  background: #0066ff;
+  border-radius: 50%;
+}
+
+.newsletter-form-row {
+  display: flex;
+  gap: 10px;
+  max-width: 520px;
+  margin: 0 auto 12px;
+}
+
+.newsletter-input {
+  flex: 1;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #0a0a0a;
+  background: #ffffff;
+  border: 1.5px solid #e8e8e5;
+  border-radius: 12px;
+  padding: 14px 18px;
+  outline: none;
+  transition: border-color 0.2s;
+  min-width: 0;
+}
+
+.newsletter-input::placeholder {
+  color: #9a9a94;
+}
+
+.newsletter-input:focus {
+  border-color: #0066ff;
+}
+
+.newsletter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0066ff;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 22px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+.newsletter-btn:hover {
+  background: #0052cc;
+  transform: translateY(-1px);
+}
+
+.newsletter-btn:active {
+  transform: translateY(0);
+}
+
+.newsletter-disclaimer {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #5a5a55;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 520px) {
+  .newsletter-section {
+    padding: 52px 20px;
+  }
+  .newsletter-form-row {
+    flex-direction: column;
+  }
+  .newsletter-btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+</style>
 </head>
 <body>
 
@@ -125,6 +280,67 @@
   </div>
 
 </div>
+
+
+<!-- Newsletter Signup Section -->
+<section class="newsletter-section" id="newsletter">
+  <div class="newsletter-inner">
+
+    <div class="newsletter-badge">FREE GUIDE</div>
+
+    <h2 class="newsletter-headline">
+      Get Your Free AI Dream Team Playbook
+    </h2>
+
+    <p class="newsletter-subhead">
+      A practical 11-page guide to building a team of specialist AI agents
+      that research, write, edit and publish on your behalf —
+      no coding required.
+    </p>
+
+    <ul class="newsletter-bullets">
+      <li>5 ready-to-use specialist agents with copy-paste instructions</li>
+      <li>The no-code tools that make real handoffs possible</li>
+      <li>A step-by-step first workflow you can run today</li>
+    </ul>
+
+    <form
+      action="https://us17.list-manage.com/subscribe/post?u=d216d8d113f8f68e40d85652c&amp;id=62c82cee46"
+      method="post"
+      id="newsletter-form"
+      target="_blank"
+      novalidate
+    >
+      <!-- Mailchimp bot protection — do not remove this field -->
+      <div style="position:absolute;left:-5000px" aria-hidden="true">
+        <input type="text" name="b_d216d8d113f8f68e40d85652c_62c82cee46" tabindex="-1" value="">
+      </div>
+
+      <div class="newsletter-form-row">
+        <input
+          type="email"
+          name="EMAIL"
+          id="newsletter-email"
+          class="newsletter-input"
+          placeholder="Your email address"
+          required
+          autocomplete="email"
+        >
+        <button type="submit" class="newsletter-btn">
+          Get the Free Guide
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <p class="newsletter-disclaimer">
+        No spam. Unsubscribe any time. We also send new guides and honest AI tool reviews when published.
+      </p>
+    </form>
+
+  </div>
+</section>
 
 <footer>
   <div class="footer-logo">Talented<span>At</span>AI</div>
