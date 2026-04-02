@@ -1,38 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://talentedatai.com/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-02</lastmod>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://talentedatai.com/content/published/2026-guide-ai-agents-automated-workflows.html</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://talentedatai.com/content/published/best-ai-writing-tools-bloggers.html</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://talentedatai.com/content/published/chatgpt-vs-claude-2026.html</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://talentedatai.com/content/published/top-ai-tools-productivity-2026.html</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://talentedatai.com/articles.html</loc>
     <lastmod>2026-04-02</lastmod>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://talentedatai.com/thank-you.html</loc>
+    <loc>https://talentedatai.com/about.html</loc>
     <lastmod>2026-04-02</lastmod>
-    <priority>0.3</priority>
+    <priority>0.6</priority>
   </url>
+
+  <url>
+    <loc>https://talentedatai.com/contact.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/privacy-policy.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/content/published/2026-guide-ai-agents-automated-workflows.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/content/published/best-ai-writing-tools-bloggers.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/content/published/chatgpt-vs-claude-2026.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/content/published/top-ai-tools-productivity-2026.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/content/published/ai-agents-explained-2026.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/content/published/google-notebooklm-review-2026.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/content/published/how-to-get-started-with-ai-beginners-guide-2026.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/content/published/elevenlabs-review-2026.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/content/published/suno-ai-music-2026.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/content/published/ai-job-search-real-results-2026.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
