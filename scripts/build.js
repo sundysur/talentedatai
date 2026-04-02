@@ -161,5 +161,6 @@ ${html}
   console.log('  Built: ' + slug + '.html');
 });
 
+articles.sort((a, b) => new Date(b.date) - new Date(a.date));
 fs.writeFileSync('./content/articles.json', JSON.stringify(articles, null, 2));
 console.log('\nBuild complete. ' + mdFiles.length + ' article(s) built.');
