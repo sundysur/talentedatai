@@ -2,7 +2,7 @@
 title: "The Best AI Image Generators in 2026: Ranked, Tested, and Actually Honest"
 description: "Midjourney, DALL-E 3, Adobe Firefly, Flux, and Ideogram ranked by real use — with honest pros, cons, and a clear winner for each use case."
 category: "AI Tools"
-date: "2026-04-02"
+date: "2026-04-02T23:00:00"
 author: "TalentedAtAI Team"
 read_time: "9 min"
 tags: ["AI image generators", "Midjourney", "DALL-E 3", "Adobe Firefly", "Flux", "Ideogram", "AI art", "image generation"]

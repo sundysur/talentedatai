@@ -2,7 +2,7 @@
 title: "What Happens to Human Expertise When AI Knows Everything?"
 description: "When AI can answer any question, expertise doesn't disappear — it transforms. Here's what actually changes, and what doesn't."
 category: "Guides"
-date: "2026-04-02"
+date: "2026-04-02T22:00:00"
 author: "TalentedAtAI Team"
 read_time: "8 min"
 tags: ["AI", "expertise", "human skills", "future of work", "AI and society", "critical thinking"]
