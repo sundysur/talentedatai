@@ -225,6 +225,21 @@ ${fm.image ? `
 <div class="article-body">
 ${html}
 </div>
+<div style="max-width:760px;margin:0 auto;padding:0 24px 48px;">
+  <div style="border-top:1px solid #e8e8e5;margin-top:48px;padding-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+    <span style="font-family:'DM Sans',sans-serif;color:#5a5a55;font-size:15px;">Found this useful?</span>
+    <a href="https://x.com/intent/tweet?text=${encodeURIComponent(fm.title + ' — via @talentedat\nhttps://talentedatai.com/content/published/' + slug + '.html')}"
+       target="_blank" rel="noopener"
+       style="display:inline-flex;align-items:center;gap:6px;background:#000;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+    <a href="https://x.com/talentedat" target="_blank" rel="noopener"
+       style="display:inline-flex;align-items:center;gap:6px;color:#5a5a55;font-size:14px;text-decoration:none;">
+      Follow @talentedat
+    </a>
+  </div>
+</div>
 <footer>
   <div class="footer-logo">Talented<span>At</span>AI</div>
   <p style="margin-top:8px">&copy; 2026 TalentedAtAI. All rights reserved. &nbsp;·&nbsp; <a href="https://talentedatai.com">Home</a> &nbsp;·&nbsp; <a href="https://talentedatai.com/about.html">About</a> &nbsp;·&nbsp; <a href="https://talentedatai.com/privacy-policy.html">Privacy</a></p>
