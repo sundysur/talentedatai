@@ -55,6 +55,61 @@ mdFiles.forEach(file => {
   <meta name="twitter:description" content="${fm.description}">
   <meta name="twitter:image" content="https://talentedatai.com/static/images/articles/${fm.image}">
   <meta name="author" content="${fm.author || 'TalentedAtAI Team'}"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "${fm.title}",
+    "description": "${fm.description}",
+    "image": "https://talentedatai.com/static/images/articles/${fm.image}",
+    "datePublished": "${fm.date}",
+    "dateModified": "${fm.date}",
+    "author": {
+      "@type": "Organization",
+      "name": "TalentedAtAI",
+      "url": "https://talentedatai.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TalentedAtAI",
+      "url": "https://talentedatai.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://talentedatai.com/static/images/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://talentedatai.com/content/published/${slug}.html"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://talentedatai.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles",
+        "item": "https://talentedatai.com/articles.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "${fm.title}",
+        "item": "https://talentedatai.com/content/published/${slug}.html"
+      }
+    ]
+  }
+  </script>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYQ40F2CXQ"></script>
   <script>
