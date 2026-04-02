@@ -37,13 +37,13 @@ Each tool received a score from 1–10 in each category, and we weighted results
 
 **Score: 9.4/10 | From $20/month**
 
-Claude consistently produced the highest-quality long-form outputs in our testing. Its ability to reason through complex problems, maintain context across long conversations, and produce nuanced writing that doesn't sound AI-generated makes it the top pick for knowledge workers.
+[Claude](https://talentedatai.com/content/published/chatgpt-vs-claude-2026.html) consistently produced the highest-quality long-form outputs in our testing. Its ability to reason through complex problems, maintain context across long conversations, and produce nuanced writing that doesn't sound AI-generated makes it the top pick for knowledge workers.
 
 **Best for:** Writing, research synthesis, complex reasoning, document analysis
 
 **Why it stands out:** Claude's 200K context window means you can feed it an entire report, contract, or transcript and ask it to reason across the whole thing. No other tool matched this capability in practice.
 
-**Weaknesses:** No native image generation, fewer plugins than ChatGPT.
+**Weaknesses:** No native image generation, fewer plugins than [ChatGPT](https://talentedatai.com/content/published/chatgpt-vs-claude-2026.html).
 
 ---
 

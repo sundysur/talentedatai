@@ -36,7 +36,7 @@ Let's go through the best tool for each stage.
 
 ## Stage 1: Ideation — ChatGPT + AnswerThePublic
 
-The biggest mistake bloggers make with AI is jumping straight to drafting without doing proper ideation. Start with ChatGPT for brainstorming:
+The biggest mistake bloggers make with AI is jumping straight to drafting without doing proper ideation. Start with [ChatGPT](https://talentedatai.com/content/published/chatgpt-vs-claude-2026.html) for brainstorming:
 
 **Prompt:** "I run a blog about [your niche]. Generate 20 specific article ideas targeting people who are [stage in their journey, e.g., 'just starting out' or 'scaling their business']. Each idea should have clear search intent."
 
@@ -60,7 +60,7 @@ Perplexity has become the gold standard for research-heavy blogging in 2026. Ask
 
 ## Stage 3: Outline — Claude
 
-Claude is exceptional at creating detailed, SEO-aware outlines. Feed it your article title, target keyword, and a note about your audience, and it will produce a logical, hierarchical structure that covers the topic comprehensively.
+[Claude](https://talentedatai.com/content/published/chatgpt-vs-claude-2026.html) is exceptional at creating detailed, SEO-aware outlines. Feed it your article title, target keyword, and a note about your audience, and it will produce a logical, hierarchical structure that covers the topic comprehensively.
 
 **Prompt template:**
 ```
