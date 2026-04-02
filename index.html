@@ -341,7 +341,7 @@
         <span class="nav__logo-dot"></span>
       </a>
       <ul class="nav__links">
-        <li><a href="#articles">Articles</a></li>
+        <li><a href="https://talentedatai.com/articles.html">Articles</a></li>
         <li><a href="/about.html">About</a></li>
         <li><a href="/contact.html">Contact</a></li>
         <li><a href="/privacy-policy.html">Privacy Policy</a></li>
@@ -385,7 +385,7 @@
 
     <!-- See all articles link -->
     <div class="see-all-wrap">
-      <a href="/articles.html" class="see-all-btn">
+      <a href="https://talentedatai.com/articles.html" class="see-all-btn">
         See all articles
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -567,7 +567,7 @@
         const sorted = articles
           .slice()
           .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
-          .slice(0, 6);
+          .slice(0, 8);
         grid.innerHTML = sorted.map(buildCard).join('');
         setupObserver();
       } catch (err) {
