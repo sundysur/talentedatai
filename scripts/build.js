@@ -179,6 +179,7 @@ mdFiles.forEach(file => {
     .footer-logo span{color:var(--blue)}
     @media(max-width:640px){nav{padding:0 20px}.article-hero{padding:40px 20px 32px}.article-body{padding:32px 20px 64px}}
   </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3277838203710267" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="progress-bar" style="position:fixed;top:0;left:0;height:3px;background:#0066ff;width:0%;z-index:9999;transition:width 0.1s;"></div>
