@@ -65,8 +65,9 @@
     .nav__links a:hover { color: var(--blue); }
 
     /* HERO */
-    .hero { padding: 96px 24px 80px; max-width: 800px; margin: 0 auto; position: relative; overflow: hidden; background-color: #fafaf8; background-image: radial-gradient(circle, #0066ff18 1px, transparent 1px); background-size: 28px 28px; }
-    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px; background: linear-gradient(to bottom, transparent, #fafaf8); pointer-events: none; }
+    .hero-section { position: relative; overflow: hidden; background-color: #fafaf8; background-image: radial-gradient(ellipse 60% 50% at 50% 50%, #0066ff12 0%, transparent 70%), radial-gradient(circle, #0066ff35 1.5px, transparent 1.5px); background-size: auto, 22px 22px; }
+    .hero-section::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px; background: linear-gradient(to bottom, transparent, #fafaf8); pointer-events: none; }
+    .hero { padding: 96px 24px 80px; max-width: 1200px; margin: 0 auto; position: relative; }
     .hero__badge { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-light); color: var(--blue); font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 100px; margin-bottom: 24px; letter-spacing: 0.04em; text-transform: uppercase; }
     .hero__badge-dot { width: 6px; height: 6px; background: var(--blue); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);} }
@@ -358,7 +359,7 @@
   </nav>
 
   <!-- Hero -->
-  <section>
+  <section class="hero-section">
     <div class="hero">
       <div class="hero__badge">
         <span class="hero__badge-dot"></span>
