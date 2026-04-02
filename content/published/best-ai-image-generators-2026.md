@@ -6,7 +6,7 @@ date: "2026-04-02"
 author: "TalentedAtAI Team"
 read_time: "9 min"
 tags: ["AI image generators", "Midjourney", "DALL-E 3", "Adobe Firefly", "Flux", "Ideogram", "AI art", "image generation"]
-image: "best-ai-image-generators-2026-header.jpg"
+image: "ai-image-generators-header.jpg"
 slug: "best-ai-image-generators-2026"
 ---
 

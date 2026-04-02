@@ -6,7 +6,7 @@ date: "2026-04-02"
 author: "TalentedAtAI Team"
 read_time: "8 min"
 tags: ["AI", "expertise", "human skills", "future of work", "AI and society", "critical thinking"]
-image: "human-expertise-age-of-ai-header.jpg"
+image: "ai-expertise-human-header.jpg"
 slug: "human-expertise-age-of-ai"
 ---
 
