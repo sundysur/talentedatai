@@ -150,6 +150,7 @@ ${fm.image ? `
   <img
     src="/static/images/articles/${fm.image}"
     alt="${fm.title || ''}"
+    loading="lazy"
     style="width:100%;height:420px;object-fit:cover;display:block;"
   />
 </div>` : ''}
