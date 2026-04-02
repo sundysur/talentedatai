@@ -181,6 +181,15 @@ mdFiles.forEach(file => {
   </style>
 </head>
 <body>
+<div id="progress-bar" style="position:fixed;top:0;left:0;height:3px;background:#0066ff;width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+  window.addEventListener('scroll', function() {
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    document.getElementById('progress-bar').style.width = progress + '%';
+  });
+</script>
 <nav>
   <a href="https://talentedatai.com" class="nav-logo">Talented<span>At</span>AI</a>
   <ul class="nav-links">
@@ -199,6 +208,9 @@ mdFiles.forEach(file => {
     <span>${readTime}</span>
   </div>
   <h1>${fm.title || ''}</h1>
+  <p style="color:#5a5a55;font-size:0.9em;margin:4px 0 24px 0;">
+    Last updated: ${new Date(fm.date).toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'})}
+  </p>
   <p class="article-desc">${fm.description || ''}</p>
 ${fm.image ? `
 <div style="margin-top:32px;border-radius:16px;overflow:hidden;max-height:420px;">
