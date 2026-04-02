@@ -43,10 +43,17 @@ mdFiles.forEach(file => {
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>${fm.title || slug} | TalentedAtAI</title>
-  <meta name="description" content="${fm.description || ''}"/>
-  <meta property="og:title" content="${fm.title || slug}"/>
-  <meta property="og:description" content="${fm.description || ''}"/>
-  <meta property="og:type" content="article"/>
+  <link rel="canonical" href="https://talentedatai.com/content/published/${slug}.html">
+  <meta name="description" content="${fm.description}">
+  <meta property="og:title" content="${fm.title} — TalentedAtAI">
+  <meta property="og:description" content="${fm.description}">
+  <meta property="og:url" content="https://talentedatai.com/content/published/${slug}.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://talentedatai.com/static/images/articles/${fm.image}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${fm.title} — TalentedAtAI">
+  <meta name="twitter:description" content="${fm.description}">
+  <meta name="twitter:image" content="https://talentedatai.com/static/images/articles/${fm.image}">
   <meta name="author" content="${fm.author || 'TalentedAtAI Team'}"/>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYQ40F2CXQ"></script>
