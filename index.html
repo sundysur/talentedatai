@@ -94,7 +94,7 @@
     /* ARTICLE CARDS */
     .articles-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
     .article-card { background: var(--white); border: 1px solid rgba(0,0,0,0.07); border-radius: var(--radius); overflow: hidden; transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition); cursor: pointer; }
-    .article-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,102,0.10); }
+    .article-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: rgba(0,102,255,0.2); }
     .article-card--featured { grid-column: span 2; }
     .article-card__thumb { width: 100%; aspect-ratio: 16/9; position: relative; overflow: hidden; }
     .article-card__thumb-inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 52px; }
@@ -533,7 +533,6 @@
         </div>`;
 
       return `
-        <a href="${url}" style="text-decoration:none;color:inherit;display:block;">
         <article class="article-card${featured}">
           ${thumbHtml}
           <div class="article-card__body">
@@ -548,15 +547,14 @@
                 <div class="author__avatar ${avatarClass}">TA</div>
                 <span class="author__name">${article.author || 'TalentedAtAI Team'}</span>
               </div>
-              <span class="read-more">Read article ${arrowSvg}</span>
+              <a href="${url}" class="read-more">Read article ${arrowSvg}</a>
             </div>
-            <a href="${shareUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:inline-flex;align-items:center;gap:5px;color:#5a5a55;font-size:13px;text-decoration:none;padding:6px 10px;border:1px solid #e8e8e5;border-radius:6px;margin-top:8px;">
+            <a href="${shareUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;color:#5a5a55;font-size:13px;text-decoration:none;padding:6px 10px;border:1px solid #e8e8e5;border-radius:6px;margin-top:8px;">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               Share
             </a>
           </div>
-        </article>
-        </a>`;
+        </article>`;
     }
 
     function setupObserver() {
