@@ -116,4 +116,6 @@ The era of "The Prompt" was about efficiency — doing the same work faster. The
 
 Ready to start? Your first task: identify one multi-step process in your business that you do every single day. That is your first target for automation.
 
+If you're evaluating tools for your workflow, our roundup of the [best AI video generators in 2026](/content/published/best-ai-video-generators-2026.html) covers the top options for content production.
+
 Start building your team. They aren't people. They are agents.

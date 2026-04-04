@@ -157,4 +157,6 @@ Start with Claude or ChatGPT (pick one and go deep before adding more). Master i
 
 ---
 
+For creators specifically, we've also reviewed the [best AI video generators in 2026](/content/published/best-ai-video-generators-2026.html) — the tools that make video production as fast as writing.
+
 *Have a tool we should add to our next round of testing? [Contact us](#) or reply to our newsletter.*
