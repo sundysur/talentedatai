@@ -55,6 +55,17 @@ mdFiles.forEach(file => {
   <meta name="twitter:description" content="${fm.description}">
   <meta name="twitter:image" content="https://talentedatai.com/static/images/articles/${fm.image}">
   <meta name="author" content="${fm.author || 'TalentedAtAI Team'}"/>
+  ${fm.faq ? `<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": ${JSON.stringify(fm.faq.map(q => ({
+      "@type": "Question",
+      "name": q.q,
+      "acceptedAnswer": { "@type": "Answer", "text": q.a }
+    })))}
+  }
+  </script>` : ''}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
