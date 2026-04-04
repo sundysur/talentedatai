@@ -10,6 +10,8 @@ image: "ai-beginners-guide-header.jpg"
 slug: "how-to-get-started-with-ai-beginners-guide-2026"
 ---
 
+> **TL;DR:** The biggest barrier to starting with AI isn't technical — it's the feeling that everyone else already understands it. This guide skips the jargon and walks you through your first genuinely useful AI interaction, starting with a free ChatGPT or Claude account and one real task.
+
 Not long ago, I sat in a meeting while my colleagues talked about how they were using AI to draft reports, summarise contracts, and brainstorm ideas. I nodded along. I had absolutely no idea what they were actually doing.
 
 I wasn't alone in that feeling. A lot of smart, capable people are quietly unsure about AI right now — not because they're behind, but because the conversation around it tends to skip straight past the basics and into a kind of excited jargon that makes the whole thing feel more complicated than it probably needs to be.

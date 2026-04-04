@@ -10,6 +10,8 @@ image: "ai-agents-explained-header.jpg"
 slug: "ai-agents-explained-2026"
 ---
 
+> **TL;DR:** AI agents are autonomous systems that go beyond answering questions — they can browse the web, execute code, and complete multi-step tasks without you managing each step. This is a jargon-free explainer of what they genuinely can do in 2026, and where the hype is still running ahead of the reality.
+
 If you've paid any attention to AI news in 2026, you've heard the word "agents." Tech journalists are excited about them. Enterprise software companies are building them into everything. And most articles about them read like they were written for people who already understand what they are.
 
 So let's fix that.

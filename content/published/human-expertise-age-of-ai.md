@@ -10,6 +10,8 @@ image: "ai-expertise-human-header.jpg"
 slug: "human-expertise-age-of-ai"
 ---
 
+> **TL;DR:** AI hasn't made expertise worthless — it's made the information-holding part cheap. What remains valuable is judgment, context, relationships, and the ability to act on knowledge rather than merely possess it — and those things are harder to automate than anyone is admitting.
+
 There is a conversation happening right now in workplaces, universities, and living rooms that tends to get framed in exactly the wrong way. The question people are asking is: *which jobs will AI take?* The question worth asking is different: *what does it mean to know something, now that knowing is almost free?*
 
 These aren't the same question. The first is about economics. The second is about something stranger and more important — about what expertise actually is, what it was always for, and what survives when the part that could be automated gets automated.

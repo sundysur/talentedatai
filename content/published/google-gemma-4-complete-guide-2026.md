@@ -10,6 +10,8 @@ image: "gemma-4-guide-header.jpg"
 slug: "google-gemma-4-complete-guide-2026"
 ---
 
+> **TL;DR:** Google Gemma 4 is a family of open-weight AI models released under an Apache 2.0 licence — meaning free commercial use, no per-token costs, and no data sent to Google's servers. The smallest variant runs on a smartphone; the largest competes with GPT-4-class models on many tasks.
+
 Google released Gemma 4 yesterday — April 2, 2026 — and the coverage has mostly focused on the benchmarks and the fact that it outperforms previous versions. Both things are true and both things are, honestly, the least interesting part of the story.
 
 The interesting part is this: Google just released a model built on the same research as Gemini 3 — their best proprietary AI — under an Apache 2.0 licence. That licence means you can use it commercially, modify it, deploy it in a product, and Google cannot come back later and change the terms. No subscription. No per-token costs. No data sent to a server somewhere. You download the model. You run it. That's it.
