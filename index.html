@@ -192,6 +192,12 @@
     .newsletter-form-row { flex-direction: column; }
     .newsletter-btn { justify-content: center; width: 100%; }
   }
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+  .filter-btn { font-family: var(--font-body); font-size: 13px; font-weight: 500; padding: 8px 18px; border-radius: 100px; border: 1.5px solid var(--gray-300); background: var(--white); color: var(--gray-700); cursor: pointer; transition: all 0.2s ease; white-space: nowrap; }
+  .filter-btn:hover { border-color: var(--blue); color: var(--blue); }
+  .filter-btn.active { background: var(--blue); border-color: var(--blue); color: var(--white); }
+  .filter-count { font-size: 11px; opacity: 0.7; margin-left: 4px; }
+  .no-results { grid-column: 1/-1; text-align: center; padding: 48px 24px; color: var(--gray-500); font-size: 15px; }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3277838203710267" crossorigin="anonymous"></script>
 </head>
@@ -237,8 +243,16 @@
     <div class="content-area">
       <div id="featured-slot" class="featured-card-wrap"></div>
       <div id="secondary-slot" class="secondary-row"></div>
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-btn active" data-filter="all" onclick="filterArticles('all')">All</button>
+        <button class="filter-btn" data-filter="Reviews" onclick="filterArticles('Reviews')">Reviews</button>
+        <button class="filter-btn" data-filter="Comparisons" onclick="filterArticles('Comparisons')">Comparisons</button>
+        <button class="filter-btn" data-filter="Guides" onclick="filterArticles('Guides')">Guides</button>
+        <button class="filter-btn" data-filter="Explainers" onclick="filterArticles('Explainers')">Explainers</button>
+        <button class="filter-btn" data-filter="Beginners" onclick="filterArticles('Beginners')">Beginners</button>
+      </div>
       <div class="more-label">
-        <span>More articles</span>
+        <span id="more-label-text">More articles</span>
         <a href="https://talentedatai.com/articles.html" id="see-all-link">See all →</a>
       </div>
       <div id="articles-grid" class="articles-grid"></div>
@@ -464,6 +478,8 @@
       }
       featuredSlot.innerHTML  = buildFeaturedCard(sorted[0]);
       secondarySlot.innerHTML = sorted.slice(1, 3).map(buildSecondaryCard).join('');
+      allArticles = sorted;
+      updateFilterCounts(sorted);
       grid.innerHTML          = sorted.slice(3, 12).map((a, i) => buildGridCard(a, i)).join('');
       setupObserver();
     } catch (err) {
@@ -471,6 +487,56 @@
     }
   }
   document.addEventListener('DOMContentLoaded', loadArticles);
+  let allArticles = [];
+  let activeFilter = 'all';
+  function filterArticles(category) {
+    activeFilter = category;
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.filter === category);
+    });
+    const filtered = category === 'all'
+      ? allArticles
+      : allArticles.filter(a =>
+          Array.isArray(a.filters)
+            ? a.filters.includes(category)
+            : a.category === category
+        );
+    const grid = document.getElementById('articles-grid');
+    const label = document.getElementById('more-label-text');
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="no-results">No articles in this category yet.</div>';
+      if (label) label.textContent = 'More articles';
+      return;
+    }
+    const gridArticles = filtered.slice(3, 12);
+    grid.innerHTML = gridArticles.map((a, i) => buildGridCard(a, i)).join('');
+    if (label) label.textContent = filtered.length + ' articles';
+    setupObserver();
+  }
+  function updateFilterCounts(articles) {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      const filter = btn.dataset.filter;
+      const count = filter === 'all'
+        ? articles.length
+        : articles.filter(a =>
+            Array.isArray(a.filters)
+              ? a.filters.includes(filter)
+              : a.category === filter
+          ).length;
+      if (count > 0) {
+        let countSpan = btn.querySelector('.filter-count');
+        if (!countSpan) {
+          countSpan = document.createElement('span');
+          countSpan.className = 'filter-count';
+          btn.appendChild(countSpan);
+        }
+        countSpan.textContent = '(' + count + ')';
+      } else {
+        btn.style.opacity = '0.4';
+        btn.style.pointerEvents = 'none';
+      }
+    });
+  }
   function toggleMenu() {
     const btn = document.getElementById('nav-hamburger');
     const menu = document.getElementById('nav-mobile-menu');
