@@ -6,6 +6,7 @@ date: "2026-04-01"
 author: "TalentedAtAI Team"
 read_time: "7 min"
 tags: ["Beginners", "Getting Started", "AI Tools", "Guide", "ChatGPT"]
+filters: ["Guides", "Beginners"]
 image: "ai-beginners-guide-header.jpg"
 slug: "how-to-get-started-with-ai-beginners-guide-2026"
 ---

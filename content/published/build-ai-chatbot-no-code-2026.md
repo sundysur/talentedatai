@@ -6,6 +6,7 @@ date: "2026-04-05T14:00:00"
 author: "TalentedAtAI Team"
 read_time: "12 min"
 tags: ["AI chatbot", "no code AI", "build with AI", "Botpress", "Voiceflow", "beginner AI guide"]
+filters: ["Guides", "Beginners"]
 image: "build-ai-chatbot-2026-header.jpg"
 slug: "build-ai-chatbot-no-code-2026"
 faq:

@@ -47,6 +47,7 @@ title: "Your Article Title Here"
 description: "A 1–2 sentence summary for SEO and social sharing. Aim for 150–160 characters."
 category: "Productivity"
 tags: ["tag one", "tag two", "tag three", "tag four"]
+filters: ["Reviews"]  # Required — choose from: Reviews, Comparisons, Guides, Explainers, Beginners. Articles can have multiple filters e.g. ["Guides", "Beginners"]
 date: "2026-03-29"
 author: "Your Name"
 author_bio: "One sentence about the author."

@@ -28,6 +28,7 @@ mdFiles.forEach(file => {
     title: fm.title || slug,
     description: fm.description || '',
     category: fm.category || 'General',
+    filters: fm.filters || [],
     date: fm.date || '',
     author: fm.author || 'TalentedAtAI Team',
     read_time: fm.read_time || (Math.ceil(content.split(' ').length / 200) + ' min'),

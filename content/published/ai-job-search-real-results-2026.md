@@ -6,6 +6,7 @@ date: "2026-04-02"
 author: "TalentedAtAI Team"
 read_time: "7 min"
 tags: ["job search", "AI tools", "cover letter", "resume", "career", "productivity", "ChatGPT", "Claude", "Perplexity"]
+filters: ["Guides"]
 image: "ai-job-search-2026-header.jpg"
 slug: "ai-job-search-real-results-2026"
 ---

@@ -4,6 +4,7 @@ description: "We spent 6 weeks testing every major AI productivity tool so you d
 category: "Productivity"
 image: "i-productivity-tools-header.jpg"
 tags: ["AI tools", "productivity", "2026", "workflow automation", "ChatGPT", "Claude", "Notion AI"]
+filters: ["Reviews", "Guides"]
 date: "2026-03-28"
 author: "TalentedAtAI Team"
 slug: "top-ai-tools-productivity-2026"

@@ -4,6 +4,7 @@ description: "An in-depth head-to-head comparison of ChatGPT-4o and Claude acros
 category: "Comparison"
 image: "chatgpt-vs-claude-header.jpg"
 tags: ["ChatGPT", "Claude", "AI comparison", "OpenAI", "Anthropic", "GPT-4o", "AI assistant"]
+filters: ["Reviews", "Comparisons"]
 date: "2026-03-27"
 author: "TalentedAtAI Team"
 slug: "chatgpt-vs-claude-2026"

@@ -6,6 +6,7 @@ date: "2026-04-06T14:00:00"
 author: "TalentedAtAI Team"
 read_time: "12 min"
 tags: ["make money with AI", "AI side hustle", "AI income", "AI freelancing", "AI business 2026"]
+filters: ["Guides", "Beginners"]
 image: "make-money-with-ai-2026-header.jpg"
 slug: "how-to-make-money-with-ai-2026"
 faq:

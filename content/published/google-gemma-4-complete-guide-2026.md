@@ -6,6 +6,7 @@ date: "2026-04-03T21:00:00"
 author: "TalentedAtAI Team"
 read_time: "12 min"
 tags: ["Gemma 4", "Google AI", "open source AI", "on-device AI", "LLM"]
+filters: ["Reviews", "Guides"]
 image: "gemma-4-guide-header.jpg"
 slug: "google-gemma-4-complete-guide-2026"
 ---

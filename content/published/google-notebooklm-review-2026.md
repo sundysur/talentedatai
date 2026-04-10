@@ -6,6 +6,7 @@ date: "2026-04-01"
 author: "TalentedAtAI Team"
 read_time: "8 min"
 tags: ["Google NotebookLM", "AI Tools", "Research", "Review", "Free Tools"]
+filters: ["Reviews"]
 image: "notebooklm-review-header.jpg"
 slug: "google-notebooklm-review-2026"
 ---

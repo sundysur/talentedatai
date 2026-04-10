@@ -6,6 +6,7 @@ date: "2026-04-05T12:00:00"
 author: "TalentedAtAI Team"
 read_time: "11 min"
 tags: ["AI content marketing", "AI writing", "content strategy", "SEO", "AI tools", "content creation"]
+filters: ["Guides"]
 image: "ai-content-marketing-2026-header.jpg"
 slug: "how-to-use-ai-for-content-marketing-2026"
 faq:

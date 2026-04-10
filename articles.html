@@ -62,6 +62,12 @@
     .nav__links a { font-size: 14px; font-weight: 500; color: var(--gray-700); transition: color var(--transition); }
     .nav__links a:hover { color: var(--blue); }
 
+    /* FILTER BAR */
+    .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .filter-btn { font-family: var(--font-body); font-size: 13px; font-weight: 600; padding: 7px 18px; border-radius: 100px; border: 1.5px solid rgba(0,102,255,0.18); background: var(--white); color: var(--gray-500); cursor: pointer; transition: all var(--transition); }
+    .filter-btn:hover { border-color: var(--blue); color: var(--blue); }
+    .filter-btn.active { background: var(--blue); border-color: var(--blue); color: var(--white); }
+
     /* ARTICLE CARDS */
     .articles-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
     .article-card { background: var(--white); border: 1px solid rgba(0,0,0,0.07); border-radius: var(--radius); overflow: hidden; transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition); cursor: pointer; }
@@ -319,6 +325,14 @@
         <h1 class="articles-page-title">All Articles</h1>
         <p class="articles-page-sub">Every guide, review and explainer — newest first.</p>
       </div>
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-btn active" data-filter="all" onclick="filterArticles('all')">All</button>
+        <button class="filter-btn" data-filter="Reviews" onclick="filterArticles('Reviews')">Reviews</button>
+        <button class="filter-btn" data-filter="Comparisons" onclick="filterArticles('Comparisons')">Comparisons</button>
+        <button class="filter-btn" data-filter="Guides" onclick="filterArticles('Guides')">Guides</button>
+        <button class="filter-btn" data-filter="Explainers" onclick="filterArticles('Explainers')">Explainers</button>
+        <button class="filter-btn" data-filter="Beginners" onclick="filterArticles('Beginners')">Beginners</button>
+      </div>
       <div class="articles-grid" id="all-articles-grid">
         <!-- populated by JS -->
       </div>
@@ -486,6 +500,50 @@
       });
     }
 
+    let allArticles = [];
+
+    function filterArticles(category) {
+      const grid  = document.getElementById('all-articles-grid');
+      const empty = document.getElementById('articles-empty');
+      // Update active button
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.filter === category);
+      });
+      const filtered = category === 'all'
+        ? allArticles
+        : allArticles.filter(a =>
+            Array.isArray(a.filters)
+              ? a.filters.includes(category)
+              : a.category === category
+          );
+      if (filtered.length === 0) {
+        grid.style.display = 'none';
+        empty.style.display = 'block';
+      } else {
+        grid.style.display = '';
+        empty.style.display = 'none';
+        grid.innerHTML = filtered.map(buildCard).join('');
+        setupObserver();
+      }
+      updateFilterCounts(allArticles);
+    }
+
+    function updateFilterCounts(articles) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        const filter = btn.dataset.filter;
+        const count = filter === 'all'
+          ? articles.length
+          : articles.filter(a =>
+              Array.isArray(a.filters)
+                ? a.filters.includes(filter)
+                : a.category === filter
+            ).length;
+        btn.textContent = filter === 'all'
+          ? `All (${count})`
+          : btn.textContent.replace(/ \(\d+\)$/, '') + ` (${count})`;
+      });
+    }
+
     async function loadAllArticles() {
       const grid  = document.getElementById('all-articles-grid');
       const empty = document.getElementById('articles-empty');
@@ -498,11 +556,12 @@
           empty.style.display = 'block';
           return;
         }
-        const sorted = articles
+        allArticles = articles
           .slice()
           .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
-        grid.innerHTML = sorted.map(buildCard).join('');
+        grid.innerHTML = allArticles.map(buildCard).join('');
         setupObserver();
+        updateFilterCounts(allArticles);
       } catch (err) {
         grid.style.display = 'none';
         empty.style.display = 'block';

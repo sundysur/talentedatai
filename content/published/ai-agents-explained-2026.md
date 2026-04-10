@@ -6,6 +6,7 @@ date: "2026-04-01"
 author: "TalentedAtAI Team"
 read_time: "9 min"
 tags: ["AI Agents", "Agentic AI", "Automation", "Explainer", "AI Trends 2026"]
+filters: ["Explainers", "Beginners"]
 image: "ai-agents-explained-header.jpg"
 slug: "ai-agents-explained-2026"
 ---

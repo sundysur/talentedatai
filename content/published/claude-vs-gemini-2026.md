@@ -6,6 +6,7 @@ date: "2026-04-06T12:00:00"
 author: "TalentedAtAI Team"
 read_time: "11 min"
 tags: ["Claude vs Gemini", "Claude AI", "Google Gemini", "AI comparison", "best AI assistant 2026"]
+filters: ["Reviews", "Comparisons"]
 image: "claude-vs-gemini-2026-header.jpg"
 slug: "claude-vs-gemini-2026"
 faq:

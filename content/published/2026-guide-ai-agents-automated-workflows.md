@@ -7,6 +7,7 @@ author: "TalentedAtAI Team"
 image: "ai-agents-header.jpg"
 read_time: "9 min"
 tags: ["ai agents", "automation", "agentic AI", "workflow", "productivity", "cursor", "zapier"]
+filters: ["Guides", "Explainers"]
 slug: "2026-guide-ai-agents-automated-workflows"
 ---
 

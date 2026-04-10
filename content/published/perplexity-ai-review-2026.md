@@ -6,6 +6,7 @@ date: "2026-04-06T10:00:00"
 author: "TalentedAtAI Team"
 read_time: "10 min"
 tags: ["Perplexity AI", "AI search", "AI tools", "search engine", "Perplexity review"]
+filters: ["Reviews"]
 image: "perplexity-ai-review-2026-header.jpg"
 slug: "perplexity-ai-review-2026"
 faq:

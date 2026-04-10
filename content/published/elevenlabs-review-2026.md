@@ -6,6 +6,7 @@ date: "2026-04-02"
 author: "TalentedAtAI Team"
 read_time: "6 min"
 tags: ["ElevenLabs", "AI voice", "text-to-speech", "voice cloning", "podcasting", "content creation", "AI Tools", "audio"]
+filters: ["Reviews"]
 image: "elevenlabs-review-2026-header.jpg"
 slug: "elevenlabs-review-2026"
 faq:

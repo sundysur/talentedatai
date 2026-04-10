@@ -6,6 +6,7 @@ date: "2026-04-07T10:00:00"
 author: "TalentedAtAI Team"
 read_time: "8 min"
 tags: ["Gemma 4", "Android AI", "on-device AI", "Google Gemma", "run AI locally"]
+filters: ["Guides", "Beginners"]
 image: "gemma-4-android-guide-header.jpg"
 slug: "how-to-run-gemma-4-on-android-2026"
 faq:

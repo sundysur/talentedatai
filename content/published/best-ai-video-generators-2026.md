@@ -6,6 +6,7 @@ date: "2026-04-05T10:00:00"
 author: "TalentedAtAI Team"
 read_time: "11 min"
 tags: ["AI video", "text to video", "video generators", "Kling", "Runway", "Sora", "Veo 3"]
+filters: ["Reviews", "Comparisons"]
 image: "ai-video-generators-2026-header.jpg"
 slug: "best-ai-video-generators-2026"
 ---
