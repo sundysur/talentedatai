@@ -258,8 +258,19 @@
       .article-card--featured { grid-column: span 2; }
       .footer__top { grid-template-columns: 1fr 1fr; }
     }
+    .nav__hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin-left: auto; }
+    .nav__hamburger span { display: block; width: 22px; height: 2px; background: var(--dark); border-radius: 2px; transition: all 0.25s ease; }
+    .nav__hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav__hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav__hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav__mobile-menu { display: none; position: absolute; top: 56px; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,102,255,0.08); padding: 16px 24px; flex-direction: column; gap: 0; z-index: 99; }
+    .nav__mobile-menu a { font-size: 15px; font-weight: 500; color: var(--gray-700); padding: 12px 0; border-bottom: 1px solid var(--gray-100); display: block; transition: color 0.2s; }
+    .nav__mobile-menu a:last-child { border-bottom: none; }
+    .nav__mobile-menu a:hover { color: var(--blue); }
+    .nav__mobile-menu.open { display: flex; }
     @media(max-width:768px) {
       .nav__links { display: none; }
+      .nav__hamburger { display: flex; }
       .articles-grid { grid-template-columns: 1fr; }
       .article-card--featured { grid-column: span 1; }
       .footer__top { grid-template-columns: 1fr; }
@@ -288,6 +299,17 @@
         <li><a href="/contact.html">Contact</a></li>
         <li><a href="/privacy-policy.html">Privacy Policy</a></li>
       </ul>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav__mobile-menu" id="nav-mobile-menu">
+        <a href="https://talentedatai.com/articles.html">Articles</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+      </div>
     </div>
   </nav>
 
@@ -488,7 +510,21 @@
     }
 
     document.addEventListener('DOMContentLoaded', loadAllArticles);
-  </script>
+    function toggleMenu() {
+    const btn = document.getElementById('nav-hamburger');
+    const menu = document.getElementById('nav-mobile-menu');
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    const btn = document.getElementById('nav-hamburger');
+    const menu = document.getElementById('nav-mobile-menu');
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      btn.classList.remove('open');
+      menu.classList.remove('open');
+    }
+  });
+</script>
 
 </body>
 </html>
