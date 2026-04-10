@@ -1,6 +1,6 @@
 ---
 title: "Google Gemma 4: The Complete Guide to the Open-Source AI You Can Run Anywhere"
-description: "Gemma 4 is Google's most capable open model yet — runs on your phone, laptop or Raspberry Pi, free for commercial use. Here's everything you need to know."
+description: "Complete guide to Google Gemma 4 in 2026 — how to run it on Android, iPhone, laptop, and Raspberry Pi. Free, open-source, no server costs required."
 category: "AI Tools"
 date: "2026-04-03T21:00:00"
 author: "TalentedAtAI Team"
