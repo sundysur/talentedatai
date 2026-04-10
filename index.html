@@ -99,7 +99,7 @@
   .secondary-card:hover .secondary-card__title { color: var(--blue); }
   .secondary-card__meta { font-size: 11px; color: var(--gray-300); margin-top: 4px; }
   /* MORE LABEL */
-  .more-label { display: flex; align-items: center; justify-content: space-between; margin: 28px 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-100); }
+  .more-label { display: flex; align-items: center; justify-content: space-between; margin: 28px 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-100); flex-wrap: wrap; gap: 12px; }
   .more-label span { font-family: var(--font-head); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-500); }
   .more-label a { font-size: 13px; font-weight: 600; color: var(--blue); }
   .more-label a:hover { text-decoration: underline; }
@@ -192,8 +192,8 @@
     .newsletter-form-row { flex-direction: column; }
     .newsletter-btn { justify-content: center; width: 100%; }
   }
-  .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
-  .filter-btn { font-family: var(--font-body); font-size: 13px; font-weight: 500; padding: 8px 18px; border-radius: 100px; border: 1.5px solid var(--gray-300); background: var(--white); color: var(--gray-700); cursor: pointer; transition: all 0.2s ease; white-space: nowrap; }
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0; }
+  .filter-btn { font-family: var(--font-body); font-size: 12px; font-weight: 500; padding: 5px 14px; border-radius: 100px; border: 1px solid var(--gray-300); background: var(--white); color: var(--gray-500); cursor: pointer; transition: all 0.2s ease; white-space: nowrap; }
   .filter-btn:hover { border-color: var(--blue); color: var(--blue); }
   .filter-btn.active { background: var(--blue); border-color: var(--blue); color: var(--white); }
   .filter-count { font-size: 11px; opacity: 0.7; margin-left: 4px; }
@@ -243,16 +243,15 @@
     <div class="content-area">
       <div id="featured-slot" class="featured-card-wrap"></div>
       <div id="secondary-slot" class="secondary-row"></div>
-      <div class="filter-bar" id="filter-bar">
-        <button class="filter-btn active" data-filter="all" onclick="filterArticles('all')">All</button>
-        <button class="filter-btn" data-filter="Reviews" onclick="filterArticles('Reviews')">Reviews</button>
-        <button class="filter-btn" data-filter="Comparisons" onclick="filterArticles('Comparisons')">Comparisons</button>
-        <button class="filter-btn" data-filter="Guides" onclick="filterArticles('Guides')">Guides</button>
-        <button class="filter-btn" data-filter="Explainers" onclick="filterArticles('Explainers')">Explainers</button>
-        <button class="filter-btn" data-filter="Beginners" onclick="filterArticles('Beginners')">Beginners</button>
-      </div>
       <div class="more-label">
-        <span id="more-label-text">More articles</span>
+        <div class="filter-bar" id="filter-bar">
+          <button class="filter-btn active" data-filter="all" onclick="filterArticles('all')">All</button>
+          <button class="filter-btn" data-filter="Reviews" onclick="filterArticles('Reviews')">Reviews</button>
+          <button class="filter-btn" data-filter="Comparisons" onclick="filterArticles('Comparisons')">Comparisons</button>
+          <button class="filter-btn" data-filter="Guides" onclick="filterArticles('Guides')">Guides</button>
+          <button class="filter-btn" data-filter="Explainers" onclick="filterArticles('Explainers')">Explainers</button>
+          <button class="filter-btn" data-filter="Beginners" onclick="filterArticles('Beginners')">Beginners</button>
+        </div>
         <a href="https://talentedatai.com/articles.html" id="see-all-link">See all →</a>
       </div>
       <div id="articles-grid" class="articles-grid"></div>
@@ -508,7 +507,8 @@
       if (label) label.textContent = 'More articles';
       return;
     }
-    const gridArticles = filtered.slice(3, 12);
+    const isFiltered = category !== 'all';
+    const gridArticles = isFiltered ? filtered.slice(0, 9) : filtered.slice(3, 12);
     grid.innerHTML = gridArticles.map((a, i) => buildGridCard(a, i)).join('');
     if (label) label.textContent = filtered.length + ' articles';
     setupObserver();
