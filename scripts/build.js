@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { marked } = require('marked');
 const matter = require('gray-matter');
+const sharp = require('sharp');
 
 const publishedDir = './content/published';
 
@@ -10,15 +11,40 @@ if (!fs.existsSync(publishedDir)) {
   process.exit(0);
 }
 
+async function generateResponsiveImages(imageFile) {
+  if (!imageFile) return;
+  const imgDir = path.join(__dirname, '../static/images/articles');
+  const srcPath = path.join(imgDir, imageFile);
+
+  if (!require('fs').existsSync(srcPath)) return;
+
+  const sizes = [400, 800];
+  const baseName = imageFile.replace(/\.[^/.]+$/, '');
+
+  for (const size of sizes) {
+    const destName = `${baseName}-${size}w.jpg`;
+    const destPath = path.join(imgDir, destName);
+    if (!require('fs').existsSync(destPath)) {
+      await sharp(srcPath)
+        .resize(size, null, { withoutEnlargement: true })
+        .jpeg({ quality: 82, progressive: true })
+        .toFile(destPath);
+      console.log(`Generated: ${destName}`);
+    }
+  }
+}
+
 const mdFiles = fs.readdirSync(publishedDir).filter(f => f.endsWith('.md'));
 console.log('Building ' + mdFiles.length + ' article(s)...');
 
 const articles = [];
 
-mdFiles.forEach(file => {
+(async () => {
+for (const file of mdFiles) {
   const raw = fs.readFileSync(path.join(publishedDir, file), 'utf8');
   const parsed = matter(raw);
   const fm = parsed.data;
+  await generateResponsiveImages(fm.image);
   const content = parsed.content;
   const html = marked.parse(content);
   const slug = file.replace('.md', '');
@@ -231,6 +257,10 @@ ${fm.image ? `
 <div style="margin-top:32px;border-radius:16px;overflow:hidden;max-height:420px;">
   <img
     src="/static/images/articles/${fm.image}"
+    srcset="/static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-400w.jpg 400w,
+            /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-800w.jpg 800w,
+            /static/images/articles/${fm.image} 1600w"
+    sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
     alt="${fm.title || ''}"
     loading="lazy"
     style="width:100%;height:420px;object-fit:cover;display:block;"
@@ -264,8 +294,9 @@ ${html}
 
   fs.writeFileSync(path.join(publishedDir, slug + '.html'), articlePage);
   console.log('  Built: ' + slug + '.html');
-});
+}
 
 articles.sort((a, b) => new Date(b.date) - new Date(a.date));
 fs.writeFileSync('./content/articles.json', JSON.stringify(articles, null, 2));
 console.log('\nBuild complete. ' + mdFiles.length + ' article(s) built.');
+})();

@@ -371,7 +371,15 @@
   function buildFeaturedCard(article) {
     const url = 'https://talentedatai.com/content/published/' + article.slug + '.html';
     const imgHtml = article.image
-      ? `<img src="${article.image}" alt="${article.title}" style="width:100%;height:100%;object-fit:cover;display:block;">`
+      ? `<img
+      src="${article.image}"
+      srcset="${article.image.replace('-header.jpg', '-header-400w.jpg')} 400w,
+              ${article.image.replace('-header.jpg', '-header-800w.jpg')} 800w,
+              ${article.image} 1600w"
+      sizes="(max-width: 768px) 400px, (max-width: 1200px) 800px, 800px"
+      alt="${article.title}"
+      loading="eager"
+      style="width:100%;height:100%;object-fit:cover;display:block;">`
       : `<div class="featured-card__img-fallback">🤖</div>`;
     return `
       <article class="featured-card" onclick="window.location.href='${url}'" style="cursor:pointer;">
@@ -392,7 +400,13 @@
   function buildSecondaryCard(article) {
     const url = 'https://talentedatai.com/content/published/' + article.slug + '.html';
     const thumbHtml = article.image
-      ? `<img src="${article.image}" alt="${article.title}" loading="lazy">`
+      ? `<img
+      src="${article.image.replace('-header.jpg', '-header-400w.jpg')}"
+      srcset="${article.image.replace('-header.jpg', '-header-400w.jpg')} 400w,
+              ${article.image} 1600w"
+      sizes="120px"
+      alt="${article.title}"
+      loading="lazy">`
       : `<div class="secondary-card__thumb-fallback">📄</div>`;
     return `
       <article class="secondary-card" onclick="window.location.href='${url}'" style="cursor:pointer;">
@@ -415,7 +429,15 @@
     const shareUrl = 'https://x.com/intent/tweet?text=' + shareText;
     const arrowSvg = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     const thumbContent = article.image
-      ? `<img src="${article.image}" alt="${article.title}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">`
+      ? `<img
+      src="${article.image.replace('-header.jpg', '-header-400w.jpg')}"
+      srcset="${article.image.replace('-header.jpg', '-header-400w.jpg')} 400w,
+              ${article.image.replace('-header.jpg', '-header-800w.jpg')} 800w,
+              ${article.image} 1600w"
+      sizes="(max-width: 768px) calc(100vw - 48px), (max-width: 1200px) 33vw, 369px"
+      alt="${article.title}"
+      loading="lazy"
+      style="width:100%;height:100%;object-fit:cover;display:block;">`
       : `<div class="article-card__thumb-inner">${thumbEmoji}</div>`;
     return `
       <article class="article-card" onclick="window.location.href='${url}'" style="cursor:pointer;">
