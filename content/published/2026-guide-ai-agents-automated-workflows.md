@@ -1,6 +1,6 @@
 ---
 title: "AI Agents in 2026: How to Build Automated Workflows (Guide)"
-description: "AI agents can run your workflows automatically in 2026 — but most guides skip the practical setup. Here's exactly how to build and automate with AI agents, step by step."
+description: "AI agents automate your workflows in 2026 — but most guides skip the practical setup. Here's exactly how to build and deploy AI agents, step by step."
 category: "Guides"
 date: "2026-03-31"
 author: "TalentedAtAI Team"

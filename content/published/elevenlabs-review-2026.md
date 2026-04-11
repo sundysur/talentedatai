@@ -1,6 +1,6 @@
 ---
 title: "ElevenLabs Review 2026: Best AI Voice Generator?"
-description: "ElevenLabs is the best AI voice generator in 2026 — but is it worth paying for? We tested every plan and voice quality. Honest review with real audio examples."
+description: "ElevenLabs is the best AI voice generator in 2026 — but is it worth it? We tested every plan and voice quality. Honest review with real audio examples."
 category: "AI Tools"
 date: "2026-04-02"
 author: "TalentedAtAI Team"

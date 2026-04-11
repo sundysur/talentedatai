@@ -1,6 +1,6 @@
 ---
 title: "Gemma 4 Review 2026: Google's Best Open-Source AI Tested"
-description: "Gemma 4 is Google's most capable open-source AI — and you can run it free on any device. Complete guide: setup, benchmarks, and real-world performance tested in 2026."
+description: "Gemma 4 is Google's most capable open-source AI — run it free on any device. Setup, benchmarks, and real-world performance tested in 2026."
 category: "AI Tools"
 date: "2026-04-03T21:00:00"
 author: "TalentedAtAI Team"
