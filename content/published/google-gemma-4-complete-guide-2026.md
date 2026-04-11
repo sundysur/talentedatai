@@ -1,6 +1,6 @@
 ---
-title: "Google Gemma 4: The Complete Guide to the Open-Source AI You Can Run Anywhere"
-description: "Complete guide to Google Gemma 4 in 2026 — how to run it on Android, iPhone, laptop, and Raspberry Pi. Free, open-source, no server costs required."
+title: "Gemma 4 Review 2026: Google's Best Open-Source AI Tested"
+description: "Gemma 4 is Google's most capable open-source AI — and you can run it free on any device. Complete guide: setup, benchmarks, and real-world performance tested in 2026."
 category: "AI Tools"
 date: "2026-04-03T21:00:00"
 author: "TalentedAtAI Team"

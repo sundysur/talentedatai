@@ -1,6 +1,6 @@
 ---
-title: "The 2026 Guide to AI Agents: How to Move from Prompting to Fully Automated Workflows"
-description: "The era of the prompt is ending. Here's how to move from typing into chatbots to building autonomous AI agents that do the work for you — with real workflow blueprints you can use today."
+title: "AI Agents in 2026: How to Build Automated Workflows (Guide)"
+description: "AI agents can run your workflows automatically in 2026 — but most guides skip the practical setup. Here's exactly how to build and automate with AI agents, step by step."
 category: "Guides"
 date: "2026-03-31"
 author: "TalentedAtAI Team"
