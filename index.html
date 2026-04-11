@@ -171,11 +171,13 @@
   .nav__tagline { font-size: 11px; color: var(--gray-500); font-family: var(--font-body); font-weight: 400; letter-spacing: 0.01em; }
   .nav__cta { font-size: 12px; font-weight: 600; color: var(--blue); border: 1px solid var(--blue); border-radius: 20px; padding: 5px 14px; white-space: nowrap; transition: all var(--transition); }
   .nav__cta:hover { background: var(--blue); color: var(--white); }
+  @media(max-width:900px) {
+    .nav__tagline { display: none; }
+    .nav__cta { display: none; }
+  }
   @media(max-width:768px) {
     .nav__links { display: none; }
     .nav__hamburger { display: flex; }
-    .nav__tagline { display: none; }
-    .nav__cta { display: none; }
     .featured-card { grid-template-columns: 1fr; }
     .featured-card__img { min-height: 200px; }
     .featured-card__body { border-left: none; border-top: 1px solid rgba(0,0,0,0.07); }
@@ -217,7 +219,7 @@
         <li><a href="/privacy-policy.html">Privacy Policy</a></li>
       </ul>
       <a href="#newsletter" class="nav__cta">Get free guide →</a>
-      <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" onclick="toggleMenu()">
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
@@ -238,12 +240,12 @@
       <div id="secondary-slot" class="secondary-row"></div>
       <div class="more-label">
         <div class="filter-bar" id="filter-bar">
-          <button class="filter-btn active" data-filter="all" onclick="filterArticles('all')">All</button>
-          <button class="filter-btn" data-filter="Reviews" onclick="filterArticles('Reviews')">Reviews</button>
-          <button class="filter-btn" data-filter="Comparisons" onclick="filterArticles('Comparisons')">Comparisons</button>
-          <button class="filter-btn" data-filter="Guides" onclick="filterArticles('Guides')">Guides</button>
-          <button class="filter-btn" data-filter="Explainers" onclick="filterArticles('Explainers')">Explainers</button>
-          <button class="filter-btn" data-filter="Beginners" onclick="filterArticles('Beginners')">Beginners</button>
+          <button class="filter-btn active" data-filter="all" aria-pressed="true" onclick="filterArticles('all')">All</button>
+          <button class="filter-btn" data-filter="Reviews" aria-pressed="false" onclick="filterArticles('Reviews')">Reviews</button>
+          <button class="filter-btn" data-filter="Comparisons" aria-pressed="false" onclick="filterArticles('Comparisons')">Comparisons</button>
+          <button class="filter-btn" data-filter="Guides" aria-pressed="false" onclick="filterArticles('Guides')">Guides</button>
+          <button class="filter-btn" data-filter="Explainers" aria-pressed="false" onclick="filterArticles('Explainers')">Explainers</button>
+          <button class="filter-btn" data-filter="Beginners" aria-pressed="false" onclick="filterArticles('Beginners')">Beginners</button>
         </div>
         <a href="https://talentedatai.com/articles.html" id="see-all-link">See all →</a>
       </div>
@@ -382,7 +384,7 @@
       alt="${escAttr(article.title)}"
       loading="eager"
       style="width:100%;height:100%;object-fit:cover;display:block;">`
-      : `<div class="featured-card__img-fallback">🤖</div>`;
+      : `<div class="featured-card__img-fallback" aria-hidden="true">🤖</div>`;
     return `
       <article class="featured-card" onclick="window.location.href='${url}'" style="cursor:pointer;">
         <div class="featured-card__img">${imgHtml}</div>
@@ -413,7 +415,7 @@
       sizes="120px"
       alt="${escAttr(article.title)}"
       loading="lazy">`
-      : `<div class="secondary-card__thumb-fallback">📄</div>`;
+      : `<div class="secondary-card__thumb-fallback" aria-hidden="true">📄</div>`;
     return `
       <article class="secondary-card" onclick="window.location.href='${url}'" style="cursor:pointer;">
         <div class="secondary-card__thumb">${thumbHtml}</div>
@@ -448,7 +450,7 @@
       alt="${escAttr(article.title)}"
       loading="lazy"
       style="width:100%;height:100%;object-fit:cover;display:block;">`
-      : `<div class="article-card__thumb-inner">${thumbEmoji}</div>`;
+      : `<div class="article-card__thumb-inner" aria-hidden="true">${thumbEmoji}</div>`;
     return `
       <article class="article-card" onclick="window.location.href='${url}'" style="cursor:pointer;">
         <div class="article-card__thumb ${article.image ? '' : 'thumb--' + color}">${thumbContent}</div>
@@ -460,7 +462,7 @@
           <h3 class="article-card__title">${article.title}</h3>
           <div class="article-card__footer">
             <div class="author">
-              <div class="author__avatar ${avatarClass}">TA</div>
+              <div class="author__avatar ${avatarClass}" aria-hidden="true">TA</div>
               <span class="author__name">${article.author || 'TalentedAtAI Team'}</span>
             </div>
             <span class="read-more">Read ${arrowSvg}</span>
@@ -523,7 +525,9 @@
   function filterArticles(category) {
     activeFilter = category;
     document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.filter === category);
+      const isActive = btn.dataset.filter === category;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     });
     const filtered = category === 'all'
       ? allArticles
@@ -571,6 +575,7 @@
     const menu = document.getElementById('nav-mobile-menu');
     btn.classList.toggle('open');
     menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', menu.classList.contains('open') ? 'true' : 'false');
   }
   document.addEventListener('click', function(e) {
     const btn = document.getElementById('nav-hamburger');
