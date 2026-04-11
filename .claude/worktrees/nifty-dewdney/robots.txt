@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /content/pending/
+Disallow: /dashboard/
+
+Sitemap: https://talentedatai.com/sitemap.xml

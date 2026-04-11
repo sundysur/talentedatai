@@ -16,10 +16,7 @@ async function generateResponsiveImages(imageFile) {
   const imgDir = path.join(__dirname, '../static/images/articles');
   const srcPath = path.join(imgDir, imageFile);
 
-  if (!require('fs').existsSync(srcPath)) {
-    console.warn('Missing source image: ' + srcPath);
-    return;
-  }
+  if (!require('fs').existsSync(srcPath)) return;
 
   const sizes = [400, 800];
   const baseName = imageFile.replace(/\.[^/.]+$/, '');
@@ -79,11 +76,11 @@ for (const file of mdFiles) {
   <meta property="og:description" content="${fm.description}">
   <meta property="og:url" content="https://talentedatai.com/content/published/${slug}.html">
   <meta property="og:type" content="article">
-  ${fm.image ? `<meta property="og:image" content="https://talentedatai.com/static/images/articles/${fm.image}">` : ''}
+  <meta property="og:image" content="https://talentedatai.com/static/images/articles/${fm.image}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${fm.title} — TalentedAtAI">
   <meta name="twitter:description" content="${fm.description}">
-  ${fm.image ? `<meta name="twitter:image" content="https://talentedatai.com/static/images/articles/${fm.image}">` : ''}
+  <meta name="twitter:image" content="https://talentedatai.com/static/images/articles/${fm.image}">
   <meta name="author" content="${fm.author || 'TalentedAtAI Team'}"/>
   ${fm.faq ? `<script type="application/ld+json">
   {
@@ -102,7 +99,7 @@ for (const file of mdFiles) {
     "@type": "Article",
     "headline": "${fm.title}",
     "description": "${fm.description}",
-    ${fm.image ? `"image": "https://talentedatai.com/static/images/articles/${fm.image}",` : ''}
+    "image": "https://talentedatai.com/static/images/articles/${fm.image}",
     "datePublished": "${fm.date}",
     "dateModified": "${fm.date}",
     "author": {

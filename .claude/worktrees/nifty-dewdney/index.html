@@ -524,13 +524,16 @@
             : a.category === category
         );
     const grid = document.getElementById('articles-grid');
+    const label = document.getElementById('more-label-text');
     if (filtered.length === 0) {
       grid.innerHTML = '<div class="no-results">No articles in this category yet.</div>';
+      if (label) label.textContent = 'More articles';
       return;
     }
     const isFiltered = category !== 'all';
     const gridArticles = isFiltered ? filtered.slice(0, 9) : filtered.slice(3, 12);
     grid.innerHTML = gridArticles.map((a, i) => buildGridCard(a, i)).join('');
+    if (label) label.textContent = filtered.length + ' articles';
     setupObserver();
   }
   function updateFilterCounts(articles) {
