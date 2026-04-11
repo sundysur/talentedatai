@@ -357,6 +357,15 @@
   </footer>
 
   <script>
+  function escAttr(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
   const THUMB_COLORS  = ['blue','purple','green'];
   const BADGE_CLASSES = ['','category-badge--purple','category-badge--green'];
   const AVATAR_COLORS = ['avatar--blue','avatar--purple','avatar--green'];
@@ -370,7 +379,7 @@
               ${article.image.replace('-header.jpg', '-header-800w.jpg')} 800w,
               ${article.image} 1600w"
       sizes="(max-width: 768px) 400px, (max-width: 1200px) 800px, 800px"
-      alt="${article.title}"
+      alt="${escAttr(article.title)}"
       loading="eager"
       style="width:100%;height:100%;object-fit:cover;display:block;">`
       : `<div class="featured-card__img-fallback">🤖</div>`;
@@ -402,7 +411,7 @@
       srcset="${article.image.replace('-header.jpg', '-header-400w.jpg')} 400w,
               ${article.image} 1600w"
       sizes="120px"
-      alt="${article.title}"
+      alt="${escAttr(article.title)}"
       loading="lazy">`
       : `<div class="secondary-card__thumb-fallback">📄</div>`;
     return `
@@ -436,7 +445,7 @@
               ${article.image.replace('-header.jpg', '-header-800w.jpg')} 800w,
               ${article.image} 1600w"
       sizes="(max-width: 768px) calc(100vw - 48px), (max-width: 1200px) 33vw, 369px"
-      alt="${article.title}"
+      alt="${escAttr(article.title)}"
       loading="lazy"
       style="width:100%;height:100%;object-fit:cover;display:block;">`
       : `<div class="article-card__thumb-inner">${thumbEmoji}</div>`;

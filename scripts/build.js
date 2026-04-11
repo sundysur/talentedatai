@@ -85,7 +85,7 @@ for (const file of mdFiles) {
   <meta name="twitter:description" content="${fm.description}">
   ${fm.image ? `<meta name="twitter:image" content="https://talentedatai.com/static/images/articles/${fm.image}">` : ''}
   <meta name="author" content="${fm.author || 'TalentedAtAI Team'}"/>
-  ${fm.faq ? `<script type="application/ld+json">
+  ${fm.faq && Array.isArray(fm.faq) ? `<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -93,7 +93,7 @@ for (const file of mdFiles) {
       "@type": "Question",
       "name": q.q,
       "acceptedAnswer": { "@type": "Answer", "text": q.a }
-    })))}
+    }))).replace(/</g, '\\u003c')}
   }
   </script>` : ''}
   <script type="application/ld+json">
@@ -253,7 +253,7 @@ for (const file of mdFiles) {
   </div>
   <h1>${fm.title || ''}</h1>
   <p style="color:#5a5a55;font-size:0.9em;margin:4px 0 24px 0;">
-    Last updated: ${new Date(fm.date).toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'})}
+    Last updated: ${fm.date ? new Date(fm.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }) : ''}
   </p>
   <p class="article-desc">${fm.description || ''}</p>
 ${fm.image ? `
