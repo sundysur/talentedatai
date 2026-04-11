@@ -62,14 +62,6 @@
   .nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
   .nav__links a { font-size: 14px; font-weight: 500; color: var(--gray-700); transition: color var(--transition); }
   .nav__links a:hover { color: var(--blue); }
-  /* MASTHEAD STRIP */
-  .masthead { background: var(--gray-100); border-bottom: 1px solid rgba(0,0,0,0.06); padding: 0 24px; height: 36px; display: flex; align-items: center; justify-content: space-between; max-width: 100%; }
-  .masthead__left { display: flex; align-items: center; gap: 8px; }
-  .masthead__dot { width: 6px; height: 6px; background: var(--blue); border-radius: 50%; animation: pulse 2s ease-in-out infinite; flex-shrink: 0; }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);} }
-  .masthead__text { font-size: 12px; color: var(--gray-500); }
-  .masthead__cta { font-size: 12px; font-weight: 600; color: var(--blue); border: 1px solid var(--blue); border-radius: 20px; padding: 3px 12px; transition: all var(--transition); white-space: nowrap; }
-  .masthead__cta:hover { background: var(--blue); color: var(--white); }
   /* CONTENT AREA */
   .content-area { max-width: 1200px; margin: 0 auto; padding: 0 24px 64px; }
   /* FEATURED CARD */
@@ -175,10 +167,15 @@
   .nav__mobile-menu a:last-child { border-bottom: none; }
   .nav__mobile-menu a:hover { color: var(--blue); }
   .nav__mobile-menu.open { display: flex; }
+  .nav__logo-wrap { display: flex; flex-direction: column; gap: 1px; }
+  .nav__tagline { font-size: 11px; color: var(--gray-500); font-family: var(--font-body); font-weight: 400; letter-spacing: 0.01em; }
+  .nav__cta { font-size: 12px; font-weight: 600; color: var(--blue); border: 1px solid var(--blue); border-radius: 20px; padding: 5px 14px; white-space: nowrap; transition: all var(--transition); }
+  .nav__cta:hover { background: var(--blue); color: var(--white); }
   @media(max-width:768px) {
     .nav__links { display: none; }
     .nav__hamburger { display: flex; }
-    .masthead__text { display: none; }
+    .nav__tagline { display: none; }
+    .nav__cta { display: none; }
     .featured-card { grid-template-columns: 1fr; }
     .featured-card__img { min-height: 200px; }
     .featured-card__body { border-left: none; border-top: 1px solid rgba(0,0,0,0.07); }
@@ -206,16 +203,20 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav__inner">
-      <a href="/" class="nav__logo">
-        Talented<span>At</span>AI
-        <span class="nav__logo-dot"></span>
-      </a>
+      <div class="nav__logo-wrap">
+        <a href="/" class="nav__logo">
+          <span class="nav__logo-dot"></span>
+          Talented<span>At</span>AI
+        </a>
+        <div class="nav__tagline">Practical guides, honest reviews · Independent</div>
+      </div>
       <ul class="nav__links">
         <li><a href="https://talentedatai.com/articles.html">Articles</a></li>
         <li><a href="/about.html">About</a></li>
         <li><a href="/contact.html">Contact</a></li>
         <li><a href="/privacy-policy.html">Privacy Policy</a></li>
       </ul>
+      <a href="#newsletter" class="nav__cta">Get free guide →</a>
       <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" onclick="toggleMenu()">
         <span></span>
         <span></span>
@@ -229,14 +230,6 @@
       </div>
     </div>
   </nav>
-
-  <div class="masthead">
-    <div class="masthead__left">
-      <span class="masthead__dot"></span>
-      <span class="masthead__text">Practical guides, honest reviews · Updated daily · Independent</span>
-    </div>
-    <a href="#newsletter" class="masthead__cta">Get free AI guide →</a>
-  </div>
 
   <!-- Latest Articles -->
   <section id="articles">
