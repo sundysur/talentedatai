@@ -4,7 +4,14 @@ const { marked } = require('marked');
 const matter = require('gray-matter');
 const sharp = require('sharp');
 
-const publishedDir = './content/published';
+const SITE_URL = 'https://talentedatai.com';
+const GA_ID = 'G-SYQ40F2CXQ';
+const ADSENSE_ID = 'ca-pub-3277838203710267';
+const DEFAULT_AUTHOR = 'TalentedAtAI Team';
+const SITE_NAME = 'TalentedAtAI';
+const LOGO_URL = 'https://talentedatai.com/static/images/logo.png';
+
+const publishedDir = path.join(__dirname, '../content/published');
 
 if (!fs.existsSync(publishedDir)) {
   console.log('No published articles yet.');
@@ -59,7 +66,7 @@ for (const file of mdFiles) {
     category: fm.category || 'General',
     filters: fm.filters || [],
     date: fm.date || '',
-    author: fm.author || 'TalentedAtAI Team',
+    author: fm.author || DEFAULT_AUTHOR,
     read_time: fm.read_time || (Math.ceil(content.split(' ').length / 200) + ' min'),
     tags: fm.tags || [],
     image: fm.image ? '/static/images/articles/' + fm.image : null
@@ -72,19 +79,19 @@ for (const file of mdFiles) {
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>${fm.title || slug} | TalentedAtAI</title>
-  <link rel="canonical" href="https://talentedatai.com/content/published/${slug}.html">
+  <title>${fm.title || slug} | ${SITE_NAME}</title>
+  <link rel="canonical" href="${SITE_URL}/content/published/${slug}.html">
   <meta name="description" content="${fm.description}">
-  <meta property="og:title" content="${fm.title} — TalentedAtAI">
+  <meta property="og:title" content="${fm.title} — ${SITE_NAME}">
   <meta property="og:description" content="${fm.description}">
-  <meta property="og:url" content="https://talentedatai.com/content/published/${slug}.html">
+  <meta property="og:url" content="${SITE_URL}/content/published/${slug}.html">
   <meta property="og:type" content="article">
-  ${fm.image ? `<meta property="og:image" content="https://talentedatai.com/static/images/articles/${fm.image}">` : ''}
+  ${fm.image ? `<meta property="og:image" content="${SITE_URL}/static/images/articles/${fm.image}">` : ''}
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${fm.title} — TalentedAtAI">
+  <meta name="twitter:title" content="${fm.title} — ${SITE_NAME}">
   <meta name="twitter:description" content="${fm.description}">
-  ${fm.image ? `<meta name="twitter:image" content="https://talentedatai.com/static/images/articles/${fm.image}">` : ''}
-  <meta name="author" content="${fm.author || 'TalentedAtAI Team'}"/>
+  ${fm.image ? `<meta name="twitter:image" content="${SITE_URL}/static/images/articles/${fm.image}">` : ''}
+  <meta name="author" content="${fm.author || DEFAULT_AUTHOR}"/>
   ${fm.faq && Array.isArray(fm.faq) ? `<script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -102,26 +109,26 @@ for (const file of mdFiles) {
     "@type": "Article",
     "headline": "${fm.title}",
     "description": "${fm.description}",
-    ${fm.image ? `"image": "https://talentedatai.com/static/images/articles/${fm.image}",` : ''}
+    ${fm.image ? `"image": "${SITE_URL}/static/images/articles/${fm.image}",` : ''}
     "datePublished": "${fm.date}",
     "dateModified": "${fm.date}",
     "author": {
       "@type": "Organization",
-      "name": "TalentedAtAI",
-      "url": "https://talentedatai.com"
+      "name": "${SITE_NAME}",
+      "url": "${SITE_URL}"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "TalentedAtAI",
-      "url": "https://talentedatai.com",
+      "name": "${SITE_NAME}",
+      "url": "${SITE_URL}",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://talentedatai.com/static/images/logo.png"
+        "url": "${LOGO_URL}"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://talentedatai.com/content/published/${slug}.html"
+      "@id": "${SITE_URL}/content/published/${slug}.html"
     }
   }
   </script>
@@ -134,30 +141,30 @@ for (const file of mdFiles) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://talentedatai.com/"
+        "item": "${SITE_URL}/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Articles",
-        "item": "https://talentedatai.com/articles.html"
+        "item": "${SITE_URL}/articles.html"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "${fm.title}",
-        "item": "https://talentedatai.com/content/published/${slug}.html"
+        "item": "${SITE_URL}/content/published/${slug}.html"
       }
     ]
   }
   </script>
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYQ40F2CXQ"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-SYQ40F2CXQ');
+    gtag('config', '${GA_ID}');
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -222,7 +229,7 @@ for (const file of mdFiles) {
     .footer-logo span{color:var(--blue)}
     @media(max-width:640px){nav{padding:0 20px}.article-hero{padding:40px 20px 32px}.article-body{padding:32px 20px 64px}}
   </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3277838203710267" crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="progress-bar" style="position:fixed;top:0;left:0;height:3px;background:#0066ff;width:0%;z-index:9999;transition:width 0.1s;"></div>
@@ -235,17 +242,17 @@ for (const file of mdFiles) {
   });
 </script>
 <nav>
-  <a href="https://talentedatai.com" class="nav-logo">Talented<span>At</span>AI</a>
+  <a href="${SITE_URL}" class="nav-logo">Talented<span>At</span>AI</a>
   <ul class="nav-links">
-    <li><a href="https://talentedatai.com" class="nav-back">← All articles</a></li>
-    <li><a href="https://talentedatai.com/about.html">About</a></li>
-    <li><a href="https://talentedatai.com/contact.html">Contact</a></li>
+    <li><a href="${SITE_URL}" class="nav-back">← All articles</a></li>
+    <li><a href="${SITE_URL}/about.html">About</a></li>
+    <li><a href="${SITE_URL}/contact.html">Contact</a></li>
   </ul>
 </nav>
 <div class="article-hero">
   <span class="category-pill">${fm.category || 'General'}</span>
   <div class="article-meta">
-    <span>${fm.author || 'TalentedAtAI Team'}</span>
+    <span>${fm.author || DEFAULT_AUTHOR}</span>
     <span>·</span>
     <span>${fm.date || ''}</span>
     <span>·</span>
@@ -276,7 +283,7 @@ ${html}
 <div style="max-width:760px;margin:0 auto;padding:0 24px 48px;">
   <div style="border-top:1px solid #e8e8e5;margin-top:48px;padding-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
     <span style="font-family:'DM Sans',sans-serif;color:#5a5a55;font-size:15px;">Found this useful?</span>
-    <a href="https://x.com/intent/tweet?text=${encodeURIComponent(fm.title + ' — via @talentedat\nhttps://talentedatai.com/content/published/' + slug + '.html')}"
+    <a href="https://x.com/intent/tweet?text=${encodeURIComponent(fm.title + ' — via @talentedat\n' + SITE_URL + '/content/published/' + slug + '.html')}"
        target="_blank" rel="noopener"
        style="display:inline-flex;align-items:center;gap:6px;background:#000;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -290,7 +297,7 @@ ${html}
 </div>
 <footer>
   <div class="footer-logo">Talented<span>At</span>AI</div>
-  <p style="margin-top:8px">&copy; 2026 TalentedAtAI. All rights reserved. &nbsp;·&nbsp; <a href="https://talentedatai.com">Home</a> &nbsp;·&nbsp; <a href="https://talentedatai.com/about.html">About</a> &nbsp;·&nbsp; <a href="https://talentedatai.com/privacy-policy.html">Privacy</a></p>
+  <p style="margin-top:8px">&copy; 2026 ${SITE_NAME}. All rights reserved. &nbsp;·&nbsp; <a href="${SITE_URL}">Home</a> &nbsp;·&nbsp; <a href="${SITE_URL}/about.html">About</a> &nbsp;·&nbsp; <a href="${SITE_URL}/privacy-policy.html">Privacy</a></p>
 </footer>
 </body>
 </html>`;
@@ -300,6 +307,6 @@ ${html}
 }
 
 articles.sort((a, b) => new Date(b.date) - new Date(a.date));
-fs.writeFileSync('./content/articles.json', JSON.stringify(articles, null, 2));
+fs.writeFileSync(path.join(__dirname, '../content/articles.json'), JSON.stringify(articles, null, 2));
 console.log('\nBuild complete. ' + mdFiles.length + ' article(s) built.');
 })();
