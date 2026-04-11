@@ -9,7 +9,7 @@ date: "2026-03-28"
 author: "TalentedAtAI Team"
 slug: "top-ai-tools-productivity-2026"
 featured: true
-status: "pending"
+status: "published"
 read_time: "8 min"
 image_alt: "Screenshot collage of top AI productivity tools in 2026"
 ---

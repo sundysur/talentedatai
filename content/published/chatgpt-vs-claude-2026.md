@@ -9,7 +9,7 @@ date: "2026-03-27"
 author: "TalentedAtAI Team"
 slug: "chatgpt-vs-claude-2026"
 featured: false
-status: "pending"
+status: "published"
 read_time: "6 min"
 image_alt: "ChatGPT vs Claude logo comparison graphic"
 ---

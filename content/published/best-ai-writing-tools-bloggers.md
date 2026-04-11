@@ -9,7 +9,7 @@ author: "TalentedAtAI Team"
 image: "ai-writing-tools-header.jpg"
 slug: "best-ai-writing-tools-bloggers"
 featured: false
-status: "pending"
+status: "published"
 read_time: "5 min"
 image_alt: "Blogger working at laptop with AI writing interface on screen"
 ---
