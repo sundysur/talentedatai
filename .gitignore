@@ -3,3 +3,7 @@ public/
 .DS_Store
 node_modules/
 content/audio/
+content/published/*.html
+content/articles.json
+static/images/articles/*-400w.jpg
+static/images/articles/*-800w.jpg
