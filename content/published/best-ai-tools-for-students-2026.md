@@ -8,6 +8,7 @@ read_time: "11 min"
 tags: ["AI tools", "students", "education", "free AI tools", "productivity"]
 image: "ai-tools-students-2026-header.jpg"
 slug: "best-ai-tools-for-students-2026"
+affiliate: true
 filters: ["Guides", "Beginners"]
 faq:
   - q: "What is the best free AI tool for students in 2026?"

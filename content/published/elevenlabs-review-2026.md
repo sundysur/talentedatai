@@ -9,6 +9,7 @@ tags: ["ElevenLabs", "AI voice", "text-to-speech", "voice cloning", "podcasting"
 filters: ["Reviews"]
 image: "elevenlabs-review-2026-header.jpg"
 slug: "elevenlabs-review-2026"
+affiliate: true
 faq:
   - q: "Is ElevenLabs free to use?"
     a: "ElevenLabs offers a free tier with 10,000 characters per month. Paid plans start from $5/month for the Starter plan."

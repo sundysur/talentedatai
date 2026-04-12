@@ -9,6 +9,7 @@ tags: ["AI image generators", "Midjourney", "DALL-E 3", "Adobe Firefly", "Flux",
 filters: ["Reviews", "Comparisons"]
 image: "ai-image-generators-header.jpg"
 slug: "best-ai-image-generators-2026"
+affiliate: true
 faq:
   - q: "What is the best AI image generator in 2026?"
     a: "Midjourney leads on artistic quality, Adobe Firefly on commercial safety, and DALL-E 3 on ease of use via ChatGPT."

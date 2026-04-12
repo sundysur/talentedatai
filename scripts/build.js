@@ -247,6 +247,7 @@ for (const file of mdFiles) {
     .audio-credit { font-size: 12px; color: #888; margin: -28px 0 36px; font-family: 'DM Sans', sans-serif; }
     .audio-credit a { color: #0066ff; text-decoration: none; }
     .audio-credit a:hover { text-decoration: underline; }
+    .affiliate-notice { font-size: 12px; color: #888; background: #f4f4f0; border-left: 3px solid #e0e0da; padding: 8px 12px; border-radius: 0 6px 6px 0; margin: 0 0 24px; font-family: 'DM Sans', sans-serif; line-height: 1.5; }
   </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}" crossorigin="anonymous"></script>
 </head>
@@ -282,6 +283,7 @@ for (const file of mdFiles) {
     Last updated: ${fm.date ? new Date(fm.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }) : ''}
   </p>
   <p class="article-desc">${fm.description || ''}</p>
+${fm.affiliate ? `<p class="affiliate-notice">This article contains affiliate links. If you purchase through these links we may earn a commission at no extra cost to you.</p>` : ''}
 ${fm.audio_url ? `
 <div class="audio-player" role="region" aria-label="Audio version of this article">
   <audio id="article-audio" src="${fm.audio_url}" preload="metadata"></audio>

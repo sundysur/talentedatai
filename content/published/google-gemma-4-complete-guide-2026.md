@@ -10,6 +10,7 @@ tags: ["Gemma 4", "Google AI", "open source AI", "on-device AI", "LLM"]
 filters: ["Reviews", "Guides"]
 image: "gemma-4-guide-header.jpg"
 slug: "google-gemma-4-complete-guide-2026"
+affiliate: true
 ---
 
 > **TL;DR:** Google Gemma 4 is a family of open-weight AI models released under an Apache 2.0 licence — meaning free commercial use, no per-token costs, and no data sent to Google's servers. The smallest variant runs on a smartphone; the largest competes with GPT-4-class models on many tasks.
