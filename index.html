@@ -197,23 +197,6 @@
   .filter-btn.active { background: var(--blue); border-color: var(--blue); color: var(--white); }
   .filter-count { font-size: 11px; opacity: 0.7; margin-left: 4px; }
   .no-results { grid-column: 1/-1; text-align: center; padding: 48px 24px; color: var(--gray-500); font-size: 15px; }
-  #sib-container input::placeholder { color: #c0ccda; }
-  #sib-container a { color: #0066ff; }
-  .sib-form { background: transparent !important; }
-  .sib-container--large {
-    background: transparent !important;
-    border: none !important;
-    max-width: 100% !important;
-    text-align: left !important;
-  }
-  #sib-form p { color: inherit; font-family: inherit; }
-  .sib-form-block__button {
-    background-color: #0066ff !important;
-    border-radius: 100px !important;
-    font-family: inherit !important;
-    padding: 12px 28px !important;
-    font-size: 15px !important;
-  }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3277838203710267" crossorigin="anonymous"></script>
 </head>
@@ -281,32 +264,26 @@
 <!-- Newsletter Signup Section -->
 <section class="newsletter-section" id="newsletter">
   <div class="newsletter-inner">
-    <span class="newsletter-badge">Free AI Guide</span>
-    <h2 class="newsletter-headline">Get the AI Dream Team Playbook</h2>
-    <p class="newsletter-subhead">Practical guides, honest reviews and real
-    strategies for working smarter with AI — delivered weekly.</p>
+    <div class="newsletter-badge">FREE GUIDE</div>
+    <h2 class="newsletter-headline">Work Smarter with AI</h2>
+    <p class="newsletter-subhead">Get the free AI Dream Team guide +
+    practical AI strategies delivered weekly. No spam, unsubscribe
+    anytime.</p>
     <ul class="newsletter-bullets">
-      <li>Honest AI tool reviews — no sponsored rankings</li>
+      <li>Weekly AI tool reviews and comparisons</li>
       <li>Practical guides you can use immediately</li>
-      <li>Weekly newsletter · Free forever</li>
+      <li>Free AI Dream Team Playbook on signup</li>
     </ul>
-    <form id="sib-form" method="POST" action="https://8a2885bb.sibforms.com/serve/MUIFAJM1SA6XqgRWRdC2Hq6liAdL7SZNnX3S4yQsHHVOK6TPXR9boE7mLpp0ddtt18o2Nw-lojO6y-S7RfRFjgpyUIW70apN5HNa4qma2qJ1Kf0cbEpMowk4rWIWscLB0R6UX6rELFHAzZ1wzOVYgGf3Sq-fnHFBHTCtdPQq5wmUh9h3G3B2AEir3shm2OHK4uyh6Pnv3k3ZyJEsmw==" data-type="subscription" style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-start;max-width:520px;margin:0 auto;">
-      <div style="flex:1;min-width:240px;">
-        <input
-          type="email"
-          id="EMAIL"
-          name="EMAIL"
-          placeholder="Your email address"
-          required
-          autocomplete="off"
-          class="newsletter-input"
-        />
+    <form action="https://us17.list-manage.com/subscribe/post?u=d216d8d113f8f68e40d85652c&amp;id=62c82cee46" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <div class="newsletter-form-row">
+        <input type="email" name="EMAIL" placeholder="Your email address" required class="newsletter-input" id="mce-EMAIL" />
+        <button type="submit" name="subscribe" class="newsletter-btn">
+          Get free guide →
+        </button>
       </div>
-      <button type="submit" form="sib-form" class="newsletter-btn">
-        Get free guide →
-      </button>
-      <input type="text" name="email_address_check" value="" style="display:none;">
-      <input type="hidden" name="locale" value="en">
+      <div style="position:absolute;left:-5000px;" aria-hidden="true">
+        <input type="text" name="b_d216d8d113f8f68e40d85652c_62c82cee46" tabindex="-1" value="">
+      </div>
     </form>
     <p class="newsletter-disclaimer">Free forever · No spam · Unsubscribe anytime</p>
   </div>
@@ -589,15 +566,6 @@
   });
 </script>
 
-<script>
-  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-  window.LOCALE = 'en';
-  window.EMAIL_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
-  window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank.";
-  window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
-  var AUTOHIDE = Boolean(1);
-</script>
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
 </body>
 </html>
