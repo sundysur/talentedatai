@@ -4,7 +4,7 @@ description: "A direct comparison of Adobe Firefly, Midjourney, ChatGPT Image (O
 category: "AI Tools"
 tags: ["ai image generators", "adobe firefly", "midjourney", "chatgpt image", "openai image generation", "flux", "image generation"]
 filters: ["Comparisons", "Reviews"]
-date: "2026-04-12"
+date: "2026-04-12T10:00:00"
 author: "TalentedAtAI Team"
 author_bio: "The TalentedAtAI team tests AI tools so you can make smarter decisions about which ones are worth your time and money."
 slug: "adobe-firefly-vs-midjourney-vs-chatgpt-image-vs-flux-2026"
