@@ -129,7 +129,13 @@ for (const file of mdFiles) {
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "${SITE_URL}/content/published/${slug}.html"
-    }
+    }${fm.audio_url ? `,
+    "audio": {
+      "@type": "AudioObject",
+      "contentUrl": "${fm.audio_url}",
+      "encodingFormat": "audio/mpeg",
+      "name": "Audio version of ${fm.title}"
+    }` : ''}
   }
   </script>
   <script type="application/ld+json">
@@ -228,6 +234,16 @@ for (const file of mdFiles) {
     .footer-logo{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:white;margin-bottom:8px}
     .footer-logo span{color:var(--blue)}
     @media(max-width:640px){nav{padding:0 20px}.article-hero{padding:40px 20px 32px}.article-body{padding:32px 20px 64px}}
+    .audio-player { margin: 0 0 36px; }
+    .audio-player__inner { display: flex; align-items: center; gap: 14px; background: #f4f4f0; border-radius: 12px; padding: 14px 18px; }
+    .audio-btn { width: 42px; height: 42px; border-radius: 50%; background: #0066ff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #fff; transition: background 0.2s, transform 0.15s; }
+    .audio-btn:hover { background: #0052cc; transform: scale(1.05); }
+    .audio-player__content { flex: 1; min-width: 0; }
+    .audio-player__label { font-size: 13px; font-weight: 600; color: #0a0a0a; margin: 0 0 8px; font-family: 'DM Sans', sans-serif; }
+    .audio-player__duration { font-weight: 400; color: #888; }
+    .audio-player__bar { background: #e0e0da; border-radius: 4px; height: 4px; cursor: pointer; position: relative; }
+    .audio-player__progress { background: #0066ff; height: 4px; border-radius: 4px; width: 0%; transition: width 0.1s linear; pointer-events: none; }
+    .audio-player__time { font-size: 12px; color: #888; flex-shrink: 0; font-family: 'DM Sans', sans-serif; min-width: 32px; text-align: right; }
   </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}" crossorigin="anonymous"></script>
 </head>
@@ -277,6 +293,72 @@ ${fm.image ? `
   />
 </div>` : ''}
 </div>
+${fm.audio_url ? `
+<div class="audio-player" role="region" aria-label="Audio version of this article">
+  <audio id="article-audio" src="${fm.audio_url}" preload="metadata"></audio>
+  <div class="audio-player__inner">
+    <button class="audio-btn" onclick="toggleAudio()" aria-label="Play audio" id="audio-btn">
+      <svg class="audio-icon" id="play-icon" width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true"><path d="M4 2.5l11 6.5-11 6.5z"/></svg>
+      <svg class="audio-icon" id="pause-icon" width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true" style="display:none"><rect x="3" y="2" width="4" height="14" rx="1"/><rect x="11" y="2" width="4" height="14" rx="1"/></svg>
+    </button>
+    <div class="audio-player__content">
+      <div class="audio-player__label">🎧 Listen to this article <span class="audio-player__duration" id="audio-duration"></span></div>
+      <div class="audio-player__bar" onclick="seekAudio(event, this)" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="audio-player__progress" id="audio-progress"></div>
+      </div>
+    </div>
+    <span class="audio-player__time" id="audio-time">0:00</span>
+  </div>
+</div>
+<script>
+(function(){
+  var a=document.getElementById('article-audio');
+  var prog=document.getElementById('audio-progress');
+  var time=document.getElementById('audio-time');
+  var dur=document.getElementById('audio-duration');
+  var btn=document.getElementById('audio-btn');
+  a.addEventListener('loadedmetadata',function(){
+    var m=Math.floor(a.duration/60);
+    var s=Math.floor(a.duration%60);
+    dur.textContent='· '+(m+':'+(s<10?'0':'')+s)+' min';
+  });
+  a.addEventListener('timeupdate',function(){
+    var pct=a.duration?(a.currentTime/a.duration)*100:0;
+    prog.style.width=pct+'%';
+    document.querySelector('.audio-player__bar').setAttribute('aria-valuenow',Math.round(pct));
+    var m=Math.floor(a.currentTime/60);
+    var s=Math.floor(a.currentTime%60);
+    time.textContent=m+':'+(s<10?'0':'')+s;
+  });
+  a.addEventListener('ended',function(){
+    document.getElementById('play-icon').style.display='block';
+    document.getElementById('pause-icon').style.display='none';
+    btn.setAttribute('aria-label','Play audio');
+    prog.style.width='0%';
+    time.textContent='0:00';
+  });
+  window.toggleAudio=function(){
+    var play=document.getElementById('play-icon');
+    var pause=document.getElementById('pause-icon');
+    if(a.paused){
+      a.play();
+      play.style.display='none';
+      pause.style.display='block';
+      btn.setAttribute('aria-label','Pause audio');
+    } else {
+      a.pause();
+      play.style.display='block';
+      pause.style.display='none';
+      btn.setAttribute('aria-label','Play audio');
+    }
+  };
+  window.seekAudio=function(e,bar){
+    var rect=bar.getBoundingClientRect();
+    var pct=(e.clientX-rect.left)/rect.width;
+    if(a.duration) a.currentTime=pct*a.duration;
+  };
+})();
+</script>` : ''}
 <div class="article-body">
 ${html}
 </div>
