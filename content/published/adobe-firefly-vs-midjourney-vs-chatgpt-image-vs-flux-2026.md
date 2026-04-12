@@ -13,7 +13,7 @@ status: "pending"
 read_time: "11 min"
 image: "ai-image-generators-comparison-2026.jpg"
 image_alt: "Adobe Firefly, Midjourney, ChatGPT, and Flux logos side by side on a dark background"
-audio_url: ""
+audio_url: "https://pub-82fbb2522fba410c9262febf2afac462.r2.dev/ai-image-generators-audio.mp3"
 faq:
   - q: "Which AI image generator produces the best quality images in 2026?"
     a: "Midjourney v7 produces the highest-quality artistic and photorealistic images in 2026. Flux Pro is a close second for photorealism specifically. For clean, commercial-ready images, Adobe Firefly is the more consistent choice."
