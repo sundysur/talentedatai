@@ -234,8 +234,8 @@ for (const file of mdFiles) {
     .footer-logo{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:white;margin-bottom:8px}
     .footer-logo span{color:var(--blue)}
     @media(max-width:640px){nav{padding:0 20px}.article-hero{padding:40px 20px 32px}.article-body{padding:32px 20px 64px}}
-    .audio-player { margin: 0 0 36px; }
-    .audio-player__inner { display: flex; align-items: center; gap: 14px; background: #f4f4f0; border-radius: 12px; padding: 14px 18px; }
+    .audio-player { margin: 24px 0 36px; width: 100%; max-width: 100%; box-sizing: border-box; }
+    .audio-player__inner { display: flex; align-items: center; gap: 14px; background: #eeeee8; border: 1.5px solid #e0e0da; border-radius: 12px; padding: 14px 18px; width: 100%; box-sizing: border-box; }
     .audio-btn { width: 42px; height: 42px; border-radius: 50%; background: #0066ff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #fff; transition: background 0.2s, transform 0.15s; }
     .audio-btn:hover { background: #0052cc; transform: scale(1.05); }
     .audio-player__content { flex: 1; min-width: 0; }
@@ -279,20 +279,6 @@ for (const file of mdFiles) {
     Last updated: ${fm.date ? new Date(fm.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }) : ''}
   </p>
   <p class="article-desc">${fm.description || ''}</p>
-${fm.image ? `
-<div style="margin-top:32px;border-radius:16px;overflow:hidden;max-height:420px;">
-  <img
-    src="/static/images/articles/${fm.image}"
-    srcset="/static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-400w.jpg 400w,
-            /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-800w.jpg 800w,
-            /static/images/articles/${fm.image} 1600w"
-    sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
-    alt="${fm.title || ''}"
-    loading="lazy"
-    style="width:100%;height:420px;object-fit:cover;display:block;"
-  />
-</div>` : ''}
-</div>
 ${fm.audio_url ? `
 <div class="audio-player" role="region" aria-label="Audio version of this article">
   <audio id="article-audio" src="${fm.audio_url}" preload="metadata"></audio>
@@ -359,6 +345,20 @@ ${fm.audio_url ? `
   };
 })();
 </script>` : ''}
+${fm.image ? `
+<div style="margin-top:32px;border-radius:16px;overflow:hidden;max-height:420px;">
+  <img
+    src="/static/images/articles/${fm.image}"
+    srcset="/static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-400w.jpg 400w,
+            /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-800w.jpg 800w,
+            /static/images/articles/${fm.image} 1600w"
+    sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
+    alt="${fm.title || ''}"
+    loading="lazy"
+    style="width:100%;height:420px;object-fit:cover;display:block;"
+  />
+</div>` : ''}
+</div>
 <div class="article-body">
 ${html}
 </div>
