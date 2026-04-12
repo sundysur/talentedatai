@@ -1,0 +1,17 @@
+Google just released a powerful AI model you can run for free on your own hardware — no subscription, no API costs, no data sent to any server. And thanks to one specific legal detail, it might be the most important open-source AI release of 2026.
+
+It's called Gemma 4, and here are the five things you actually need to know about it.
+
+First, the licence. Google released Gemma 4 under Apache 2.0 — one of the most permissive open-source licences that exists. That means you can use it commercially, build products on it, and modify it. Crucially, Google cannot come back later and change the terms on you. In a world where "we're adjusting our terms" announcements have made developers and legal teams deeply nervous about building on open AI models, this is a genuine differentiator. The licence is a fact, not a claim to be tested.
+
+Second, there are three models in the family, not one. The smallest, called E2B, runs on a smartphone or a Raspberry Pi. The middle option, E4B, is the sweet spot for most developers — capable enough for serious work, small enough to run on a laptop. And the flagship 27B model uses a clever architecture called mixture-of-experts, which means it has 26 billion parameters but behaves more like a 4-billion parameter model when it's actually running. A single consumer GPU — an RTX 4090 — can handle it in compressed form.
+
+Third, these models are genuinely fast. Gemma 4 is up to four times faster than the previous version, with up to 60 percent less battery consumption on mobile hardware. That's not a marginal improvement — it's the difference between a model that feels like a useful tool and one that makes you wait. All three variants also support a context window of 128,000 tokens, which is roughly an entire book's worth of text in a single input.
+
+Fourth, Gemma 4 is now multimodal. The previous Gemma versions could only process text. The E2B and E4B models now accept images and audio alongside text — meaning you can do document analysis, image description, and audio transcription all running locally, without any external API. For developers building privacy-sensitive applications, this is a significant expansion of what's possible without sending data off-device.
+
+Fifth, the bigger picture matters here. Google releasing this on Apache 2.0 is strategy, not charity. Chinese AI labs have been releasing competitive open-weight models at pace, and Google's response is to make Gemma compelling enough that developers choose it by default. That context is worth understanding — not because it makes Gemma 4 less useful, but because it helps you think clearly about what you're building on and why Google is invested in keeping it good.
+
+The practical verdict: if you're a developer who needs local inference for privacy or cost reasons, or a company with regulatory constraints that make cloud APIs awkward, or just someone who wants capable AI running on the hardware you already own — Gemma 4 is worth your time right now. You can be up and running in fifteen minutes using a tool called Ollama.
+
+We've done a full breakdown of the architecture, the setup steps, and how it compares to Llama 4 and Mistral on the TalentedAtAI website. The link is in the description — go read the full article and decide for yourself whether this belongs in your stack.
