@@ -244,6 +244,9 @@ for (const file of mdFiles) {
     .audio-player__bar { background: #e0e0da; border-radius: 4px; height: 4px; cursor: pointer; position: relative; }
     .audio-player__progress { background: #0066ff; height: 4px; border-radius: 4px; width: 0%; transition: width 0.1s linear; pointer-events: none; }
     .audio-player__time { font-size: 12px; color: #888; flex-shrink: 0; font-family: 'DM Sans', sans-serif; min-width: 32px; text-align: right; }
+    .audio-credit { font-size: 12px; color: #888; margin: -28px 0 36px; font-family: 'DM Sans', sans-serif; }
+    .audio-credit a { color: #0066ff; text-decoration: none; }
+    .audio-credit a:hover { text-decoration: underline; }
   </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}" crossorigin="anonymous"></script>
 </head>
@@ -296,6 +299,7 @@ ${fm.audio_url ? `
     <span class="audio-player__time" id="audio-time">0:00</span>
   </div>
 </div>
+${fm.audio_url ? `<p class="audio-credit">Audio summary by <a href="https://try.elevenlabs.io/ihsithj42jfj" target="_blank" rel="noopener">ElevenLabs</a> — try it free</p>` : ''}
 <script>
 (function(){
   var a=document.getElementById('article-audio');
