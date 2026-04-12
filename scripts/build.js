@@ -288,7 +288,7 @@ ${fm.audio_url ? `
       <svg class="audio-icon" id="pause-icon" width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true" style="display:none"><rect x="3" y="2" width="4" height="14" rx="1"/><rect x="11" y="2" width="4" height="14" rx="1"/></svg>
     </button>
     <div class="audio-player__content">
-      <div class="audio-player__label">🎧 Listen to this article <span class="audio-player__duration" id="audio-duration"></span></div>
+      <div class="audio-player__label">🎧 Listen to the audio summary <span class="audio-player__duration" id="audio-duration"></span></div>
       <div class="audio-player__bar" onclick="seekAudio(event, this)" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
         <div class="audio-player__progress" id="audio-progress"></div>
       </div>
