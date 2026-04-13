@@ -65,9 +65,9 @@
   .nav__links a { font-size: 14px; font-weight: 500; color: var(--gray-700); transition: color var(--transition); }
   .nav__links a:hover { color: var(--blue); }
   /* CONTENT AREA */
-  .content-area { max-width: 1200px; margin: 0 auto; padding: 0 24px 64px; }
+  .content-area { max-width: 1200px; margin: 0 auto; padding: 0 24px 64px; min-height: 1800px; }
   /* FEATURED CARD */
-  .featured-card-wrap { margin: 24px 0 0; }
+  .featured-card-wrap { margin: 24px 0 0; min-height: 320px; }
   .featured-card { display: grid; grid-template-columns: 1.2fr 1fr; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(0,0,0,0.07); cursor: pointer; transition: box-shadow var(--transition); }
   .featured-card:hover { box-shadow: 0 8px 40px rgba(0,102,255,0.12); }
   .featured-card__img { position: relative; min-height: 280px; overflow: hidden; background: var(--gray-100); }
@@ -82,6 +82,7 @@
   .featured-card__read { font-size: 13px; font-weight: 600; color: var(--blue); }
   /* SECONDARY ROW */
   .secondary-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0 0; }
+  .secondary-row { min-height: 130px; }
   .secondary-card { display: flex; gap: 16px; align-items: flex-start; padding: 20px; border: 1px solid rgba(0,0,0,0.07); border-radius: 12px; cursor: pointer; transition: box-shadow var(--transition), border-color var(--transition); background: var(--white); }
   .secondary-card:hover { box-shadow: 0 4px 20px rgba(0,102,255,0.10); border-color: rgba(0,102,255,0.15); }
   .secondary-card__thumb { width: 120px; height: 80px; border-radius: 8px; flex-shrink: 0; overflow: hidden; background: var(--gray-100); }
@@ -180,6 +181,9 @@
   @media(max-width:768px) {
     .nav__links { display: none; }
     .nav__hamburger { display: flex; }
+    .content-area { min-height: 3200px; }
+    .featured-card-wrap { min-height: 420px; }
+    .secondary-row { min-height: 260px; }
     .featured-card { grid-template-columns: 1fr; }
     .featured-card__img { min-height: 200px; }
     .featured-card__body { border-left: none; border-top: 1px solid rgba(0,0,0,0.07); }
