@@ -8,7 +8,7 @@ author: "TalentedAtAI Team"
 read_time: "10 min"
 tags: ["ElevenLabs", "Murf", "Descript", "AI voice", "text-to-speech", "voice cloning", "podcasting", "content creation", "AI Tools", "audio", "comparison"]
 filters: ["Reviews", "Comparisons"]
-image: "elevenlabs-vs-murf-vs-descript-2026-header.jpg"
+image: "elevenlabs-vs-murf-vs-descript-2026.jpg"
 slug: "elevenlabs-vs-murf-vs-descript-2026"
 affiliate: true
 faq:
