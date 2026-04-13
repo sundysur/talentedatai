@@ -3,13 +3,13 @@
 
   <url>
     <loc>https://talentedatai.com/</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-04-13</lastmod>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://talentedatai.com/articles.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-04-13</lastmod>
     <priority>0.8</priority>
   </url>
 
@@ -158,6 +158,30 @@
   <url>
     <loc>https://talentedatai.com/content/published/best-ai-tools-for-students-2026.html</loc>
     <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/content/published/adobe-firefly-vs-midjourney-vs-chatgpt-image-vs-flux-2026.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/content/published/elevenlabs-vs-murf-vs-descript-2026.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/content/published/gemma-4-vs-llama-4-2026.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://talentedatai.com/content/published/perplexity-vs-chatgpt-2026.html</loc>
+    <lastmod>2026-04-13</lastmod>
     <priority>0.8</priority>
   </url>
 
