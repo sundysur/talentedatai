@@ -23,7 +23,7 @@ async function generateResponsiveImages(imageFile) {
   const imgDir = path.join(__dirname, '../static/images/articles');
   const srcPath = path.join(imgDir, imageFile);
 
-  if (!require('fs').existsSync(srcPath)) {
+  if (!fs.existsSync(srcPath)) {
     console.warn('Missing source image: ' + srcPath);
     return;
   }
@@ -32,15 +32,37 @@ async function generateResponsiveImages(imageFile) {
   const baseName = imageFile.replace(/\.[^/.]+$/, '');
 
   for (const size of sizes) {
-    const destName = `${baseName}-${size}w.jpg`;
-    const destPath = path.join(imgDir, destName);
-    if (!require('fs').existsSync(destPath)) {
+    // Generate JPEG variant
+    const jpgName = `${baseName}-${size}w.jpg`;
+    const jpgPath = path.join(imgDir, jpgName);
+    if (!fs.existsSync(jpgPath)) {
       await sharp(srcPath)
         .resize(size, null, { withoutEnlargement: true })
         .jpeg({ quality: 82, progressive: true })
-        .toFile(destPath);
-      console.log(`Generated: ${destName}`);
+        .toFile(jpgPath);
+      console.log(`Generated: ${jpgName}`);
     }
+
+    // Generate WebP variant
+    const webpName = `${baseName}-${size}w.webp`;
+    const webpPath = path.join(imgDir, webpName);
+    if (!fs.existsSync(webpPath)) {
+      await sharp(srcPath)
+        .resize(size, null, { withoutEnlargement: true })
+        .webp({ quality: 80 })
+        .toFile(webpPath);
+      console.log(`Generated: ${webpName}`);
+    }
+  }
+
+  // Generate full-size WebP
+  const fullWebpName = `${baseName}.webp`;
+  const fullWebpPath = path.join(imgDir, fullWebpName);
+  if (!fs.existsSync(fullWebpPath)) {
+    await sharp(srcPath)
+      .webp({ quality: 80 })
+      .toFile(fullWebpPath);
+    console.log(`Generated: ${fullWebpName}`);
   }
 }
 
@@ -50,6 +72,7 @@ console.log('Building ' + mdFiles.length + ' article(s)...');
 const articles = [];
 
 (async () => {
+try {
 for (const file of mdFiles) {
   const raw = fs.readFileSync(path.join(publishedDir, file), 'utf8');
   const parsed = matter(raw);
@@ -81,6 +104,7 @@ for (const file of mdFiles) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>${fm.title || slug} | ${SITE_NAME}</title>
   <link rel="canonical" href="${SITE_URL}/content/published/${slug}.html">
+  ${fm.image ? `<link rel="preload" as="image" type="image/webp" imagesrcset="/static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-400w.webp 400w, /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-800w.webp 800w, /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}.webp 1600w" imagesizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px">` : ''}
   <meta name="description" content="${fm.description}">
   <meta property="og:title" content="${fm.title} — ${SITE_NAME}">
   <meta property="og:description" content="${fm.description}">
@@ -91,7 +115,10 @@ for (const file of mdFiles) {
   <meta name="twitter:title" content="${fm.title} — ${SITE_NAME}">
   <meta name="twitter:description" content="${fm.description}">
   ${fm.image ? `<meta name="twitter:image" content="${SITE_URL}/static/images/articles/${fm.image}">` : ''}
+  <meta name="robots" content="index, follow">
   <meta name="author" content="${fm.author || DEFAULT_AUTHOR}"/>
+  <meta property="og:site_name" content="${SITE_NAME}">
+  <meta property="article:published_time" content="${fm.date}">
   ${fm.faq && Array.isArray(fm.faq) ? `<script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -107,11 +134,11 @@ for (const file of mdFiles) {
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "${fm.title}",
-    "description": "${fm.description}",
+    "headline": "${(fm.title || '').replace(/\\/g, '\\\\').replace(/"/g, '\\"')}",
+    "description": "${(fm.description || '').replace(/\\/g, '\\\\').replace(/"/g, '\\"')}",
     ${fm.image ? `"image": "${SITE_URL}/static/images/articles/${fm.image}",` : ''}
     "datePublished": "${fm.date}",
-    "dateModified": "${fm.date}",
+    "dateModified": "${fm.date_modified || fm.date}",
     "author": {
       "@type": "Organization",
       "name": "${SITE_NAME}",
@@ -134,7 +161,7 @@ for (const file of mdFiles) {
       "@type": "AudioObject",
       "contentUrl": "${fm.audio_url}",
       "encodingFormat": "audio/mpeg",
-      "name": "Audio version of ${fm.title}"
+      "name": "Audio version of ${(fm.title || '').replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"
     }` : ''}
   }
   </script>
@@ -158,7 +185,7 @@ for (const file of mdFiles) {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "${fm.title}",
+        "name": "${(fm.title || '').replace(/\\/g, '\\\\').replace(/"/g, '\\"')}",
         "item": "${SITE_URL}/content/published/${slug}.html"
       }
     ]
@@ -178,6 +205,8 @@ for (const file of mdFiles) {
   <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" /></noscript>
   <style>
+    @font-face{font-family:'Syne Fallback';src:local('Arial Black'),local('Arial');size-adjust:97%;ascent-override:105%;descent-override:30%;line-gap-override:0%}
+    @font-face{font-family:'DM Sans Fallback';src:local('Arial'),local('Helvetica');size-adjust:105%;ascent-override:95%;descent-override:25%;line-gap-override:0%}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
       --blue:#0066ff;
@@ -190,11 +219,11 @@ for (const file of mdFiles) {
       --gray-200:#e8e8e5;
       --white:#fafaf8;
     }
-    body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+    body{font-family:'DM Sans','DM Sans Fallback',sans-serif;color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
     a{color:var(--blue);text-decoration:none}
     a:hover{text-decoration:underline}
     nav{position:sticky;top:0;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-200);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;z-index:100}
-    .nav-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--dark);text-decoration:none}
+    .nav-logo{font-family:'Syne','Syne Fallback',sans-serif;font-size:18px;font-weight:800;color:var(--dark);text-decoration:none}
     .nav-logo span{color:var(--blue)}
     .nav-back{font-size:13px;color:var(--gray-600);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
     .nav-back:hover{color:var(--blue);text-decoration:none}
@@ -205,12 +234,12 @@ for (const file of mdFiles) {
     .article-hero{max-width:760px;margin:0 auto;padding:64px 24px 48px}
     .category-pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px;background:var(--blue-light);color:var(--blue);margin-bottom:20px}
     .article-meta{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray-400);margin-bottom:24px;flex-wrap:wrap}
-    .article-hero h1{font-family:'Syne',sans-serif;font-size:clamp(30px,5vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:20px;color:var(--dark)}
+    .article-hero h1{font-family:'Syne','Syne Fallback',sans-serif;font-size:clamp(30px,5vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:20px;color:var(--dark)}
     .article-desc{font-size:18px;color:var(--gray-600);line-height:1.65;font-weight:300;padding-bottom:40px;border-bottom:1px solid var(--gray-200)}
     .article-body{max-width:760px;margin:0 auto;padding:48px 24px 96px}
-    .article-body h2{font-family:'Syne',sans-serif;font-size:28px;font-weight:700;letter-spacing:-.02em;line-height:1.2;margin:56px 0 16px;color:var(--dark)}
-    .article-body h3{font-family:'Syne',sans-serif;font-size:21px;font-weight:700;margin:40px 0 12px;color:var(--dark)}
-    .article-body h4{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin:28px 0 8px;color:var(--dark)}
+    .article-body h2{font-family:'Syne','Syne Fallback',sans-serif;font-size:28px;font-weight:700;letter-spacing:-.02em;line-height:1.2;margin:56px 0 16px;color:var(--dark)}
+    .article-body h3{font-family:'Syne','Syne Fallback',sans-serif;font-size:21px;font-weight:700;margin:40px 0 12px;color:var(--dark)}
+    .article-body h4{font-family:'Syne','Syne Fallback',sans-serif;font-size:17px;font-weight:700;margin:28px 0 8px;color:var(--dark)}
     .article-body p{margin-bottom:24px;font-size:17px;color:#2a2a28;line-height:1.8}
     .article-body ul,.article-body ol{margin:0 0 28px 0;padding:0;list-style:none}
     .article-body ul li{font-size:17px;color:#2a2a28;margin-bottom:10px;padding-left:22px;position:relative;line-height:1.7}
@@ -226,12 +255,12 @@ for (const file of mdFiles) {
     .article-body pre{background:var(--dark);color:#e8e8e5;padding:24px;border-radius:12px;overflow-x:auto;margin:28px 0;font-size:14px;line-height:1.6}
     .article-body pre code{background:none;padding:0;color:inherit}
     .article-body table{width:100%;border-collapse:collapse;margin:28px 0;font-size:15px}
-    .article-body th{font-family:'Syne',sans-serif;font-weight:700;text-align:left;padding:12px 16px;background:var(--gray-100);border-bottom:2px solid var(--gray-200)}
+    .article-body th{font-family:'Syne','Syne Fallback',sans-serif;font-weight:700;text-align:left;padding:12px 16px;background:var(--gray-100);border-bottom:2px solid var(--gray-200)}
     .article-body td{padding:12px 16px;border-bottom:1px solid var(--gray-200);color:#2a2a28}
     .article-body tr:last-child td{border-bottom:none}
     footer{background:var(--dark);color:rgba(255,255,255,.45);text-align:center;padding:40px 24px;font-size:13px}
     footer a{color:var(--blue)}
-    .footer-logo{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:white;margin-bottom:8px}
+    .footer-logo{font-family:'Syne','Syne Fallback',sans-serif;font-size:16px;font-weight:800;color:white;margin-bottom:8px}
     .footer-logo span{color:var(--blue)}
     @media(max-width:640px){nav{padding:0 20px}.article-hero{padding:40px 20px 32px}.article-body{padding:32px 20px 64px}}
     .audio-player { margin: 24px 0 36px; width: 100%; max-width: 100%; box-sizing: border-box; }
@@ -249,7 +278,6 @@ for (const file of mdFiles) {
     .audio-credit a:hover { text-decoration: underline; }
     .affiliate-notice { font-size: 12px; color: #888; background: #f4f4f0; border-left: 3px solid #e0e0da; padding: 8px 12px; border-radius: 0 6px 6px 0; margin: 0 0 24px; font-family: 'DM Sans', sans-serif; line-height: 1.5; }
   </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="progress-bar" style="position:fixed;top:0;left:0;height:3px;background:#0066ff;width:0%;z-index:9999;transition:width 0.1s;"></div>
@@ -353,16 +381,26 @@ ${fm.audio_url ? `<p class="audio-credit">Audio summary by <a href="https://try.
 </script>` : ''}
 ${fm.image ? `
 <div style="margin-top:32px;border-radius:16px;overflow:hidden;max-height:420px;">
-  <img
-    src="/static/images/articles/${fm.image}"
-    srcset="/static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-400w.jpg 400w,
-            /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-800w.jpg 800w,
-            /static/images/articles/${fm.image} 1600w"
-    sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
-    alt="${fm.title || ''}"
-    loading="lazy"
-    style="width:100%;height:420px;object-fit:cover;display:block;"
-  />
+  <picture>
+    <source
+      type="image/webp"
+      srcset="/static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-400w.webp 400w,
+              /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-800w.webp 800w,
+              /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}.webp 1600w"
+      sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px">
+    <img
+      src="/static/images/articles/${fm.image}"
+      srcset="/static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-400w.jpg 400w,
+              /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-800w.jpg 800w,
+              /static/images/articles/${fm.image} 1600w"
+      sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
+      alt="${fm.image_alt || fm.title || ''}"
+      width="760"
+      height="420"
+      fetchpriority="high"
+      style="width:100%;height:420px;object-fit:cover;display:block;"
+    />
+  </picture>
 </div>` : ''}
 </div>
 <div class="article-body">
@@ -387,6 +425,15 @@ ${html}
   <div class="footer-logo">Talented<span>At</span>AI</div>
   <p style="margin-top:8px">&copy; 2026 ${SITE_NAME}. All rights reserved. &nbsp;·&nbsp; <a href="${SITE_URL}">Home</a> &nbsp;·&nbsp; <a href="${SITE_URL}/about.html">About</a> &nbsp;·&nbsp; <a href="${SITE_URL}/privacy-policy.html">Privacy</a></p>
 </footer>
+<script>
+  window.addEventListener('load', function() {
+    var s = document.createElement('script');
+    s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}';
+    s.async = true;
+    s.crossOrigin = 'anonymous';
+    document.body.appendChild(s);
+  });
+</script>
 </body>
 </html>`;
 
@@ -396,5 +443,51 @@ ${html}
 
 articles.sort((a, b) => new Date(b.date) - new Date(a.date));
 fs.writeFileSync(path.join(__dirname, '../content/articles.json'), JSON.stringify(articles, null, 2));
+
+// Generate sitemap
+const today = new Date().toISOString().split('T')[0];
+const sitemapEntries = articles.map(a => `  <url>
+    <loc>${SITE_URL}/content/published/${a.slug}.html</loc>
+    <lastmod>${a.date}</lastmod>
+    <priority>0.8</priority>
+  </url>`).join('\n');
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${SITE_URL}/</loc>
+    <lastmod>${today}</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>${SITE_URL}/articles.html</loc>
+    <lastmod>${today}</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>${SITE_URL}/about.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>${SITE_URL}/contact.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>${SITE_URL}/privacy-policy.html</loc>
+    <priority>0.4</priority>
+  </url>
+${sitemapEntries}
+</urlset>`;
+
+fs.writeFileSync(path.join(__dirname, '../sitemap.xml'), sitemap);
+console.log('Sitemap generated with ' + articles.length + ' article(s).');
+
 console.log('\nBuild complete. ' + mdFiles.length + ' article(s) built.');
-})();
+} catch (error) {
+  console.error('Build failed:', error.message);
+  process.exit(1);
+}
+})().catch(error => {
+  console.error('Unhandled build error:', error);
+  process.exit(1);
+});

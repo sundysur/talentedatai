@@ -30,6 +30,8 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" /></noscript>
 
   <style>
+    @font-face { font-family: 'Syne Fallback'; src: local('Arial Black'), local('Arial'); size-adjust: 97%; ascent-override: 105%; descent-override: 30%; line-gap-override: 0%; }
+    @font-face { font-family: 'DM Sans Fallback'; src: local('Arial'), local('Helvetica'); size-adjust: 105%; ascent-override: 95%; descent-override: 25%; line-gap-override: 0%; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --blue: #0066ff;
@@ -41,8 +43,8 @@
       --gray-300: #b8b8d0;
       --gray-100: #f4f4f8;
       --white: #ffffff;
-      --font-head: 'Syne', sans-serif;
-      --font-body: 'DM Sans', sans-serif;
+      --font-head: 'Syne', 'Syne Fallback', sans-serif;
+      --font-body: 'DM Sans', 'DM Sans Fallback', sans-serif;
       --radius: 16px;
       --shadow: 0 4px 24px rgba(0,102,255,0.08);
       --shadow-hover: 0 8px 40px rgba(0,102,255,0.15);
@@ -288,7 +290,6 @@
       .newsletter-btn { justify-content: center; width: 100%; }
     }
   </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3277838203710267" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -453,7 +454,22 @@
       const arrowSvg    = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
       const thumbContent = article.image
-        ? `<img src="${article.image}" alt="${article.title}" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">`
+        ? `<picture>
+        <source type="image/webp"
+          srcset="${article.image.replace(/\.[^/.]+$/, '-400w.webp')} 400w,
+                  ${article.image.replace(/\.[^/.]+$/, '-800w.webp')} 800w,
+                  ${article.image.replace(/\.[^/.]+$/, '.webp')} 1600w"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw">
+        <img src="${article.image.replace(/\.[^/.]+$/, '-400w.jpg')}"
+          srcset="${article.image.replace(/\.[^/.]+$/, '-400w.jpg')} 400w,
+                  ${article.image.replace(/\.[^/.]+$/, '-800w.jpg')} 800w,
+                  ${article.image} 1600w"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          alt="${article.title}"
+          width="400" height="225"
+          loading="lazy"
+          style="width:100%;height:100%;object-fit:cover;display:block;">
+        </picture>`
         : `<div class="article-card__thumb-inner">${thumbEmoji}</div>`;
 
       const thumbHtml = `<div class="article-card__thumb ${article.image ? '' : 'thumb--' + color}">
@@ -585,6 +601,15 @@
       btn.classList.remove('open');
       menu.classList.remove('open');
     }
+  });
+</script>
+<script>
+  window.addEventListener('load', function() {
+    var s = document.createElement('script');
+    s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3277838203710267';
+    s.async = true;
+    s.crossOrigin = 'anonymous';
+    document.body.appendChild(s);
   });
 </script>
 

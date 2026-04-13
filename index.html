@@ -15,7 +15,7 @@
   <meta name="twitter:title" content="TalentedAtAI — Practical AI Guides, Reviews and Strategies">
   <meta name="twitter:description" content="Practical guides, honest reviews and real strategies for working smarter with AI.">
   <meta name="twitter:image" content="https://talentedatai.com/static/images/articles/ai-agents-header.jpg">
-  <link rel="canonical" href="https://talentedatai.com" />
+  <link rel="canonical" href="https://talentedatai.com/" />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYQ40F2CXQ"></script>
@@ -34,6 +34,8 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" /></noscript>
 
   <style>
+  @font-face { font-family: 'Syne Fallback'; src: local('Arial Black'), local('Arial'); size-adjust: 97%; ascent-override: 105%; descent-override: 30%; line-gap-override: 0%; }
+  @font-face { font-family: 'DM Sans Fallback'; src: local('Arial'), local('Helvetica'); size-adjust: 105%; ascent-override: 95%; descent-override: 25%; line-gap-override: 0%; }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --blue: #0066ff;
@@ -45,8 +47,8 @@
     --gray-300: #b8b8d0;
     --gray-100: #f4f4f8;
     --white: #ffffff;
-    --font-head: 'Syne', sans-serif;
-    --font-body: 'DM Sans', sans-serif;
+    --font-head: 'Syne', 'Syne Fallback', sans-serif;
+    --font-body: 'DM Sans', 'DM Sans Fallback', sans-serif;
     --radius: 16px;
     --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
   }
@@ -198,7 +200,6 @@
   .filter-count { font-size: 11px; opacity: 0.7; margin-left: 4px; }
   .no-results { grid-column: 1/-1; text-align: center; padding: 48px 24px; color: var(--gray-500); font-size: 15px; }
 </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3277838203710267" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -354,15 +355,23 @@
   function buildFeaturedCard(article) {
     const url = 'https://talentedatai.com/content/published/' + article.slug + '.html';
     const imgHtml = article.image
-      ? `<img
+      ? `<picture>
+      <source type="image/webp"
+        srcset="${article.image.replace(/\.[^/.]+$/, '-400w.webp')} 400w,
+                ${article.image.replace(/\.[^/.]+$/, '-800w.webp')} 800w,
+                ${article.image.replace(/\.[^/.]+$/, '.webp')} 1600w"
+        sizes="(max-width: 768px) 400px, (max-width: 1200px) 800px, 800px">
+      <img
       src="${article.image}"
-      srcset="${article.image.replace('-header.jpg', '-header-400w.jpg')} 400w,
-              ${article.image.replace('-header.jpg', '-header-800w.jpg')} 800w,
+      srcset="${article.image.replace(/\.[^/.]+$/, '-400w.jpg')} 400w,
+              ${article.image.replace(/\.[^/.]+$/, '-800w.jpg')} 800w,
               ${article.image} 1600w"
       sizes="(max-width: 768px) 400px, (max-width: 1200px) 800px, 800px"
       alt="${escAttr(article.title)}"
-      loading="eager"
-      style="width:100%;height:100%;object-fit:cover;display:block;">`
+      width="800" height="380"
+      fetchpriority="high"
+      style="width:100%;height:100%;object-fit:cover;display:block;">
+      </picture>`
       : `<div class="featured-card__img-fallback" aria-hidden="true">🤖</div>`;
     return `
       <article class="featured-card" onclick="window.location.href='${url}'" style="cursor:pointer;">
@@ -387,13 +396,19 @@
   function buildSecondaryCard(article) {
     const url = 'https://talentedatai.com/content/published/' + article.slug + '.html';
     const thumbHtml = article.image
-      ? `<img
-      src="${article.image.replace('-header.jpg', '-header-400w.jpg')}"
-      srcset="${article.image.replace('-header.jpg', '-header-400w.jpg')} 400w,
+      ? `<picture>
+      <source type="image/webp"
+        srcset="${article.image.replace(/\.[^/.]+$/, '-400w.webp')} 400w"
+        sizes="120px">
+      <img
+      src="${article.image.replace(/\.[^/.]+$/, '-400w.jpg')}"
+      srcset="${article.image.replace(/\.[^/.]+$/, '-400w.jpg')} 400w,
               ${article.image} 1600w"
       sizes="120px"
       alt="${escAttr(article.title)}"
-      loading="lazy">`
+      width="120" height="80"
+      loading="lazy">
+      </picture>`
       : `<div class="secondary-card__thumb-fallback" aria-hidden="true">📄</div>`;
     return `
       <article class="secondary-card" onclick="window.location.href='${url}'" style="cursor:pointer;">
@@ -420,15 +435,23 @@
     const shareUrl = 'https://x.com/intent/tweet?text=' + shareText;
     const arrowSvg = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     const thumbContent = article.image
-      ? `<img
-      src="${article.image.replace('-header.jpg', '-header-400w.jpg')}"
-      srcset="${article.image.replace('-header.jpg', '-header-400w.jpg')} 400w,
-              ${article.image.replace('-header.jpg', '-header-800w.jpg')} 800w,
+      ? `<picture>
+      <source type="image/webp"
+        srcset="${article.image.replace(/\.[^/.]+$/, '-400w.webp')} 400w,
+                ${article.image.replace(/\.[^/.]+$/, '-800w.webp')} 800w,
+                ${article.image.replace(/\.[^/.]+$/, '.webp')} 1600w"
+        sizes="(max-width: 768px) calc(100vw - 48px), (max-width: 1200px) 33vw, 369px">
+      <img
+      src="${article.image.replace(/\.[^/.]+$/, '-400w.jpg')}"
+      srcset="${article.image.replace(/\.[^/.]+$/, '-400w.jpg')} 400w,
+              ${article.image.replace(/\.[^/.]+$/, '-800w.jpg')} 800w,
               ${article.image} 1600w"
       sizes="(max-width: 768px) calc(100vw - 48px), (max-width: 1200px) 33vw, 369px"
       alt="${escAttr(article.title)}"
+      width="400" height="225"
       loading="lazy"
-      style="width:100%;height:100%;object-fit:cover;display:block;">`
+      style="width:100%;height:100%;object-fit:cover;display:block;">
+      </picture>`
       : `<div class="article-card__thumb-inner" aria-hidden="true">${thumbEmoji}</div>`;
     return `
       <article class="article-card" onclick="window.location.href='${url}'" style="cursor:pointer;">
@@ -565,7 +588,15 @@
     }
   });
 </script>
-
+<script>
+  window.addEventListener('load', function() {
+    var s = document.createElement('script');
+    s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3277838203710267';
+    s.async = true;
+    s.crossOrigin = 'anonymous';
+    document.body.appendChild(s);
+  });
+</script>
 
 </body>
 </html>

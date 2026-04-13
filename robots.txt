@@ -2,5 +2,8 @@ User-agent: *
 Disallow: /content/pending
 Disallow: /content/pending/
 Disallow: /dashboard/
+Disallow: /scripts/
+Disallow: /node_modules/
+Disallow: /.claude/
 
 Sitemap: https://talentedatai.com/sitemap.xml
