@@ -201,7 +201,8 @@ for (const file of mdFiles) {
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" />
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=optional" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=optional" /></noscript>
   <style>
     @font-face{font-family:'Syne Fallback';src:local('Arial Black'),local('Arial');size-adjust:97%;ascent-override:105%;descent-override:30%;line-gap-override:0%}
     @font-face{font-family:'DM Sans Fallback';src:local('Arial'),local('Helvetica');size-adjust:105%;ascent-override:95%;descent-override:25%;line-gap-override:0%}
@@ -479,6 +480,25 @@ ${sitemapEntries}
 
 fs.writeFileSync(path.join(__dirname, '../sitemap.xml'), sitemap);
 console.log('Sitemap generated with ' + articles.length + ' article(s).');
+
+// Inject LCP preload for featured (newest) article image into index.html
+if (articles.length > 0 && articles[0].image) {
+  const featImg = articles[0].image;
+  // articles[0].image already has /static/images/articles/ prefix
+  const featBase = featImg.replace(/\.[^/.]+$/, '');
+  const preloadTag = `<link rel="preload" as="image" type="image/webp" imagesrcset="${featBase}-400w.webp 400w, ${featBase}-800w.webp 800w, ${featBase}.webp 1600w" imagesizes="(max-width: 768px) 400px, (max-width: 1200px) 800px, 800px">`;
+  const indexPath = path.join(__dirname, '../index.html');
+  let indexHtml = fs.readFileSync(indexPath, 'utf8');
+  // Remove any previously injected preload
+  indexHtml = indexHtml.replace(/\n  <!-- LCP preload -->\n  <link rel="preload" as="image"[^>]*>/g, '');
+  // Inject after canonical
+  indexHtml = indexHtml.replace(
+    '<link rel="canonical" href="https://talentedatai.com/" />',
+    '<link rel="canonical" href="https://talentedatai.com/" />\n  <!-- LCP preload -->\n  ' + preloadTag
+  );
+  fs.writeFileSync(indexPath, indexHtml);
+  console.log('Injected LCP preload for: ' + featImg);
+}
 
 console.log('\nBuild complete. ' + mdFiles.length + ' article(s) built.');
 } catch (error) {
