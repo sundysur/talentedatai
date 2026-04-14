@@ -238,14 +238,13 @@
     .mid-feed-newsletter__btn { width: 100%; text-align: center; }
   }
   /* HERO BAR */
-  .hero-bar { background: #1e2d4a; padding: 22px 24px; position: relative; z-index: 50; max-width: 1200px; margin: 0 auto; border-radius: 0 0 12px 12px; }
-  .hero-bar__inner { max-width: 720px; margin: 0 auto; text-align: center; }
-  .hero-bar__headline { font-family: var(--font-head); font-weight: 700; color: #f0f4ff; font-size: clamp(15px, 1.8vw, 18px); line-height: 1.35; letter-spacing: -0.01em; margin: 0; }
+  .hero-bar { background: #1e2d4a; padding: 18px 32px; position: relative; z-index: 50; max-width: fit-content; margin: 0 auto; border-radius: 0 0 12px 12px; }
+  .hero-bar__inner { text-align: center; }
+  .hero-bar__headline { font-family: var(--font-head); font-weight: 700; color: #f0f4ff; font-size: 16px; line-height: 1.35; letter-spacing: -0.01em; margin: 0; white-space: nowrap; }
   .hero-bar__sub { font-family: var(--font-body); font-weight: 300; color: #8892a4; font-size: 12px; line-height: 1.5; margin: 6px 0 0; letter-spacing: 0.02em; }
   @media(max-width:640px) {
-    .hero-bar { padding: 20px 20px; border-radius: 0; }
-    .hero-bar__inner { padding: 0; }
-    .hero-bar__headline { font-size: 14px; line-height: 1.4; }
+    .hero-bar { padding: 16px 20px; border-radius: 0; max-width: 100%; }
+    .hero-bar__headline { font-size: 14px; line-height: 1.4; white-space: normal; }
     .hero-bar__sub { font-size: 11px; }
   }
 </style>
