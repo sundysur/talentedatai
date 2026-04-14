@@ -232,6 +232,16 @@
     .mid-feed-newsletter__form { flex-direction: column; }
     .mid-feed-newsletter__btn { width: 100%; text-align: center; }
   }
+  /* HERO BAR */
+  .hero-bar { background: #1a1f2e; padding: 22px 24px; border-bottom: 1px solid rgba(255,255,255,0.06); box-shadow: 0 4px 12px rgba(13,13,26,0.06); position: relative; z-index: 50; }
+  .hero-bar__inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+  .hero-bar__headline { font-family: var(--font-head); font-weight: 700; color: #ffffff; font-size: clamp(15px, 1.8vw, 18px); line-height: 1.35; letter-spacing: -0.01em; margin: 0; }
+  .hero-bar__sub { font-family: var(--font-body); font-weight: 300; color: #8892a4; font-size: 12px; line-height: 1.5; margin: 6px 0 0; letter-spacing: 0.02em; }
+  @media(max-width:640px) {
+    .hero-bar { padding: 20px 20px; }
+    .hero-bar__headline { font-size: 14px; line-height: 1.4; }
+    .hero-bar__sub { font-size: 11px; }
+  }
 </style>
 </head>
 <body>
@@ -266,6 +276,14 @@
       </div>
     </div>
   </nav>
+
+  <!-- Hero Bar -->
+  <div class="hero-bar">
+    <div class="hero-bar__inner">
+      <h1 class="hero-bar__headline">Practical guides, honest reviews and real strategies for working smarter with AI</h1>
+      <p class="hero-bar__sub">Independent · No sponsored rankings · Updated weekly</p>
+    </div>
+  </div>
 
   <!-- Latest Articles -->
   <section id="articles">
