@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://talentedatai.com/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://talentedatai.com/articles.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -21,6 +21,16 @@
   <url>
     <loc>https://talentedatai.com/privacy-policy.html</loc>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://talentedatai.com/content/published/heygen-vs-synthesia-2026.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://talentedatai.com/content/published/notion-ai-review-2026.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://talentedatai.com/content/published/elevenlabs-vs-murf-vs-descript-2026.html</loc>
