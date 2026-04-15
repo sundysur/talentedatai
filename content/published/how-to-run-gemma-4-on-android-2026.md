@@ -1,6 +1,6 @@
 ---
-title: "How to Run Gemma 4 on Android in 2026 (Step-by-Step Guide)"
-description: "A complete beginner's guide to running Google's Gemma 4 AI model on your Android phone in 2026 — free, offline, no cloud required."
+title: "How to Run Gemma 4 on Android: Local & Offline Setup (2026)"
+description: "Run Google's Gemma 4 (E2B/E4B) locally on your Android device. No internet required after setup. Includes Thinking Mode setup and offline AI guide for 2026."
 category: "Guides"
 date: "2026-04-07T10:00:00"
 author: "TalentedAtAI Team"
@@ -74,6 +74,8 @@ Scroll through the model list until you find Gemma 4. You will see two versions:
 
 If your phone has 6GB RAM or more, choose the 4B. If you're unsure, start with 1B — you can always download 4B later. Tap the version you want, then tap **Download**.
 
+**Which Gemma 4 variant should you pick: E2B or E4B?** E2B is the recommended model for standard Android devices — it runs roughly 3x faster than E4B and works on mid-range phones from 2022 onwards with 4GB RAM, which covers the large majority of Android users. E4B offers better reasoning and produces noticeably stronger answers on complex tasks, but it requires a flagship device with 6GB+ RAM and will drain battery faster. If you're not sure which you have, default to E2B; you can always install E4B later if your phone can handle it.
+
 Make sure you are on WiFi before tapping Download. Downloading 2GB over mobile data is slow and will eat into your data allowance.
 
 ### Step 4 — Wait for the download to complete
@@ -133,6 +135,10 @@ Generate ideas without an internet connection — useful when you're on a plane,
 Ask Gemma 4 to explain a concept you're trying to understand, or to quiz you on a topic you're studying.
 
 *Example prompt:* "Explain compound interest to me like I'm 16, then give me three practice questions to test if I understood it."
+
+## Thinking Mode: Getting Better Answers on Complex Tasks
+
+Gemma 4 supports chain-of-thought reasoning via **Thinking Mode**. To switch it on, add the `<|think|>` token to your system prompt before your question — most Android chat interfaces, including AI Edge Gallery, expose a system prompt field in the chat settings. With Thinking Mode active, the model works through its reasoning step by step before producing a final answer, which measurably improves accuracy on maths problems, multi-step logic, and any task where the right answer depends on several linked pieces of information. The tradeoff is speed: responses take longer because the model is doing more work, so leave it off for simple queries and switch it on when a question actually needs the extra thinking.
 
 ## Honest Limitations
 

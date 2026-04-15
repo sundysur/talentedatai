@@ -1,8 +1,9 @@
 ---
-title: "Gemma 4 Review 2026: Google's Best Open-Source AI Tested"
+title: "Google Gemma 4 Complete Guide 2026: Models, Benchmarks and How to Get Started"
 description: "Gemma 4 is Google's most capable open-source AI — run it free on any device. Setup, benchmarks, and real-world performance tested in 2026."
 category: "AI Tools"
 date: "2026-04-03T21:00:00"
+date_modified: "2026-04-15"
 audio_url: "https://pub-82fbb2522fba410c9262febf2afac462.r2.dev/gemma-4-audio.mp3"
 author: "TalentedAtAI Team"
 read_time: "12 min"
@@ -15,13 +16,13 @@ affiliate: true
 
 > **TL;DR:** Google Gemma 4 is a family of open-weight AI models released under an Apache 2.0 licence — meaning free commercial use, no per-token costs, and no data sent to Google's servers. The smallest variant runs on a smartphone; the largest competes with GPT-4-class models on many tasks.
 
-Google released Gemma 4 yesterday — April 2, 2026 — and the coverage has mostly focused on the benchmarks and the fact that it outperforms previous versions. Both things are true and both things are, honestly, the least interesting part of the story.
+Google released Gemma 4 on April 2, 2026, and the coverage has mostly focused on the benchmarks and the fact that it outperforms previous versions. Both things are true and both things are, honestly, the least interesting part of the story.
 
 The interesting part is this: Google just released a model built on the same research as Gemini 3 — their best proprietary AI — under an Apache 2.0 licence. That licence means you can use it commercially, modify it, deploy it in a product, and Google cannot come back later and change the terms. No subscription. No per-token costs. No data sent to a server somewhere. You download the model. You run it. That's it.
 
 For developers and companies who have been watching the open-source AI space with one eyebrow permanently raised — waiting for the inevitable "we're changing our terms" moment — this matters. Apache 2.0 is as permissive as it gets.
 
-That's the real headline. The benchmark numbers will be debated and contextualised over the coming weeks. The licence is a fact.
+That's the real headline. The benchmark numbers will be debated and contextualised over the weeks since launch. The licence is a fact.
 
 ---
 
@@ -85,13 +86,15 @@ The Ollama installation path (more on that below) makes this accessible without 
 
 ## How It Compares to the Alternatives
 
-This section needs a caveat upfront: Gemma 4 was released yesterday. Real-world testing is still emerging. The benchmarks Google published were designed by Google. Independent evaluation takes time. What follows is based on specs, architectural comparisons, and early community reports — not definitive verdicts.
+This section needs a caveat upfront: Gemma 4 was released on April 2, 2026. Real-world testing is still emerging. The benchmarks Google published were designed by Google. Independent evaluation takes time. What follows is based on specs, architectural comparisons, and early community reports — not definitive verdicts.
 
 **vs Llama 4 (Meta)**
 
 Llama 4 is Meta's most capable open release and Gemma 4's most direct competitor. Both use mixture-of-experts architecture at the larger sizes. Both have competitive licences. Based on what's public so far, Llama 4 Scout and Maverick are the relevant comparisons to Gemma 4's 27B — broadly similar capability tiers, though real-world performance varies significantly by task.
 
 Where Gemma 4 has a clear edge in the specs: the smaller models. Llama 4's smallest useful option is less efficient on constrained hardware than Gemma 4's E2B, which is specifically engineered for mobile and edge deployment. If you're targeting a phone or a Raspberry Pi, Gemma 4 currently looks like the better option. If you're running on server hardware and want maximum capability, both are worth testing.
+
+Community observations since launch have started to fill in the picture. Gemma 4 E4B has a reputation for punching above its weight on document tasks — summarisation, extraction, question answering over long PDFs — and on coding in mainstream languages at its size tier. Llama 4 Scout, meanwhile, still has the edge on multilingual tasks, particularly for less well-resourced languages where Meta's training mix appears to go broader. Neither pattern is definitive yet, but both have been consistent enough across independent testers to be worth factoring in.
 
 **vs Mistral**
 
@@ -101,7 +104,7 @@ Gemma 4 is newer and larger at the equivalent tier. Whether it performs better o
 
 **vs Phi-4 (Microsoft)**
 
-Phi-4 is Microsoft's small model, competing in the same efficiency-focused tier as Gemma 4's E2B and E4B. Phi-4 has performed well on reasoning benchmarks relative to its size. Early comparisons suggest Gemma 4 E4B is competitive on reasoning tasks, but again — one day of real-world data is not enough to draw firm conclusions.
+Phi-4 is Microsoft's small model, competing in the same efficiency-focused tier as Gemma 4's E2B and E4B. Phi-4 has performed well on reasoning benchmarks relative to its size. Early comparisons suggest Gemma 4 E4B is competitive on reasoning tasks, but again — limited real-world data at the time of writing is not enough to draw firm conclusions.
 
 The practical difference is hardware optimisation. Gemma 4 has specific optimisations for NVIDIA RTX hardware and Android devices. If your deployment target is NVIDIA consumer GPUs or Android phones specifically, Gemma 4 currently has an edge in that pipeline.
 
@@ -133,6 +136,8 @@ ollama run gemma4:27b   # 27B — needs a capable GPU
 ```
 
 Ollama handles quantisation and hardware detection automatically. On most consumer hardware it will select an appropriate quantisation level without you having to manage it. The first run downloads the model weights, which are several gigabytes depending on the variant — plan accordingly.
+
+Running Gemma 4 on Android specifically has its own setup process that doesn't involve Ollama. Android relies on different tooling — Google AI Edge Gallery for most users, MediaPipe LLM Inference for developers — and the model size selection is different because of phone RAM constraints. If you want to run Gemma 4 on your phone rather than a laptop or desktop, the full step-by-step is in our dedicated guide on [how to run Gemma 4 on Android](/content/published/how-to-run-gemma-4-on-android-2026.html).
 
 ### Google AI Studio (No Setup Required)
 
@@ -177,10 +182,10 @@ Gemma 4 is a serious open-source release that warrants attention, particularly t
 
 The practical case is strongest for three groups: developers who need local inference for privacy or cost reasons, companies with regulatory constraints that make cloud APIs awkward, and hobbyists who want capable AI running on consumer hardware. For all three, Gemma 4 is now a top-tier option.
 
-The caveats are real. This is one day old. Real-world performance across diverse tasks will take weeks to properly evaluate. The benchmark numbers are impressive, but benchmarks are designed to be impressive — what matters is how the model performs on your specific workload.
+The caveats are real. Gemma 4 is still in its early weeks. Real-world performance across diverse tasks will take weeks to properly evaluate. The benchmark numbers are impressive, but benchmarks are designed to be impressive — what matters is how the model performs on your specific workload.
 
 What's encouraging is what doesn't need further evaluation: the licence, the hardware support, the architecture, and the clear engineering focus on efficiency. Those are facts, not claims to be tested.
 
-The things to watch over the coming weeks: independent benchmark comparisons with Llama 4 and Mistral, community reports on specific use cases, and whether the Android AICore integration delivers on its promise for mobile developers.
+The things to watch over the weeks since launch: independent benchmark comparisons with Llama 4 and Mistral, community reports on specific use cases, and whether the Android AICore integration delivers on its promise for mobile developers.
 
 For now: if you've been waiting for an open-source model that's genuinely capable, genuinely free to use commercially, and genuinely runs on the hardware you already have — this is worth your time.
