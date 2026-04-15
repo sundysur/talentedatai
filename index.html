@@ -67,6 +67,18 @@
   .nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
   .nav__links a { font-size: 14px; font-weight: 500; color: var(--gray-700); transition: color var(--transition); }
   .nav__links a:hover { color: var(--blue); }
+  /* NAV SEARCH */
+  .nav-search { position: relative; display: flex; align-items: center; gap: 6px; }
+  .nav-search__input { width: 0; opacity: 0; padding: 0; margin: 0; border: none; border-bottom: 1.5px solid transparent; background: transparent; font-family: var(--font-body); font-size: 14px; font-weight: 500; color: var(--dark); outline: none; transition: width 200ms ease, opacity 200ms ease, border-color 200ms ease, padding 200ms ease; pointer-events: none; min-width: 0; }
+  .nav-search__input::placeholder { color: var(--gray-300); }
+  .nav-search.open .nav-search__input { width: 220px; opacity: 1; padding: 4px 2px; border-bottom-color: var(--blue); pointer-events: auto; }
+  .nav-search__toggle { display: flex; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; padding: 4px; color: var(--gray-700); transition: color var(--transition); }
+  .nav-search__toggle:hover { color: var(--blue); }
+  .nav-search.open .nav-search__toggle { color: var(--blue); }
+  .nav-search__toggle svg { display: block; }
+  @media(max-width: 768px) {
+    .nav-search.open .nav-search__input { width: calc(100vw - 180px); max-width: 300px; }
+  }
   /* CONTENT AREA */
   .content-area { max-width: 1200px; margin: 0 auto; padding: 0 24px 64px; min-height: 1800px; }
   /* FEATURED CARD */
@@ -267,6 +279,32 @@
         <li><a href="/contact.html">Contact</a></li>
         <li><a href="/privacy-policy.html">Privacy Policy</a></li>
       </ul>
+      <div class="nav-search" id="nav-search">
+        <input
+          type="search"
+          id="nav-search-input"
+          class="nav-search__input"
+          placeholder="Search articles..."
+          aria-label="Search articles"
+          autocomplete="off"
+          spellcheck="false"
+          tabindex="-1"
+          oninput="onNavSearchInput(event)"
+          onkeydown="onNavSearchKeydown(event)"
+          onblur="onNavSearchBlur(event)"
+        >
+        <button
+          type="button"
+          class="nav-search__toggle"
+          aria-label="Search"
+          onclick="toggleNavSearch()"
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M14 14l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
       <a href="#newsletter" class="nav__cta">Get free guide →</a>
       <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu" onclick="toggleMenu()">
         <span></span>
@@ -707,6 +745,76 @@
     btn.classList.toggle('open');
     menu.classList.toggle('open');
     btn.setAttribute('aria-expanded', menu.classList.contains('open') ? 'true' : 'false');
+  }
+
+  // NAV SEARCH
+  // Icon button expands an inline search input. Submitting redirects to
+  // articles.html?search=<query>. Input auto-submits after a 500ms pause
+  // once 3+ characters are typed, or immediately on Enter.
+  let navSearchRedirectTimer = null;
+  let navSearchBlurTimer = null;
+
+  function toggleNavSearch() {
+    const wrap = document.getElementById('nav-search');
+    const input = document.getElementById('nav-search-input');
+    if (!wrap || !input) return;
+    if (wrap.classList.contains('open')) {
+      closeNavSearch();
+    } else {
+      wrap.classList.add('open');
+      // Slight delay lets the width transition begin before focus visual lands.
+      setTimeout(function() { input.focus(); }, 10);
+    }
+  }
+
+  function closeNavSearch() {
+    const wrap = document.getElementById('nav-search');
+    const input = document.getElementById('nav-search-input');
+    if (!wrap || !input) return;
+    wrap.classList.remove('open');
+    input.value = '';
+    clearTimeout(navSearchRedirectTimer);
+    clearTimeout(navSearchBlurTimer);
+  }
+
+  function submitNavSearch(q) {
+    const trimmed = (q || '').trim();
+    if (!trimmed) return;
+    window.location.href = '/articles.html?search=' + encodeURIComponent(trimmed);
+  }
+
+  function onNavSearchInput(e) {
+    const value = e.target.value;
+    clearTimeout(navSearchRedirectTimer);
+    if (value.trim().length >= 3) {
+      navSearchRedirectTimer = setTimeout(function() { submitNavSearch(value); }, 500);
+    }
+  }
+
+  function onNavSearchKeydown(e) {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+      e.preventDefault();
+      clearTimeout(navSearchRedirectTimer);
+      if (e.target.value.trim()) submitNavSearch(e.target.value);
+      // Empty on Enter: do nothing, per spec.
+    } else if (e.key === 'Escape' || e.keyCode === 27) {
+      e.preventDefault();
+      closeNavSearch();
+    }
+  }
+
+  function onNavSearchBlur(e) {
+    // 200ms delay gives the toggle-button click a chance to fire first,
+    // and leaves space for the collapse transition.
+    clearTimeout(navSearchBlurTimer);
+    const input = e.target;
+    navSearchBlurTimer = setTimeout(function() {
+      if (!input.value) {
+        const wrap = document.getElementById('nav-search');
+        if (wrap) wrap.classList.remove('open');
+      }
+      // If input has content, leave it expanded — per spec.
+    }, 200);
   }
   document.addEventListener('click', function(e) {
     const btn = document.getElementById('nav-hamburger');

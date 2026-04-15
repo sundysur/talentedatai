@@ -707,6 +707,7 @@
         setupObserver();
         updateFilterCounts(allArticles);
         applyUrlFilter();
+        applyUrlSearch();
       } catch (err) {
         grid.style.display = 'none';
         empty.style.display = 'block';
@@ -729,6 +730,29 @@
         if (match) filterArticles(match.dataset.filter);
       } catch (_) {
         // Malformed URL or missing URLSearchParams — silently keep default "All".
+      }
+    }
+
+    // On page load, honour a ?search= URL parameter by pre-filling the search
+    // input and applying the search immediately. Runs after applyUrlFilter so
+    // that ?filter=reviews&search=claude activates BOTH at the same time.
+    // Safe to run even if ?search= is absent.
+    function applyUrlSearch() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const raw = params.get('search');
+        if (!raw) return;
+        const trimmed = raw.trim();
+        if (!trimmed) return;
+        const input = document.getElementById('article-search');
+        const clearBtn = document.getElementById('article-search-clear');
+        if (input) input.value = trimmed;
+        if (clearBtn) clearBtn.hidden = false;
+        currentSearchRaw = trimmed;
+        currentSearch = trimmed.toLowerCase();
+        renderArticles();
+      } catch (_) {
+        // Malformed URL or missing URLSearchParams — silently leave search empty.
       }
     }
 
