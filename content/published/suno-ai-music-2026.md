@@ -9,6 +9,15 @@ tags: ["Suno", "AI music", "music generation", "creative AI", "AI Tools", "music
 filters: ["Reviews", "Explainers"]
 image: "suno-ai-music-2026-header.jpg"
 slug: "suno-ai-music-2026"
+faq:
+  - q: "Is Suno free to use in 2026?"
+    a: "Yes — Suno has a free tier that lets you generate a limited number of songs per day, enough to try the tool and produce personal-use tracks. Paid plans add more daily generations, higher audio quality, and explicit commercial rights to your output. The free tier does not include commercial usage rights, so anything you plan to sell or use in monetised content should come from a paid plan."
+  - q: "Can I sell songs I make with Suno commercially?"
+    a: "Only on Suno's paid tiers, which grant commercial rights to the music you generate. The free tier is personal-use only. Even on paid plans, because Suno is trained on copyrighted music and the legal status of that training data is still being litigated, some platforms (record labels, licensing agencies, major streaming services) may impose additional restrictions on AI-generated submissions. Read the specific licensing terms before any serious commercial project."
+  - q: "Is AI-generated music copyrighted?"
+    a: "This is one of the genuinely unresolved legal questions. In most jurisdictions, purely AI-generated work with no human creative contribution cannot currently be copyrighted. Songs that involve substantial human creative direction — your lyrics, your arrangement choices, your edits to the AI output — do have a stronger claim to copyright in the human-added elements. The law is moving, and different countries are arriving at different answers."
+  - q: "What is the difference between Suno and Udio?"
+    a: "Both are text-to-music platforms with broadly similar workflows, but they differ in aesthetic feel and output characteristics. Suno is the more widely adopted and tends to produce more polished, mainstream-adjacent output across popular genres. Udio has a reputation for slightly more interesting results in experimental, electronic, and niche genres. Anyone serious about AI music generation is worth trying both to see which one fits your sound better."
 ---
 
 > **TL;DR:** Suno lets anyone generate a complete, produced song from a text prompt in under 30 seconds — and the output is closer to real recordings than most people expect. This piece looks honestly at what that means for creators, the music industry, and what "making music" even means when the tools are this accessible.

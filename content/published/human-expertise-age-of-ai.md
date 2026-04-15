@@ -9,6 +9,15 @@ tags: ["AI", "expertise", "human skills", "future of work", "AI and society", "c
 filters: ["Explainers"]
 image: "ai-expertise-human-header.jpg"
 slug: "human-expertise-age-of-ai"
+faq:
+  - q: "Does AI make human expertise obsolete?"
+    a: "No — AI has commoditised the information-holding part of expertise, which was never the whole of it. Judgment (knowing which piece of information applies in a specific situation), integrated attention (noticing the detail that doesn't fit), accountability (standing behind a decision), and relationship (knowing when and how to communicate) are all harder for AI to replicate and arguably more valuable now than before. Expertise is transforming, not disappearing."
+  - q: "Which skills become more valuable as AI improves?"
+    a: "Three stand out: the ability to ask the right question in the first place (which requires a mental model of the domain AI can't provide for you), the ability to evaluate AI output critically and recognise when something is subtly wrong, and what might simply be called care — the investment in an outcome because it's yours and your name is on it. AI produces the same quality regardless of stakes; humans perform differently when something matters."
+  - q: "How do junior professionals develop expertise when AI does the entry-level work?"
+    a: "This is one of the harder unresolved problems. The traditional path to expertise involved doing repetitive, lower-value work — memo drafting, literature reviews, basic analysis — that developed capability through repetition. If AI handles all that scaffolding, novices need a different path: emphasis on application over retrieval, on evaluating AI output rather than producing the underlying work, on interrogating whether the question itself is the right one. Institutions are adapting, but unevenly."
+  - q: "Will AI replace doctors, lawyers, and financial advisors?"
+    a: "The informational component of these roles — looking up precedents, diagnosing from a checklist, researching regulations — is being significantly commoditised. What isn't being replaced is the judgment, the accountability, and the relationship layers: a patient in front of you, a client depending on advice, a name on the recommendation. Those professions will change substantially and some work will be automated, but 'replaced' overstates what's actually happening in practice."
 ---
 
 > **TL;DR:** AI hasn't made expertise worthless — it's made the information-holding part cheap. What remains valuable is judgment, context, relationships, and the ability to act on knowledge rather than merely possess it — and those things are harder to automate than anyone is admitting.

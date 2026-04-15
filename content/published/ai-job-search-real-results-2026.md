@@ -9,6 +9,15 @@ tags: ["job search", "AI tools", "cover letter", "resume", "career", "productivi
 filters: ["Guides"]
 image: "ai-job-search-2026-header.jpg"
 slug: "ai-job-search-real-results-2026"
+faq:
+  - q: "Can hiring managers tell if my cover letter was written by AI?"
+    a: "Experienced hiring managers can often spot unedited AI output by its tells — phrases like 'eager to contribute my skills to your dynamic team' or a slightly generic structural rhythm. What they generally can't detect is an AI-drafted letter that's been meaningfully edited into your voice, with specific reasons you're applying and phrasing that matches how you actually speak. Use AI for the first draft; always rewrite enough that it sounds like you before sending."
+  - q: "Will applicant tracking systems (ATS) penalise AI-written resumes?"
+    a: "No — ATS systems scan for keyword matches against the job description, which is exactly what thoughtful AI-assisted rewriting helps you do. Using AI to identify the ten most important skills in a job posting and rewrite your bullets to reflect that language actually improves ATS performance rather than harming it. What hurts ATS scoring is generic templated content that doesn't mirror the posting's vocabulary."
+  - q: "Is it ethical to use AI for job applications?"
+    a: "Using AI to draft, tailor, and practise — absolutely, in the same way it's ethical to use a writing coach or career advisor. Using AI to misrepresent experience you don't have, fabricate credentials, or generate fake work samples is not. The line is straightforward: AI should help you present your actual strengths more clearly, not create a version of you that doesn't exist."
+  - q: "Which AI tool is best for mock interview practice?"
+    a: "Claude tends to give the most useful interview feedback because it's willing to be specific and layered rather than just encouraging — if your answer is vague, it will name what's vague; if your tone sounds defensive, it will say so. ChatGPT works too and is faster at processing long job descriptions. For deep company research ahead of the interview, Perplexity is better than either because it cites its sources in real time."
 ---
 
 > **TL;DR:** AI won't land a job for you, but it dramatically lowers the hardest barriers: the blank cover letter, the resume that doesn't match the job description, the interview you haven't prepared for. This guide shows exactly how to use ChatGPT and Claude as first-draft tools while keeping your authentic voice in everything you send.

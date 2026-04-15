@@ -12,6 +12,15 @@ featured: false
 status: "published"
 read_time: "5 min"
 image_alt: "Blogger working at laptop with AI writing interface on screen"
+faq:
+  - q: "Can Google detect AI-written blog posts?"
+    a: "Google's current position is that AI-assisted content is acceptable so long as it's useful, accurate, and adds genuine value — the penalties come for thin, unedited, low-effort AI spam. Posts drafted with AI and then meaningfully edited with human voice, fact-checking, and personal examples tend to perform fine in search. AI-detection tools exist but Google itself doesn't publicly use them as a ranking signal; the ranking signals that matter are quality, originality of perspective, and demonstrated expertise."
+  - q: "What is the cheapest AI blogging stack that still produces rankable content?"
+    a: "Under $40 per month you can run Claude Pro ($20) for ideation, outlining, and drafting, plus Frase.io ($15) for SEO optimisation, and free tools like Hemingway Editor and Grammarly's free tier for polish. That stack covers the full pipeline — ideation through optimisation — without the $164/month cost of the full professional stack. Add Perplexity Pro and Jasper only when revenue justifies them."
+  - q: "Should bloggers use Jasper or Claude for drafting?"
+    a: "Solo bloggers are almost always better served by Claude at $20/month — the prose quality is higher, it writes with more natural voice variety, and it's a fraction of the cost. Jasper at $49+/month makes sense for content teams and marketing agencies producing at volume, because its workflow features (templates, team collaboration, Surfer integration) scale in a way Claude's interface currently doesn't. Pure writing quality favours Claude; workflow tooling favours Jasper."
+  - q: "How long should AI-generated blog posts be to rank in 2026?"
+    a: "Word count alone isn't a ranking factor — depth and completeness of coverage are. Most high-ranking posts in competitive keywords fall in the 1,800–2,600 word range because that's roughly what it takes to cover a topic thoroughly. Surfer SEO's Content Editor gives you a target based on what's actually ranking for your keyword. A 1,200-word post can rank if it answers the query fully; a 3,000-word post padded with AI filler will not."
 ---
 
 > **TL;DR:** The fastest-growing bloggers in 2026 use AI across every stage of the content pipeline, not just for drafts. This guide maps the best tool for each stage — from ideation with Perplexity to SEO optimisation with Surfer — and shows how to chain them into a complete, repeatable workflow.

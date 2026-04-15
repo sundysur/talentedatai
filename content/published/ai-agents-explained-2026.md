@@ -9,6 +9,15 @@ tags: ["AI Agents", "Agentic AI", "Automation", "Explainer", "AI Trends 2026"]
 filters: ["Explainers", "Beginners"]
 image: "ai-agents-explained-header.jpg"
 slug: "ai-agents-explained-2026"
+faq:
+  - q: "Are AI agents the same as ChatGPT or Claude?"
+    a: "Not quite — ChatGPT and Claude are the models that *power* AI agents, but in their default form they're assistants rather than agents. An agent is what you get when you combine one of these models with planning, tool use (web browsing, code execution, API access), and the ability to execute multi-step goals autonomously. Claude with tools enabled or ChatGPT with browsing can both operate in agent mode, but the core chatbot interaction isn't agentic."
+  - q: "What can AI agents actually do reliably right now in 2026?"
+    a: "Research agents like Perplexity produce cited, multi-source summaries in under a minute. Coding agents like Cursor and GitHub Copilot Workspace can plan an implementation, write code across multiple files, run tests, and fix errors. Productivity agents embedded in Microsoft Copilot and Google Workspace can summarise meetings, draft replies, and schedule follow-ups. Automation agents like Zapier AI turn plain-English descriptions into working workflows. All of these are production-ready today for low- to medium-stakes tasks."
+  - q: "Can AI agents work completely without human supervision?"
+    a: "Not for anything high-stakes, and not yet. Agents still misinterpret goals, use tools incorrectly, get stuck in loops, and produce confident-looking errors. The safe mental model is 'junior staff on their first week' — capable and eager, but the work needs review before it goes anywhere important. Fully autonomous multi-hour or multi-day agents are not ready for production decisions that can't be easily reversed."
+  - q: "How can I try an AI agent today without enterprise software?"
+    a: "The simplest demonstration is opening Claude.ai, creating a new Project, adding a few documents (notes, background reading, past work), and giving it a multi-step request like 'read these, identify three common themes, and draft a briefing document.' That's not a full agent — Claude isn't browsing the web or sending emails — but it shows the core agentic behaviour of breaking a goal into steps and executing them. It takes about five minutes."
 ---
 
 > **TL;DR:** AI agents are autonomous systems that go beyond answering questions — they can browse the web, execute code, and complete multi-step tasks without you managing each step. This is a jargon-free explainer of what they genuinely can do in 2026, and where the hype is still running ahead of the reality.

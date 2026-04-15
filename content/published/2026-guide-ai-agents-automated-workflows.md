@@ -9,6 +9,15 @@ read_time: "9 min"
 tags: ["ai agents", "automation", "agentic AI", "workflow", "productivity", "cursor", "zapier"]
 filters: ["Guides", "Explainers"]
 slug: "2026-guide-ai-agents-automated-workflows"
+faq:
+  - q: "What is the difference between an AI agent and a chatbot?"
+    a: "A chatbot is reactive — you ask a question, it answers, and the exchange ends. An AI agent is autonomous — you give it a goal, and it plans its own multi-step approach, uses tools like web browsers and databases, executes each step, and reports back when done. The shift is from Human-in-the-Loop (approving each step) to Human-on-the-Loop (managing the agent that's doing the work)."
+  - q: "Do I need to know how to code to build AI agents in 2026?"
+    a: "No — the easiest entry points for non-developers are Zapier Agents and ChatGPT Plus with plugins, both of which let you describe agent workflows in plain English. For more advanced custom agents, tools like Cursor's agentic mode can write the underlying code for you after a single prompt, which is how this site's own backend was built. Traditional coding knowledge is helpful but no longer a prerequisite."
+  - q: "Can I run AI agents locally without sending data to the cloud?"
+    a: "Yes — a local setup on a capable machine like an M4 Mac Mini running Ollama can host agents that never touch the cloud. This is particularly useful for compliance-sensitive workflows like contract review, where dropping a PDF into a watched folder and getting an agent-generated summary on your desktop keeps the data fully on-device. Local agents are slower than cloud APIs but remove data exposure and per-token costs entirely."
+  - q: "What business workflows are agents most useful for right now?"
+    a: "Three patterns are working well in 2026: lead qualification agents that monitor LinkedIn or similar sources, score companies against your target profile, and draft outreach for CRM review; daily summary agents that synthesise analytics, emails, and project tasks into a Slack digest; and local compliance agents that review contracts or policies against a jurisdiction's rules and flag clauses needing human attention. Multi-step, rule-based processes you repeat daily are the best first candidates for automation."
 ---
 
 > **TL;DR:** The era of typing into chatbots is ending — AI agents that act autonomously are the real shift in 2026. This guide shows three ready-to-deploy workflow blueprints (marketing, operations, compliance) and how TalentedAtAI itself was built using agentic tools like Cursor and Zapier.

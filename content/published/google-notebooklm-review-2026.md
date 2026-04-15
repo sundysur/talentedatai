@@ -9,6 +9,15 @@ tags: ["Google NotebookLM", "AI Tools", "Research", "Review", "Free Tools"]
 filters: ["Reviews"]
 image: "notebooklm-review-header.jpg"
 slug: "google-notebooklm-review-2026"
+faq:
+  - q: "Is Google NotebookLM really free in 2026?"
+    a: "Yes — NotebookLM has a genuinely generous free tier that covers most individual users: up to 100 notebooks, each with up to 50 sources, and individual sources can be up to 500,000 words. That's enough to handle a typical course load, a full research project, or most professional document-review workflows without hitting any paid wall. Large teams doing intensive collaborative research may eventually need a higher-tier option."
+  - q: "What is the difference between NotebookLM and ChatGPT?"
+    a: "NotebookLM only answers from the documents you upload — it has no general knowledge and won't respond to questions about the world, the news, or anything outside your sources. ChatGPT is the opposite: a general assistant drawing on broad training data but without automatic grounding in your specific documents. NotebookLM is a research companion; ChatGPT is a general thinking partner. Most serious users keep both."
+  - q: "Can NotebookLM hallucinate or make up facts?"
+    a: "NotebookLM is specifically designed to prevent outside-knowledge hallucination — it will tell you when something isn't in your uploaded sources rather than inventing an answer. Every response includes citations pointing to the exact passages it drew from. That said, it can still misinterpret a source, conflate two documents, or emphasise the wrong detail, so source-citation checking remains important for anything high-stakes."
+  - q: "Does NotebookLM work with YouTube videos and audio files?"
+    a: "Yes — NotebookLM accepts PDFs, Google Docs, web pages, pasted text, YouTube transcripts, and audio file uploads. For YouTube specifically you paste the URL and NotebookLM fetches the transcript. For audio files (lectures, meeting recordings, interviews) it transcribes automatically and then treats the transcript as a source. This is what makes the Audio Overview feature particularly powerful — you can turn a pile of mixed media into a podcast-style synthesis."
 ---
 
 > **TL;DR:** Google NotebookLM is not a general AI assistant — it's a free research tool that answers questions exclusively from the documents you upload, with cited sources and no hallucinations from outside data. If you regularly process large PDFs, reports, or transcripts, it's the most useful free AI tool available in 2026.

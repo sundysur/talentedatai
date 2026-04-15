@@ -12,6 +12,15 @@ filters: ["Reviews", "Guides"]
 image: "gemma-4-guide-header.jpg"
 slug: "google-gemma-4-complete-guide-2026"
 affiliate: true
+faq:
+  - q: "Is Gemma 4 free for commercial use?"
+    a: "Yes — Gemma 4 is released under an Apache 2.0 licence, which permits unrestricted commercial use, modification, and deployment in products without per-token costs or royalties. This is as permissive as open-source AI licensing currently gets, and a key differentiator from licences that restrict commercial use past certain revenue thresholds. The Apache 2.0 terms cannot be retroactively changed by Google for weights already released."
+  - q: "What hardware do I need to run Gemma 4 locally?"
+    a: "It depends on the variant. The E2B model (2.3B parameters) runs comfortably on phones, Raspberry Pi, and NVIDIA Jetson devices. The E4B model (4.5B parameters) works well on a modern laptop or any modest desktop GPU. The 27B flagship needs a capable consumer GPU like an RTX 4090 in 4-bit quantised form, or server hardware like an H100 for the full unquantised version. Ollama handles quantisation automatically on most consumer setups."
+  - q: "Is Gemma 4 better than Llama 4 in 2026?"
+    a: "Neither is definitively 'better' — they're broadly competitive at similar tiers and each has its strengths. Gemma 4 has a clear edge on smaller models and mobile/edge deployment, thanks to specific hardware optimisations for phones and Raspberry Pi. Llama 4 Scout has performed better on multilingual tasks, particularly for less-resourced languages. For server workloads at the flagship tier, both are worth testing on your specific tasks rather than relying on general benchmarks."
+  - q: "Can I run Gemma 4 on a phone or Raspberry Pi?"
+    a: "Yes — the E2B variant was specifically engineered for on-device deployment. Android users can run it through Google AI Edge Gallery (for consumer use) or MediaPipe LLM Inference (for developers). On Raspberry Pi, ARM inference speeds are genuinely usable, not just theoretically possible. If you specifically want to run Gemma 4 on Android, our dedicated guide walks through the setup step by step."
 ---
 
 > **TL;DR:** Google Gemma 4 is a family of open-weight AI models released under an Apache 2.0 licence — meaning free commercial use, no per-token costs, and no data sent to Google's servers. The smallest variant runs on a smartphone; the largest competes with GPT-4-class models on many tasks.

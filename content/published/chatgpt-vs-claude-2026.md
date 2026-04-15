@@ -12,6 +12,15 @@ featured: false
 status: "published"
 read_time: "6 min"
 image_alt: "ChatGPT vs Claude logo comparison graphic"
+faq:
+  - q: "Is Claude or ChatGPT better for writing in 2026?"
+    a: "Claude wins on writing quality in head-to-head testing — it scored 9.0 vs ChatGPT's 7.5 on creative writing, and its drafts needed roughly 40% fewer edits to reach publication-ready quality in our tests. ChatGPT writes competently but tends toward a formulaic topic-sentence-three-points-conclusion structure unless specifically prompted away from it. For bloggers, newsletter writers, and anyone whose output is primarily long-form prose, Claude is the better first choice."
+  - q: "Which is better for coding — Claude or ChatGPT?"
+    a: "ChatGPT edged out Claude in our coding tests (8.7 vs 8.0), particularly on Python, JavaScript, and SQL tasks and when working with common libraries. Claude writes cleaner, better-commented code but occasionally hallucinates function names for obscure libraries and handles complex algorithmic problems slightly less reliably. For most web and data-science work, ChatGPT is marginally better; for any code that goes to production, review the output from either tool carefully."
+  - q: "Is it worth paying for both ChatGPT Plus and Claude Pro?"
+    a: "At $40/month combined, it's worth it for most knowledge professionals and content-heavy teams. The tools are genuinely complementary — Claude handles writing, reasoning, and long-document analysis better; ChatGPT handles images, plugins, voice mode, and coding better. If you can only afford one, start with Claude for the higher writing quality and reasoning reliability; add ChatGPT when you hit a capability Claude can't match."
+  - q: "Why does Claude perform better on long documents than ChatGPT?"
+    a: "Claude's 200K token context window — roughly 160,000 words — is about 50% larger than ChatGPT-4o's 128K, which means Claude can hold an entire 50-page contract or full transcript in working memory and reason across the whole thing. ChatGPT loses track of earlier sections as documents grow, producing analyses that miss details from the front of the document. On our contract-analysis test, Claude scored 9.5 vs ChatGPT's 7.0."
 ---
 
 > **TL;DR:** After 40+ standardised tests, Claude wins on long-form writing quality and document reasoning while ChatGPT-4o wins on versatility and plugin breadth — choose Claude if nuanced writing and analysis are your priority, ChatGPT if you need one tool that does everything reasonably well.
