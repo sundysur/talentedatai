@@ -306,7 +306,7 @@ for (const file of mdFiles) {
   </div>
   <h1>${fm.title || ''}</h1>
   <p style="color:#5a5a55;font-size:0.9em;margin:4px 0 24px 0;">
-    Last updated: ${fm.date ? new Date(fm.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }) : ''}
+    Last updated: ${(fm.date_modified || fm.date) ? new Date(fm.date_modified || fm.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }) : ''}
   </p>
   <p class="article-desc">${fm.description || ''}</p>
 ${fm.affiliate ? `<p class="affiliate-notice">This article contains affiliate links. If you purchase through these links we may earn a commission at no extra cost to you.</p>` : ''}
