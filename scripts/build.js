@@ -89,6 +89,7 @@ for (const file of mdFiles) {
     category: fm.category || 'General',
     filters: fm.filters || [],
     date: fm.date || '',
+    date_modified: fm.date_modified || '',
     author: fm.author || DEFAULT_AUTHOR,
     read_time: fm.read_time || (Math.ceil(content.split(' ').length / 200) + ' min'),
     tags: fm.tags || [],
@@ -443,12 +444,29 @@ articles.sort((a, b) => new Date(b.date) - new Date(a.date));
 fs.writeFileSync(path.join(__dirname, '../content/articles.json'), JSON.stringify(articles, null, 2));
 
 // Generate sitemap
+// Normalise any incoming date-ish value (string, Date, empty) to strict YYYY-MM-DD.
+// Returns null when the value can't be parsed into a real date — callers then omit <lastmod>.
+const toISODate = (value) => {
+  if (value === null || value === undefined || value === '') return null;
+  if (value instanceof Date) {
+    return isNaN(value.getTime()) ? null : value.toISOString().split('T')[0];
+  }
+  const str = String(value).trim();
+  if (!str) return null;
+  // Fast path: already strict YYYY-MM-DD
+  if (/^\d{4}-\d{2}-\d{2}$/.test(str)) return str;
+  const d = new Date(str);
+  return isNaN(d.getTime()) ? null : d.toISOString().split('T')[0];
+};
 const today = new Date().toISOString().split('T')[0];
-const sitemapEntries = articles.map(a => `  <url>
-    <loc>${SITE_URL}/content/published/${a.slug}.html</loc>
-    <lastmod>${a.date}</lastmod>
+const sitemapEntries = articles.map(a => {
+  const lastmod = toISODate(a.date_modified) || toISODate(a.date);
+  const lastmodTag = lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : '';
+  return `  <url>
+    <loc>${SITE_URL}/content/published/${a.slug}.html</loc>${lastmodTag}
     <priority>0.8</priority>
-  </url>`).join('\n');
+  </url>`;
+}).join('\n');
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
