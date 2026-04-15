@@ -576,9 +576,29 @@
         grid.innerHTML = allArticles.map(buildCard).join('');
         setupObserver();
         updateFilterCounts(allArticles);
+        applyUrlFilter();
       } catch (err) {
         grid.style.display = 'none';
         empty.style.display = 'block';
+      }
+    }
+
+    // On page load, honour a ?filter= URL parameter by activating the matching
+    // filter button. Matches case-insensitively against each button's data-filter
+    // value. If the parameter is missing or doesn't match any button, leaves the
+    // default "All" filter in place. Does not affect click-based filtering.
+    function applyUrlFilter() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const requested = params.get('filter');
+        if (!requested) return;
+        const target = requested.trim().toLowerCase();
+        if (!target || target === 'all') return;
+        const match = Array.from(document.querySelectorAll('.filter-btn'))
+          .find(btn => (btn.dataset.filter || '').toLowerCase() === target);
+        if (match) filterArticles(match.dataset.filter);
+      } catch (_) {
+        // Malformed URL or missing URLSearchParams — silently keep default "All".
       }
     }
 

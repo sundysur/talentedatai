@@ -175,13 +175,13 @@ for (const file of mdFiles) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "${SITE_URL}/"
+        "item": "${SITE_URL}"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Articles",
-        "item": "${SITE_URL}/articles.html"
+        "name": "${((Array.isArray(fm.filters) && fm.filters.length > 0 ? fm.filters[0] : fm.category) || 'General').replace(/\\/g, '\\\\').replace(/"/g, '\\"')}",
+        "item": "${SITE_URL}/articles.html?filter=${((Array.isArray(fm.filters) && fm.filters.length > 0 ? fm.filters[0] : fm.category) || 'General').toLowerCase().replace(/\s+/g, '-')}"
       },
       {
         "@type": "ListItem",
