@@ -784,11 +784,10 @@
   }
 
   function onNavSearchInput(e) {
-    const value = e.target.value;
+    // Typing never triggers a redirect — only Enter does (handled in onNavSearchKeydown).
+    // The clearTimeout call below is defensive: if any residual timer ever exists
+    // (e.g. from older builds in the wild), this guarantees it's cancelled.
     clearTimeout(navSearchRedirectTimer);
-    if (value.trim().length >= 3) {
-      navSearchRedirectTimer = setTimeout(function() { submitNavSearch(value); }, 500);
-    }
   }
 
   function onNavSearchKeydown(e) {
