@@ -251,6 +251,11 @@ for (const file of mdFiles) {
     .nav-search.open .nav-search__toggle{color:var(--blue)}
     .nav-search__toggle svg{display:block}
     .nav-search__drawer{display:none}
+    .nav__logo-wrap{display:flex;flex-direction:column;gap:1px}
+    .nav__tagline{font-size:11px;color:var(--gray-500);font-family:var(--font-body);font-weight:400;letter-spacing:0.01em}
+    .nav__cta{font-size:12px;font-weight:600;color:var(--blue);border:1px solid var(--blue);border-radius:20px;padding:5px 14px;white-space:nowrap;transition:all var(--transition)}
+    .nav__cta:hover{background:var(--blue);color:var(--white)}
+    @media(max-width:900px){.nav__tagline{display:none}.nav__cta{display:none}}
     /* HAMBURGER + MOBILE MENU */
     .nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:auto}
     .nav__hamburger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:all 0.25s ease}
@@ -345,10 +350,13 @@ for (const file of mdFiles) {
 </script>
 <nav class="nav">
   <div class="nav__inner">
-    <a href="${SITE_URL}" class="nav__logo">
-      <span class="nav__logo-dot"></span>
-      Talented<span>At</span>AI
-    </a>
+    <div class="nav__logo-wrap">
+      <a href="${SITE_URL}" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        Talented<span>At</span>AI
+      </a>
+      <div class="nav__tagline">Practical guides, honest reviews · Independent</div>
+    </div>
     <ul class="nav__links">
       <li><a href="${SITE_URL}/articles.html">Articles</a></li>
       <li><a href="${SITE_URL}/about.html">About</a></li>
@@ -361,6 +369,7 @@ for (const file of mdFiles) {
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M14 14l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </button>
     </div>
+    <a href="${SITE_URL}/#newsletter" class="nav__cta">Get free guide →</a>
     <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </button>

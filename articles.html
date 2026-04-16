@@ -51,7 +51,7 @@
     a { color: inherit; text-decoration: none; }
 
     /* NAV */
-    .nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,102,255,0.08); }
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,102,255,0.08); }
     .nav__inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
     .nav__logo { font-family: var(--font-head); font-size: 20px; font-weight: 800; color: var(--dark); letter-spacing: -0.02em; display: flex; align-items: center; gap: 6px; }
     .nav__logo span { color: var(--blue); }
@@ -59,6 +59,21 @@
     .nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
     .nav__links a { font-size: 14px; font-weight: 500; color: var(--gray-700); transition: color var(--transition); }
     .nav__links a:hover { color: var(--blue); }
+    /* NAV SEARCH */
+    .nav-search { position: relative; display: flex; align-items: center; gap: 6px; }
+    .nav-search__input { width: 0; opacity: 0; padding: 0; margin: 0; border: none; border-bottom: 1.5px solid transparent; background: transparent; font-family: var(--font-body); font-size: 14px; font-weight: 500; color: var(--dark); outline: none; transition: width 200ms ease, opacity 200ms ease, border-color 200ms ease, padding 200ms ease; pointer-events: none; min-width: 0; }
+    .nav-search__input::placeholder { color: var(--gray-300); }
+    .nav-search.open .nav-search__input { width: 220px; opacity: 1; padding: 4px 2px; border-bottom-color: var(--blue); pointer-events: auto; }
+    .nav-search__toggle { display: flex; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; padding: 4px; color: var(--gray-700); transition: color var(--transition); }
+    .nav-search__toggle:hover { color: var(--blue); }
+    .nav-search.open .nav-search__toggle { color: var(--blue); }
+    .nav-search__toggle svg { display: block; }
+    .nav-search__drawer { display: none; }
+    .nav__logo-wrap { display: flex; flex-direction: column; gap: 1px; }
+    .nav__tagline { font-size: 11px; color: var(--gray-500); font-family: var(--font-body); font-weight: 400; letter-spacing: 0.01em; }
+    .nav__cta { font-size: 12px; font-weight: 600; color: var(--blue); border: 1px solid var(--blue); border-radius: 20px; padding: 5px 14px; white-space: nowrap; transition: all var(--transition); }
+    .nav__cta:hover { background: var(--blue); color: var(--white); }
+    @media(max-width:900px) { .nav__tagline { display: none; } .nav__cta { display: none; } }
 
     /* SEARCH BAR */
     .search-bar { position: relative; margin-bottom: 16px; }
@@ -289,6 +304,12 @@
     @media(max-width:768px) {
       .nav__links { display: none; }
       .nav__hamburger { display: flex; }
+      .nav-search.open .nav-search__input { width: 0; opacity: 0; padding: 0; border-bottom-color: transparent; pointer-events: none; }
+      .nav-search__drawer { display: block; max-height: 0; overflow: hidden; background: var(--white); border-bottom: 1px solid transparent; padding: 0 16px; transition: max-height 200ms ease, padding 200ms ease, border-color 200ms ease; }
+      .nav-search__drawer.open { max-height: 80px; padding: 12px 16px; border-bottom-color: rgba(0,102,255,0.08); }
+      .nav-search__drawer-input { width: 100%; font-family: var(--font-body); font-size: 15px; font-weight: 500; color: var(--dark); background: transparent; border: none; border-bottom: 1.5px solid var(--blue); padding: 6px 2px; margin: 0; outline: none; -webkit-appearance: none; appearance: none; }
+      .nav-search__drawer-input::placeholder { color: var(--gray-300); }
+      .nav-search__drawer-input::-webkit-search-cancel-button { -webkit-appearance: none; display: none; }
       .articles-grid { grid-template-columns: 1fr; }
       .article-card--featured { grid-column: span 1; }
       .footer__top { grid-template-columns: 1fr; }
@@ -306,20 +327,31 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav__inner">
-      <a href="/" class="nav__logo">
-        Talented<span>At</span>AI
-        <span class="nav__logo-dot"></span>
-      </a>
+      <div class="nav__logo-wrap">
+        <a href="/" class="nav__logo">
+          <span class="nav__logo-dot"></span>
+          Talented<span>At</span>AI
+        </a>
+        <div class="nav__tagline">Practical guides, honest reviews · Independent</div>
+      </div>
       <ul class="nav__links">
         <li><a href="https://talentedatai.com/articles.html">Articles</a></li>
         <li><a href="/about.html">About</a></li>
         <li><a href="/contact.html">Contact</a></li>
         <li><a href="/privacy-policy.html">Privacy Policy</a></li>
       </ul>
+      <div class="nav-search" id="nav-search">
+        <input type="search" id="nav-search-input" class="nav-search__input" placeholder="Search articles..." aria-label="Search articles" autocomplete="off" spellcheck="false" tabindex="-1" oninput="onNavSearchInput(event)" onkeydown="onNavSearchKeydown(event)" onblur="onNavSearchBlur(event)">
+        <button type="button" class="nav-search__toggle" aria-label="Search" onclick="toggleNavSearch()">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M14 14l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <a href="#newsletter" class="nav__cta">Get free guide →</a>
       <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <div class="nav__mobile-menu" id="nav-mobile-menu">
         <a href="https://talentedatai.com/articles.html">Articles</a>
@@ -327,6 +359,9 @@
         <a href="/contact.html">Contact</a>
         <a href="/privacy-policy.html">Privacy Policy</a>
       </div>
+    </div>
+    <div class="nav-search__drawer" id="nav-search-drawer">
+      <input type="search" id="nav-search-drawer-input" class="nav-search__drawer-input" placeholder="Search articles..." aria-label="Search articles" autocomplete="off" spellcheck="false" oninput="onNavSearchInput(event)" onkeydown="onNavSearchKeydown(event)">
     </div>
   </nav>
 
@@ -757,21 +792,59 @@
     }
 
     document.addEventListener('DOMContentLoaded', loadAllArticles);
+    // HAMBURGER MENU
     function toggleMenu() {
-    const btn = document.getElementById('nav-hamburger');
-    const menu = document.getElementById('nav-mobile-menu');
-    btn.classList.toggle('open');
-    menu.classList.toggle('open');
-    btn.setAttribute('aria-expanded', menu.classList.contains('open') ? 'true' : 'false');
-  }
-  document.addEventListener('click', function(e) {
-    const btn = document.getElementById('nav-hamburger');
-    const menu = document.getElementById('nav-mobile-menu');
-    if (!btn.contains(e.target) && !menu.contains(e.target)) {
-      btn.classList.remove('open');
-      menu.classList.remove('open');
+      var btn = document.getElementById('nav-hamburger');
+      var menu = document.getElementById('nav-mobile-menu');
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', menu.classList.contains('open') ? 'true' : 'false');
     }
-  });
+    // NAV SEARCH
+    var navSearchRedirectTimer = null;
+    var navSearchBlurTimer = null;
+    function isMobileNavViewport() { return typeof window.matchMedia === 'function' && window.matchMedia('(max-width:768px)').matches; }
+    function toggleNavSearch() { if (isMobileNavViewport()) { toggleMobileDrawer(); } else { toggleInlineSearch(); } }
+    function toggleInlineSearch() {
+      var wrap = document.getElementById('nav-search');
+      var input = document.getElementById('nav-search-input');
+      if (!wrap || !input) return;
+      if (wrap.classList.contains('open')) { closeNavSearch(); } else { wrap.classList.add('open'); setTimeout(function() { input.focus(); }, 10); }
+    }
+    function toggleMobileDrawer() {
+      var drawer = document.getElementById('nav-search-drawer');
+      var drawerInput = document.getElementById('nav-search-drawer-input');
+      if (!drawer || !drawerInput) return;
+      if (drawer.classList.contains('open')) { closeNavSearch(); } else { drawer.classList.add('open'); setTimeout(function() { drawerInput.focus(); }, 10); }
+    }
+    function closeNavSearch() {
+      var wrap = document.getElementById('nav-search');
+      var input = document.getElementById('nav-search-input');
+      var drawer = document.getElementById('nav-search-drawer');
+      var drawerInput = document.getElementById('nav-search-drawer-input');
+      if (wrap) wrap.classList.remove('open');
+      if (input) input.value = '';
+      if (drawer) drawer.classList.remove('open');
+      if (drawerInput) drawerInput.value = '';
+      clearTimeout(navSearchRedirectTimer);
+      clearTimeout(navSearchBlurTimer);
+    }
+    function submitNavSearch(q) { var t = (q || '').trim(); if (!t) return; window.location.href = '/articles.html?search=' + encodeURIComponent(t); }
+    function onNavSearchInput(e) { clearTimeout(navSearchRedirectTimer); }
+    function onNavSearchKeydown(e) {
+      if (e.key === 'Enter' || e.keyCode === 13) { e.preventDefault(); clearTimeout(navSearchRedirectTimer); if (e.target.value.trim()) submitNavSearch(e.target.value); }
+      else if (e.key === 'Escape' || e.keyCode === 27) { e.preventDefault(); closeNavSearch(); }
+    }
+    function onNavSearchBlur(e) {
+      clearTimeout(navSearchBlurTimer);
+      var input = e.target;
+      navSearchBlurTimer = setTimeout(function() { if (!input.value) { var wrap = document.getElementById('nav-search'); if (wrap) wrap.classList.remove('open'); } }, 200);
+    }
+    document.addEventListener('click', function(e) {
+      var btn = document.getElementById('nav-hamburger');
+      var menu = document.getElementById('nav-mobile-menu');
+      if (btn && menu && !btn.contains(e.target) && !menu.contains(e.target)) { btn.classList.remove('open'); menu.classList.remove('open'); }
+    });
 </script>
 <script>
   window.addEventListener('load', function() {
