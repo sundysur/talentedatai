@@ -104,12 +104,12 @@ for (const file of mdFiles) {
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>${fm.title || slug} | ${SITE_NAME}</title>
-  <link rel="canonical" href="${SITE_URL}/content/published/${slug}.html">
+  <link rel="canonical" href="${SITE_URL}/content/published/${slug}">
   ${fm.image ? `<link rel="preload" as="image" type="image/webp" imagesrcset="/static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-400w.webp 400w, /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-800w.webp 800w, /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}.webp 1600w" imagesizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px">` : ''}
   <meta name="description" content="${fm.description}">
   <meta property="og:title" content="${fm.title} — ${SITE_NAME}">
   <meta property="og:description" content="${fm.description}">
-  <meta property="og:url" content="${SITE_URL}/content/published/${slug}.html">
+  <meta property="og:url" content="${SITE_URL}/content/published/${slug}">
   <meta property="og:type" content="article">
   ${fm.image ? `<meta property="og:image" content="${SITE_URL}/static/images/articles/${fm.image}">` : ''}
   <meta name="twitter:card" content="summary_large_image">
@@ -156,7 +156,7 @@ for (const file of mdFiles) {
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "${SITE_URL}/content/published/${slug}.html"
+      "@id": "${SITE_URL}/content/published/${slug}"
     }${fm.audio_url ? `,
     "audio": {
       "@type": "AudioObject",
@@ -187,7 +187,7 @@ for (const file of mdFiles) {
         "@type": "ListItem",
         "position": 3,
         "name": "${(fm.title || '').replace(/\\/g, '\\\\').replace(/"/g, '\\"')}",
-        "item": "${SITE_URL}/content/published/${slug}.html"
+        "item": "${SITE_URL}/content/published/${slug}"
       }
     ]
   }
@@ -209,27 +209,69 @@ for (const file of mdFiles) {
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
       --blue:#0066ff;
-      --blue-light:#e8f0ff;
-      --dark:#0a0a0a;
+      --blue-light:#e6f0ff;
+      --blue-mid:#3385ff;
+      --dark:#0d0d1a;
+      --gray-700:#3d3d5c;
+      --gray-500:#6b6b8a;
+      --gray-300:#b8b8d0;
+      --gray-100:#f4f4f8;
+      --white:#ffffff;
+      --font-head:'Syne','Syne Fallback',sans-serif;
+      --font-body:'DM Sans','DM Sans Fallback',sans-serif;
+      --radius:16px;
+      --transition:0.25s cubic-bezier(0.4,0,0.2,1);
+      /* Legacy aliases used by article body styles */
       --text:#1a1a18;
       --gray-400:#9a9a95;
       --gray-600:#5a5a55;
-      --gray-100:#f5f5f3;
       --gray-200:#e8e8e5;
-      --white:#fafaf8;
+      --blue-light-legacy:#e8f0ff;
     }
-    body{font-family:'DM Sans','DM Sans Fallback',sans-serif;color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font-body);color:var(--dark);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
     a{color:var(--blue);text-decoration:none}
     a:hover{text-decoration:underline}
-    nav{position:sticky;top:0;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-200);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;z-index:100}
-    .nav-logo{font-family:'Syne','Syne Fallback',sans-serif;font-size:18px;font-weight:800;color:var(--dark);text-decoration:none}
-    .nav-logo span{color:var(--blue)}
-    .nav-back{font-size:13px;color:var(--gray-600);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
-    .nav-back:hover{color:var(--blue);text-decoration:none}
-    .nav-links{display:flex;gap:32px;list-style:none;align-items:center}
-    .nav-links a{font-size:13px;font-weight:500;color:var(--gray-600);text-decoration:none;transition:color .2s}
-    .nav-links a:hover{color:var(--dark)}
-    @media(max-width:640px){.nav-links{display:none}}
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,102,255,0.08)}
+    .nav__inner{max-width:1200px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+    .nav__logo{font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--dark);letter-spacing:-0.02em;display:flex;align-items:center;gap:6px;text-decoration:none}
+    .nav__logo:hover{text-decoration:none}
+    .nav__logo span{color:var(--blue)}
+    .nav__logo-dot{width:8px;height:8px;background:var(--blue);border-radius:50%;display:inline-block}
+    .nav__links{display:flex;align-items:center;gap:32px;list-style:none}
+    .nav__links a{font-size:14px;font-weight:500;color:var(--gray-700);transition:color var(--transition);text-decoration:none}
+    .nav__links a:hover{color:var(--blue);text-decoration:none}
+    /* NAV SEARCH */
+    .nav-search{position:relative;display:flex;align-items:center;gap:6px}
+    .nav-search__input{width:0;opacity:0;padding:0;margin:0;border:none;border-bottom:1.5px solid transparent;background:transparent;font-family:var(--font-body);font-size:14px;font-weight:500;color:var(--dark);outline:none;transition:width 200ms ease,opacity 200ms ease,border-color 200ms ease,padding 200ms ease;pointer-events:none;min-width:0}
+    .nav-search__input::placeholder{color:var(--gray-300)}
+    .nav-search.open .nav-search__input{width:220px;opacity:1;padding:4px 2px;border-bottom-color:var(--blue);pointer-events:auto}
+    .nav-search__toggle{display:flex;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;padding:4px;color:var(--gray-700);transition:color var(--transition)}
+    .nav-search__toggle:hover{color:var(--blue)}
+    .nav-search.open .nav-search__toggle{color:var(--blue)}
+    .nav-search__toggle svg{display:block}
+    .nav-search__drawer{display:none}
+    /* HAMBURGER + MOBILE MENU */
+    .nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:auto}
+    .nav__hamburger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:all 0.25s ease}
+    .nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav__hamburger.open span:nth-child(2){opacity:0}
+    .nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav__mobile-menu{display:none;position:absolute;top:56px;left:0;right:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,102,255,0.08);padding:16px 24px;flex-direction:column;gap:0;z-index:99}
+    .nav__mobile-menu a{font-size:15px;font-weight:500;color:var(--gray-700);padding:12px 0;border-bottom:1px solid var(--gray-100);display:block;transition:color 0.2s;text-decoration:none}
+    .nav__mobile-menu a:last-child{border-bottom:none}
+    .nav__mobile-menu a:hover{color:var(--blue)}
+    .nav__mobile-menu.open{display:flex}
+    @media(max-width:768px){
+      .nav__links{display:none}
+      .nav__hamburger{display:flex}
+      .nav-search.open .nav-search__input{width:0;opacity:0;padding:0;border-bottom-color:transparent;pointer-events:none}
+      .nav-search__drawer{display:block;max-height:0;overflow:hidden;background:var(--white);border-bottom:1px solid transparent;padding:0 16px;transition:max-height 200ms ease,padding 200ms ease,border-color 200ms ease}
+      .nav-search__drawer.open{max-height:80px;padding:12px 16px;border-bottom-color:rgba(0,102,255,0.08)}
+      .nav-search__drawer-input{width:100%;font-family:var(--font-body);font-size:15px;font-weight:500;color:var(--dark);background:transparent;border:none;border-bottom:1.5px solid var(--blue);padding:6px 2px;margin:0;outline:none;-webkit-appearance:none;appearance:none}
+      .nav-search__drawer-input::placeholder{color:var(--gray-300)}
+      .nav-search__drawer-input::-webkit-search-cancel-button{-webkit-appearance:none;display:none}
+    }
     .article-hero{max-width:760px;margin:0 auto;padding:64px 24px 48px}
     .category-pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px;background:var(--blue-light);color:var(--blue);margin-bottom:20px}
     .article-meta{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray-400);margin-bottom:24px;flex-wrap:wrap}
@@ -257,11 +299,24 @@ for (const file of mdFiles) {
     .article-body th{font-family:'Syne','Syne Fallback',sans-serif;font-weight:700;text-align:left;padding:12px 16px;background:var(--gray-100);border-bottom:2px solid var(--gray-200)}
     .article-body td{padding:12px 16px;border-bottom:1px solid var(--gray-200);color:#2a2a28}
     .article-body tr:last-child td{border-bottom:none}
-    footer{background:var(--dark);color:rgba(255,255,255,.45);text-align:center;padding:40px 24px;font-size:13px}
-    footer a{color:var(--blue)}
-    .footer-logo{font-family:'Syne','Syne Fallback',sans-serif;font-size:16px;font-weight:800;color:white;margin-bottom:8px}
-    .footer-logo span{color:var(--blue)}
-    @media(max-width:640px){nav{padding:0 20px}.article-hero{padding:40px 20px 32px}.article-body{padding:32px 20px 64px}}
+    /* FOOTER */
+    .footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:64px 24px 32px}
+    .footer__inner{max-width:1200px;margin:0 auto}
+    .footer__top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
+    .footer__brand-logo{font-family:var(--font-head);font-size:20px;font-weight:800;color:#fff;margin-bottom:14px}
+    .footer__brand-logo span{color:var(--blue)}
+    .footer__brand-desc{font-size:14px;line-height:1.7;max-width:280px}
+    .footer__col-title{font-family:var(--font-head);font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px}
+    .footer__links{list-style:none;display:flex;flex-direction:column;gap:12px}
+    .footer__links a{font-size:14px;color:rgba(255,255,255,0.55);transition:color var(--transition);text-decoration:none}
+    .footer__links a:hover{color:#fff}
+    .footer__bottom{display:flex;align-items:center;justify-content:space-between;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);font-size:13px}
+    .footer__bottom-links{display:flex;gap:24px}
+    .footer__bottom-links a{color:rgba(255,255,255,0.4);transition:color var(--transition);text-decoration:none}
+    .footer__bottom-links a:hover{color:#fff}
+    @media(max-width:1024px){.footer__top{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.footer__top{grid-template-columns:1fr}.footer__bottom{flex-direction:column;gap:16px;text-align:center}}
+    @media(max-width:640px){.article-hero{padding:40px 20px 32px}.article-body{padding:32px 20px 64px}}
     .audio-player { margin: 24px 0 36px; width: 100%; max-width: 100%; box-sizing: border-box; }
     .audio-player__inner { display: flex; align-items: center; gap: 14px; background: #eeeee8; border: 1.5px solid #e0e0da; border-radius: 12px; padding: 14px 18px; width: 100%; box-sizing: border-box; }
     .audio-btn { width: 42px; height: 42px; border-radius: 50%; background: #0066ff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #fff; transition: background 0.2s, transform 0.15s; }
@@ -288,13 +343,37 @@ for (const file of mdFiles) {
     document.getElementById('progress-bar').style.width = progress + '%';
   });
 </script>
-<nav>
-  <a href="${SITE_URL}" class="nav-logo">Talented<span>At</span>AI</a>
-  <ul class="nav-links">
-    <li><a href="${SITE_URL}" class="nav-back">← All articles</a></li>
-    <li><a href="${SITE_URL}/about.html">About</a></li>
-    <li><a href="${SITE_URL}/contact.html">Contact</a></li>
-  </ul>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="${SITE_URL}" class="nav__logo">
+      <span class="nav__logo-dot"></span>
+      Talented<span>At</span>AI
+    </a>
+    <ul class="nav__links">
+      <li><a href="${SITE_URL}/articles.html">Articles</a></li>
+      <li><a href="${SITE_URL}/about.html">About</a></li>
+      <li><a href="${SITE_URL}/contact.html">Contact</a></li>
+      <li><a href="${SITE_URL}/privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+    <div class="nav-search" id="nav-search">
+      <input type="search" id="nav-search-input" class="nav-search__input" placeholder="Search articles..." aria-label="Search articles" autocomplete="off" spellcheck="false" tabindex="-1" oninput="onNavSearchInput(event)" onkeydown="onNavSearchKeydown(event)" onblur="onNavSearchBlur(event)">
+      <button type="button" class="nav-search__toggle" aria-label="Search" onclick="toggleNavSearch()">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M14 14l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__mobile-menu" id="nav-mobile-menu">
+      <a href="${SITE_URL}/articles.html">Articles</a>
+      <a href="${SITE_URL}/about.html">About</a>
+      <a href="${SITE_URL}/contact.html">Contact</a>
+      <a href="${SITE_URL}/privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="nav-search__drawer" id="nav-search-drawer">
+    <input type="search" id="nav-search-drawer-input" class="nav-search__drawer-input" placeholder="Search articles..." aria-label="Search articles" autocomplete="off" spellcheck="false" oninput="onNavSearchInput(event)" onkeydown="onNavSearchKeydown(event)">
+  </div>
 </nav>
 <div class="article-hero">
   <span class="category-pill">${fm.category || 'General'}</span>
@@ -408,7 +487,7 @@ ${html}
 <div style="max-width:760px;margin:0 auto;padding:0 24px 48px;">
   <div style="border-top:1px solid #e8e8e5;margin-top:48px;padding-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
     <span style="font-family:'DM Sans',sans-serif;color:#5a5a55;font-size:15px;">Found this useful?</span>
-    <a href="https://x.com/intent/tweet?text=${encodeURIComponent(fm.title + ' — via @talentedat\n' + SITE_URL + '/content/published/' + slug + '.html')}"
+    <a href="https://x.com/intent/tweet?text=${encodeURIComponent(fm.title + ' — via @talentedat\n' + SITE_URL + '/content/published/' + slug)}"
        target="_blank" rel="noopener"
        style="display:inline-flex;align-items:center;gap:6px;background:#000;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -420,10 +499,94 @@ ${html}
     </a>
   </div>
 </div>
-<footer>
-  <div class="footer-logo">Talented<span>At</span>AI</div>
-  <p style="margin-top:8px">&copy; 2026 ${SITE_NAME}. All rights reserved. &nbsp;·&nbsp; <a href="${SITE_URL}">Home</a> &nbsp;·&nbsp; <a href="${SITE_URL}/about.html">About</a> &nbsp;·&nbsp; <a href="${SITE_URL}/privacy-policy.html">Privacy</a></p>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand-logo">Talented<span>At</span>AI</div>
+        <p class="footer__brand-desc">Your practical guide to the best AI tools, strategies, and workflows. Independent, honest, and updated daily.</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Articles</div>
+        <ul class="footer__links">
+          <li><a href="${SITE_URL}/articles.html">Latest Articles</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Company</div>
+        <ul class="footer__links">
+          <li><a href="${SITE_URL}/about.html">About Us</a></li>
+          <li><a href="${SITE_URL}/contact.html">Contact</a></li>
+          <li><a href="${SITE_URL}/privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 ${SITE_NAME}. All rights reserved.</span>
+      <div class="footer__bottom-links">
+        <a href="${SITE_URL}/privacy-policy.html">Privacy Policy</a>
+        <a href="${SITE_URL}/about.html">About</a>
+        <a href="${SITE_URL}/contact.html">Contact</a>
+        <a href="https://x.com/talentedat" target="_blank" rel="noopener">@talentedat</a>
+      </div>
+    </div>
+  </div>
 </footer>
+<script>
+  // HAMBURGER MENU
+  function toggleMenu(){
+    var btn=document.getElementById('nav-hamburger');
+    var menu=document.getElementById('nav-mobile-menu');
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',menu.classList.contains('open')?'true':'false');
+  }
+  // NAV SEARCH
+  var navSearchRedirectTimer=null;
+  var navSearchBlurTimer=null;
+  function isMobileNavViewport(){return typeof window.matchMedia==='function'&&window.matchMedia('(max-width:768px)').matches;}
+  function toggleNavSearch(){if(isMobileNavViewport()){toggleMobileDrawer();}else{toggleInlineSearch();}}
+  function toggleInlineSearch(){
+    var wrap=document.getElementById('nav-search');
+    var input=document.getElementById('nav-search-input');
+    if(!wrap||!input)return;
+    if(wrap.classList.contains('open')){closeNavSearch();}else{wrap.classList.add('open');setTimeout(function(){input.focus();},10);}
+  }
+  function toggleMobileDrawer(){
+    var drawer=document.getElementById('nav-search-drawer');
+    var drawerInput=document.getElementById('nav-search-drawer-input');
+    if(!drawer||!drawerInput)return;
+    if(drawer.classList.contains('open')){closeNavSearch();}else{drawer.classList.add('open');setTimeout(function(){drawerInput.focus();},10);}
+  }
+  function closeNavSearch(){
+    var wrap=document.getElementById('nav-search');
+    var input=document.getElementById('nav-search-input');
+    var drawer=document.getElementById('nav-search-drawer');
+    var drawerInput=document.getElementById('nav-search-drawer-input');
+    if(wrap)wrap.classList.remove('open');
+    if(input)input.value='';
+    if(drawer)drawer.classList.remove('open');
+    if(drawerInput)drawerInput.value='';
+    clearTimeout(navSearchRedirectTimer);
+    clearTimeout(navSearchBlurTimer);
+  }
+  function submitNavSearch(q){var t=(q||'').trim();if(!t)return;window.location.href='/articles.html?search='+encodeURIComponent(t);}
+  function onNavSearchInput(e){clearTimeout(navSearchRedirectTimer);}
+  function onNavSearchKeydown(e){
+    if(e.key==='Enter'||e.keyCode===13){e.preventDefault();clearTimeout(navSearchRedirectTimer);if(e.target.value.trim())submitNavSearch(e.target.value);}
+    else if(e.key==='Escape'||e.keyCode===27){e.preventDefault();closeNavSearch();}
+  }
+  function onNavSearchBlur(e){
+    clearTimeout(navSearchBlurTimer);
+    var input=e.target;
+    navSearchBlurTimer=setTimeout(function(){if(!input.value){var wrap=document.getElementById('nav-search');if(wrap)wrap.classList.remove('open');}},200);
+  }
+  document.addEventListener('click',function(e){
+    var btn=document.getElementById('nav-hamburger');
+    var menu=document.getElementById('nav-mobile-menu');
+    if(btn&&menu&&!btn.contains(e.target)&&!menu.contains(e.target)){btn.classList.remove('open');menu.classList.remove('open');}
+  });
+</script>
 <script>
   window.addEventListener('load', function() {
     var s = document.createElement('script');
@@ -463,7 +626,7 @@ const sitemapEntries = articles.map(a => {
   const lastmod = toISODate(a.date_modified) || toISODate(a.date);
   const lastmodTag = lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : '';
   return `  <url>
-    <loc>${SITE_URL}/content/published/${a.slug}.html</loc>${lastmodTag}
+    <loc>${SITE_URL}/content/published/${a.slug}</loc>${lastmodTag}
     <priority>0.8</priority>
   </url>`;
 }).join('\n');
