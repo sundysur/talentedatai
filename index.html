@@ -268,6 +268,54 @@
     .hero-bar__headline { font-size: 14px; line-height: 1.4; white-space: normal; }
     .hero-bar__sub { font-size: 11px; }
   }
+  /* MAGAZINE LAYOUT */
+  #articles-grid.main-feed__grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .main-layout{display:grid;grid-template-columns:1fr 320px;gap:32px;margin-top:20px}
+  .feed-card{background:var(--white);border:1px solid rgba(0,0,0,0.07);border-radius:12px;overflow:hidden;cursor:pointer;transition:transform var(--transition),box-shadow var(--transition);display:flex;flex-direction:column}
+  .feed-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,102,0.08)}
+  .feed-card__thumb{width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--gray-100)}
+  .feed-card__thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .feed-card__body{padding:14px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .feed-card__meta{display:flex;align-items:center;gap:8px}
+  .feed-card__title{font-family:var(--font-head);font-size:15px;font-weight:700;line-height:1.3;color:var(--dark);transition:color var(--transition);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .feed-card:hover .feed-card__title{color:var(--blue)}
+  .feed-card__desc{font-size:13px;color:var(--gray-500);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+  .feed-card__footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--gray-100);margin-top:auto}
+  /* SIDEBAR */
+  .sidebar{position:sticky;top:80px;align-self:start}
+  .sidebar__section{background:var(--white);border:1px solid rgba(0,0,0,0.07);border-radius:12px;padding:20px;margin-bottom:20px}
+  .sidebar__section:last-child{margin-bottom:0}
+  .sidebar__heading{font-family:var(--font-head);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-500);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--blue)}
+  .sidebar-pick{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--gray-100);text-decoration:none;color:inherit}
+  .sidebar-pick:last-child{border-bottom:none;padding-bottom:0}
+  .sidebar-pick:first-of-type{padding-top:0}
+  .sidebar-pick__thumb{width:64px;height:44px;border-radius:6px;overflow:hidden;flex-shrink:0;background:var(--gray-100)}
+  .sidebar-pick__thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .sidebar-pick__body{flex:1;min-width:0}
+  .sidebar-pick__title{font-family:var(--font-head);font-size:13px;font-weight:700;line-height:1.3;color:var(--dark);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .sidebar-pick:hover .sidebar-pick__title{color:var(--blue)}
+  .sidebar-pick__meta{font-size:11px;color:var(--gray-300);margin-top:4px;display:flex;align-items:center;gap:6px}
+  .sidebar-list-item{display:block;padding:10px 0;border-bottom:1px solid var(--gray-100);text-decoration:none;color:inherit}
+  .sidebar-list-item:last-child{border-bottom:none;padding-bottom:0}
+  .sidebar-list-item:first-of-type{padding-top:0}
+  .sidebar-list-item__title{font-family:var(--font-body);font-size:14px;font-weight:500;line-height:1.4;color:var(--dark)}
+  .sidebar-list-item:hover .sidebar-list-item__title{color:var(--blue)}
+  .sidebar-list-item__row{display:flex;align-items:center;justify-content:space-between;margin-top:4px}
+  .sidebar-list-item__time{font-size:11px;color:var(--gray-300)}
+  .sidebar-list-item__link{font-size:12px;font-weight:600;color:var(--blue)}
+  /* BENTO SECTIONS */
+  .bento-wrap{margin-top:48px}
+  .bento-section{margin-bottom:48px}
+  .bento-section__header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--gray-100)}
+  .bento-section__title{font-family:var(--font-head);font-size:18px;font-weight:700;color:var(--dark)}
+  .bento-section__link{font-size:13px;font-weight:600;color:var(--blue);text-decoration:none}
+  .bento-section__link:hover{text-decoration:underline}
+  .bento-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .load-more-wrap{text-align:center;margin-top:28px}
+  .load-more-btn{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-family:var(--font-body);font-size:14px;font-weight:600;background:none;border:1.5px solid var(--blue);border-radius:100px;padding:10px 24px;cursor:pointer;transition:background 0.2s,color 0.2s}
+  .load-more-btn:hover{background:var(--blue);color:var(--white)}
+  @media(max-width:1024px){.main-layout{grid-template-columns:1fr}.sidebar{position:static}}
+  @media(max-width:768px){#articles-grid.main-feed__grid{grid-template-columns:1fr}.bento-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -368,13 +416,27 @@
         </div>
         <a href="https://talentedatai.com/articles.html" id="see-all-link">See all →</a>
       </div>
-      <div id="articles-grid"></div>
-      <div style="text-align:center;margin-top:40px;padding-bottom:8px;">
-        <a href="https://talentedatai.com/articles.html" style="display:inline-flex;align-items:center;gap:8px;color:#0066ff;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;border:1.5px solid #0066ff;border-radius:100px;padding:12px 28px;text-decoration:none;transition:background 0.2s,color 0.2s;" onmouseover="this.style.background='#0066ff';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#0066ff'">
-          See all articles
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      <div class="main-layout">
+        <div class="main-feed">
+          <div id="articles-grid" class="main-feed__grid"></div>
+          <div class="load-more-wrap" id="load-more-wrap" style="display:none;">
+            <button class="load-more-btn" onclick="loadMoreArticles()">Load more articles</button>
+          </div>
+        </div>
+        <aside class="sidebar" id="sidebar">
+          <div class="sidebar__section" id="sidebar-editors-choice">
+            <div class="sidebar__heading">Editor's Choice</div>
+          </div>
+          <div class="sidebar__section" id="sidebar-top-reviews">
+            <div class="sidebar__heading">Top Reviews</div>
+          </div>
+          <div class="sidebar__section" id="sidebar-top-guides">
+            <div class="sidebar__heading">Top Guides</div>
+          </div>
+        </aside>
       </div>
+      <div id="mid-feed-newsletter-slot"></div>
+      <div id="bento-sections" class="bento-wrap"></div>
     </div>
   </section>
 
@@ -661,48 +723,166 @@
         }
       });
     }, { threshold: 0.08 });
-    document.querySelectorAll('.article-card').forEach(el => {
+    document.querySelectorAll('.article-card, .feed-card, .compact-card').forEach(el => {
+      if (el.dataset.observed) return;
+      el.dataset.observed = '1';
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s ease';
       obs.observe(el);
     });
   }
+  /* FEED CARD — for 70% main column */
+  function buildFeedCard(article, index) {
+    var url = 'https://talentedatai.com/content/published/' + article.slug + '.html';
+    var ci = index % 3;
+    var badgeExtra = BADGE_CLASSES[ci] ? ' ' + BADGE_CLASSES[ci] : '';
+    var avatarClass = AVATAR_COLORS[ci];
+    var thumbContent = article.image
+      ? '<picture><source type="image/webp" srcset="' + article.image.replace(/\.[^/.]+$/, '-400w.webp') + ' 400w, ' + article.image.replace(/\.[^/.]+$/, '-800w.webp') + ' 800w" sizes="(max-width:768px) calc(100vw - 48px), 380px"><img src="' + article.image.replace(/\.[^/.]+$/, '-400w.jpg') + '" srcset="' + article.image.replace(/\.[^/.]+$/, '-400w.jpg') + ' 400w, ' + article.image.replace(/\.[^/.]+$/, '-800w.jpg') + ' 800w" sizes="(max-width:768px) calc(100vw - 48px), 380px" alt="' + escAttr(article.title) + '" width="400" height="225" loading="lazy"></picture>'
+      : '';
+    var arrowSvg = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    return '<article class="feed-card" onclick="window.location.href=\'' + url + '\'">'
+      + '<div class="feed-card__thumb">' + thumbContent + '</div>'
+      + '<div class="feed-card__body">'
+      + '<div class="feed-card__meta"><span class="category-badge' + badgeExtra + '">' + (article.category || 'General') + '</span><span style="font-size:11px;color:var(--gray-300)">' + estimateReadTime(article) + '</span></div>'
+      + '<h3 class="feed-card__title">' + article.title + '</h3>'
+      + '<p class="feed-card__desc">' + (article.description || '') + '</p>'
+      + '<div class="feed-card__footer"><div class="author"><div class="author__avatar ' + avatarClass + '" aria-hidden="true">TA</div><span class="author__name">' + (article.author || 'TalentedAtAI Team') + '</span></div><span class="read-more">Read article ' + arrowSvg + '</span></div>'
+      + '</div></article>';
+  }
+  /* SIDEBAR BUILDERS */
+  function buildSidebarPick(article) {
+    var url = 'https://talentedatai.com/content/published/' + article.slug + '.html';
+    var thumbHtml = article.image
+      ? '<img src="' + article.image.replace(/\.[^/.]+$/, '-400w.jpg') + '" alt="' + escAttr(article.title) + '" width="64" height="44" loading="lazy">'
+      : '';
+    return '<a class="sidebar-pick" href="' + url + '">'
+      + '<div class="sidebar-pick__thumb">' + thumbHtml + '</div>'
+      + '<div class="sidebar-pick__body">'
+      + '<div class="sidebar-pick__title">' + article.title + '</div>'
+      + '<div class="sidebar-pick__meta"><span class="category-badge" style="font-size:9px;padding:1px 6px">' + (article.category || 'General') + '</span><span>' + estimateReadTime(article) + '</span></div>'
+      + '</div></a>';
+  }
+  function buildSidebarListItem(article) {
+    var url = 'https://talentedatai.com/content/published/' + article.slug + '.html';
+    return '<a class="sidebar-list-item" href="' + url + '">'
+      + '<div class="sidebar-list-item__title">' + article.title + '</div>'
+      + '<div class="sidebar-list-item__row"><span class="sidebar-list-item__time">' + estimateReadTime(article) + '</span><span class="sidebar-list-item__link">Read →</span></div>'
+      + '</a>';
+  }
+  function parseReadTime(a) { return parseInt(a.read_time) || 0; }
+  function populateSidebar(sorted, shownSlugs) {
+    /* Helper: articles matching a filter keyword, not already shown, sorted by read_time desc */
+    function bestUnshown(filterKey, count) {
+      return sorted.filter(function(a){
+        if (shownSlugs.has(a.slug)) return false;
+        if (filterKey === 'Reviews') return a.category === 'Reviews' || (Array.isArray(a.filters) && a.filters.indexOf('Reviews') !== -1);
+        return Array.isArray(a.filters) && a.filters.indexOf(filterKey) !== -1;
+      }).sort(function(a,b){ return parseReadTime(b) - parseReadTime(a); }).slice(0, count);
+    }
+    /* EDITOR'S CHOICE — keep hardcoded picks unless already shown; replace with same-category fallback */
+    var editorsSlugs = ['gamma-ai-review-2026','how-to-clone-your-voice-with-ai-2026','best-ai-tools-for-podcasters-2026'];
+    var editorsArticles = [];
+    for (var i = 0; i < editorsSlugs.length; i++) {
+      var pick = sorted.find(function(a){ return a.slug === editorsSlugs[i]; });
+      if (pick && !shownSlugs.has(pick.slug)) {
+        editorsArticles.push(pick);
+        shownSlugs.add(pick.slug);
+      } else if (pick) {
+        /* Find replacement from same category, not already shown */
+        var catKey = (Array.isArray(pick.filters) && pick.filters.indexOf('Guides') !== -1) ? 'Guides' : 'Reviews';
+        var fallback = sorted.filter(function(a){
+          if (shownSlugs.has(a.slug)) return false;
+          if (catKey === 'Reviews') return a.category === 'Reviews' || (Array.isArray(a.filters) && a.filters.indexOf('Reviews') !== -1);
+          return Array.isArray(a.filters) && a.filters.indexOf(catKey) !== -1;
+        }).sort(function(a,b){ return parseReadTime(b) - parseReadTime(a); });
+        if (fallback.length) { editorsArticles.push(fallback[0]); shownSlugs.add(fallback[0].slug); }
+      }
+    }
+    var ec = document.getElementById('sidebar-editors-choice');
+    if (ec) ec.innerHTML = '<div class="sidebar__heading">Editor\'s Choice</div>' + editorsArticles.map(buildSidebarPick).join('');
+    /* TOP REVIEWS — highest read_time, excluding everything already shown */
+    var reviewArticles = bestUnshown('Reviews', 3);
+    reviewArticles.forEach(function(a){ shownSlugs.add(a.slug); });
+    var rc = document.getElementById('sidebar-top-reviews');
+    if (rc) rc.innerHTML = '<div class="sidebar__heading">Top Reviews</div>' + reviewArticles.map(buildSidebarListItem).join('');
+    /* TOP GUIDES — highest read_time, excluding everything already shown */
+    var guideArticles = bestUnshown('Guides', 3);
+    guideArticles.forEach(function(a){ shownSlugs.add(a.slug); });
+    var gc = document.getElementById('sidebar-top-guides');
+    if (gc) gc.innerHTML = '<div class="sidebar__heading">Top Guides</div>' + guideArticles.map(buildSidebarListItem).join('');
+  }
+  /* BENTO THEMATIC SECTIONS */
+  function populateBento(sorted, shownSlugs) {
+    var container = document.getElementById('bento-sections');
+    if (!container) return;
+    var remaining = sorted.filter(function(a){ return !shownSlugs.has(a.slug); });
+    var bentoDefs = [
+      { title: 'AI Video & Visual', param: 'Reviews',
+        match: function(a){ var t = ((a.tags||[]).join(' ')+(a.title||'')).toLowerCase(); return t.indexOf('video')!==-1||t.indexOf('image')!==-1||t.indexOf('avatar')!==-1||t.indexOf('firefly')!==-1||t.indexOf('midjourney')!==-1||t.indexOf('visual')!==-1; } },
+      { title: 'AI Voice & Audio', param: 'Reviews',
+        match: function(a){ var t = ((a.tags||[]).join(' ')+(a.title||'')).toLowerCase(); return t.indexOf('voice')!==-1||t.indexOf('audio')!==-1||t.indexOf('music')!==-1||t.indexOf('elevenlabs')!==-1||t.indexOf('suno')!==-1||t.indexOf('podcast')!==-1; } },
+      { title: 'AI for Productivity', param: 'Guides',
+        match: function(a){ var t = ((a.tags||[]).join(' ')+(a.title||'')).toLowerCase(); return t.indexOf('productivity')!==-1||t.indexOf('workflow')!==-1||t.indexOf('job search')!==-1||t.indexOf('content marketing')!==-1||t.indexOf('writing')!==-1||t.indexOf('money')!==-1; } }
+    ];
+    var usedInBento = {};
+    var html = '';
+    for (var b = 0; b < bentoDefs.length; b++) {
+      var def = bentoDefs[b];
+      var matches = remaining.filter(function(a){ return def.match(a) && !usedInBento[a.slug]; }).slice(0, 3);
+      if (matches.length < 2) continue;
+      matches.forEach(function(a){ usedInBento[a.slug] = true; });
+      html += '<div class="bento-section"><div class="bento-section__header"><h2 class="bento-section__title">' + def.title + '</h2><a class="bento-section__link" href="https://talentedatai.com/articles.html?filter=' + encodeURIComponent(def.param) + '">See all →</a></div><div class="bento-grid">' + matches.map(buildCompactCard).join('') + '</div></div>';
+    }
+    container.innerHTML = html;
+    setupObserver();
+  }
+  /* PAGINATION */
+  var feedPage = 0;
+  var FEED_PAGE_SIZE = 8;
+  var currentFeedArticles = [];
+  function renderFeedPage() {
+    var grid = document.getElementById('articles-grid');
+    var end = (feedPage + 1) * FEED_PAGE_SIZE;
+    var visible = currentFeedArticles.slice(0, end);
+    grid.innerHTML = visible.map(function(a, i){ return buildFeedCard(a, i); }).join('');
+    var wrap = document.getElementById('load-more-wrap');
+    if (wrap) wrap.style.display = end < currentFeedArticles.length ? 'block' : 'none';
+    setupObserver();
+  }
+  function loadMoreArticles() {
+    feedPage++;
+    renderFeedPage();
+  }
+  /* MAIN LOAD */
   async function loadArticles() {
-    const featuredSlot  = document.getElementById('featured-slot');
-    const secondarySlot = document.getElementById('secondary-slot');
-    const grid          = document.getElementById('articles-grid');
-    const seeAllLink    = document.getElementById('see-all-link');
+    var featuredSlot  = document.getElementById('featured-slot');
+    var secondarySlot = document.getElementById('secondary-slot');
+    var seeAllLink    = document.getElementById('see-all-link');
     try {
-      const res = await fetch('/content/articles.json');
+      var res = await fetch('/content/articles.json');
       if (!res.ok) throw new Error('load failed');
-      const articles = await res.json();
+      var articles = await res.json();
       if (!articles || articles.length === 0) {
-        grid.innerHTML = '<p style="color:var(--gray-500);font-size:15px;padding:32px 0;">No articles yet — check back soon.</p>';
+        document.getElementById('articles-grid').innerHTML = '<p style="color:var(--gray-500);font-size:15px;padding:32px 0;">No articles yet — check back soon.</p>';
         return;
       }
-      const sorted = articles
-        .slice()
-        .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
-      if (seeAllLink) {
-        seeAllLink.textContent = 'See all ' + sorted.length + ' →';
-      }
+      var sorted = articles.slice().sort(function(a, b){ return new Date(b.date||0) - new Date(a.date||0); });
+      if (seeAllLink) seeAllLink.textContent = 'See all ' + sorted.length + ' →';
       featuredSlot.innerHTML  = buildFeaturedCard(sorted[0]);
       secondarySlot.innerHTML = sorted.slice(1, 3).map(buildSecondaryCard).join('');
       allArticles = sorted;
       updateFilterCounts(sorted);
-      const gridArticles = sorted.slice(3);
-      const fullCards = gridArticles.slice(0, 3).map((a, i) => buildGridCard(a, i)).join('');
-      const compactBefore = gridArticles.slice(3, 6).map(a => buildCompactCard(a)).join('');
-      const compactAfter = gridArticles.slice(6, 12).map(a => buildCompactCard(a)).join('');
-      const newsletterCta = gridArticles.length > 6 ? buildMidFeedNewsletter() : '';
-      grid.innerHTML = (fullCards ? '<div class="articles-grid">' + fullCards + '</div>' : '')
-        + (gridArticles.length > 3 ? '<div class="articles-grid">' + compactBefore + '</div>' : '')
-        + newsletterCta
-        + (gridArticles.length > 6 ? '<div class="articles-grid">' + compactAfter + '</div>' : '');
-      setupObserver();
+      currentFeedArticles = sorted.slice(3);
+      feedPage = 0;
+      renderFeedPage();
+      var shownSlugs = new Set(sorted.slice(0, 3 + Math.min(currentFeedArticles.length, FEED_PAGE_SIZE)).map(function(a){ return a.slug; }));
+      populateSidebar(sorted, shownSlugs);
+      document.getElementById('mid-feed-newsletter-slot').innerHTML = buildMidFeedNewsletter();
+      populateBento(sorted, shownSlugs);
     } catch (err) {
-      grid.innerHTML = '<p style="color:var(--gray-500);font-size:15px;padding:32px 0;">No articles yet — check back soon.</p>';
+      document.getElementById('articles-grid').innerHTML = '<p style="color:var(--gray-500);font-size:15px;padding:32px 0;">No articles yet — check back soon.</p>';
     }
   }
   document.addEventListener('DOMContentLoaded', loadArticles);
@@ -715,29 +895,19 @@
       btn.classList.toggle('active', isActive);
       btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     });
-    const filtered = category === 'all'
+    var filtered = category === 'all'
       ? allArticles
-      : allArticles.filter(a =>
-          Array.isArray(a.filters)
-            ? a.filters.includes(category)
-            : a.category === category
-        );
-    const grid = document.getElementById('articles-grid');
+      : allArticles.filter(function(a){
+          return Array.isArray(a.filters) ? a.filters.indexOf(category) !== -1 : a.category === category;
+        });
     if (filtered.length === 0) {
-      grid.innerHTML = '<div class="no-results">No articles in this category yet.</div>';
+      document.getElementById('articles-grid').innerHTML = '<div class="no-results">No articles in this category yet.</div>';
+      document.getElementById('load-more-wrap').style.display = 'none';
       return;
     }
-    const isFiltered = category !== 'all';
-    const gridArticles = isFiltered ? filtered.slice(0, 12) : filtered.slice(3);
-    const fullCards = gridArticles.slice(0, 3).map((a, i) => buildGridCard(a, i)).join('');
-    const compactBefore = gridArticles.slice(3, 6).map(a => buildCompactCard(a)).join('');
-    const compactAfter = gridArticles.slice(6, 12).map(a => buildCompactCard(a)).join('');
-    const newsletterCta = gridArticles.length > 6 ? buildMidFeedNewsletter() : '';
-    grid.innerHTML = (fullCards ? '<div class="articles-grid">' + fullCards + '</div>' : '')
-      + (gridArticles.length > 3 ? '<div class="articles-grid">' + compactBefore + '</div>' : '')
-      + newsletterCta
-      + (gridArticles.length > 6 ? '<div class="articles-grid">' + compactAfter + '</div>' : '');
-    setupObserver();
+    currentFeedArticles = category !== 'all' ? filtered : filtered.slice(3);
+    feedPage = 0;
+    renderFeedPage();
   }
   function updateFilterCounts(articles) {
     document.querySelectorAll('.filter-btn').forEach(btn => {
