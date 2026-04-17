@@ -345,7 +345,9 @@ for (const file of mdFiles) {
     .author-bio__content{flex:1;min-width:0}
     .author-bio__name{font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--dark);margin-bottom:4px}
     .author-bio__text{font-family:var(--font-body);font-size:14px;color:var(--gray-500);line-height:1.6;margin:0}
-    .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:28px 0;border-radius:8px}
+    .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:28px 0;border-radius:8px;position:relative;border:1px solid var(--gray-200)}
+    .table-scroll::after{content:'';position:absolute;top:0;right:0;width:40px;height:100%;background:linear-gradient(to right,transparent,var(--white));pointer-events:none;border-radius:0 8px 8px 0}
+    @media(max-width:768px){.table-scroll::before{content:'Scroll to see more →';display:block;font-size:11px;color:var(--gray-500);text-align:right;padding:4px 8px 0;font-family:var(--font-body)}}
     .table-scroll table{margin:0}
     .article-body table{width:100%;border-collapse:collapse;margin:28px 0;font-size:15px;min-width:480px}
     .article-body th{font-family:'Syne','Syne Fallback',sans-serif;font-weight:700;text-align:left;padding:12px 16px;background:var(--gray-100);border-bottom:2px solid var(--gray-200)}
@@ -420,6 +422,8 @@ for (const file of mdFiles) {
     [data-theme="dark"] .article-body code{background:#1a1a2e !important;color:#e0e0f0 !important}
     [data-theme="dark"] .article-body pre{background:#1a1a2e;color:#e8e8f0}
     [data-theme="dark"] .article-body img{opacity:0.9}
+    [data-theme="dark"] .table-scroll{border-color:rgba(255,255,255,0.07)}
+    [data-theme="dark"] .table-scroll::after{background:linear-gradient(to right,transparent,#0d0d1a)}
     [data-theme="dark"] .article-body table{border-color:rgba(255,255,255,0.07)}
     [data-theme="dark"] .article-body th{background:#1a1a2e !important;color:#e0e0f0 !important}
     [data-theme="dark"] .article-body td{border-color:rgba(255,255,255,0.07)}
@@ -444,6 +448,8 @@ for (const file of mdFiles) {
     [data-theme="dark"] .article-body div[style*="background:#f0f6ff"],[data-theme="dark"] .article-body div[style*="background: #f0f6ff"]{background:#1a2a3a !important;border-color:#4d9fff !important}
     [data-theme="dark"] .article-body div[style*="background:#f0f6ff"] p,[data-theme="dark"] .article-body div[style*="background: #f0f6ff"] p{color:#c8d8f0 !important}
     [data-theme="dark"] .article-body div[style*="background:#f0f6ff"] a[style*="background:#0066ff"],[data-theme="dark"] .article-body div[style*="background: #f0f6ff"] a[style*="background:#0066ff"]{color:#fff !important;background:#4d9fff !important}
+    [data-theme="dark"] .footer__brand-logo{color:#f0f0f5}
+    [data-theme="dark"] .footer__brand-logo span{color:#4d9fff}
     body{transition:background-color 200ms ease,color 200ms ease}
     </style>
 </head>
