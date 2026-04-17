@@ -79,7 +79,8 @@ for (const file of mdFiles) {
   const fm = parsed.data;
   await generateResponsiveImages(fm.image);
   const content = parsed.content;
-  const html = marked.parse(content);
+  const html = marked.parse(content)
+    .replace(/<table([\s\S]*?<\/table>)/g, '<div class="table-scroll"><table$1</div>');
 
   // --- TOC generation: parse H2 headings ---
   const h2Regex = /<h2[^>]*>([\s\S]*?)<\/h2>/g;
@@ -263,7 +264,7 @@ for (const file of mdFiles) {
       --white:#0d0d1a;--dark:#f0f0f5;--gray-100:#1a1a2e;--gray-200:#252538;
       --gray-300:#4a4a6a;--gray-500:#8888aa;--gray-700:#ccccdd;
       --blue:#4d9fff;--blue-light:#1a2940;--blue-mid:#6ab0ff;
-      --text:#e8e8f0;--gray-400:#7a7a9a;--gray-600:#aaaacc;
+      --text:#e0e0f0;--gray-400:#7a7a9a;--gray-600:#aaaacc;
       --blue-light-legacy:#1a2940;
     }
     body{font-family:var(--font-body);color:var(--dark);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -344,7 +345,9 @@ for (const file of mdFiles) {
     .author-bio__content{flex:1;min-width:0}
     .author-bio__name{font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--dark);margin-bottom:4px}
     .author-bio__text{font-family:var(--font-body);font-size:14px;color:var(--gray-500);line-height:1.6;margin:0}
-    .article-body table{width:100%;border-collapse:collapse;margin:28px 0;font-size:15px}
+    .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:28px 0;border-radius:8px}
+    .table-scroll table{margin:0}
+    .article-body table{width:100%;border-collapse:collapse;margin:28px 0;font-size:15px;min-width:480px}
     .article-body th{font-family:'Syne','Syne Fallback',sans-serif;font-weight:700;text-align:left;padding:12px 16px;background:var(--gray-100);border-bottom:2px solid var(--gray-200)}
     .article-body td{padding:12px 16px;border-bottom:1px solid var(--gray-200);color:#2a2a28}
     .article-body tr:last-child td{border-bottom:none}
@@ -394,13 +397,16 @@ for (const file of mdFiles) {
     .toc-link.active{color:var(--blue);font-weight:500;border-left-color:var(--blue)}
     @media(max-width:1100px){.article-toc-wrapper{display:block;max-width:760px;padding:0}.toc-sidebar{display:none}}
   
-    /* DARK MODE TOGGLE */
-    .theme-toggle{display:flex;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;padding:4px;color:var(--gray-700);transition:color var(--transition)}
-    .theme-toggle:hover{color:var(--blue)}
-    .theme-toggle__sun{display:block}
-    .theme-toggle__moon{display:none}
-    [data-theme="dark"] .theme-toggle__sun{display:none}
-    [data-theme="dark"] .theme-toggle__moon{display:block}
+/* DARK MODE TOGGLE — sliding pill */
+    .theme-toggle{background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center}
+    .theme-toggle__track{width:52px;height:26px;border-radius:13px;background:var(--gray-200,#e8e8e5);border:1.5px solid var(--gray-300);position:relative;display:flex;align-items:center;transition:background 200ms ease,border-color 200ms ease}
+    .theme-toggle__thumb{width:20px;height:20px;border-radius:50%;background:white;position:absolute;left:2px;transition:transform 200ms ease,background 200ms ease;box-shadow:0 1px 3px rgba(0,0,0,0.2)}
+    .theme-toggle__moon{position:absolute;right:4px;font-size:12px;line-height:1}
+    .theme-toggle__sun{position:absolute;left:4px;font-size:12px;line-height:1;opacity:0.4}
+    [data-theme="dark"] .theme-toggle__track{background:#1e3a5f;border-color:#4d9fff}
+    [data-theme="dark"] .theme-toggle__thumb{transform:translateX(26px);background:#4d9fff}
+    [data-theme="dark"] .theme-toggle__sun{opacity:1}
+    [data-theme="dark"] .theme-toggle__moon{opacity:0.4}
     /* DARK OVERRIDES — article pages */
     [data-theme="dark"] .nav{background:rgba(13,13,26,0.95);border-bottom-color:rgba(77,159,255,0.08)}
     [data-theme="dark"] .nav__mobile-menu{background:rgba(13,13,26,0.98);border-bottom-color:rgba(77,159,255,0.08)}
@@ -409,13 +415,13 @@ for (const file of mdFiles) {
     [data-theme="dark"] .newsletter-section{background:#060612}
     [data-theme="dark"] .newsletter-input{background:#1a1a2e;color:#e8e8f0;border-color:#252538}
     [data-theme="dark"] .newsletter-input::placeholder{color:#6a6a8a}
-    [data-theme="dark"] .article-body a{color:var(--blue)}
-    [data-theme="dark"] .article-body blockquote{border-left-color:var(--blue);background:var(--gray-100);color:var(--text,var(--dark))}
-    [data-theme="dark"] .article-body code{background:var(--gray-100);color:var(--text,var(--dark))}
+    [data-theme="dark"] .article-body a{color:#7db8ff !important}
+    [data-theme="dark"] .article-body blockquote{border-left-color:#4d9fff;background:#1a1a2e !important;color:#c8c8e8 !important}
+    [data-theme="dark"] .article-body code{background:#1a1a2e !important;color:#e0e0f0 !important}
     [data-theme="dark"] .article-body pre{background:#1a1a2e;color:#e8e8f0}
     [data-theme="dark"] .article-body img{opacity:0.9}
     [data-theme="dark"] .article-body table{border-color:rgba(255,255,255,0.07)}
-    [data-theme="dark"] .article-body th{background:var(--gray-100);color:var(--dark)}
+    [data-theme="dark"] .article-body th{background:#1a1a2e !important;color:#e0e0f0 !important}
     [data-theme="dark"] .article-body td{border-color:rgba(255,255,255,0.07)}
     [data-theme="dark"] .category-pill{background:rgba(77,159,255,0.12);color:#7db8ff;border:1px solid rgba(77,159,255,0.2)}
     [data-theme="dark"] .author-bio{border-top-color:rgba(255,255,255,0.07);border-bottom-color:rgba(255,255,255,0.07)}
@@ -427,6 +433,17 @@ for (const file of mdFiles) {
     [data-theme="dark"] .article-desc{color:#9999bb;border-bottom-color:rgba(255,255,255,0.07)}
     [data-theme="dark"] .article-body img{border:1px solid rgba(255,255,255,0.08);border-radius:8px}
     [data-theme="dark"] .related-grid .feed-card__thumb img{border:1px solid rgba(255,255,255,0.08);border-radius:inherit}
+    [data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3{color:#f0f0ff}
+    [data-theme="dark"] .article-body{color:#e0e0f0 !important}
+    [data-theme="dark"] .article-body p,[data-theme="dark"] .article-body li,[data-theme="dark"] .article-body td,[data-theme="dark"] .article-body th{color:#e0e0f0 !important}
+    [data-theme="dark"] .article-body h2,[data-theme="dark"] .article-body h3,[data-theme="dark"] .article-body h4{color:#f0f0ff !important}
+    [data-theme="dark"] .article-body blockquote{background:#1a1a2e !important;border-left-color:#4d9fff;color:#c8c8e8 !important}
+    [data-theme="dark"] .article-body blockquote p,[data-theme="dark"] .article-body blockquote li{color:#c8c8e8 !important}
+    [data-theme="dark"] .article-body strong{color:#f0f0ff !important}
+    [data-theme="dark"] .article-body a{color:#7db8ff !important}
+    [data-theme="dark"] .article-body div[style*="background:#f0f6ff"],[data-theme="dark"] .article-body div[style*="background: #f0f6ff"]{background:#1a2a3a !important;border-color:#4d9fff !important}
+    [data-theme="dark"] .article-body div[style*="background:#f0f6ff"] p,[data-theme="dark"] .article-body div[style*="background: #f0f6ff"] p{color:#c8d8f0 !important}
+    [data-theme="dark"] .article-body div[style*="background:#f0f6ff"] a[style*="background:#0066ff"],[data-theme="dark"] .article-body div[style*="background: #f0f6ff"] a[style*="background:#0066ff"]{color:#fff !important;background:#4d9fff !important}
     body{transition:background-color 200ms ease,color 200ms ease}
     </style>
 </head>
@@ -455,7 +472,7 @@ for (const file of mdFiles) {
       <li><a href="${SITE_URL}/contact.html">Contact</a></li>
       <li><a href="${SITE_URL}/privacy-policy.html">Privacy Policy</a></li>
     </ul>
-    <button type="button" class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()"><svg class="theme-toggle__sun" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.93 4.93l1.41 1.41M13.66 13.66l1.41 1.41M4.93 15.07l1.41-1.41M13.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><svg class="theme-toggle__moon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.003 8.003 0 1010.586 10.586z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button>
+    <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" role="switch"><span class="theme-toggle__track"><span class="theme-toggle__thumb"></span><span class="theme-toggle__moon">🌙</span><span class="theme-toggle__sun">☀️</span></span></button>
     <div class="nav-search" id="nav-search">
       <input type="search" id="nav-search-input" class="nav-search__input" placeholder="Search articles..." aria-label="Search articles" autocomplete="off" spellcheck="false" tabindex="-1" oninput="onNavSearchInput(event)" onkeydown="onNavSearchKeydown(event)" onblur="onNavSearchBlur(event)">
       <button type="button" class="nav-search__toggle" aria-label="Search" onclick="toggleNavSearch()">
