@@ -860,6 +860,43 @@ if (articles.length > 0 && articles[0].image) {
   console.log('Injected LCP preload for: ' + featImg);
 }
 
+// --- IndexNow: write key file + ping API ---
+async function pingIndexNow(urls) {
+  const key = process.env.INDEXNOW_KEY || '387e8459eb7f485c930b1d36cac02ee4';
+  const keyFile = key + '.txt';
+
+  // Write key verification file
+  fs.writeFileSync(path.join(__dirname, '..', keyFile), key);
+  console.log('IndexNow key file written: ' + keyFile);
+
+  // Collect URLs: homepage + articles page + all article URLs
+  const allUrls = [
+    'https://talentedatai.com',
+    'https://talentedatai.com/articles.html',
+    ...urls
+  ];
+
+  try {
+    const fetchFn = typeof fetch === 'function' ? fetch : (...args) => import('node-fetch').then(({default: f}) => f(...args));
+    const response = await fetchFn('https://api.indexnow.org/indexnow', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        host: 'talentedatai.com',
+        key: key,
+        keyLocation: 'https://talentedatai.com/' + keyFile,
+        urlList: allUrls
+      })
+    });
+    console.log('IndexNow pinged: ' + response.status + ' (' + allUrls.length + ' URLs)');
+  } catch (err) {
+    console.warn('IndexNow ping failed (non-fatal): ' + err.message);
+  }
+}
+
+const articleUrls = articles.map(a => SITE_URL + '/content/published/' + a.slug);
+await pingIndexNow(articleUrls);
+
 console.log('\nBuild complete. ' + mdFiles.length + ' article(s) built.');
 } catch (error) {
   console.error('Build failed:', error.message);
