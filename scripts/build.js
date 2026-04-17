@@ -80,6 +80,36 @@ for (const file of mdFiles) {
   await generateResponsiveImages(fm.image);
   const content = parsed.content;
   const html = marked.parse(content);
+
+  // --- TOC generation: parse H2 headings ---
+  const h2Regex = /<h2[^>]*>([\s\S]*?)<\/h2>/g;
+  const tocItems = [];
+  const usedSlugs = {};
+  const h2Matches = [];
+  let h2Match;
+  while ((h2Match = h2Regex.exec(html)) !== null) {
+    h2Matches.push({ full: h2Match[0], inner: h2Match[1] });
+  }
+  for (const m of h2Matches) {
+    const headingText = m.inner.replace(/<[^>]+>/g, '').trim();
+    let hSlug = headingText.toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '') || 'section';
+    if (usedSlugs[hSlug]) { usedSlugs[hSlug]++; hSlug += '-' + usedSlugs[hSlug]; }
+    else { usedSlugs[hSlug] = 1; }
+    tocItems.push({ id: hSlug, text: headingText, original: m.full, inner: m.inner });
+  }
+  let articleContentHtml = html;
+  for (const item of tocItems) {
+    articleContentHtml = articleContentHtml.replace(item.original, '<h2 id="' + item.id + '">' + item.inner + '</h2>');
+  }
+  const hasToc = tocItems.length >= 3;
+  const tocListHtml = tocItems.map(function(item) {
+    return '<li class="toc-item"><a class="toc-link" href="#' + item.id + '">' + item.text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</a></li>';
+  }).join('');
+
   const slug = file.replace('.md', '');
 
   articles.push({
@@ -342,6 +372,19 @@ for (const file of mdFiles) {
     .audio-credit a { color: #0066ff; text-decoration: none; }
     .audio-credit a:hover { text-decoration: underline; }
     .affiliate-notice { font-size: 12px; color: #888; background: #f4f4f0; border-left: 3px solid #e0e0da; padding: 8px 12px; border-radius: 0 6px 6px 0; margin: 0 0 24px; font-family: 'DM Sans', sans-serif; line-height: 1.5; }
+    /* TABLE OF CONTENTS */
+    .article-toc-wrapper{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 240px;gap:40px;padding:0 20px}
+    .article-toc-wrapper .article-body{max-width:760px;margin:0;padding:48px 24px 96px}
+    .toc-sidebar{padding-top:48px}
+    .toc-sticky{position:sticky;top:100px;opacity:0;transition:opacity 0.4s ease}
+    .toc-sticky.visible{opacity:1}
+    .toc-heading{font-family:var(--font-head);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gray-500);margin-bottom:16px}
+    .toc-list{list-style:none;border-left:2px solid var(--gray-100);padding:0;margin:0}
+    .toc-item{margin:0}
+    .toc-link{display:block;padding:4px 0 4px 16px;margin-left:-2px;border-left:2px solid transparent;font-family:var(--font-body);font-size:13px;color:var(--gray-700);text-decoration:none;line-height:1.5;margin-bottom:8px;transition:color 0.2s,border-color 0.2s,font-weight 0.2s}
+    .toc-link:hover{color:var(--blue);text-decoration:none}
+    .toc-link.active{color:var(--blue);font-weight:500;border-left-color:var(--blue)}
+    @media(max-width:1100px){.article-toc-wrapper{display:block;max-width:760px;padding:0}.toc-sidebar{display:none}}
   </style>
 </head>
 <body>
@@ -395,7 +438,7 @@ for (const file of mdFiles) {
   <div class="article-meta">
     <span>${fm.author || DEFAULT_AUTHOR}</span>
     <span>·</span>
-    <span>${fm.date || ''}</span>
+    <span>${fm.date ? new Date(fm.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}</span>
     <span>·</span>
     <span>${readTime}</span>
   </div>
@@ -496,9 +539,17 @@ ${fm.image ? `
   </picture>
 </div>` : ''}
 </div>
+${hasToc ? '<div class="article-toc-wrapper">' : ''}
 <div class="article-body">
-${html}
+${hasToc ? articleContentHtml : html}
 </div>
+${hasToc ? `<nav class="toc-sidebar" aria-label="Table of contents">
+  <div class="toc-sticky">
+    <div class="toc-heading">Contents</div>
+    <ul class="toc-list">${tocListHtml}</ul>
+  </div>
+</nav>
+</div>` : ''}
 <div style="max-width:760px;margin:0 auto;padding:0 24px 48px;">
   <div class="author-bio">
     <div class="author-bio__avatar">TA</div>
@@ -608,6 +659,39 @@ ${html}
     var menu=document.getElementById('nav-mobile-menu');
     if(btn&&menu&&!btn.contains(e.target)&&!menu.contains(e.target)){btn.classList.remove('open');menu.classList.remove('open');}
   });
+</script>
+<script>
+  // TABLE OF CONTENTS — scroll tracking
+  (function(){
+    var tocLinks = document.querySelectorAll('.toc-link');
+    if (!tocLinks.length) return;
+    var headingIds = [];
+    tocLinks.forEach(function(l){ headingIds.push(l.getAttribute('href').slice(1)); });
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          tocLinks.forEach(function(l){ l.classList.remove('active'); });
+          var active = document.querySelector('.toc-link[href="#' + entry.target.id + '"]');
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-100px 0px -66% 0px', threshold: 0 });
+    headingIds.forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    // Fade in
+    var sticky = document.querySelector('.toc-sticky');
+    if (sticky) setTimeout(function(){ sticky.classList.add('visible'); }, 100);
+    // Smooth scroll on click
+    tocLinks.forEach(function(link){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        var target = document.getElementById(this.getAttribute('href').slice(1));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  })();
 </script>
 <script>
   window.addEventListener('load', function() {
