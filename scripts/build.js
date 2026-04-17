@@ -230,6 +230,7 @@ for (const file of mdFiles) {
     gtag('js', new Date());
     gtag('config', '${GA_ID}');
   </script>
+  <script>(function(){var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)})()</script>
   <style>
     @font-face{font-family:'DM Sans';font-style:normal;font-weight:300 600;font-display:optional;src:url(/static/fonts/dm-sans-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
     @font-face{font-family:'DM Sans';font-style:italic;font-weight:400;font-display:optional;src:url(/static/fonts/dm-sans-italic-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -257,6 +258,13 @@ for (const file of mdFiles) {
       --gray-600:#5a5a55;
       --gray-200:#e8e8e5;
       --blue-light-legacy:#e8f0ff;
+    }
+    [data-theme="dark"]{
+      --white:#0d0d1a;--dark:#f0f0f5;--gray-100:#1a1a2e;--gray-200:#252538;
+      --gray-300:#4a4a6a;--gray-500:#8888aa;--gray-700:#ccccdd;
+      --blue:#4d9fff;--blue-light:#1a2940;--blue-mid:#6ab0ff;
+      --text:#e8e8f0;--gray-400:#7a7a9a;--gray-600:#aaaacc;
+      --blue-light-legacy:#1a2940;
     }
     body{font-family:var(--font-body);color:var(--dark);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
     a{color:var(--blue);text-decoration:none}
@@ -385,7 +393,42 @@ for (const file of mdFiles) {
     .toc-link:hover{color:var(--blue);text-decoration:none}
     .toc-link.active{color:var(--blue);font-weight:500;border-left-color:var(--blue)}
     @media(max-width:1100px){.article-toc-wrapper{display:block;max-width:760px;padding:0}.toc-sidebar{display:none}}
-  </style>
+  
+    /* DARK MODE TOGGLE */
+    .theme-toggle{display:flex;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;padding:4px;color:var(--gray-700);transition:color var(--transition)}
+    .theme-toggle:hover{color:var(--blue)}
+    .theme-toggle__sun{display:block}
+    .theme-toggle__moon{display:none}
+    [data-theme="dark"] .theme-toggle__sun{display:none}
+    [data-theme="dark"] .theme-toggle__moon{display:block}
+    /* DARK OVERRIDES — article pages */
+    [data-theme="dark"] .nav{background:rgba(13,13,26,0.95);border-bottom-color:rgba(77,159,255,0.08)}
+    [data-theme="dark"] .nav__mobile-menu{background:rgba(13,13,26,0.98);border-bottom-color:rgba(77,159,255,0.08)}
+    [data-theme="dark"] .nav-search__drawer{background:var(--white)}
+    [data-theme="dark"] .footer{background:#111128;border-top:1px solid rgba(255,255,255,0.06)}
+    [data-theme="dark"] .newsletter-section{background:#060612}
+    [data-theme="dark"] .newsletter-input{background:#1a1a2e;color:#e8e8f0;border-color:#252538}
+    [data-theme="dark"] .newsletter-input::placeholder{color:#6a6a8a}
+    [data-theme="dark"] .article-body a{color:var(--blue)}
+    [data-theme="dark"] .article-body blockquote{border-left-color:var(--blue);background:var(--gray-100);color:var(--text,var(--dark))}
+    [data-theme="dark"] .article-body code{background:var(--gray-100);color:var(--text,var(--dark))}
+    [data-theme="dark"] .article-body pre{background:#1a1a2e;color:#e8e8f0}
+    [data-theme="dark"] .article-body img{opacity:0.9}
+    [data-theme="dark"] .article-body table{border-color:rgba(255,255,255,0.07)}
+    [data-theme="dark"] .article-body th{background:var(--gray-100);color:var(--dark)}
+    [data-theme="dark"] .article-body td{border-color:rgba(255,255,255,0.07)}
+    [data-theme="dark"] .category-pill{background:rgba(77,159,255,0.12);color:#7db8ff;border:1px solid rgba(77,159,255,0.2)}
+    [data-theme="dark"] .author-bio{border-top-color:rgba(255,255,255,0.07);border-bottom-color:rgba(255,255,255,0.07)}
+    [data-theme="dark"] .related-grid .feed-card{border-color:rgba(255,255,255,0.07)}
+    [data-theme="dark"] .toc-sidebar{border-left-color:rgba(255,255,255,0.07)}
+    [data-theme="dark"] #progress-bar{background:#4d9fff}
+
+    [data-theme="dark"] .article-meta{color:#9999bb}
+    [data-theme="dark"] .article-desc{color:#9999bb;border-bottom-color:rgba(255,255,255,0.07)}
+    [data-theme="dark"] .article-body img{border:1px solid rgba(255,255,255,0.08);border-radius:8px}
+    [data-theme="dark"] .related-grid .feed-card__thumb img{border:1px solid rgba(255,255,255,0.08);border-radius:inherit}
+    body{transition:background-color 200ms ease,color 200ms ease}
+    </style>
 </head>
 <body>
 <div id="progress-bar" style="position:fixed;top:0;left:0;height:3px;background:#0066ff;width:0%;z-index:9999;transition:width 0.1s;"></div>
@@ -412,6 +455,7 @@ for (const file of mdFiles) {
       <li><a href="${SITE_URL}/contact.html">Contact</a></li>
       <li><a href="${SITE_URL}/privacy-policy.html">Privacy Policy</a></li>
     </ul>
+    <button type="button" class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()"><svg class="theme-toggle__sun" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.93 4.93l1.41 1.41M13.66 13.66l1.41 1.41M4.93 15.07l1.41-1.41M13.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><svg class="theme-toggle__moon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.003 8.003 0 1010.586 10.586z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button>
     <div class="nav-search" id="nav-search">
       <input type="search" id="nav-search-input" class="nav-search__input" placeholder="Search articles..." aria-label="Search articles" autocomplete="off" spellcheck="false" tabindex="-1" oninput="onNavSearchInput(event)" onkeydown="onNavSearchKeydown(event)" onblur="onNavSearchBlur(event)">
       <button type="button" class="nav-search__toggle" aria-label="Search" onclick="toggleNavSearch()">
@@ -701,6 +745,13 @@ ${hasToc ? `<nav class="toc-sidebar" aria-label="Table of contents">
     s.crossOrigin = 'anonymous';
     document.body.appendChild(s);
   });
+
+  function toggleTheme(){
+    var html=document.documentElement;
+    var next=html.getAttribute('data-theme')==='dark'?'light':'dark';
+    html.setAttribute('data-theme',next);
+    localStorage.setItem('theme',next);
+  }
 </script>
 </body>
 </html>`;
