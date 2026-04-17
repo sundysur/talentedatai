@@ -51,7 +51,7 @@ Before downloading anything, check your phone meets the basic requirements. Most
 
 If your phone isn't on this list, it will likely still work if it has 6GB or more of RAM and was made in 2022 or later. You can check your phone's RAM in Settings → About phone → RAM or equivalent.
 
-You do not need to root your phone, enable developer mode, or have any coding knowledge. Both methods below are straightforward app installs.
+You do not need to root your phone, enable developer mode, or have any coding knowledge. Both methods below are simple app installs.
 
 ## Method 1: Google AI Edge Gallery (Recommended)
 

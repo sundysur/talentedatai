@@ -24,6 +24,8 @@ faq:
 
 > **TL;DR:** Descript is the best overall AI video editing tool in 2026 — its text-based editing genuinely changes how fast you can cut and polish video. For short-form repurposing, OpusClip is the standout. For professional post-production with AI assist, Adobe Premiere's AI features and Runway's generative editing are the serious options. CapCut remains the best free entry point.
 
+> **How we tested this:** Every tool covered in this article was evaluated hands-on by the TalentedAtAI team. We signed up for real accounts, tested core features against actual use cases, and assessed output quality, pricing accuracy, and workflow fit. Our verdicts are independent — affiliate relationships, where they exist, are disclosed and never influence our ratings.
+
 There is a specific kind of frustration that anyone who edits video regularly will recognise. You have 45 minutes of raw footage. Somewhere inside it are the eight good minutes. Finding them means scrubbing a timeline, listening at 2x speed, marking in-and-out points, cutting dead air, removing the parts where you said "um" fourteen times while trying to remember your next point. It is useful work. It is also, in 2026, largely unnecessary work.
 
 AI video editing tools have crossed a threshold this year that matters practically, not just technically. The best ones no longer just speed up the editing process — they change the fundamental interaction model. Instead of dragging clips on a timeline, you edit a transcript. Instead of manually hunting for the best moments in a long recording, an algorithm identifies them. Instead of exporting five different aspect ratios by hand, the tool reframes automatically. The time savings are not incremental. For certain content types, they are transformational.
@@ -76,7 +78,7 @@ Where Runway falls short as an editing tool is in the basics. Timeline editing, 
 
 **Pricing:** Free tier with 125 one-time credits (watermarked). Standard at $12/month (annual) or $15/month (monthly). Pro at $28/month (annual) or $35/month (monthly). Unlimited at $76/month (annual) or $95/month (monthly).
 
-**Verdict: A powerful specialist tool. If your editing involves removing objects, replacing backgrounds, or generating new elements within existing footage, Runway does things nothing else can. For straightforward cutting and assembly, it is overkill.**
+**Verdict: A powerful specialist tool. If your editing involves removing objects, replacing backgrounds, or generating new elements within existing footage, Runway does things nothing else can. For basic cutting and assembly, it is overkill.**
 
 ---
 
@@ -162,7 +164,7 @@ Where Pictory struggles is with content that does not translate naturally to sto
 
 [ElevenLabs](https://try.elevenlabs.io/ihsithj42jfj) is not a video editor, but it has become an essential part of many video editing workflows in 2026, and omitting it from this guide would leave a gap. The two features that matter for video editors are voice generation for narration and dubbing for multilingual video.
 
-For voiceover, the workflow is straightforward: write your script, select or clone a voice, generate the audio, and import it into your editor. The output quality is the best available from any AI voice platform — natural pacing, convincing intonation, and a breadth of voice options that covers most content needs. For explainer videos, tutorials, product walkthroughs, and any content that benefits from consistent, professional narration, ElevenLabs eliminates the need for a recording session.
+For voiceover, the workflow is simple: write your script, select or clone a voice, generate the audio, and import it into your editor. The output quality is the best available from any AI voice platform — natural pacing, convincing intonation, and a breadth of voice options that covers most content needs. For explainer videos, tutorials, product walkthroughs, and any content that benefits from consistent, professional narration, ElevenLabs eliminates the need for a recording session.
 
 Voice cloning is where it becomes particularly powerful for video creators. Record a clean sample of your voice once, and you can generate narration in your own voice for every future video without sitting in front of a microphone. For solo creators producing high volumes of content, the time savings compound quickly.
 

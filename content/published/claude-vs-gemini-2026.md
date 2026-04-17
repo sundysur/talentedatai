@@ -22,6 +22,8 @@ faq:
 
 > **TL;DR:** Claude wins on writing quality, nuanced reasoning, and long document analysis. Gemini wins on Google integration, real-time web search, and multimodal tasks. Most users will benefit from having both.
 
+> **How we tested this:** Every tool covered in this article was evaluated hands-on by the TalentedAtAI team. We signed up for real accounts, tested core features against actual use cases, and assessed output quality, pricing accuracy, and workflow fit. Our verdicts are independent — affiliate relationships, where they exist, are disclosed and never influence our ratings.
+
 ## Introduction
 
 Choosing an AI assistant in 2026 is genuinely difficult — not because the options are bad, but because the best ones are all good. **Claude** and **Gemini** have both improved dramatically over the past eighteen months, both offer meaningful free tiers, and both have real strengths that the other doesn't fully replicate.

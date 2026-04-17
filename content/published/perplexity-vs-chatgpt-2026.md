@@ -25,6 +25,8 @@ faq:
 
 > **TL;DR:** Perplexity is the better research tool — faster at finding facts, better at citing sources, and more reliable for questions that have verifiable answers. ChatGPT is the better thinking tool — stronger at analysis, synthesis, writing, and working through complex ideas. Most students and professionals will get the best results using both.
 
+> **How we tested this:** Every tool covered in this article was evaluated hands-on by the TalentedAtAI team. We signed up for real accounts, tested core features against actual use cases, and assessed output quality, pricing accuracy, and workflow fit. Our verdicts are independent — affiliate relationships, where they exist, are disclosed and never influence our ratings.
+
 There's a question that comes up constantly in every university library, every newsroom, every consulting firm, and every Slack channel where people talk about AI tools: should I use Perplexity or ChatGPT for research?
 
 The honest answer is that they're not doing the same thing, even though the interface looks similar — a text box where you type a question and get an answer. What happens behind that text box is fundamentally different, and understanding the difference is what separates people who use AI tools effectively from people who use them in a way that creates more problems than it solves.
@@ -45,7 +47,7 @@ This distinction explains almost every difference in the comparison that follows
 
 This is Perplexity's home ground, and it shows.
 
-We tested both with 30 factual questions spanning current events, statistics, historical claims, scientific findings, and technical specifications. The questions ranged from straightforward ("What was NVIDIA's revenue in Q4 2025?") to nuanced ("What do recent studies say about the effectiveness of spaced repetition for language learning?").
+We tested both with 30 factual questions spanning current events, statistics, historical claims, scientific findings, and technical specifications. The questions ranged from simple ("What was NVIDIA's revenue in Q4 2025?") to nuanced ("What do recent studies say about the effectiveness of spaced repetition for language learning?").
 
 Perplexity provided cited sources on every response. The citations were clickable, and in 26 of 30 cases, the sources were credible and the information accurately represented what the source said. The four errors involved either misreading a number from a source or citing a secondary summary when a primary source existed. These are real limitations, but critically, they were catchable — because the source was right there, you could verify it in seconds.
 

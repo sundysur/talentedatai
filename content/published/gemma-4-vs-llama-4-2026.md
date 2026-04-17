@@ -25,6 +25,8 @@ faq:
 
 > **TL;DR:** Gemma 4 wins on efficiency, on-device deployment, and licencing simplicity. Llama 4 wins on raw capability at the largest sizes and has a more established developer ecosystem. If you're deploying to phones or edge hardware, Gemma 4. If you need maximum reasoning power on a server, Llama 4 Maverick. For most developers, the answer depends on where the model needs to run.
 
+> **How we tested this:** Every tool covered in this article was evaluated hands-on by the TalentedAtAI team. We signed up for real accounts, tested core features against actual use cases, and assessed output quality, pricing accuracy, and workflow fit. Our verdicts are independent — affiliate relationships, where they exist, are disclosed and never influence our ratings.
+
 The open-source AI landscape in 2026 has, for the first time, produced a genuinely difficult choice. Not difficult in the "they're all mediocre in different ways" sense that characterised earlier years, but difficult because two models — Google's Gemma 4 and Meta's Llama 4 — are both good enough that picking the wrong one for your use case is a real missed opportunity.
 
 A year ago, the default recommendation for anyone self-hosting an open-source model was some variant of "just use Llama." Meta had built enough momentum, enough community tooling, and enough benchmark credibility that the decision was easy. That changed in April 2026, when Google released Gemma 4 under an Apache 2.0 licence with a family of models engineered specifically for efficient deployment across hardware tiers.
@@ -55,7 +57,7 @@ Gemma 4 27B holds its own better than its parameter count would suggest, largely
 
 At the smaller tiers, the comparison becomes lopsided in Gemma 4's favour. Llama 4 Scout, while capable, is not designed for the kind of constrained hardware that Gemma 4 E2B and E4B target. There is no Llama 4 model you can run on a phone. There is no Llama 4 model that runs comfortably on a Raspberry Pi. Gemma 4 occupies this space essentially alone among top-tier open-source releases.
 
-On coding benchmarks — HumanEval, MBPP, and the newer SWE-bench variants — Llama 4 Maverick has a clear edge for complex, multi-step coding tasks. Gemma 4 27B is competitive for straightforward code generation, function writing, and code explanation. For developers building coding assistants or code-completion tools, the choice depends on deployment constraints: if it needs to run locally, Gemma 4 is often the only practical option; if it runs on a server, Maverick is hard to beat.
+On coding benchmarks — HumanEval, MBPP, and the newer SWE-bench variants — Llama 4 Maverick has a clear edge for complex, multi-step coding tasks. Gemma 4 27B is competitive for routine code generation, function writing, and code explanation. For developers building coding assistants or code-completion tools, the choice depends on deployment constraints: if it needs to run locally, Gemma 4 is often the only practical option; if it runs on a server, Maverick is hard to beat.
 
 The multimodal comparison is also worth noting. Gemma 4's smaller models (E2B and E4B) accept images and audio alongside text — a capability that runs entirely on-device. Llama 4 Scout and Maverick both support images, and Maverick's image understanding is strong. But the ability to process images on a phone, offline, without any server, is something only Gemma 4 currently offers in the open-source space.
 

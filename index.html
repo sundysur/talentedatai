@@ -348,7 +348,7 @@
   <div class="hero-bar">
     <div class="hero-bar__inner">
       <h1 class="hero-bar__headline">Practical guides, honest reviews and real strategies for working smarter with AI</h1>
-      <p class="hero-bar__sub">Trusted by 1,000+ readers · 28 published guides · No affiliate bias</p>
+      <p class="hero-bar__sub">Trusted by 1,000+ readers · <span id="hero-article-count">32</span> published articles · Editorially independent</p>
     </div>
   </div>
 
@@ -687,6 +687,8 @@
       if (seeAllLink) {
         seeAllLink.textContent = 'See all ' + sorted.length + ' →';
       }
+      var heroCount = document.getElementById('hero-article-count');
+      if (heroCount) { heroCount.textContent = sorted.length; }
       featuredSlot.innerHTML  = buildFeaturedCard(sorted[0]);
       secondarySlot.innerHTML = sorted.slice(1, 3).map(buildSecondaryCard).join('');
       allArticles = sorted;

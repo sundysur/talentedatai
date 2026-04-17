@@ -40,11 +40,7 @@ All of these are genuinely reasonable. The tools now support them. This is the g
 
 ElevenLabs is the AI voice platform most people end up on for cloning, and the one we'll use for this tutorial. It's a text-to-speech tool with voice cloning built in — you upload a sample of yourself speaking, it generates a voice model, and then anything you type comes out in that voice. It has the largest voice library in the space and, in our testing, the most convincing clones. If you want the full picture before committing, our [ElevenLabs review](/blog/elevenlabs-review-2026) covers pricing, quality, and where the tool falls short. For this guide, we'll stay focused on the cloning workflow itself.
 
-<div style="background:#f0f6ff;border:2px solid #0066ff;border-radius:12px;padding:24px;margin:32px 0;text-align:center;">
-  <p style="font-size:1.1em;font-weight:700;margin:0 0 8px 0;">🎙️ Try ElevenLabs Free</p>
-  <p style="color:#5a5a55;margin:0 0 16px 0;">Sign up free to test voice quality. Voice cloning unlocks on the Starter plan at $5/month.</p>
-  <a href="https://try.elevenlabs.io/ihsithj42jfj" target="_blank" rel="noopener" style="background:#0066ff;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;display:inline-block;">Start Free on ElevenLabs →</a>
-</div>
+You can get started with [ElevenLabs](https://try.elevenlabs.io/ihsithj42jfj) on the free tier to test voice quality — voice cloning unlocks on the Starter plan at $5/month.
 
 ## Step 1: Create Your Account and Test the Platform (5 Minutes)
 
@@ -112,11 +108,7 @@ Character count is input text, not audio duration. A 1,500-word article is rough
 
 The practical sequence is almost always the same: sign up free, paste a paragraph into text-to-speech to confirm the platform sounds good to you, upgrade to Starter when you're ready to record your sample, then decide between Starter and Creator based on how much you actually use it in the first month.
 
-<div style="background:#f0f6ff;border:2px solid #0066ff;border-radius:12px;padding:24px;margin:32px 0;text-align:center;">
-  <p style="font-size:1.1em;font-weight:700;margin:0 0 8px 0;">🎙️ Try ElevenLabs Free</p>
-  <p style="color:#5a5a55;margin:0 0 16px 0;">The best AI voice generator in 2026. Test the free tier; upgrade to Starter ($5/mo) for voice cloning.</p>
-  <a href="https://try.elevenlabs.io/ihsithj42jfj" target="_blank" rel="noopener" style="background:#0066ff;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;display:inline-block;">Try ElevenLabs Free →</a>
-</div>
+You can test [ElevenLabs](https://try.elevenlabs.io/ihsithj42jfj) on the free tier, then upgrade to Starter ($5/month) when you're ready for voice cloning.
 
 ## The Legal and Ethical Part (Please Read This)
 
@@ -134,7 +126,7 @@ This matters for a few practical reasons.
 
 There are some grey areas worth knowing about. Cloning the voice of a deceased relative, with family consent, for private memorial use is handled differently by different platforms — some allow it with documentation, some don't. Cloning a historical or public-domain voice for educational content is typically allowed but sits in a different category on most platforms and requires specific approval. If you're planning either, check the current platform policy before you upload anything.
 
-For the overwhelming majority of people reading this, none of the complicated cases apply. You want to clone your own voice for your own projects. That's straightforward, legal, and exactly what these tools are built for. Proceed.
+For the overwhelming majority of people reading this, none of the complicated cases apply. You want to clone your own voice for your own projects. That's simple, legal, and exactly what these tools are built for. Proceed.
 
 ## Five Real Projects to Try This Week
 

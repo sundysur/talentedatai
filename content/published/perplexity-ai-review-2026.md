@@ -22,6 +22,8 @@ faq:
 
 > **TL;DR:** Perplexity AI is the best research tool available in 2026 for anyone who wants direct answers with cited sources. The free tier is genuinely useful. Pro is worth it if you research daily.
 
+> **How we tested this:** Every tool covered in this article was evaluated hands-on by the TalentedAtAI team. We signed up for real accounts, tested core features against actual use cases, and assessed output quality, pricing accuracy, and workflow fit. Our verdicts are independent — affiliate relationships, where they exist, are disclosed and never influence our ratings.
+
 ## Introduction
 
 Google has been the default answer to every question for over two decades. But its model hasn't fundamentally changed: type a query, get ten blue links, click through several tabs, piece together the answer yourself. That works fine if you're looking for a website or a product to buy. It works less well when you actually need to understand something.
@@ -66,7 +68,7 @@ Ask Perplexity what a stock is trading at, what the score was in last night's ga
 
 Perplexity's free tier is more useful than most people expect, and more useful than a lot of paid AI tools. Here's exactly what it includes.
 
-You get unlimited Quick searches. These use a lighter, faster model and are good for straightforward factual questions, quick lookups, and the majority of everyday research queries. The answers are accurate and sourced. For most casual users this is enough.
+You get unlimited Quick searches. These use a lighter, faster model and are good for simple factual questions, quick lookups, and the majority of everyday research queries. The answers are accurate and sourced. For most casual users this is enough.
 
 You get five Pro searches per day. Pro searches use a stronger underlying model, go deeper, and handle more complex or nuanced questions more reliably. Five is enough to cover the queries where you genuinely need the best available answer.
 

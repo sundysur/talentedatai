@@ -22,6 +22,8 @@ faq:
 
 > **TL;DR:** Claude Managed Agents removes the infrastructure burden of building production AI agents — sandboxing, state management, tool orchestration. At $0.08/hour plus model costs, it's cheap for enterprise use. Early results from Notion, Asana and Sentry are strong. The real question is whether you want to lock into Anthropic's platform.
 
+> **How we tested this:** Every tool covered in this article was evaluated hands-on by the TalentedAtAI team. We signed up for real accounts, tested core features against actual use cases, and assessed output quality, pricing accuracy, and workflow fit. Our verdicts are independent — affiliate relationships, where they exist, are disclosed and never influence our ratings.
+
 ## Introduction
 
 Building a production AI agent has always been two jobs. The first job is writing the agent logic — the prompts, tools, and decision rules that make the agent actually useful. The second job is building the infrastructure to run it reliably: isolated execution environments, session persistence, authentication handling, error recovery, and observability tooling. Most teams spend two to three months on the second job before they ship anything their users see.
@@ -139,7 +141,7 @@ For developers, the practical implication is that the agent infrastructure probl
 
 **For teams building Claude-native agents:** Claude Managed Agents is the obvious choice right now. It removes the infrastructure work that has been the primary bottleneck between prototype and production, the pricing is low enough that it undercuts the cost of doing it yourself, and the observability tooling in the Console is legitimately useful for debugging agent behavior at scale.
 
-**For teams deciding where to start:** the public beta and low per-hour cost make it worth running a production pilot before committing. The harness system is well-documented, the API surface is straightforward, and the early customer deployments demonstrate that it can handle real production workloads. Test it on a single agent workflow before you build your architecture around it.
+**For teams deciding where to start:** the public beta and low per-hour cost make it worth running a production pilot before committing. The harness system is well-documented, the API surface is clean, and the early customer deployments demonstrate that it can handle real production workloads. Test it on a single agent workflow before you build your architecture around it.
 
 **The main risk is platform dependency.** Once your agent logic is built around Anthropic's harness abstractions — session management, sandbox permissions, tool routing — migrating to a different infrastructure layer is a significant engineering project. The multi-agent coordination and Agent Teams features, currently in research preview, will deepen that dependency if they ship to general availability in the form previewed at launch.
 

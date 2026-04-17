@@ -98,6 +98,38 @@ That depends on who you are and what you're trying to accomplish.
 
 ---
 
+## The Trust and Safety Question
+
+As agents gain the ability to act in the world — sending emails, executing code, making purchases, accessing databases — the question of trust becomes important in a way it wasn't with simple chatbots.
+
+When a chatbot gives you bad advice, you can ignore it. When an agent sends a bad email on your behalf, the damage is done. The stakes of mistakes are higher because agents act, and actions have consequences.
+
+Several practical questions follow from this. How much access should you give an agent? An email agent that can read your inbox and draft replies is useful; one that can send those replies without your approval is risky until you've verified its judgment over many iterations. A coding agent that writes and tests code in a sandbox is safe; one that pushes directly to production is not.
+
+The principle that's emerging across the industry is "progressive trust." Start with agents that propose actions for your approval. Once you've reviewed enough proposals to trust the pattern — dozens or hundreds, not five — gradually expand the scope of what the agent can do autonomously. This mirrors how you'd manage a human employee: new hires get their work reviewed; trusted veterans get more latitude.
+
+Data privacy is the other dimension worth thinking about. Agents that use cloud-based AI models send your data — emails, documents, customer information — to external servers for processing. For many workflows, this is acceptable. For sensitive data — medical records, legal privileged communications, proprietary business information — you need to understand where the data goes and what the provider's policies are. Local agents running on your own hardware (using tools like Ollama) eliminate this concern but trade off capability and speed.
+
+None of this should discourage you from using agents. It should encourage you to use them thoughtfully — starting with low-stakes tasks, expanding gradually, and always maintaining the ability to review and override.
+
+---
+
+## Where Agents Are Heading: What to Expect Next
+
+Making predictions about AI is a famously unreliable exercise, but some trajectories are clear enough to be worth noting.
+
+**Multi-agent collaboration** is moving from research to products. Instead of a single agent handling a complex task, systems of specialised agents that delegate to each other — a research agent handing findings to a writing agent, which passes the draft to an editing agent — are becoming practical. Frameworks like CrewAI and AutoGen are making this accessible to developers, and productised versions are starting to appear in tools like Zapier and Make.
+
+**Better memory and continuity** will address one of agents' current biggest limitations. Today's agents largely start fresh each session. Agents with persistent memory — knowledge of your preferences, your past requests, your work context — will be dramatically more useful because they won't need to be re-briefed each time. Several companies are actively building this.
+
+**Agent marketplaces** are likely to emerge, similar to how app stores and plugin directories developed. Rather than building agents from scratch, you'll browse pre-built agents for specific workflows — "onboard a new client," "prepare a weekly sales report," "research a patent landscape" — and customise them for your context.
+
+**Regulatory frameworks** are beginning to form. The EU AI Act already includes provisions relevant to autonomous AI systems, and other jurisdictions are developing similar frameworks. As agents become more capable and more widely deployed, expect clearer rules about accountability (who's responsible when an agent makes a mistake?), transparency (should the recipient of an agent-written email know it was agent-written?), and boundaries (what actions should agents be prohibited from taking without explicit human approval?).
+
+The direction is clear: agents will become more capable, more integrated into daily tools, and more autonomous. The organisations and individuals who understand how to use them effectively — including understanding their limitations — will have a meaningful advantage over those who don't.
+
+---
+
 ## One Thing You Can Try Today
 
 If you want a taste of agentic behaviour without diving into enterprise software, try this: open Claude.ai and create a new Project. Add some documents to it — background reading, past work, notes — and then give it a multi-step request. Something like: "Read through these documents, identify the three most common themes, and draft a short briefing document I could share with a colleague."

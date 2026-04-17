@@ -26,6 +26,8 @@ faq:
 
 > **TL;DR:** HeyGen wins on avatar realism, creator-friendly pricing, and multilingual output — pick it for marketing, social content, and solo creators. Synthesia wins on enterprise maturity, L&D features, and polished corporate templates — pick it for training, compliance, and large-team production. Both work; the right one depends on why you are making the video.
 
+> **How we tested this:** Every tool covered in this article was evaluated hands-on by the TalentedAtAI team. We signed up for real accounts, tested core features against actual use cases, and assessed output quality, pricing accuracy, and workflow fit. Our verdicts are independent — affiliate relationships, where they exist, are disclosed and never influence our ratings.
+
 If you have sat in a browser tab comparing HeyGen and Synthesia pricing pages for the last hour, you are in good company. Both tools promise something genuinely useful: you type a script, an AI avatar speaks it back on video, and you get a finished clip without hiring a presenter, renting a studio, or standing in front of a camera yourself. For training teams, marketers, sales ops, and solo creators producing explainer content at volume, the economics are obvious.
 
 What is not obvious is which one to actually buy. The demos on each site are carefully curated. Independent reviews tend to pick favourites without showing you the full trade-off. And the two products have diverged enough in 2026 that a casual comparison of feature checklists misses the real differences.

@@ -34,6 +34,8 @@ faq:
 
 > **TL;DR:** Midjourney v7 leads on image quality; Adobe Firefly leads on commercial safety; ChatGPT Image (OpenAI) leads on ease of use and accessibility for existing subscribers; Flux leads on cost and flexibility for technical users. None of these tools does everything best — the right choice depends entirely on what you're making and who you're making it for.
 
+> **How we tested this:** Every tool covered in this article was evaluated hands-on by the TalentedAtAI team. We signed up for real accounts, tested core features against actual use cases, and assessed output quality, pricing accuracy, and workflow fit. Our verdicts are independent — affiliate relationships, where they exist, are disclosed and never influence our ratings.
+
 If you search "best AI image generator" you'll find ranked lists. This isn't one of those. The four tools covered here — Adobe Firefly, Midjourney, ChatGPT Image (OpenAI), and Flux — are genuinely different products optimised for different things. Pretending one wins outright would mean ignoring the fact that a freelance illustrator, a marketing manager at a regulated company, and a developer building an image pipeline have completely different requirements.
 
 What follows is a direct comparison across the dimensions that actually matter: image quality, pricing, commercial rights, and ease of use. Then a clear recommendation by use case so you can skip straight to the answer that applies to you.
@@ -100,7 +102,7 @@ No free tier. Basic plan: $10/month for 200 image generations. Standard plan: $3
 
 ### Strengths
 
-**Output quality** is the straightforward answer to why Midjourney still leads. Skin texture, fabric, lighting behaviour, depth of field, compositional balance — these are the details that separate an image you'd show to a client from one you'd use internally. Midjourney handles them with a consistency no other tool currently matches at the top end.
+**Output quality** is the short answer to why Midjourney still leads. Skin texture, fabric, lighting behaviour, depth of field, compositional balance — these are the details that separate an image you'd show to a client from one you'd use internally. Midjourney handles them with a consistency no other tool currently matches at the top end.
 
 **Stylistic range** is broader than it initially appears. The "Midjourney aesthetic" is real — there's a recognisable polish to images generated with default settings — but power users know how to escape it. Aspect ratio controls, style reference images, character reference features, and negative prompting give experienced users precise control over output direction.
 

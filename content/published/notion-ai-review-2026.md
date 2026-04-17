@@ -26,6 +26,8 @@ faq:
 
 > **TL;DR:** Notion AI is worth $10 per user per month if you already live in Notion. The real value is not the writing — it is the Q&A across your entire workspace and the AI Meeting Notes. For casual Notion users, stick with the free tier and pair it with Claude or ChatGPT. For heavy users, it pays for itself within a week.
 
+> **How we tested this:** Every tool covered in this article was evaluated hands-on by the TalentedAtAI team. We signed up for real accounts, tested core features against actual use cases, and assessed output quality, pricing accuracy, and workflow fit. Our verdicts are independent — affiliate relationships, where they exist, are disclosed and never influence our ratings.
+
 There is a specific kind of frustration that comes from switching between five different AI tools to do work that all lives in one place. You write a draft in ChatGPT, paste it into Notion, realise you need to cross-reference a meeting note from last month, switch to Notion search, copy the relevant passage, paste it back into ChatGPT, ask a follow-up question, and by the time you are done, half the session has been spent on context-shuffling rather than thinking.
 
 [Notion AI](https://www.notion.so/product/ai) is the most ambitious attempt so far to solve that problem by putting the AI *inside* the workspace where the content already lives. We tested it for several weeks across real work — meeting notes, project documentation, writing, research, and database automation — to answer the question that actually matters: is it worth the extra $10 per user per month in 2026?
@@ -80,7 +82,7 @@ Some tasks feel transformative. Others feel like features bolted onto a product 
 
 **Long-form creative writing** is not Notion AI's strength. The output is functional but formulaic. For blog posts, strategy memos, or anything where voice and structure matter, drafting in [Claude or ChatGPT](/blog/chatgpt-vs-claude-2026) and pasting into Notion still produces better results.
 
-**Deep analysis and reasoning** is similarly weaker. Notion AI handles straightforward analytical tasks well, but for complex reasoning — evaluating trade-offs, working through multi-step arguments, comparing strategic options — dedicated tools with stronger reasoning models outperform it.
+**Deep analysis and reasoning** is similarly weaker. Notion AI handles basic analytical tasks well, but for complex reasoning — evaluating trade-offs, working through multi-step arguments, comparing strategic options — dedicated tools with stronger reasoning models outperform it.
 
 **Coding** is basic at best. Notion AI can generate small code snippets and explain code, but it is not a replacement for a proper coding assistant. For developers, it is not a reason to subscribe.
 

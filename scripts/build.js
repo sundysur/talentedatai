@@ -300,6 +300,12 @@ for (const file of mdFiles) {
     .article-body code{background:var(--gray-100);padding:2px 8px;border-radius:6px;font-size:14px;font-family:monospace;color:var(--dark)}
     .article-body pre{background:var(--dark);color:#e8e8e5;padding:24px;border-radius:12px;overflow-x:auto;margin:28px 0;font-size:14px;line-height:1.6}
     .article-body pre code{background:none;padding:0;color:inherit}
+    /* AUTHOR BIO */
+    .author-bio{display:flex;align-items:flex-start;gap:16px;background:var(--gray-100);border-radius:var(--radius);padding:24px;margin:0 0 0}
+    .author-bio__avatar{width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--font-head);font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .author-bio__content{flex:1;min-width:0}
+    .author-bio__name{font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--dark);margin-bottom:4px}
+    .author-bio__text{font-family:var(--font-body);font-size:14px;color:var(--gray-500);line-height:1.6;margin:0}
     .article-body table{width:100%;border-collapse:collapse;margin:28px 0;font-size:15px}
     .article-body th{font-family:'Syne','Syne Fallback',sans-serif;font-weight:700;text-align:left;padding:12px 16px;background:var(--gray-100);border-bottom:2px solid var(--gray-200)}
     .article-body td{padding:12px 16px;border-bottom:1px solid var(--gray-200);color:#2a2a28}
@@ -494,6 +500,13 @@ ${fm.image ? `
 ${html}
 </div>
 <div style="max-width:760px;margin:0 auto;padding:0 24px 48px;">
+  <div class="author-bio">
+    <div class="author-bio__avatar">TA</div>
+    <div class="author-bio__content">
+      <div class="author-bio__name">TalentedAtAI Editorial Team</div>
+      <div class="author-bio__text">We research, test and review AI tools so you can make smarter decisions about what to use, what to skip, and what's worth paying for. Independent, editorially driven, and never paid to rank a tool.</div>
+    </div>
+  </div>
   <div style="border-top:1px solid #e8e8e5;margin-top:48px;padding-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
     <span style="font-family:'DM Sans',sans-serif;color:#5a5a55;font-size:15px;">Found this useful?</span>
     <a href="https://x.com/intent/tweet?text=${encodeURIComponent(fm.title + ' — via @talentedat\n' + SITE_URL + '/content/published/' + slug)}"

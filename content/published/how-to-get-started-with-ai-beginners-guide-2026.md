@@ -102,6 +102,34 @@ You will encounter a lot of noise about AI. Here's what you do not need to under
 
 ---
 
+## What About Privacy and Safety?
+
+This is a question beginners often have but feel awkward asking. The short answer: these tools are safe to use for everyday tasks, but there are some sensible boundaries worth knowing about.
+
+**Don't share sensitive personal information.** AI tools process your inputs on remote servers. That means you shouldn't paste in your bank details, social security numbers, medical records, passwords, or anything you wouldn't type into a search engine. For general tasks — writing help, explanations, brainstorming, summarising articles — the information you're sharing is no more sensitive than what you'd share with a colleague.
+
+**Your conversations may be used for training.** By default, most free-tier AI tools use your conversations to help improve their models. If that concerns you, both ChatGPT and Claude offer settings to opt out of data training — look for the "Data Controls" or "Privacy" section in settings. Paid plans often have stronger privacy defaults, and enterprise plans typically guarantee your data won't be used for training.
+
+**AI tools can be wrong.** This is worth repeating because it's the most important safety consideration. AI produces confident, well-written responses even when the content is inaccurate. For casual use — brainstorming, drafting, general explanations — this is manageable. For anything with consequences — medical decisions, legal questions, financial choices, important factual claims — always verify the information from a trusted source. Think of AI as a starting point, not a final answer.
+
+**Be especially careful with medical and legal questions.** AI tools can explain medical or legal concepts in helpful, accessible ways. They should not replace professional advice. If you ask an AI tool about a medical symptom and it suggests something alarming, talk to a doctor rather than acting on the AI's response. The tools are useful for understanding terminology and preparing questions for professionals, not for making diagnoses or legal judgments.
+
+---
+
+## After Your First Week: Building the Habit
+
+The biggest predictor of whether someone gets lasting value from AI tools isn't which tool they choose — it's whether they build it into their routine. Most people try AI once or twice, find it interesting, and then forget about it. Here's how to move past that.
+
+**Identify your daily friction point.** Think about the task you do most days that you find slightly tedious or where you regularly lose time. For many people, this is email. For others, it's writing meeting summaries, researching a topic, or formatting documents. Whatever it is, commit to using AI for that specific task every day for two weeks.
+
+**Keep a running note of what works.** When you find a prompt that gives you exactly what you need, save it. Over a few weeks, you'll build a small collection of go-to prompts that become part of your workflow. "Summarise this in three bullet points for a non-technical audience." "Draft a polite but firm email declining this request." "Explain this concept as if I'm hearing about it for the first time." These become muscle memory.
+
+**Graduate from one-shot questions to multi-turn conversations.** The real power of AI tools shows up when you treat them as a back-and-forth conversation rather than a search engine. Ask a question. Read the answer. Ask a follow-up. Push back on something you disagree with. Ask for a different angle. This conversational approach is where the tools become genuinely useful, because you're refining the output in real time.
+
+**Don't try to learn everything at once.** You don't need to understand "prompt engineering." You don't need to try every tool. You don't need to read articles about which AI model is best this month. Just use the one tool you've chosen, for the one task you've identified, and let your understanding develop naturally through use. Competence comes from practice, not from reading about practice.
+
+---
+
 ## The Best Time to Start Is Today
 
 The honest truth about AI in 2026 is that the people benefiting most from it aren't technical wizards. They're people who got over their hesitation, tried a few things, and found a handful of tasks where it genuinely saved them time.
@@ -111,3 +139,19 @@ You don't need to understand everything. You don't need to be an early adopter. 
 You just need to open a tab, ask something real, and see what happens.
 
 That's it. The rest follows naturally.
+
+---
+
+## When AI Isn't the Right Tool
+
+It would be dishonest to write a beginner's guide without acknowledging the things AI isn't good at — because understanding the limits makes you a better user of the tools.
+
+**Anything requiring guaranteed accuracy.** AI tools can produce plausible-sounding but factually wrong information. For medical symptoms, legal requirements, financial figures, or any domain where an error has real consequences, treat AI output as a starting point that needs verification, not a final answer. The tools are excellent at explaining concepts and generating drafts; they are not reliable sources of truth.
+
+**Emotional conversations that matter.** AI can draft a difficult message for you, but the decision about what to say — and whether to say it — should be yours. For conversations that involve real relationships, real feelings, and real stakes, use AI for preparation and framing, but keep a human at the centre of the actual exchange.
+
+**Creative work where originality is the point.** AI is useful for brainstorming, overcoming blank-page paralysis, and generating variations. It is not a substitute for genuine creative thinking. If you're writing a novel, composing music, or designing something where your unique perspective is the value, use AI as a tool in the process — not as the process itself.
+
+**Tasks you need to deeply understand.** If a task is important for your own learning or understanding — studying for an exam, learning a new skill, working through a complex problem — be cautious about outsourcing too much of the thinking to AI. The act of struggling with something is often where the understanding develops. Use AI to check your work or to explain concepts you're stuck on, but don't let it skip the thinking that you need to do yourself.
+
+Knowing when not to use AI is just as valuable as knowing when to use it. The best users of these tools are the ones who've developed judgment about when AI adds value and when it subtracts from what they're actually trying to accomplish.
