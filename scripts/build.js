@@ -660,6 +660,7 @@ ${hasToc ? `<nav class="toc-sidebar" aria-label="Table of contents">
           <li><a href="${SITE_URL}/about.html">About Us</a></li>
           <li><a href="${SITE_URL}/contact.html">Contact</a></li>
           <li><a href="${SITE_URL}/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="${SITE_URL}/terms-of-service.html">Terms of Service</a></li>
         </ul>
       </div>
     </div>
@@ -667,6 +668,7 @@ ${hasToc ? `<nav class="toc-sidebar" aria-label="Table of contents">
       <span>&copy; 2026 ${SITE_NAME}. All rights reserved.</span>
       <div class="footer__bottom-links">
         <a href="${SITE_URL}/privacy-policy.html">Privacy Policy</a>
+        <a href="${SITE_URL}/terms-of-service.html">Terms of Service</a>
         <a href="${SITE_URL}/about.html">About</a>
         <a href="${SITE_URL}/contact.html">Contact</a>
         <a href="https://x.com/talentedat" target="_blank" rel="noopener">@talentedat</a>
