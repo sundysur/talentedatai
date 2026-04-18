@@ -313,7 +313,7 @@ for (const file of mdFiles) {
     .article-meta{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray-400);margin-bottom:24px;flex-wrap:wrap}
     .article-hero h1{font-family:'Syne','Syne Fallback',sans-serif;font-size:clamp(30px,5vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:20px;color:var(--dark)}
     .article-desc{font-size:18px;color:var(--gray-600);line-height:1.65;font-weight:300;padding-bottom:40px;border-bottom:1px solid var(--gray-200)}
-    .article-body{max-width:760px;margin:0 auto;padding:48px 24px 96px}
+    .article-body{max-width:760px;margin:0 auto;padding:48px 24px 48px}
     .article-body h2{font-family:'Syne','Syne Fallback',sans-serif;font-size:28px;font-weight:700;letter-spacing:-.02em;line-height:1.2;margin:56px 0 16px;color:var(--dark)}
     .article-body h3{font-family:'Syne','Syne Fallback',sans-serif;font-size:21px;font-weight:700;margin:40px 0 12px;color:var(--dark)}
     .article-body h4{font-family:'Syne','Syne Fallback',sans-serif;font-size:17px;font-weight:700;margin:28px 0 8px;color:var(--dark)}
@@ -338,8 +338,8 @@ for (const file of mdFiles) {
     .author-bio__name{font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--dark);margin-bottom:4px}
     .author-bio__text{font-family:var(--font-body);font-size:14px;color:var(--gray-500);line-height:1.6;margin:0}
     /* RELATED ARTICLES */
-    .related-articles{margin:48px 0 0;padding-top:40px;border-top:1px solid var(--gray-200)}
-    .related-articles__title{font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:var(--dark);margin:0 0 24px}
+    .related-articles{margin:48px 0 48px;padding-top:40px;border-top:1px solid var(--gray-200)}
+    .related-articles .related-articles__title{font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:var(--dark);margin:0 0 24px;letter-spacing:normal;line-height:1.3}
     .related-articles__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .related-card{text-decoration:none;border-radius:var(--radius);border:1px solid var(--gray-200);overflow:hidden;transition:box-shadow 200ms ease,transform 200ms ease;display:flex;flex-direction:column;background:var(--white)}
     .related-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);text-decoration:none}
@@ -392,7 +392,7 @@ for (const file of mdFiles) {
     .affiliate-notice { font-size: 12px; color: #888; background: #f4f4f0; border-left: 3px solid #e0e0da; padding: 8px 12px; border-radius: 0 6px 6px 0; margin: 0 0 24px; font-family: 'DM Sans', sans-serif; line-height: 1.5; }
     /* TABLE OF CONTENTS */
     .article-toc-wrapper{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 240px;gap:40px;padding:0 20px}
-    .article-toc-wrapper .article-body{max-width:760px;margin:0;padding:48px 24px 96px}
+    .article-toc-wrapper .article-body{max-width:760px;margin:0;padding:48px 24px 48px}
     .toc-sidebar{padding-top:48px}
     .toc-sticky{position:sticky;top:100px;opacity:0;transition:opacity 0.4s ease}
     .toc-sticky.visible{opacity:1}
@@ -628,6 +628,27 @@ ${fm.image ? `
 ${hasToc ? '<div class="article-toc-wrapper">' : ''}
 <div class="article-body">
 ${hasToc ? articleContentHtml : html}
+<!-- RELATED_ARTICLES -->
+<div class="author-bio">
+  <div class="author-bio__avatar">TA</div>
+  <div class="author-bio__content">
+    <div class="author-bio__name">TalentedAtAI Editorial Team</div>
+    <div class="author-bio__text">We research, test and review AI tools so you can make smarter decisions about what to use, what to skip, and what's worth paying for. Independent, editorially driven, and never paid to rank a tool.</div>
+  </div>
+</div>
+<div style="border-top:1px solid var(--gray-200);margin-top:48px;padding-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+  <span style="font-family:'DM Sans',sans-serif;color:var(--gray-600);font-size:15px;">Found this useful?</span>
+  <a href="https://x.com/intent/tweet?text=${encodeURIComponent(fm.title + ' — via @talentedat\n' + SITE_URL + '/content/published/' + slug)}"
+     target="_blank" rel="noopener"
+     style="display:inline-flex;align-items:center;gap:6px;background:#000;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    Share on X
+  </a>
+  <a href="https://x.com/talentedat" target="_blank" rel="noopener"
+     style="display:inline-flex;align-items:center;gap:6px;color:var(--gray-600);font-size:14px;text-decoration:none;">
+    Follow @talentedat
+  </a>
+</div>
 </div>
 ${hasToc ? `<nav class="toc-sidebar" aria-label="Table of contents">
   <div class="toc-sticky">
@@ -636,28 +657,6 @@ ${hasToc ? `<nav class="toc-sidebar" aria-label="Table of contents">
   </div>
 </nav>
 </div>` : ''}
-<div style="max-width:760px;margin:0 auto;padding:0 24px 48px;">
-  <div class="author-bio">
-    <div class="author-bio__avatar">TA</div>
-    <div class="author-bio__content">
-      <div class="author-bio__name">TalentedAtAI Editorial Team</div>
-      <div class="author-bio__text">We research, test and review AI tools so you can make smarter decisions about what to use, what to skip, and what's worth paying for. Independent, editorially driven, and never paid to rank a tool.</div>
-    </div>
-  </div>
-  <div style="border-top:1px solid #e8e8e5;margin-top:48px;padding-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-    <span style="font-family:'DM Sans',sans-serif;color:#5a5a55;font-size:15px;">Found this useful?</span>
-    <a href="https://x.com/intent/tweet?text=${encodeURIComponent(fm.title + ' — via @talentedat\n' + SITE_URL + '/content/published/' + slug)}"
-       target="_blank" rel="noopener"
-       style="display:inline-flex;align-items:center;gap:6px;background:#000;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      Share on X
-    </a>
-    <a href="https://x.com/talentedat" target="_blank" rel="noopener"
-       style="display:inline-flex;align-items:center;gap:6px;color:#5a5a55;font-size:14px;text-decoration:none;">
-      Follow @talentedat
-    </a>
-  </div>
-</div>
 <footer class="footer">
   <div class="footer__inner">
     <div class="footer__top">
@@ -935,10 +934,10 @@ for (const article of articles) {
   const htmlPath = path.join(publishedDir, article.slug + '.html');
   let pageHtml = fs.readFileSync(htmlPath, 'utf8');
 
-  // Insert before the author bio block
+  // Replace the placeholder comment with related articles HTML
   pageHtml = pageHtml.replace(
-    '<div class="author-bio">',
-    relatedHtml + '\n  <div class="author-bio">'
+    '<!-- RELATED_ARTICLES -->',
+    relatedHtml
   );
 
   fs.writeFileSync(htmlPath, pageHtml);
