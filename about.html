@@ -10,14 +10,6 @@
   <meta property="og:url" content="https://talentedatai.com/about.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://talentedatai.com/static/images/articles/ai-agents-header.jpg">
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYQ40F2CXQ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SYQ40F2CXQ');
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=optional" />
@@ -366,8 +358,18 @@
     [data-theme="dark"] .footer__brand-logo{color:#f0f0f5}
     [data-theme="dark"] .footer__brand-logo span{color:#4d9fff}
     body{transition:background-color 200ms ease,color 200ms ease}
+    .cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--gray-200);padding:16px 24px;z-index:9999;box-shadow:0 -4px 24px rgba(0,0,0,0.08);display:none}
+    .cookie-banner.visible{display:block}
+    .cookie-banner__inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    .cookie-banner__text{font-family:var(--font-body);font-size:14px;color:var(--gray-700);margin:0}
+    .cookie-banner__text a{color:var(--blue);text-decoration:underline}
+    .cookie-banner__actions{display:flex;gap:12px;flex-shrink:0}
+    .cookie-banner__decline{font-family:var(--font-body);font-size:14px;padding:8px 20px;border-radius:var(--radius, 8px);border:1.5px solid var(--gray-300);background:transparent;color:var(--gray-700);cursor:pointer;transition:border-color 200ms ease}
+    .cookie-banner__decline:hover{border-color:var(--blue)}
+    .cookie-banner__accept{font-family:var(--font-body);font-size:14px;padding:8px 20px;border-radius:var(--radius, 8px);border:none;background:var(--blue);color:#fff;cursor:pointer;transition:opacity 200ms ease}
+    .cookie-banner__accept:hover{opacity:0.9}
+    [data-theme="dark"] .cookie-banner{background:#13132a;border-top-color:rgba(255,255,255,0.08)}
   </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3277838203710267" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -664,6 +666,73 @@
     html.setAttribute('data-theme',next);
     localStorage.setItem('theme',next);
   }
+</script>
+
+<div class="cookie-banner" id="cookie-banner">
+  <div class="cookie-banner__inner">
+    <p class="cookie-banner__text">
+      We use cookies to analyse traffic and improve your experience.
+      <a href="/privacy-policy.html">Privacy Policy</a>
+    </p>
+    <div class="cookie-banner__actions">
+      <button class="cookie-banner__decline" onclick="cookieDecline()">Decline</button>
+      <button class="cookie-banner__accept" onclick="cookieAccept()">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+function cookieAccept() {
+  localStorage.setItem('cookie_consent', 'accepted');
+  document.getElementById('cookie-banner').classList.remove('visible');
+  loadAnalytics();
+  loadAdSense();
+}
+function cookieDecline() {
+  localStorage.setItem('cookie_consent', 'declined');
+  document.getElementById('cookie-banner').classList.remove('visible');
+  loadAdSenseNonPersonalised();
+}
+function loadAnalytics() {
+  const s = document.createElement('script');
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SYQ40F2CXQ';
+  s.async = true;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-SYQ40F2CXQ');
+}
+function loadAdSense() {
+  const s = document.createElement('script');
+  s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3277838203710267';
+  s.async = true;
+  s.crossOrigin = 'anonymous';
+  document.head.appendChild(s);
+}
+function loadAdSenseNonPersonalised() {
+  const s = document.createElement('script');
+  s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3277838203710267';
+  s.async = true;
+  s.crossOrigin = 'anonymous';
+  document.head.appendChild(s);
+  window.adsbygoogle = window.adsbygoogle || [];
+  (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+}
+(function() {
+  const consent = localStorage.getItem('cookie_consent');
+  if (consent === 'accepted') {
+    loadAnalytics();
+    loadAdSense();
+  } else if (consent === 'declined') {
+    loadAdSenseNonPersonalised();
+  } else {
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.getElementById('cookie-banner');
+      if (banner) banner.classList.add('visible');
+    });
+  }
+})();
 </script>
 
 </body>
