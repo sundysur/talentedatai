@@ -181,17 +181,16 @@
     [data-theme="dark"] .footer__brand-logo{color:#f0f0f5}
     [data-theme="dark"] .footer__brand-logo span{color:#4d9fff}
     body{transition:background-color 200ms ease,color 200ms ease}
-    .cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--gray-200);padding:16px 24px;z-index:9999;box-shadow:0 -4px 24px rgba(0,0,0,0.08);display:none}
+    .cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e2d4a;border-top:none;padding:16px 24px;z-index:9999;box-shadow:0 -4px 32px rgba(0,0,0,0.3);display:none}
     .cookie-banner.visible{display:block}
     .cookie-banner__inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-    .cookie-banner__text{font-family:var(--font-body);font-size:14px;color:var(--gray-700);margin:0}
-    .cookie-banner__text a{color:var(--blue);text-decoration:underline}
+    .cookie-banner__text{font-family:var(--font-body);font-size:14px;color:#e0e0f0;margin:0}
+    .cookie-banner__text a{color:#7db8ff;text-decoration:underline}
     .cookie-banner__actions{display:flex;gap:12px;flex-shrink:0}
-    .cookie-banner__decline{font-family:var(--font-body);font-size:14px;padding:8px 20px;border-radius:var(--radius, 8px);border:1.5px solid var(--gray-300);background:transparent;color:var(--gray-700);cursor:pointer;transition:border-color 200ms ease}
-    .cookie-banner__decline:hover{border-color:var(--blue)}
+    .cookie-banner__decline{font-family:var(--font-body);font-size:14px;padding:8px 20px;border-radius:var(--radius, 8px);border:1.5px solid rgba(255,255,255,0.3);background:transparent;color:#e0e0f0;cursor:pointer;transition:border-color 200ms ease}
+    .cookie-banner__decline:hover{border-color:#fff}
     .cookie-banner__accept{font-family:var(--font-body);font-size:14px;padding:8px 20px;border-radius:var(--radius, 8px);border:none;background:var(--blue);color:#fff;cursor:pointer;transition:opacity 200ms ease}
     .cookie-banner__accept:hover{opacity:0.9}
-    [data-theme="dark"] .cookie-banner{background:#13132a;border-top-color:rgba(255,255,255,0.08)}
   </style>
 </head>
 <body>
