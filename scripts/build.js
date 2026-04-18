@@ -337,6 +337,18 @@ for (const file of mdFiles) {
     .author-bio__content{flex:1;min-width:0}
     .author-bio__name{font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--dark);margin-bottom:4px}
     .author-bio__text{font-family:var(--font-body);font-size:14px;color:var(--gray-500);line-height:1.6;margin:0}
+    /* RELATED ARTICLES */
+    .related-articles{margin:48px 0 0;padding-top:40px;border-top:1px solid var(--gray-200)}
+    .related-articles__title{font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:var(--dark);margin:0 0 24px}
+    .related-articles__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .related-card{text-decoration:none;border-radius:var(--radius);border:1px solid var(--gray-200);overflow:hidden;transition:box-shadow 200ms ease,transform 200ms ease;display:flex;flex-direction:column;background:var(--white)}
+    .related-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);text-decoration:none}
+    .related-card__image{aspect-ratio:16/9;overflow:hidden}
+    .related-card__image img{width:100%;height:100%;object-fit:cover;display:block}
+    .related-card__content{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+    .related-card__category{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--blue)}
+    .related-card__title{font-family:var(--font-head);font-size:0.95rem;font-weight:600;color:var(--dark);margin:0;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .related-card__read-time{font-size:12px;color:var(--gray-500);margin-top:auto}
     .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:28px 0;border-radius:8px;position:relative;border:1px solid var(--gray-200)}
     .table-scroll::after{content:'';position:absolute;top:0;right:0;width:40px;height:100%;background:linear-gradient(to right,transparent,var(--white));pointer-events:none;border-radius:0 8px 8px 0}
     @media(max-width:768px){.table-scroll::before{content:'Scroll to see more →';display:block;font-size:11px;color:var(--gray-500);text-align:right;padding:4px 8px 0;font-family:var(--font-body)}}
@@ -363,6 +375,7 @@ for (const file of mdFiles) {
     @media(max-width:1024px){.footer__top{grid-template-columns:1fr 1fr}}
     @media(max-width:768px){.footer__top{grid-template-columns:1fr}.footer__bottom{flex-direction:column;gap:16px;text-align:center}}
     @media(max-width:640px){.article-hero{padding:40px 20px 32px}.article-body{padding:32px 20px 64px}}
+    @media(max-width:768px){.related-articles__grid{grid-template-columns:1fr;gap:16px}}
     .audio-player { margin: 24px 0 36px; width: 100%; max-width: 100%; box-sizing: border-box; }
     .audio-player__inner { display: flex; align-items: center; gap: 14px; background: #eeeee8; border: 1.5px solid #e0e0da; border-radius: 12px; padding: 14px 18px; width: 100%; box-sizing: border-box; }
     .audio-btn { width: 42px; height: 42px; border-radius: 50%; background: #0066ff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #fff; transition: background 0.2s, transform 0.15s; }
@@ -424,6 +437,10 @@ for (const file of mdFiles) {
     [data-theme="dark"] .related-grid .feed-card{border-color:rgba(255,255,255,0.07)}
     [data-theme="dark"] .toc-sidebar{border-left-color:rgba(255,255,255,0.07)}
     [data-theme="dark"] #progress-bar{background:#4d9fff}
+    [data-theme="dark"] .related-articles{border-top-color:rgba(255,255,255,0.08)}
+    [data-theme="dark"] .related-articles__title{color:var(--dark)}
+    [data-theme="dark"] .related-card{background:#13132a;border-color:rgba(255,255,255,0.08)}
+    [data-theme="dark"] .related-card__title{color:var(--dark)}
 
     [data-theme="dark"] .article-meta{color:#9999bb}
     [data-theme="dark"] .article-desc{color:#9999bb;border-bottom-color:rgba(255,255,255,0.07)}
@@ -849,6 +866,84 @@ function loadAdSenseNonPersonalised() {
 
 articles.sort((a, b) => new Date(b.date) - new Date(a.date));
 fs.writeFileSync(path.join(__dirname, '../content/articles.json'), JSON.stringify(articles, null, 2));
+
+// ── RELATED ARTICLES ─────────────────────────────────────────────────────────
+// Find 3 related articles for each article using category + tag overlap.
+function findRelatedArticles(currentSlug, currentCategory, currentTags, allArticles) {
+  const candidates = allArticles.filter(a => a.slug !== currentSlug);
+  const tagSet = new Set(currentTags || []);
+
+  const scored = candidates.map(a => {
+    const sameCategory = a.category === currentCategory;
+    const sharedTags = (a.tags || []).filter(t => tagSet.has(t)).length;
+    let score = 0;
+
+    if (sameCategory && sharedTags > 0) {
+      score = 100 + sharedTags;        // Priority 1: same category + shared tag(s)
+    } else if (sameCategory) {
+      score = 50;                       // Priority 2: same category only
+    } else if (sharedTags > 0) {
+      score = 25 + sharedTags;          // Priority 3: shared tag(s) only
+    }
+    // score 0 → fallback: most recent (date sort handles it)
+
+    return { ...a, _score: score };
+  });
+
+  // Sort by relevance score desc, then by date desc for tie-breaking
+  scored.sort((a, b) => {
+    if (b._score !== a._score) return b._score - a._score;
+    return new Date(b.date) - new Date(a.date);
+  });
+
+  return scored.slice(0, 3);
+}
+
+function escHtml(s) {
+  return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function buildRelatedHtml(relatedArticles) {
+  const cards = relatedArticles.map(a => {
+    const imgTag = a.image
+      ? `<img src="${a.image}" alt="${escHtml(a.title)}" loading="lazy" width="400" height="225">`
+      : '';
+    return `    <a class="related-card" href="/content/published/${a.slug}">
+      <div class="related-card__image">${imgTag}</div>
+      <div class="related-card__content">
+        <span class="related-card__category">${escHtml(a.category)}</span>
+        <h3 class="related-card__title">${escHtml(a.title)}</h3>
+        <span class="related-card__read-time">${escHtml(a.read_time)} read</span>
+      </div>
+    </a>`;
+  }).join('\n');
+
+  return `<section class="related-articles">
+  <h2 class="related-articles__title">Related Articles</h2>
+  <div class="related-articles__grid">
+${cards}
+  </div>
+</section>`;
+}
+
+// Inject related articles into each built HTML file
+for (const article of articles) {
+  const related = findRelatedArticles(article.slug, article.category, article.tags, articles);
+  if (related.length === 0) continue;
+
+  const relatedHtml = buildRelatedHtml(related);
+  const htmlPath = path.join(publishedDir, article.slug + '.html');
+  let pageHtml = fs.readFileSync(htmlPath, 'utf8');
+
+  // Insert before the author bio block
+  pageHtml = pageHtml.replace(
+    '<div class="author-bio">',
+    relatedHtml + '\n  <div class="author-bio">'
+  );
+
+  fs.writeFileSync(htmlPath, pageHtml);
+  console.log('  Related articles injected: ' + article.slug);
+}
 
 // Generate sitemap
 // Normalise any incoming date-ish value (string, Date, empty) to strict YYYY-MM-DD.
