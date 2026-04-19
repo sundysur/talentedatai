@@ -34,6 +34,11 @@ Gamma is the first tool we've used that meaningfully addresses the blank slide i
 
 Whether that jarring-ness translates into something worth paying for is the question we spent three weeks and 20 decks trying to answer.
 
+<figure>
+<img src="/static/images/articles/screenshots/gamma-ai-review-2026--generate-wizard--1.jpg" alt="Gamma AI generation wizard showing prompt input with topic, format selector set to Presentation, 10 cards, Classic theme, and Generate outline button" loading="lazy">
+<figcaption>Gamma's generation wizard — type a topic, choose format and card count, and generate a full presentation in seconds</figcaption>
+</figure>
+
 ## What Gamma AI Actually Is
 
 [Gamma](https://gamma.app) is a browser-based presentation tool built around generative AI. At its core it does three things: generates decks from a prompt, imports and restructures existing content (a doc, a pitch, a URL) into slide format, and lets you edit the output with both manual tools and AI prompts. The output lives on the web by default but exports cleanly to PowerPoint and PDF.
@@ -62,6 +67,11 @@ Reviews often get vague here, so let's be specific. We tested Gamma with four us
 
 The workflow is genuinely simple enough to describe in four steps, which is part of why it's effective.
 
+<figure>
+<img src="/static/images/articles/screenshots/gamma-ai-review-2026--outline--2.jpg" alt="Gamma AI outline view showing 7 structured slide titles with bullet points generated from the prompt about AI tools for business growth" loading="lazy">
+<figcaption>Gamma generates a full outline before building slides — you can edit any section before committing to the final design</figcaption>
+</figure>
+
 **Step 1: Choose a starting point.** From the Gamma home screen, you'll see three options: "Generate" (from a prompt), "Import" (from a file, Google Doc, or URL), or "Paste text." For a first deck, Generate is fastest. You'll be asked for a topic, audience, and tone, with sensible defaults.
 
 **Step 2: Write a prompt that does some of the work.** This is the step that most affects the quality of the output. "A sales deck" will give you a generic sales deck. "A 12-slide sales deck for a mid-market accounting firm pitching our outsourced bookkeeping service, emphasising time savings and audit readiness, tone professional but warm" will give you something substantially closer to what you actually need. Five extra seconds of prompt effort is worth minutes of editing later.
@@ -73,6 +83,11 @@ The workflow is genuinely simple enough to describe in four steps, which is part
 ## What Gamma Does Well
 
 Three things stand out after 20 decks.
+
+<figure>
+<img src="/static/images/articles/screenshots/gamma-ai-review-2026--deck-editor--3.jpg" alt="Gamma AI editor showing completed presentation with slide thumbnails panel on the left and a data-rich slide open in the canvas with iridescent design theme" loading="lazy">
+<figcaption>Gamma's finished deck — the iridescent design theme, auto-generated stats, and slide panel make it feel like a professional tool from the first use</figcaption>
+</figure>
 
 **Speed from zero to structured.** The gap between "I need a deck" and "I have a deck" has meaningfully collapsed. A pitch deck, a client proposal, a workshop structure, a project update — all take 30–45 minutes end-to-end instead of half a day. This matters most for people who produce decks regularly and whose decks follow recognisable structures, which is a larger population than the industry tends to acknowledge.
 
