@@ -32,6 +32,11 @@ There is a moment, the first time you hear a good AI voice reading something you
 
 That oscillation — between impressively good and slightly off — is probably the most honest way to describe where [ElevenLabs](https://try.elevenlabs.io/ihsithj42jfj) sits in 2026. It is genuinely the best AI voice tool available, and it is genuinely still an AI voice tool. Understanding both of those things is useful before you decide whether it belongs in your workflow.
 
+<figure>
+<img src="/static/images/articles/screenshots/elevenlabs-review-2026--speech-synthesis--1.jpg" alt="ElevenLabs Text to Speech interface showing text input with Rachel voice selected, speed and stability controls, and Generate speech button" loading="lazy">
+<figcaption>ElevenLabs Text to Speech — paste your script, choose a voice, and generate in seconds</figcaption>
+</figure>
+
 ## What ElevenLabs Actually Does
 
 ElevenLabs is a text-to-speech platform, but that description undersells it a little. You paste or upload text, choose a voice from a large library, and the platform generates an audio file that sounds like a person reading it. The quality, in most cases, is significantly better than the robotic text-to-speech you've encountered anywhere else.
@@ -51,6 +56,11 @@ We ran ElevenLabs through a set of practical tests over several weeks.
 Emotional nuance is where the pre-built voices struggle most. They handle neutral, informational content well. They're less convincing on humour, warmth, or anything that requires a voice to carry emotional weight. You can adjust the settings — stability, clarity, style exaggeration — and with experimentation you can get closer to what you want, but it takes time.
 
 **Voice cloning:** The results here are the most impressive part of the product. With a clean 3-minute sample, we produced a cloned voice that passed informal listening tests with people who knew the original speaker. They noticed something was off; they couldn't say exactly what. With a longer sample, the gap narrowed further.
+
+<figure>
+<img src="/static/images/articles/screenshots/elevenlabs-review-2026--voice-cloning--2.jpg" alt="ElevenLabs Create Voice modal showing Voice Design, Instant Voice Clone, Professional Voice Clone, Voice Remixing and Voice Library options with plan requirements" loading="lazy">
+<figcaption>ElevenLabs voice creation options — Instant Voice Cloning requires Starter plan ($6/month), Professional Voice Cloning requires Creator plan</figcaption>
+</figure>
 
 The obvious application for most people is consistency: recording your voice once and then using it for every piece of content you produce, without needing to set up a microphone every time. For solo content creators, this is practical in a way it would have seemed impossible a few years ago.
 
@@ -74,6 +84,11 @@ Where it's less useful: anything that requires genuine emotional performance, ch
 ## Pricing and What You Actually Get
 
 ElevenLabs offers a free tier that gives you around 10,000 characters per month — enough to evaluate the tool properly but not enough for consistent production use. The Starter plan ($5/month) unlocks 30,000 characters and voice cloning, which covers light regular use. The Creator plan ($22/month) brings you 100,000 characters, which is sufficient for most individual creators.
+
+<figure>
+<img src="/static/images/articles/screenshots/elevenlabs-review-2026--pricing--3.jpg" alt="ElevenLabs pricing page showing Free, Starter, Creator and Pro tiers with monthly credit limits and feature comparison" loading="lazy">
+<figcaption>ElevenLabs pricing as of April 2026 — Creator plan at $11/month (first month 50% off) is the sweet spot for most creators</figcaption>
+</figure>
 
 One important note: the character limit refers to input text, not audio duration. A 1,500-word article is roughly 8,000 characters. At the Starter level, that's about three or four articles per month in audio form. Plan accordingly.
 
