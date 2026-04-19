@@ -34,6 +34,11 @@ We did that so you don't have to. Over the past several weeks, we tested ElevenL
 
 This isn't a feature checklist. It's a practical comparison based on real use, aimed at helping you spend money on the right tool the first time.
 
+<figure>
+<img src="/static/images/articles/screenshots/elevenlabs-vs-murf-vs-descript-2026--elevenlabs--1.jpg" alt="ElevenLabs Text to Speech interface showing script input, Rachel voice selected, and audio generation controls" loading="lazy">
+<figcaption>ElevenLabs Text to Speech — paste your script, pick a voice, generate in seconds</figcaption>
+</figure>
+
 <div style="background:#f0f6ff;border:2px solid #0066ff;border-radius:12px;padding:24px;margin:32px 0;text-align:center;">
   <p style="font-size:1.1em;font-weight:700;margin:0 0 8px 0;">🎙️ Try ElevenLabs Free</p>
   <p style="color:#5a5a55;margin:0 0 16px 0;">The best AI voice generator in 2026. Start free — no credit card needed.</p>
@@ -82,9 +87,19 @@ Voice cloning is increasingly the reason creators choose one tool over another. 
 
 **Descript** wins this category outright, and it's not close. The transcript-based editing paradigm is genuinely innovative and, once you're used to it, hard to go back from. You see your audio as text. You edit the text. The audio changes. You can rearrange sections by dragging paragraphs. You can remove filler words with one click. You can add AI-generated voice segments inline with human-recorded audio.
 
+<figure>
+<img src="/static/images/articles/screenshots/elevenlabs-vs-murf-vs-descript-2026--descript-editor--3.jpg" alt="Descript editor showing transcript-based video editing with AI Tools panel, video preview, and timeline" loading="lazy">
+<figcaption>Descript — edit your video by editing the transcript, with AI tools for filler word removal, Studio Sound, and clip creation</figcaption>
+</figure>
+
 For podcasters who record interviews and need to edit them, Descript's workflow is significantly faster than traditional audio editing in a DAW. The AI voice features layer on top of this — they're useful, but the editing is the real draw.
 
 **Murf** has a studio interface that's more structured than ElevenLabs but less capable than Descript. You lay out a project with multiple scenes, assign voices to each, adjust pacing with sliders, and add background music from a built-in library. It's well-designed for producing polished corporate content — training videos, explainer narration, presentation voiceover. Teams can collaborate on projects, share assets, and maintain brand voice consistency across producers.
+
+<figure>
+<img src="/static/images/articles/screenshots/elevenlabs-vs-murf-vs-descript-2026--murf-studio--2.jpg" alt="Murf Studio editor showing script block with Amara voice selected, tone controls, and audio timeline at the bottom" loading="lazy">
+<figcaption>Murf Studio — script-based editor with voice controls, tone settings, and timeline playback</figcaption>
+</figure>
 
 **ElevenLabs** has the simplest interface: paste text, pick a voice, adjust settings, generate. For pure text-to-speech work, this simplicity is a strength. There's no project management overhead, no timeline to arrange, no learning curve beyond the basics. For anything more complex — multi-voice projects, audio-over-video, editorial workflows — you'll need to export from ElevenLabs and bring the audio into another tool.
 
