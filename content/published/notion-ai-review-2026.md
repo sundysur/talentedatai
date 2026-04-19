@@ -32,9 +32,19 @@ There is a specific kind of frustration that comes from switching between five d
 
 [Notion AI](https://www.notion.so/product/ai) is the most ambitious attempt so far to solve that problem by putting the AI *inside* the workspace where the content already lives. We tested it for several weeks across real work — meeting notes, project documentation, writing, research, and database automation — to answer the question that actually matters: is it worth the extra $10 per user per month in 2026?
 
+<figure>
+<img src="/static/images/articles/screenshots/notion-ai-review-2026--ai-summary--1.jpg" alt="Notion AI summarising meeting notes, showing the original bullet points on the left and a structured AI-generated summary with key highlights and action items on the right" loading="lazy">
+<figcaption>Notion AI summarising meeting notes — it pulls out key highlights and action items automatically from your existing page content</figcaption>
+</figure>
+
 ## What Notion AI Actually Is in 2026
 
 Notion AI is not a single feature. It is a set of AI capabilities layered across nearly every surface of the Notion product. Understanding what each one does — and what it does not — is essential before deciding whether to pay.
+
+<figure>
+<img src="/static/images/articles/screenshots/notion-ai-review-2026--slash-command--2.jpg" alt="Notion slash command menu showing AI options including AI Meeting Notes, AI Block, and Ask AI after typing /AI on a page" loading="lazy">
+<figcaption>Type /AI anywhere in Notion to access AI Meeting Notes, AI Block, and Ask AI — all available without leaving your document</figcaption>
+</figure>
 
 **Q&A across your workspace** is the headline feature and, for most users, the most valuable. Ask a natural language question and Notion searches your entire workspace, reads relevant pages, and produces an answer with links back to the source pages. "What did we decide about the pricing model in the March product review?" returns not a keyword-matched list but an actual answer with citations. For anyone with a Notion workspace containing meeting notes, project docs, or knowledge bases, this transforms how you retrieve information.
 
