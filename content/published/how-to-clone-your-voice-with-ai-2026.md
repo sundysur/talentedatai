@@ -36,6 +36,11 @@ People come to voice cloning for reasons that are often more sentimental than te
 
 All of these are genuinely reasonable. The tools now support them. This is the guide we wish we'd had the first time we tried it.
 
+<figure>
+<img src="/static/images/articles/screenshots/elevenlabs-review-2026--voice-cloning--2.jpg" alt="ElevenLabs Create Voice modal showing Voice Design, Instant Voice Clone, Professional Voice Clone, Voice Remixing and Voice Library options with plan requirements" loading="lazy">
+<figcaption>ElevenLabs voice creation options — Instant Voice Cloning requires the Starter plan ($6/month), Professional Voice Cloning requires Creator</figcaption>
+</figure>
+
 ## What ElevenLabs Is (The Short Version)
 
 ElevenLabs is the AI voice platform most people end up on for cloning, and the one we'll use for this tutorial. It's a text-to-speech tool with voice cloning built in — you upload a sample of yourself speaking, it generates a voice model, and then anything you type comes out in that voice. It has the largest voice library in the space and, in our testing, the most convincing clones. If you want the full picture before committing, our [ElevenLabs review](/blog/elevenlabs-review-2026) covers pricing, quality, and where the tool falls short. For this guide, we'll stay focused on the cloning workflow itself.
@@ -85,6 +90,11 @@ Agree, click Create, and wait about thirty seconds. That's it. You now have an A
 ## Step 4: Generate Your First Audio
 
 Go to Text to Speech in the left-hand menu. At the top, switch the voice dropdown from the default voice to the one you just created. Paste in some text — anything, but ideally something you haven't read in the sample, because you want to hear the clone produce words it hasn't seen you say.
+
+<figure>
+<img src="/static/images/articles/screenshots/elevenlabs-review-2026--speech-synthesis--1.jpg" alt="ElevenLabs Text to Speech interface showing script input with Rachel voice selected and audio generation controls" loading="lazy">
+<figcaption>Once your voice is cloned, use it in the Text to Speech interface — paste any script and generate audio in seconds</figcaption>
+</figure>
 
 Press Generate. After a few seconds, you'll have an audio file. Play it.
 
