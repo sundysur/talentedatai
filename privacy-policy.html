@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=optional" rel="stylesheet"/>
+  <link rel="icon" type="image/png" sizes="64x64" href="/static/images/favicon-64.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="/static/images/favicon-256.png">
   <script>(function(){var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)})()</script>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -26,6 +28,8 @@
       --font-body:'DM Sans','DM Sans Fallback',sans-serif;
       --radius:16px;
       --transition:0.25s cubic-bezier(0.4,0,0.2,1);
+      --brand-green-dark:#0E3B2E;
+      --brand-green-light:#C8E65A;
       /* Legacy aliases preserved for page-specific styles below */
       --text:#1a1a18;
       --gray-400:#9a9a95;
@@ -46,9 +50,11 @@
     /* NAV — matches index.html */
     .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,102,255,0.08)}
     .nav__inner{max-width:1200px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:32px}
-    .nav__logo{font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--dark);letter-spacing:-0.02em;display:flex;align-items:center;gap:6px;text-decoration:none}
-    .nav__logo span{color:var(--blue)}
-    .nav__logo-dot{width:8px;height:8px;background:var(--blue);border-radius:50%;display:inline-block}
+    .nav__logo{display:flex;align-items:center;gap:6px;text-decoration:none}
+    .nav__logo-img{height:auto}
+    .nav__logo-img--light{display:none}
+    [data-theme="dark"] .nav__logo-img--dark{display:none}
+    [data-theme="dark"] .nav__logo-img--light{display:block}
     .nav__logo-wrap{display:flex;flex-direction:column;gap:1px}
     .nav__tagline{font-size:11px;color:var(--gray-500);font-family:var(--font-body);font-weight:400;letter-spacing:0.01em}
     .nav__links{display:flex;align-items:center;gap:32px;list-style:none;padding:0;margin:0}
@@ -104,8 +110,7 @@
     .footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:64px 24px 32px}
     .footer__inner{max-width:1200px;margin:0 auto}
     .footer__top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
-    .footer__brand-logo{font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--white);margin-bottom:14px}
-    .footer__brand-logo span{color:var(--blue)}
+    .footer__brand-logo{margin-bottom:14px}
     .footer__brand-desc{font-size:14px;line-height:1.7;max-width:280px;color:rgba(255,255,255,0.7)}
     .footer__col-title{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px}
     .footer__links{list-style:none;padding:0;display:flex;flex-direction:column;gap:12px}
@@ -178,8 +183,6 @@
     /* Dark mode — date & meta text */
     [data-theme="dark"] .article-card__read-time,[data-theme="dark"] .compact-card__read-time,[data-theme="dark"] .compact-card__date,[data-theme="dark"] .secondary-card__meta,[data-theme="dark"] .feed-card__meta span,[data-theme="dark"] .sidebar-pick__meta,[data-theme="dark"] .featured-card__meta,[data-theme="dark"] .author__name{color:#9999bb}
     [data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3{color:#f0f0ff}
-    [data-theme="dark"] .footer__brand-logo{color:#f0f0f5}
-    [data-theme="dark"] .footer__brand-logo span{color:#4d9fff}
     body{transition:background-color 200ms ease,color 200ms ease}
     .cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e2d4a;border-top:none;padding:16px 24px;z-index:9999;box-shadow:0 -4px 32px rgba(0,0,0,0.3);display:none}
     .cookie-banner.visible{display:block}
@@ -199,10 +202,10 @@
   <div class="nav__inner">
     <div class="nav__logo-wrap">
       <a href="/" class="nav__logo">
-        <span class="nav__logo-dot"></span>
-        Talented<span>At</span>AI
+        <img src="/static/images/logo-dark.svg" alt="TalentedAtAI" width="160" height="auto" class="nav__logo-img nav__logo-img--dark">
+        <img src="/static/images/logo-light.svg" alt="TalentedAtAI" width="160" height="auto" class="nav__logo-img nav__logo-img--light">
       </a>
-      <div class="nav__tagline">Practical guides, honest reviews · Independent</div>
+      <div class="nav__tagline">Practical guides. Honest reviews. No hype.</div>
     </div>
     <ul class="nav__links">
       <li><a href="/articles.html">Articles</a></li>
@@ -334,7 +337,7 @@
   <div class="footer__inner">
     <div class="footer__top">
       <div>
-        <div class="footer__brand-logo">Talented<span>At</span>AI</div>
+        <div class="footer__brand-logo"><img src="/static/images/logo-light.svg" alt="TalentedAtAI" width="160" height="auto"></div>
         <p class="footer__brand-desc">Your practical guide to the best AI tools, strategies, and workflows. Independent, honest, and updated daily.</p>
       </div>
       <div>

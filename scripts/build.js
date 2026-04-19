@@ -246,6 +246,8 @@ for (const file of mdFiles) {
       --font-body:'DM Sans','DM Sans Fallback',sans-serif;
       --radius:16px;
       --transition:0.25s cubic-bezier(0.4,0,0.2,1);
+      --brand-green-dark:#0E3B2E;
+      --brand-green-light:#C8E65A;
       /* Legacy aliases used by article body styles */
       --text:#1a1a18;
       --gray-400:#9a9a95;
@@ -266,10 +268,12 @@ for (const file of mdFiles) {
     /* NAV */
     .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,102,255,0.08)}
     .nav__inner{max-width:1200px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:32px}
-    .nav__logo{font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--dark);letter-spacing:-0.02em;display:flex;align-items:center;gap:6px;text-decoration:none}
+    .nav__logo{display:flex;align-items:center;gap:6px;text-decoration:none}
     .nav__logo:hover{text-decoration:none}
-    .nav__logo span{color:var(--blue)}
-    .nav__logo-dot{width:8px;height:8px;background:var(--blue);border-radius:50%;display:inline-block}
+    .nav__logo-img{height:auto}
+    .nav__logo-img--light{display:none}
+    [data-theme="dark"] .nav__logo-img--dark{display:none}
+    [data-theme="dark"] .nav__logo-img--light{display:block}
     .nav__links{display:flex;align-items:center;gap:32px;list-style:none}
     .nav__links a{font-size:14px;font-weight:500;color:var(--gray-700);transition:color var(--transition);text-decoration:none}
     .nav__links a:hover{color:var(--blue);text-decoration:none}
@@ -328,7 +332,7 @@ for (const file of mdFiles) {
     .article-body strong{color:var(--dark);font-weight:600}
     .article-body em{font-style:italic;color:var(--gray-600)}
     .article-body hr{border:none;border-top:1px solid var(--gray-200);margin:48px 0}
-    .article-body blockquote{border-left:3px solid var(--blue);padding:16px 24px;background:var(--blue-light);border-radius:0 12px 12px 0;margin:32px 0;font-size:17px;color:var(--gray-600);font-style:italic}
+    .article-body blockquote{border-left:4px solid var(--brand-green-light);padding:16px 24px;background:var(--blue-light);border-radius:0 12px 12px 0;margin:32px 0;font-size:17px;color:var(--gray-600);font-style:italic}
     .article-body code{background:var(--gray-100);padding:2px 8px;border-radius:6px;font-size:14px;font-family:monospace;color:var(--dark)}
     .article-body pre{background:var(--dark);color:#e8e8e5;padding:24px;border-radius:12px;overflow-x:auto;margin:28px 0;font-size:14px;line-height:1.6;max-width:100%;white-space:pre-wrap;word-break:break-word}
     .article-body pre code{background:none;padding:0;color:inherit}
@@ -364,8 +368,7 @@ for (const file of mdFiles) {
     .footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:64px 24px 32px}
     .footer__inner{max-width:1200px;margin:0 auto}
     .footer__top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
-    .footer__brand-logo{font-family:var(--font-head);font-size:20px;font-weight:800;color:#fff;margin-bottom:14px}
-    .footer__brand-logo span{color:var(--blue)}
+    .footer__brand-logo{margin-bottom:14px}
     .footer__brand-desc{font-size:14px;line-height:1.7;max-width:280px}
     .footer__col-title{font-family:var(--font-head);font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px}
     .footer__links{list-style:none;display:flex;flex-direction:column;gap:12px}
@@ -404,7 +407,7 @@ for (const file of mdFiles) {
     .toc-item{margin:0}
     .toc-link{display:block;padding:4px 0 4px 16px;margin-left:-2px;border-left:2px solid transparent;font-family:var(--font-body);font-size:13px;color:var(--gray-700);text-decoration:none;line-height:1.5;margin-bottom:8px;transition:color 0.2s,border-color 0.2s,font-weight 0.2s}
     .toc-link:hover{color:var(--blue);text-decoration:none}
-    .toc-link.active{color:var(--blue);font-weight:500;border-left-color:var(--blue)}
+    .toc-link.active{color:var(--brand-green-dark);font-weight:500;border-left-color:var(--brand-green-dark)}
     @media(max-width:1100px){.article-toc-wrapper{display:block;max-width:760px;padding:0;grid-template-columns:1fr}.toc-sidebar{display:none}}
   
 /* DARK MODE TOGGLE — sliding pill */
@@ -461,8 +464,6 @@ for (const file of mdFiles) {
     [data-theme="dark"] .article-body div[style*="background:#f0f6ff"],[data-theme="dark"] .article-body div[style*="background: #f0f6ff"]{background:#1a2a3a !important;border-color:#4d9fff !important}
     [data-theme="dark"] .article-body div[style*="background:#f0f6ff"] p,[data-theme="dark"] .article-body div[style*="background: #f0f6ff"] p{color:#c8d8f0 !important}
     [data-theme="dark"] .article-body div[style*="background:#f0f6ff"] a[style*="background:#0066ff"],[data-theme="dark"] .article-body div[style*="background: #f0f6ff"] a[style*="background:#0066ff"]{color:#fff !important;background:#4d9fff !important}
-    [data-theme="dark"] .footer__brand-logo{color:#f0f0f5}
-    [data-theme="dark"] .footer__brand-logo span{color:#4d9fff}
     body{transition:background-color 200ms ease,color 200ms ease}
     .cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e2d4a;border-top:none;padding:16px 24px;z-index:9999;box-shadow:0 -4px 32px rgba(0,0,0,0.3);display:none}
     .cookie-banner.visible{display:block}
@@ -490,10 +491,10 @@ for (const file of mdFiles) {
   <div class="nav__inner">
     <div class="nav__logo-wrap">
       <a href="${SITE_URL}" class="nav__logo">
-        <span class="nav__logo-dot"></span>
-        Talented<span>At</span>AI
+        <img src="${SITE_URL}/static/images/logo-dark.svg" alt="TalentedAtAI" width="160" height="auto" class="nav__logo-img nav__logo-img--dark">
+        <img src="${SITE_URL}/static/images/logo-light.svg" alt="TalentedAtAI" width="160" height="auto" class="nav__logo-img nav__logo-img--light">
       </a>
-      <div class="nav__tagline">Practical guides, honest reviews · Independent</div>
+      <div class="nav__tagline">Practical guides. Honest reviews. No hype.</div>
     </div>
     <ul class="nav__links">
       <li><a href="${SITE_URL}/articles.html">Articles</a></li>
@@ -665,7 +666,7 @@ ${hasToc ? `<nav class="toc-sidebar" aria-label="Table of contents">
   <div class="footer__inner">
     <div class="footer__top">
       <div>
-        <div class="footer__brand-logo">Talented<span>At</span>AI</div>
+        <div class="footer__brand-logo"><img src="${SITE_URL}/static/images/logo-light.svg" alt="TalentedAtAI" width="160" height="auto"></div>
         <p class="footer__brand-desc">Your practical guide to the best AI tools, strategies, and workflows. Independent, honest, and updated daily.</p>
       </div>
       <div>

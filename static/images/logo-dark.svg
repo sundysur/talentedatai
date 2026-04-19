@@ -1,0 +1,26 @@
+<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 680px; height: auto;" id="svg-dark">
+          <defs>
+            <style>
+              .word { font-family: 'DM Serif Display', 'Instrument Serif', Georgia, serif;
+                      font-size: 128px; fill: #FAF6EC; letter-spacing: -2px;}
+              .word-it { font-style: italic; }
+              .word-ai { fill: oklch(0.86 0.19 115); font-style: normal; }
+              .sub { font-family: 'JetBrains Mono', ui-monospace, monospace;
+                     font-size: 18px; letter-spacing: 6px; fill: #FAF6EC;
+                     fill-opacity: 0.72; font-weight: 500;}
+            </style>
+          </defs>
+          <!-- wordmark row -->
+          <text class="word word-it" x="110" y="170">Talented</text>
+          <!-- Arrow ligature — refined: thinner stroke, capped -->
+          <g transform="translate(550, 148)" stroke="oklch(0.86 0.19 115)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="0" y1="0" x2="72" y2="0"/>
+            <polyline points="54,-10 74,0 54,10"/>
+          </g>
+          <text class="word word-ai" x="650" y="170">AI</text>
+          <!-- rule + subline -->
+          <line x1="200" y1="210" x2="700" y2="210" stroke="#FAF6EC" stroke-opacity="0.28" stroke-width="0.8"/>
+          <text class="sub" x="450" y="245" text-anchor="middle">
+            AN INDEPENDENT PUBLICATION · EST. 2024
+          </text>
+        </svg>

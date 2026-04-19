@@ -1,0 +1,16 @@
+<svg viewBox="0 0 300 300" width="120" height="120" id="svg-avatar" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="300" fill="#0E3B2E"/>
+          <text x="150" y="135" text-anchor="middle" font-family="DM Serif Display, Georgia, serif" font-size="56" font-style="italic" fill="#FAF6EC" letter-spacing="-1">Talented</text>
+          <g transform="translate(116, 170)" stroke="oklch(0.86 0.19 115)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="0" y1="0" x2="44" y2="0"/>
+            <polyline points="32,-9 48,0 32,9"/>
+          </g>
+          <text x="180" y="178" fill="oklch(0.86 0.19 115)" font-family="DM Serif Display, Georgia, serif" font-size="34">AI</text>
+          <line x1="70" y1="210" x2="230" y2="210" stroke="#FAF6EC" stroke-opacity="0.3" stroke-width="0.6"/>
+          <text x="150" y="232" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#FAF6EC" fill-opacity="0.72" letter-spacing="3">
+            AN INDEPENDENT PUBLICATION
+          </text>
+          <text x="150" y="250" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#FAF6EC" fill-opacity="0.72" letter-spacing="3">
+            · EST. 2024 ·
+          </text>
+        </svg>

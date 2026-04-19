@@ -1,0 +1,23 @@
+<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 680px; height: auto;" id="svg-light">
+          <defs>
+            <style>
+              .word-l { font-family: 'DM Serif Display', 'Instrument Serif', Georgia, serif;
+                        font-size: 128px; fill: #0E3B2E; letter-spacing: -2px;}
+              .word-l.it { font-style: italic; }
+              .word-l.ai { fill: #0E3B2E; font-style: normal; }
+              .sub-l { font-family: 'JetBrains Mono', ui-monospace, monospace;
+                       font-size: 18px; letter-spacing: 6px; fill: #0E3B2E;
+                       fill-opacity: 0.6; font-weight: 500;}
+            </style>
+          </defs>
+          <text class="word-l it" x="110" y="170">Talented</text>
+          <g transform="translate(550, 148)" stroke="#0E3B2E" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="0" y1="0" x2="72" y2="0"/>
+            <polyline points="54,-10 74,0 54,10"/>
+          </g>
+          <text class="word-l ai" x="650" y="170">AI</text>
+          <line x1="200" y1="210" x2="700" y2="210" stroke="#0E3B2E" stroke-opacity="0.22" stroke-width="0.8"/>
+          <text class="sub-l" x="450" y="245" text-anchor="middle">
+            AN INDEPENDENT PUBLICATION · EST. 2024
+          </text>
+        </svg>
