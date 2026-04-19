@@ -267,7 +267,7 @@ for (const file of mdFiles) {
     a:hover{color:#1a5c45;text-decoration:underline}
     /* NAV */
     .nav{position:sticky;top:0;z-index:100;background:#0E3B2E;backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.12)}
-    .nav__inner{max-width:1200px;margin:0 auto;padding:0 24px;height:72px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+    .nav__inner{max-width:1200px;margin:0 auto;padding:0 24px;height:90px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
     .nav__logo{display:flex;align-items:center;gap:6px;text-decoration:none}
     .nav__logo:hover{text-decoration:none}
     .nav__logo-img{display:block}
@@ -297,7 +297,7 @@ for (const file of mdFiles) {
     .nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .nav__hamburger.open span:nth-child(2){opacity:0}
     .nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .nav__mobile-menu{display:none;position:absolute;top:72px;left:0;right:0;background:#0E3B2E;backdrop-filter:blur(16px);border-bottom:1px solid #0a2d22;padding:16px 24px;flex-direction:column;gap:0;z-index:99}
+    .nav__mobile-menu{display:none;position:absolute;top:90px;left:0;right:0;background:#0E3B2E;backdrop-filter:blur(16px);border-bottom:1px solid #0a2d22;padding:16px 24px;flex-direction:column;gap:0;z-index:99}
     .nav__mobile-menu a{font-size:15px;font-weight:500;color:rgba(255,255,255,0.85);padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1);display:block;transition:color 0.2s;text-decoration:none}
     .nav__mobile-menu a:last-child{border-bottom:none}
     .nav__mobile-menu a:hover{color:#C8E65A}
@@ -509,9 +509,10 @@ for (const file of mdFiles) {
       <li><a href="${SITE_URL}/articles.html">Articles</a></li>
       <li><a href="${SITE_URL}/about.html">About</a></li>
       <li><a href="${SITE_URL}/contact.html">Contact</a></li>
+      <li><a href="${SITE_URL}/privacy-policy.html">Privacy Policy</a></li>
     </ul>
     <a href="${SITE_URL}" class="nav__logo">
-      <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" height="60" style="width:auto;display:block;" aria-label="Talented at AI">
+      <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" height="90" style="width:auto;display:block;" aria-label="Talented at AI">
         <defs><style>.nav-word{font-family:'DM Serif Display','Instrument Serif',Georgia,serif;font-size:128px;fill:#FAF6EC;letter-spacing:-2px}.nav-word-it{font-style:italic}.nav-word-ai{fill:oklch(0.86 0.19 115);font-style:normal}.nav-sub{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:18px;letter-spacing:6px;fill:#FAF6EC;fill-opacity:0.72;font-weight:500}</style></defs>
         <text class="nav-word nav-word-it" x="110" y="170">Talented</text>
         <g transform="translate(550, 148)" stroke="oklch(0.86 0.19 115)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="0" y1="0" x2="72" y2="0"/><polyline points="54,-10 74,0 54,10"/></g>
@@ -700,6 +701,7 @@ ${hasToc ? `<nav class="toc-sidebar" aria-label="Table of contents">
         <ul class="footer__links">
           <li><a href="${SITE_URL}/about.html">About Us</a></li>
           <li><a href="${SITE_URL}/contact.html">Contact</a></li>
+      <li><a href="${SITE_URL}/privacy-policy.html">Privacy Policy</a></li>
           <li><a href="${SITE_URL}/privacy-policy.html">Privacy Policy</a></li>
           <li><a href="${SITE_URL}/terms-of-service.html">Terms of Service</a></li>
         </ul>
@@ -1039,6 +1041,7 @@ if (articles.length > 0 && articles[0].image) {
     '<link rel="canonical" href="https://talentedatai.com/" />',
     '<link rel="canonical" href="https://talentedatai.com/" />\n  <!-- LCP preload -->\n  ' + preloadTag
   );
+  indexHtml = indexHtml.replace(/<strong>\d+<\/strong> articles published/, `<strong>${articles.length}</strong> articles published`);
   fs.writeFileSync(indexPath, indexHtml);
   console.log('Injected LCP preload for: ' + featImg);
 }
