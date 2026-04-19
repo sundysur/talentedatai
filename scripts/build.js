@@ -266,41 +266,41 @@ for (const file of mdFiles) {
     a{color:#0E3B2E;text-decoration:none}
     a:hover{color:#1a5c45;text-decoration:underline}
     /* NAV */
-    .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,102,255,0.08)}
+    .nav{position:sticky;top:0;z-index:100;background:#0E3B2E;backdrop-filter:blur(16px);border-bottom:1px solid #0a2d22}
     .nav__inner{max-width:1200px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:32px}
     .nav__logo{display:flex;align-items:center;gap:6px;text-decoration:none}
     .nav__logo:hover{text-decoration:none}
-    .nav__logo-img{height:auto;display:block}
+    .nav__logo-img{display:block}
     .footer-logo-dark{display:none}
     [data-theme="dark"] .footer-logo-light{display:none}
     [data-theme="dark"] .footer-logo-dark{display:block}
     .nav__links{display:flex;align-items:center;gap:32px;list-style:none}
-    .nav__links a{font-size:14px;font-weight:500;color:var(--gray-700);transition:color var(--transition);text-decoration:none}
-    .nav__links a:hover{color:var(--brand-green-dark);text-decoration:none}
+    .nav__links a{font-size:14px;font-weight:500;color:rgba(255,255,255,0.85);transition:color var(--transition);text-decoration:none}
+    .nav__links a:hover{color:#C8E65A;text-decoration:none}
     /* NAV SEARCH */
     .nav-search{position:relative;display:flex;align-items:center;gap:6px}
     .nav-search__input{width:0;opacity:0;padding:0;margin:0;border:none;border-bottom:1.5px solid transparent;background:transparent;font-family:var(--font-body);font-size:14px;font-weight:500;color:var(--dark);outline:none;transition:width 200ms ease,opacity 200ms ease,border-color 200ms ease,padding 200ms ease;pointer-events:none;min-width:0}
     .nav-search__input::placeholder{color:var(--gray-300)}
     .nav-search.open .nav-search__input{width:220px;opacity:1;padding:4px 2px;border-bottom-color:var(--brand-green-dark);pointer-events:auto}
-    .nav-search__toggle{display:flex;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;padding:4px;color:var(--gray-700);transition:color var(--transition)}
-    .nav-search__toggle:hover{color:var(--brand-green-dark)}
-    .nav-search.open .nav-search__toggle{color:var(--brand-green-dark)}
+    .nav-search__toggle{display:flex;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;padding:4px;color:rgba(255,255,255,0.85);transition:color var(--transition)}
+    .nav-search__toggle:hover{color:#C8E65A}
+    .nav-search.open .nav-search__toggle{color:#C8E65A}
     .nav-search__toggle svg{display:block}
     .nav-search__drawer{display:none}
     .nav__logo-wrap{display:flex;flex-direction:column;gap:1px}
-    .nav__cta{font-size:12px;font-weight:600;color:var(--brand-green-dark);border:1px solid var(--brand-green-dark);border-radius:20px;padding:5px 14px;white-space:nowrap;transition:all var(--transition)}
-    .nav__cta:hover{background:var(--brand-green-dark);color:var(--white)}
+    .nav__cta{font-size:12px;font-weight:600;color:#C8E65A;border:1px solid #C8E65A;border-radius:20px;padding:5px 14px;white-space:nowrap;transition:all var(--transition)}
+    .nav__cta:hover{background:#C8E65A;color:#0E3B2E}
     @media(max-width:900px){.nav__cta{display:none}}
     /* HAMBURGER + MOBILE MENU */
     .nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:auto}
-    .nav__hamburger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:all 0.25s ease}
+    .nav__hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,0.9);border-radius:2px;transition:all 0.25s ease}
     .nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .nav__hamburger.open span:nth-child(2){opacity:0}
     .nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .nav__mobile-menu{display:none;position:absolute;top:56px;left:0;right:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,102,255,0.08);padding:16px 24px;flex-direction:column;gap:0;z-index:99}
-    .nav__mobile-menu a{font-size:15px;font-weight:500;color:var(--gray-700);padding:12px 0;border-bottom:1px solid var(--gray-100);display:block;transition:color 0.2s;text-decoration:none}
+    .nav__mobile-menu{display:none;position:absolute;top:56px;left:0;right:0;background:#0E3B2E;backdrop-filter:blur(16px);border-bottom:1px solid #0a2d22;padding:16px 24px;flex-direction:column;gap:0;z-index:99}
+    .nav__mobile-menu a{font-size:15px;font-weight:500;color:rgba(255,255,255,0.85);padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1);display:block;transition:color 0.2s;text-decoration:none}
     .nav__mobile-menu a:last-child{border-bottom:none}
-    .nav__mobile-menu a:hover{color:var(--brand-green-dark)}
+    .nav__mobile-menu a:hover{color:#C8E65A}
     .nav__mobile-menu.open{display:flex}
     @media(max-width:768px){
       .nav__links{display:none}
@@ -420,8 +420,8 @@ for (const file of mdFiles) {
     [data-theme="dark"] .theme-toggle__sun{opacity:1}
     [data-theme="dark"] .theme-toggle__moon{opacity:0.4}
     /* DARK OVERRIDES — article pages */
-    [data-theme="dark"] .nav{background:rgba(13,13,26,0.95);border-bottom-color:rgba(77,159,255,0.08)}
-    [data-theme="dark"] .nav__mobile-menu{background:rgba(13,13,26,0.98);border-bottom-color:rgba(77,159,255,0.08)}
+    [data-theme="dark"] .nav{background:#0a2d22;border-bottom-color:#072018}
+    [data-theme="dark"] .nav__mobile-menu{background:#0a2d22;border-bottom-color:#072018}
     [data-theme="dark"] .nav-search__drawer{background:var(--white)}
     [data-theme="dark"] .footer{background:#111128;border-top:1px solid rgba(255,255,255,0.06)}
     [data-theme="dark"] .newsletter-section{background:#060612}
@@ -460,6 +460,7 @@ for (const file of mdFiles) {
     [data-theme="dark"] .article-body ul li::before{color:var(--brand-green-light)}
     [data-theme="dark"] .article-body ol li::before{color:var(--brand-green-light)}
     [data-theme="dark"] .toc-link:hover{color:var(--brand-green-light)}
+    [data-theme="dark"] .toc-link.active{color:#C8E65A;border-left-color:#C8E65A}
 
     [data-theme="dark"] .article-meta{color:#9999bb}
     [data-theme="dark"] .article-desc{color:#9999bb;border-bottom-color:rgba(255,255,255,0.07)}
@@ -503,7 +504,7 @@ for (const file of mdFiles) {
   <div class="nav__inner">
     <div class="nav__logo-wrap">
       <a href="${SITE_URL}" class="nav__logo">
-        <img src="${SITE_URL}/static/images/logo-light.svg" alt="TalentedAtAI" width="200" height="50" style="display:block;max-width:200px;" class="nav__logo-img">
+        <img src="${SITE_URL}/static/images/logo-light.svg" alt="TalentedAtAI" style="height:44px;width:auto;display:block;" class="nav__logo-img">
       </a>
     </div>
     <ul class="nav__links">
@@ -676,7 +677,7 @@ ${hasToc ? `<nav class="toc-sidebar" aria-label="Table of contents">
   <div class="footer__inner">
     <div class="footer__top">
       <div>
-        <div class="footer__brand-logo"><img class="footer-logo-light" src="${SITE_URL}/static/images/logo-dark.svg" width="200" height="auto" alt="Talented at AI" style="display:block"><img class="footer-logo-dark" src="${SITE_URL}/static/images/logo-light.svg" width="200" height="auto" alt="Talented at AI" style="display:block"></div>
+        <div class="footer__brand-logo"><img class="footer-logo-light" src="${SITE_URL}/static/images/logo-dark.svg" alt="Talented at AI" style="height:36px;width:auto;display:block;"><img class="footer-logo-dark" src="${SITE_URL}/static/images/logo-light.svg" alt="Talented at AI" style="height:36px;width:auto;display:none;"></div>
         <p class="footer__brand-desc">Your practical guide to the best AI tools, strategies, and workflows. Independent, honest, and updated daily.</p>
       </div>
       <div>
