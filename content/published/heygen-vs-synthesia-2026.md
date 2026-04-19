@@ -34,11 +34,21 @@ What is not obvious is which one to actually buy. The demos on each site are car
 
 We tested both extensively — building the same set of videos in each tool, stress-testing the avatars, running through real corporate and creator use cases — to give you the comparison that actually helps you decide.
 
+<figure>
+<img src="/static/images/articles/screenshots/heygen-vs-synthesia-2026--heygen-editor--1.jpg" alt="HeyGen Quick Create editor showing script input with avatar selection grid including Annie, Rumi, Jibran and other AI avatars" loading="lazy">
+<figcaption>HeyGen Quick Create — paste your script, pick an avatar, and generate a video in minutes</figcaption>
+</figure>
+
 ## How They Actually Work
 
 Before the detailed comparison, it is worth understanding that these two products have different origins, and those origins still shape how they feel to use.
 
 **Synthesia** launched in 2017 as an enterprise-focused platform. Its core market has always been corporate training, internal communications, and large-scale localisation. The product is built around a template-heavy, workflow-heavy model with strong compliance, LMS integration, and governance features. When you open Synthesia, it feels like a serious professional tool — closer to working in an enterprise video platform than a consumer creative app.
+
+<figure>
+<img src="/static/images/articles/screenshots/heygen-vs-synthesia-2026--synthesia-editor--2.jpg" alt="Synthesia editor showing multi-scene video with AI avatar, script panel, and AI chat assistant for video generation" loading="lazy">
+<figcaption>Synthesia's editor — multi-scene structure with AI avatar, per-scene scripts, and an AI chat assistant to help build the video</figcaption>
+</figure>
 
 **HeyGen** launched in 2020 with a broader focus that has increasingly leaned into creators, marketers, and solo professionals. Its interface feels more like a modern creative app. It ships new features faster, pushes more aggressively on avatar realism, and has become the tool of choice for creators producing high-volume multilingual content. Enterprise features exist but feel more recent and less deeply integrated than Synthesia's.
 
