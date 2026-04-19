@@ -63,14 +63,15 @@
   body { font-family: var(--font-body); color: var(--dark); background: var(--white); line-height: 1.6; font-size: 16px; -webkit-font-smoothing: antialiased; overflow-x: hidden; max-width: 100%; }
   a { color: inherit; text-decoration: none; }
   /* NAV */
-  .nav { position: sticky; top: 0; z-index: 100; background: #0E3B2E; backdrop-filter: blur(16px); border-bottom: 1px solid #0a2d22; }
-  .nav__inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+  .nav { position: sticky; top: 0; z-index: 100; background: #0E3B2E; backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .nav__inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 72px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
   .nav__logo { display: flex; align-items: center; gap: 6px; text-decoration: none; }
   .nav__logo-img { display: block; }
   .footer-logo-dark { display: none; }
   [data-theme="dark"] .footer-logo-light { display: none; }
   [data-theme="dark"] .footer-logo-dark { display: block; }
-  .nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
+  .nav__links { display: flex; gap: 24px; align-items: center; list-style: none; }
+  .nav__actions { display: flex; gap: 16px; align-items: center; justify-content: flex-end; }
   .nav__links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); transition: color var(--transition); }
   .nav__links a:hover { color: #C8E65A; }
   /* NAV SEARCH */
@@ -195,12 +196,11 @@
   .nav__hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav__hamburger.open span:nth-child(2) { opacity: 0; }
   .nav__hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .nav__mobile-menu { display: none; position: absolute; top: 56px; left: 0; right: 0; background: #0E3B2E; backdrop-filter: blur(16px); border-bottom: 1px solid #0a2d22; padding: 16px 24px; flex-direction: column; gap: 0; z-index: 99; }
+  .nav__mobile-menu { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #0E3B2E; backdrop-filter: blur(16px); border-bottom: 1px solid #0a2d22; padding: 16px 24px; flex-direction: column; gap: 0; z-index: 99; }
   .nav__mobile-menu a { font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.85); padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: block; transition: color 0.2s; }
   .nav__mobile-menu a:last-child { border-bottom: none; }
   .nav__mobile-menu a:hover { color: #C8E65A; }
   .nav__mobile-menu.open { display: flex; }
-  .nav__logo-wrap { display: flex; flex-direction: column; gap: 1px; }
   .nav__cta { font-size: 12px; font-weight: 600; color: #C8E65A; border: 1px solid #C8E65A; border-radius: 20px; padding: 5px 14px; white-space: nowrap; transition: all var(--transition); }
   .nav__cta:hover { background: #C8E65A; color: #0E3B2E; }
   @media(max-width:900px) {
@@ -336,8 +336,8 @@
     [data-theme="dark"] .theme-toggle__moon{opacity:0.4}
     
     /* DARK OVERRIDES for hardcoded colours */
-    [data-theme="dark"] .nav{background:#0a2d22;border-bottom-color:#072018}
-    [data-theme="dark"] .nav__mobile-menu{background:#0a2d22;border-bottom-color:#072018}
+    [data-theme="dark"] .nav{background:#0a2d22;border-bottom-color:rgba(255,255,255,0.08)}
+    [data-theme="dark"] .nav__mobile-menu{background:#0a2d22;border-bottom-color:rgba(255,255,255,0.08)}
     [data-theme="dark"] .nav-search__drawer{background:var(--white)}
     [data-theme="dark"] .featured-card{border-color:rgba(255,255,255,0.07)}
     [data-theme="dark"] .featured-card:hover{box-shadow:0 8px 40px rgba(77,159,255,0.12)}
@@ -439,56 +439,40 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav__inner">
-      <div class="nav__logo-wrap">
-        <a href="/" class="nav__logo">
-          <img src="/static/images/logo-light.svg" alt="Talented at AI" style="height:44px;width:auto;display:block;" class="nav__logo-img">
-        </a>
-      </div>
       <ul class="nav__links">
         <li><a href="https://talentedatai.com/articles.html">Articles</a></li>
         <li><a href="/about.html">About</a></li>
         <li><a href="/contact.html">Contact</a></li>
-        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
       </ul>
-                  <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" role="switch">
-        <span class="theme-toggle__track">
-          <span class="theme-toggle__thumb"></span>
-          <span class="theme-toggle__moon">🌙</span>
-          <span class="theme-toggle__sun">☀️</span>
-        </span>
-      </button>
-<div class="nav-search" id="nav-search">
-        <input
-          type="search"
-          id="nav-search-input"
-          class="nav-search__input"
-          placeholder="Search articles..."
-          aria-label="Search articles"
-          autocomplete="off"
-          spellcheck="false"
-          tabindex="-1"
-          oninput="onNavSearchInput(event)"
-          onkeydown="onNavSearchKeydown(event)"
-          onblur="onNavSearchBlur(event)"
-        >
-        <button
-          type="button"
-          class="nav-search__toggle"
-          aria-label="Search"
-          onclick="toggleNavSearch()"
-        >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M14 14l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+      <a href="/" class="nav__logo">
+        <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" height="60" style="width:auto;display:block;" aria-label="Talented at AI">
+          <defs><style>.nav-word{font-family:'DM Serif Display','Instrument Serif',Georgia,serif;font-size:128px;fill:#FAF6EC;letter-spacing:-2px}.nav-word-it{font-style:italic}.nav-word-ai{fill:oklch(0.86 0.19 115);font-style:normal}.nav-sub{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:18px;letter-spacing:6px;fill:#FAF6EC;fill-opacity:0.72;font-weight:500}</style></defs>
+          <text class="nav-word nav-word-it" x="110" y="170">Talented</text>
+          <g transform="translate(550, 148)" stroke="oklch(0.86 0.19 115)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="0" y1="0" x2="72" y2="0"/><polyline points="54,-10 74,0 54,10"/></g>
+          <text class="nav-word nav-word-ai" x="650" y="170">AI</text>
+          <line x1="200" y1="210" x2="700" y2="210" stroke="#FAF6EC" stroke-opacity="0.28" stroke-width="0.8"/>
+          <text class="nav-sub" x="450" y="245" text-anchor="middle">AN INDEPENDENT PUBLICATION · EST. 2024</text>
+        </svg>
+      </a>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" role="switch">
+          <span class="theme-toggle__track">
+            <span class="theme-toggle__thumb"></span>
+            <span class="theme-toggle__moon">🌙</span>
+            <span class="theme-toggle__sun">☀️</span>
+          </span>
+        </button>
+        <div class="nav-search" id="nav-search">
+          <input type="search" id="nav-search-input" class="nav-search__input" placeholder="Search articles..." aria-label="Search articles" autocomplete="off" spellcheck="false" tabindex="-1" oninput="onNavSearchInput(event)" onkeydown="onNavSearchKeydown(event)" onblur="onNavSearchBlur(event)">
+          <button type="button" class="nav-search__toggle" aria-label="Search" onclick="toggleNavSearch()">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M14 14l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <a href="#newsletter" class="nav__cta">Get free guide →</a>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
         </button>
       </div>
-      <a href="#newsletter" class="nav__cta">Get free guide →</a>
-      <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
       <div class="nav__mobile-menu" id="nav-mobile-menu">
         <a href="https://talentedatai.com/articles.html">Articles</a>
         <a href="/about.html">About</a>
@@ -602,7 +586,7 @@
     <div class="footer__inner">
       <div class="footer__top">
         <div>
-          <div class="footer__brand-logo"><img class="footer-logo-light" src="/static/images/logo-dark.svg" alt="Talented at AI" style="height:36px;width:auto;display:block;"><img class="footer-logo-dark" src="/static/images/logo-light.svg" alt="Talented at AI" style="height:36px;width:auto;display:none;"></div>
+          <div class="footer__brand-logo"><div class="footer-logo-light"><svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" height="48" style="width:auto;display:block;" aria-label="Talented at AI"><defs><style>.fl-word{font-family:'DM Serif Display','Instrument Serif',Georgia,serif;font-size:128px;fill:#0E3B2E;letter-spacing:-2px}.fl-it{font-style:italic}.fl-ai{fill:#0E3B2E;font-style:normal}.fl-sub{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:18px;letter-spacing:6px;fill:#0E3B2E;fill-opacity:0.6;font-weight:500}</style></defs><text class="fl-word fl-it" x="110" y="170">Talented</text><g transform="translate(550,148)" stroke="#0E3B2E" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="0" y1="0" x2="72" y2="0"/><polyline points="54,-10 74,0 54,10"/></g><text class="fl-word fl-ai" x="650" y="170">AI</text><line x1="200" y1="210" x2="700" y2="210" stroke="#0E3B2E" stroke-opacity="0.22" stroke-width="0.8"/><text class="fl-sub" x="450" y="245" text-anchor="middle">AN INDEPENDENT PUBLICATION · EST. 2024</text></svg></div><div class="footer-logo-dark" style="display:none;"><svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" height="48" style="width:auto;display:block;" aria-label="Talented at AI"><defs><style>.fd-word{font-family:'DM Serif Display','Instrument Serif',Georgia,serif;font-size:128px;fill:#FAF6EC;letter-spacing:-2px}.fd-it{font-style:italic}.fd-ai{fill:oklch(0.86 0.19 115);font-style:normal}.fd-sub{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:18px;letter-spacing:6px;fill:#FAF6EC;fill-opacity:0.72;font-weight:500}</style></defs><text class="fd-word fd-it" x="110" y="170">Talented</text><g transform="translate(550,148)" stroke="oklch(0.86 0.19 115)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="0" y1="0" x2="72" y2="0"/><polyline points="54,-10 74,0 54,10"/></g><text class="fd-word fd-ai" x="650" y="170">AI</text><line x1="200" y1="210" x2="700" y2="210" stroke="#FAF6EC" stroke-opacity="0.28" stroke-width="0.8"/><text class="fd-sub" x="450" y="245" text-anchor="middle">AN INDEPENDENT PUBLICATION · EST. 2024</text></svg></div></div>
           <p class="footer__brand-desc">Your practical guide to the best AI tools, strategies, and workflows. Independent, honest, and updated daily.</p>
         </div>
         <div>
