@@ -231,7 +231,7 @@ for (const file of mdFiles) {
     @font-face{font-family:'Syne Fallback';src:local('Arial Black'),local('Arial');size-adjust:97%;ascent-override:105%;descent-override:30%;line-gap-override:0%}
     @font-face{font-family:'DM Sans Fallback';src:local('Arial'),local('Helvetica');size-adjust:105%;ascent-override:95%;descent-override:25%;line-gap-override:0%}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{overflow-x:hidden;max-width:100%}
+    html{overflow-x:clip;max-width:100%}
     :root{
       --blue:#0066ff;
       --blue-light:#e6f0ff;
@@ -260,7 +260,7 @@ for (const file of mdFiles) {
       --text:#e0e0f0;--gray-400:#7a7a9a;--gray-600:#aaaacc;
       --blue-light-legacy:#1a2940;
     }
-    body{font-family:var(--font-body);color:var(--dark);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100%}
+    body{font-family:var(--font-body);color:var(--dark);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100%}
     a{color:var(--blue);text-decoration:none}
     a:hover{text-decoration:underline}
     /* NAV */
