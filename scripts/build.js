@@ -270,10 +270,11 @@ for (const file of mdFiles) {
     .nav__inner{max-width:1200px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:32px}
     .nav__logo{display:flex;align-items:center;gap:6px;text-decoration:none}
     .nav__logo:hover{text-decoration:none}
-    .nav__logo-img{height:auto}
-    .nav__logo-img--light{display:none}
-    [data-theme="dark"] .nav__logo-img--dark{display:none}
-    [data-theme="dark"] .nav__logo-img--light{display:block}
+    .nav__logo-img{height:auto;display:block}
+    .footer__logo-img{display:block}
+    .footer__logo-img--light{display:none}
+    [data-theme="dark"] .footer__logo-img--dark{display:none}
+    [data-theme="dark"] .footer__logo-img--light{display:block}
     .nav__links{display:flex;align-items:center;gap:32px;list-style:none}
     .nav__links a{font-size:14px;font-weight:500;color:var(--gray-700);transition:color var(--transition);text-decoration:none}
     .nav__links a:hover{color:var(--blue);text-decoration:none}
@@ -288,10 +289,9 @@ for (const file of mdFiles) {
     .nav-search__toggle svg{display:block}
     .nav-search__drawer{display:none}
     .nav__logo-wrap{display:flex;flex-direction:column;gap:1px}
-    .nav__tagline{font-size:11px;color:var(--gray-500);font-family:var(--font-body);font-weight:400;letter-spacing:0.01em}
-    .nav__cta{font-size:12px;font-weight:600;color:var(--blue);border:1px solid var(--blue);border-radius:20px;padding:5px 14px;white-space:nowrap;transition:all var(--transition)}
-    .nav__cta:hover{background:var(--blue);color:var(--white)}
-    @media(max-width:900px){.nav__tagline{display:none}.nav__cta{display:none}}
+    .nav__cta{font-size:12px;font-weight:600;color:var(--brand-green-dark);border:1px solid var(--brand-green-dark);border-radius:20px;padding:5px 14px;white-space:nowrap;transition:all var(--transition)}
+    .nav__cta:hover{background:var(--brand-green-dark);color:var(--white)}
+    @media(max-width:900px){.nav__cta{display:none}}
     /* HAMBURGER + MOBILE MENU */
     .nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:auto}
     .nav__hamburger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:all 0.25s ease}
@@ -314,7 +314,7 @@ for (const file of mdFiles) {
       .nav-search__drawer-input::-webkit-search-cancel-button{-webkit-appearance:none;display:none}
     }
     .article-hero{max-width:760px;margin:0 auto;padding:64px 24px 48px}
-    .category-pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px;background:var(--blue-light);color:var(--blue);margin-bottom:20px}
+    .category-pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px;background:#0E3B2E;color:#C8E65A;margin-bottom:20px}
     .article-meta{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray-400);margin-bottom:24px;flex-wrap:wrap}
     .article-hero h1{font-family:'Syne','Syne Fallback',sans-serif;font-size:clamp(30px,5vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:20px;color:var(--dark)}
     .article-desc{font-size:18px;color:var(--gray-600);line-height:1.65;font-weight:300;padding-bottom:40px;border-bottom:1px solid var(--gray-200)}
@@ -439,7 +439,9 @@ for (const file of mdFiles) {
     [data-theme="dark"] .article-body table{border-color:rgba(255,255,255,0.07)}
     [data-theme="dark"] .article-body th{background:#1a1a2e !important;color:#e0e0f0 !important}
     [data-theme="dark"] .article-body td{border-color:rgba(255,255,255,0.07)}
-    [data-theme="dark"] .category-pill{background:rgba(77,159,255,0.12);color:#7db8ff;border:1px solid rgba(77,159,255,0.2)}
+    [data-theme="dark"] .category-pill{background:#C8E65A;color:#0E3B2E;border:none}
+    [data-theme="dark"] .nav__cta{color:var(--brand-green-light);border-color:var(--brand-green-light)}
+    [data-theme="dark"] .nav__cta:hover{background:var(--brand-green-light);color:var(--brand-green-dark)}
     [data-theme="dark"] .author-bio{border-top-color:rgba(255,255,255,0.07);border-bottom-color:rgba(255,255,255,0.07)}
     [data-theme="dark"] .related-grid .feed-card{border-color:rgba(255,255,255,0.07)}
     [data-theme="dark"] .toc-sidebar{border-left-color:rgba(255,255,255,0.07)}
@@ -491,10 +493,8 @@ for (const file of mdFiles) {
   <div class="nav__inner">
     <div class="nav__logo-wrap">
       <a href="${SITE_URL}" class="nav__logo">
-        <img src="${SITE_URL}/static/images/logo-dark.svg" alt="TalentedAtAI" width="160" height="auto" class="nav__logo-img nav__logo-img--dark">
-        <img src="${SITE_URL}/static/images/logo-light.svg" alt="TalentedAtAI" width="160" height="auto" class="nav__logo-img nav__logo-img--light">
+        <img src="${SITE_URL}/static/images/logo-light.svg" alt="TalentedAtAI" width="160" height="40" style="display:block" class="nav__logo-img">
       </a>
-      <div class="nav__tagline">Practical guides. Honest reviews. No hype.</div>
     </div>
     <ul class="nav__links">
       <li><a href="${SITE_URL}/articles.html">Articles</a></li>
@@ -666,7 +666,7 @@ ${hasToc ? `<nav class="toc-sidebar" aria-label="Table of contents">
   <div class="footer__inner">
     <div class="footer__top">
       <div>
-        <div class="footer__brand-logo"><img src="${SITE_URL}/static/images/logo-light.svg" alt="TalentedAtAI" width="160" height="auto"></div>
+        <div class="footer__brand-logo"><img src="${SITE_URL}/static/images/logo-dark.svg" alt="TalentedAtAI" width="160" height="40" style="display:block" class="footer__logo-img footer__logo-img--dark"><img src="${SITE_URL}/static/images/logo-light.svg" alt="TalentedAtAI" width="160" height="40" style="display:block" class="footer__logo-img footer__logo-img--light"></div>
         <p class="footer__brand-desc">Your practical guide to the best AI tools, strategies, and workflows. Independent, honest, and updated daily.</p>
       </div>
       <div>

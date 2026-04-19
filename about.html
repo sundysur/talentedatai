@@ -58,17 +58,17 @@
     .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,102,255,0.08)}
     .nav__inner{max-width:1200px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:32px}
     .nav__logo{display:flex;align-items:center;gap:6px;text-decoration:none}
-    .nav__logo-img{height:auto}
-    .nav__logo-img--light{display:none}
-    [data-theme="dark"] .nav__logo-img--dark{display:none}
-    [data-theme="dark"] .nav__logo-img--light{display:block}
+    .nav__logo-img{height:auto;display:block}
+    .footer__logo-img{display:block}
+    .footer__logo-img--light{display:none}
+    [data-theme="dark"] .footer__logo-img--dark{display:none}
+    [data-theme="dark"] .footer__logo-img--light{display:block}
     .nav__logo-wrap{display:flex;flex-direction:column;gap:1px}
-    .nav__tagline{font-size:11px;color:var(--gray-500);font-family:var(--font-body);font-weight:400;letter-spacing:0.01em}
     .nav__links{display:flex;align-items:center;gap:32px;list-style:none;padding:0;margin:0}
     .nav__links a{font-size:14px;font-weight:500;color:var(--gray-700);transition:color var(--transition);text-decoration:none}
     .nav__links a:hover{color:var(--blue)}
-    .nav__cta{font-size:12px;font-weight:600;color:var(--blue);border:1px solid var(--blue);border-radius:20px;padding:5px 14px;white-space:nowrap;transition:all var(--transition);text-decoration:none}
-    .nav__cta:hover{background:var(--blue);color:var(--white);text-decoration:none}
+    .nav__cta{font-size:12px;font-weight:600;color:var(--brand-green-dark);border:1px solid var(--brand-green-dark);border-radius:20px;padding:5px 14px;white-space:nowrap;transition:all var(--transition);text-decoration:none}
+    .nav__cta:hover{background:var(--brand-green-dark);color:var(--white);text-decoration:none}
     /* NAV SEARCH (inline + mobile drawer) */
     .nav-search{position:relative;display:flex;align-items:center;gap:6px}
     .nav-search__input{width:0;opacity:0;padding:0;margin:0;border:none;border-bottom:1.5px solid transparent;background:transparent;font-family:var(--font-body);font-size:14px;font-weight:500;color:var(--dark);outline:none;transition:width 200ms ease,opacity 200ms ease,border-color 200ms ease,padding 200ms ease;pointer-events:none;min-width:0}
@@ -90,7 +90,7 @@
     .nav__mobile-menu a:last-child{border-bottom:none}
     .nav__mobile-menu a:hover{color:var(--blue)}
     .nav__mobile-menu.open{display:flex}
-    @media(max-width:900px){.nav__tagline{display:none}.nav__cta{display:none}}
+    @media(max-width:900px){.nav__cta{display:none}}
     @media(max-width:768px){
       .nav__links{display:none}
       .nav__hamburger{display:flex}
@@ -337,7 +337,9 @@
     [data-theme="dark"] .footer{background:#111128;border-top:1px solid rgba(255,255,255,0.06)}
     [data-theme="dark"] .filter-btn{border-color:var(--gray-300);background:var(--white);color:var(--gray-500)}
     [data-theme="dark"] .filter-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
-    [data-theme="dark"] .category-badge{background:rgba(77,159,255,0.12);color:#7db8ff;border:1px solid rgba(77,159,255,0.2)}
+    [data-theme="dark"] .category-badge{background:#C8E65A;color:#0E3B2E;border:none}
+    [data-theme="dark"] .nav__cta{color:var(--brand-green-light);border-color:var(--brand-green-light)}
+    [data-theme="dark"] .nav__cta:hover{background:var(--brand-green-light);color:var(--brand-green-dark)}
     [data-theme="dark"] .category-badge--purple{background:#2a1a4a;color:#b088ff}
     [data-theme="dark"] .category-badge--green{background:#0a2a1a;color:#44cc88}
     [data-theme="dark"] .content p,[data-theme="dark"] .content li,[data-theme="dark"] .hero p{color:#c8c8e8}
@@ -379,10 +381,8 @@
   <div class="nav__inner">
     <div class="nav__logo-wrap">
       <a href="/" class="nav__logo">
-        <img src="/static/images/logo-dark.svg" alt="TalentedAtAI" width="160" height="auto" class="nav__logo-img nav__logo-img--dark">
-        <img src="/static/images/logo-light.svg" alt="TalentedAtAI" width="160" height="auto" class="nav__logo-img nav__logo-img--light">
+        <img src="/static/images/logo-light.svg" alt="TalentedAtAI" width="160" height="40" style="display:block" class="nav__logo-img">
       </a>
-      <div class="nav__tagline">Practical guides. Honest reviews. No hype.</div>
     </div>
     <ul class="nav__links">
       <li><a href="/articles.html">Articles</a></li>
@@ -549,7 +549,7 @@
   <div class="footer__inner">
     <div class="footer__top">
       <div>
-        <div class="footer__brand-logo"><img src="/static/images/logo-light.svg" alt="TalentedAtAI" width="160" height="auto"></div>
+        <div class="footer__brand-logo"><img src="/static/images/logo-dark.svg" alt="TalentedAtAI" width="160" height="40" style="display:block" class="footer__logo-img footer__logo-img--dark"><img src="/static/images/logo-light.svg" alt="TalentedAtAI" width="160" height="40" style="display:block" class="footer__logo-img footer__logo-img--light"></div>
         <p class="footer__brand-desc">Your practical guide to the best AI tools, strategies, and workflows. Independent, honest, and updated daily.</p>
       </div>
       <div>
