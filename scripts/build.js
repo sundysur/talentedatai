@@ -231,6 +231,7 @@ for (const file of mdFiles) {
     @font-face{font-family:'Syne Fallback';src:local('Arial Black'),local('Arial');size-adjust:97%;ascent-override:105%;descent-override:30%;line-gap-override:0%}
     @font-face{font-family:'DM Sans Fallback';src:local('Arial'),local('Helvetica');size-adjust:105%;ascent-override:95%;descent-override:25%;line-gap-override:0%}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{overflow-x:hidden;max-width:100%}
     :root{
       --blue:#0066ff;
       --blue-light:#e6f0ff;
@@ -259,7 +260,7 @@ for (const file of mdFiles) {
       --text:#e0e0f0;--gray-400:#7a7a9a;--gray-600:#aaaacc;
       --blue-light-legacy:#1a2940;
     }
-    body{font-family:var(--font-body);color:var(--dark);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font-body);color:var(--dark);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100%}
     a{color:var(--blue);text-decoration:none}
     a:hover{text-decoration:underline}
     /* NAV */
@@ -329,8 +330,9 @@ for (const file of mdFiles) {
     .article-body hr{border:none;border-top:1px solid var(--gray-200);margin:48px 0}
     .article-body blockquote{border-left:3px solid var(--blue);padding:16px 24px;background:var(--blue-light);border-radius:0 12px 12px 0;margin:32px 0;font-size:17px;color:var(--gray-600);font-style:italic}
     .article-body code{background:var(--gray-100);padding:2px 8px;border-radius:6px;font-size:14px;font-family:monospace;color:var(--dark)}
-    .article-body pre{background:var(--dark);color:#e8e8e5;padding:24px;border-radius:12px;overflow-x:auto;margin:28px 0;font-size:14px;line-height:1.6}
+    .article-body pre{background:var(--dark);color:#e8e8e5;padding:24px;border-radius:12px;overflow-x:auto;margin:28px 0;font-size:14px;line-height:1.6;max-width:100%;white-space:pre-wrap;word-break:break-word}
     .article-body pre code{background:none;padding:0;color:inherit}
+    .article-body img{max-width:100%;height:auto}
     /* AUTHOR BIO */
     .author-bio{display:flex;align-items:flex-start;gap:16px;background:var(--gray-100);border-radius:var(--radius);padding:24px;margin:0 0 0}
     .author-bio__avatar{width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--font-head);font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -402,7 +404,7 @@ for (const file of mdFiles) {
     .toc-link{display:block;padding:4px 0 4px 16px;margin-left:-2px;border-left:2px solid transparent;font-family:var(--font-body);font-size:13px;color:var(--gray-700);text-decoration:none;line-height:1.5;margin-bottom:8px;transition:color 0.2s,border-color 0.2s,font-weight 0.2s}
     .toc-link:hover{color:var(--blue);text-decoration:none}
     .toc-link.active{color:var(--blue);font-weight:500;border-left-color:var(--blue)}
-    @media(max-width:1100px){.article-toc-wrapper{display:block;max-width:760px;padding:0}.toc-sidebar{display:none}}
+    @media(max-width:1100px){.article-toc-wrapper{display:block;max-width:760px;padding:0;grid-template-columns:1fr}.toc-sidebar{display:none}}
   
 /* DARK MODE TOGGLE — sliding pill */
     .theme-toggle{background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center}
