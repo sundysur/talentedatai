@@ -476,6 +476,22 @@ for (const file of mdFiles) {
     .article-body div[style*="background:#f0f6ff"],.article-body div[style*="background: #f0f6ff"]{border-color:#0E3B2E !important}
     .article-body div[style*="background:#f0f6ff"] a[style*="background:#0066ff"],.article-body div[style*="background: #f0f6ff"] a[style*="background:#0066ff"]{background:#0E3B2E !important}
     .article-body div[style*="background:#f0f6ff"] a[style*="background:#0066ff"]:hover,.article-body div[style*="background: #f0f6ff"] a[style*="background:#0066ff"]:hover{background:#1a5c45 !important}
+    .feedback-widget{margin:48px 0 32px;padding:28px 32px;background:var(--surface,#f8f9fa);border:1px solid rgba(14,59,46,0.12);border-radius:12px;text-align:center}
+    [data-theme="dark"] .feedback-widget{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.1)}
+    .feedback-widget__question{font-size:1rem;font-weight:600;color:#0E3B2E;margin-bottom:16px}
+    [data-theme="dark"] .feedback-widget__question{color:#FAF6EC}
+    .feedback-widget__buttons{display:flex;gap:12px;justify-content:center;margin-bottom:12px}
+    .feedback-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:8px;border:1.5px solid #0E3B2E;background:transparent;color:#0E3B2E;font-size:0.95rem;font-weight:500;cursor:pointer;transition:all 0.15s ease}
+    .feedback-btn:hover{background:#0E3B2E;color:white}
+    .feedback-btn.selected{background:#0E3B2E;color:#C8E65A;border-color:#0E3B2E}
+    .feedback-btn.selected svg path{fill:#C8E65A}
+    [data-theme="dark"] .feedback-btn{border-color:#C8E65A;color:#C8E65A}
+    [data-theme="dark"] .feedback-btn:hover{background:#C8E65A;color:#0E3B2E}
+    [data-theme="dark"] .feedback-btn.selected{background:#C8E65A;color:#0E3B2E;border-color:#C8E65A}
+    .feedback-widget__counts{font-size:0.82rem;color:rgba(14,59,46,0.55);min-height:20px}
+    [data-theme="dark"] .feedback-widget__counts{color:rgba(250,246,236,0.5)}
+    .feedback-widget__thanks{font-size:0.9rem;color:#0E3B2E;font-weight:500;display:none}
+    [data-theme="dark"] .feedback-widget__thanks{color:#C8E65A}
     body{transition:background-color 200ms ease,color 200ms ease}
     .cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e2d4a;border-top:none;padding:16px 24px;z-index:9999;box-shadow:0 -4px 32px rgba(0,0,0,0.3);display:none}
     .cookie-banner.visible{display:block}
@@ -671,6 +687,21 @@ ${hasToc ? articleContentHtml : html}
     Follow @talentedat
   </a>
 </div>
+<div class="feedback-widget" id="feedback-widget">
+  <p class="feedback-widget__question">Was this article helpful?</p>
+  <div class="feedback-widget__buttons">
+    <button class="feedback-btn" id="btn-helpful" onclick="submitFeedback('helpful')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 22V11L13 2l1.5 1.5L13 8h7a2 2 0 0 1 2 2v2l-4 8H7zm-4 0V11h4v11H3z" fill="#0E3B2E"/></svg>
+      Yes
+    </button>
+    <button class="feedback-btn" id="btn-not-helpful" onclick="submitFeedback('not_helpful')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 2v11l-6 9-1.5-1.5L11 16H4a2 2 0 0 1-2-2v-2l4-8h11zm4 0v11h-4V2h4z" fill="#0E3B2E"/></svg>
+      No
+    </button>
+  </div>
+  <p class="feedback-widget__counts" id="feedback-counts"></p>
+  <p class="feedback-widget__thanks" id="feedback-thanks">Thanks for your feedback!</p>
+</div>
 </div>
 ${hasToc ? `<nav class="toc-sidebar" aria-label="Table of contents">
   <div class="toc-sticky">
@@ -813,6 +844,48 @@ ${hasToc ? `<nav class="toc-sidebar" aria-label="Table of contents">
     if(cb)cb.checked=(next==='dark');
   }
   document.addEventListener('DOMContentLoaded',function(){var cb=document.getElementById('theme-toggle');if(cb)cb.checked=(document.documentElement.getAttribute('data-theme')==='dark')});
+</script>
+<script>
+const FEEDBACK_URL = 'https://script.google.com/macros/s/AKfycbzt8JbJyqOxsjZor-KomOcJX_P0gmkabo8vQurknAQChceixCRwJA70ai_rDLRP-JDz/exec';
+const articleUrl = window.location.pathname;
+async function loadFeedbackCounts() {
+  try {
+    const res = await fetch(FEEDBACK_URL + '?url=' + encodeURIComponent(articleUrl));
+    const data = await res.json();
+    const total = data.helpful + data.notHelpful;
+    if (total > 0) {
+      document.getElementById('feedback-counts').textContent =
+        data.helpful + ' found this helpful \u00b7 ' + data.notHelpful + ' did not';
+    }
+  } catch(e) {}
+}
+async function submitFeedback(vote) {
+  const btnHelpful = document.getElementById('btn-helpful');
+  const btnNotHelpful = document.getElementById('btn-not-helpful');
+  const thanks = document.getElementById('feedback-thanks');
+  btnHelpful.disabled = true;
+  btnNotHelpful.disabled = true;
+  if (vote === 'helpful') {
+    btnHelpful.classList.add('selected');
+  } else {
+    btnNotHelpful.classList.add('selected');
+  }
+  thanks.style.display = 'block';
+  try {
+    await fetch(FEEDBACK_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        url: articleUrl,
+        vote: vote,
+        userAgent: navigator.userAgent
+      })
+    });
+  } catch(e) {}
+  setTimeout(loadFeedbackCounts, 2000);
+}
+loadFeedbackCounts();
 </script>
 
 <div class="cookie-banner" id="cookie-banner">
