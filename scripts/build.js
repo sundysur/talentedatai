@@ -136,7 +136,7 @@ for (const file of mdFiles) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>${fm.title || slug} | ${SITE_NAME}</title>
   <link rel="canonical" href="${SITE_URL}/content/published/${slug}">
-  ${fm.image ? `<link rel="preload" as="image" type="image/webp" imagesrcset="/static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-400w.webp 400w, /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-800w.webp 800w, /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}.webp 1600w" imagesizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px">` : ''}
+  ${fm.image ? `<link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesrcset="/static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-400w.webp 400w, /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}-800w.webp 800w, /static/images/articles/${fm.image.replace(/\.[^/.]+$/, '')}.webp 1600w" imagesizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px">` : ''}
   <meta name="description" content="${fm.description}">
   <meta property="og:title" content="${fm.title} — ${SITE_NAME}">
   <meta property="og:description" content="${fm.description}">
@@ -653,8 +653,9 @@ ${fm.image ? `
               /static/images/articles/${fm.image} 1600w"
       sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
       alt="${fm.image_alt || fm.title || ''}"
-      width="760"
-      height="420"
+      width="1600"
+      height="900"
+      loading="eager"
       fetchpriority="high"
       style="width:100%;height:420px;object-fit:cover;display:block;"
     />
