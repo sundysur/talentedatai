@@ -391,7 +391,9 @@ for (const file of mdFiles) {
     .audio-credit { font-size: 12px; color: #888; margin: -28px 0 36px; font-family: 'DM Sans', sans-serif; }
     .audio-credit a { color: #0E3B2E; text-decoration: none; }
     .audio-credit a:hover { text-decoration: underline; }
-    .affiliate-notice { font-size: 12px; color: #888; background: #f4f4f0; border-left: 3px solid #e0e0da; padding: 8px 12px; border-radius: 0 6px 6px 0; margin: 0 0 24px; font-family: 'DM Sans', sans-serif; line-height: 1.5; }
+    .affiliate-notice { font-size: 12px; color: #888; background: #f4f4f0; border-left: 3px solid #D4623A; padding: 8px 12px; border-radius: 0 6px 6px 0; margin: 0 0 24px; font-family: 'DM Sans', sans-serif; line-height: 1.5; }
+    .article-body div[style*="background:#f0f6ff"] a[style*="background:#0066ff"],.article-body div[style*="background: #f0f6ff"] a[style*="background:#0066ff"]{background:#D4623A !important}
+    .article-body div[style*="background:#f0f6ff"] a[style*="background:#0066ff"]:hover,.article-body div[style*="background: #f0f6ff"] a[style*="background:#0066ff"]:hover{background:#E8734A !important}
     /* TABLE OF CONTENTS */
     .article-toc-wrapper{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 240px;gap:40px;padding:0 20px}
     .article-toc-wrapper .article-body{max-width:760px;margin:0;padding:48px 24px 48px}
@@ -405,7 +407,13 @@ for (const file of mdFiles) {
     .toc-link:hover{color:var(--brand-green-dark);text-decoration:none}
     .toc-link.active{color:var(--brand-green-dark);font-weight:500;border-left-color:var(--brand-green-dark)}
     @media(max-width:1100px){.article-toc-wrapper{display:block;max-width:760px;padding:0;grid-template-columns:1fr}.toc-sidebar{display:none}}
-  
+    /* SIDEBAR FINDER CTA */
+    .sidebar-finder-cta{background:#0E3B2E;border-radius:10px;padding:20px;margin-bottom:24px;text-align:center;border-top:3px solid #D4623A}
+    .sidebar-finder-cta__eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:2px;color:#D4623A;margin-bottom:8px}
+    .sidebar-finder-cta__label{color:rgba(250,246,236,0.85);font-size:0.85rem;margin-bottom:14px;line-height:1.5}
+    .sidebar-finder-cta__btn{display:inline-block;background:#D4623A;color:white;padding:9px 20px;border-radius:7px;font-weight:700;font-size:0.85rem;text-decoration:none;transition:background 0.2s ease}
+    .sidebar-finder-cta__btn:hover{background:#E8734A;text-decoration:none}
+
 /* DARK MODE TOGGLE — sliding pill */
     .theme-toggle{position:relative;display:inline-flex;align-items:center;cursor:pointer;gap:6px}
     .theme-toggle input{opacity:0;width:0;height:0;position:absolute}
@@ -473,9 +481,9 @@ for (const file of mdFiles) {
     [data-theme="dark"] .article-body div[style*="background:#f0f6ff"],[data-theme="dark"] .article-body div[style*="background: #f0f6ff"]{background:#1a2a3a !important;border-color:#C8E65A !important}
     [data-theme="dark"] .article-body div[style*="background:#f0f6ff"] p,[data-theme="dark"] .article-body div[style*="background: #f0f6ff"] p{color:#c8d8f0 !important}
     [data-theme="dark"] .article-body div[style*="background:#f0f6ff"] a[style*="background:#0066ff"],[data-theme="dark"] .article-body div[style*="background: #f0f6ff"] a[style*="background:#0066ff"]{color:#0E3B2E !important;background:#C8E65A !important}
-    .article-body div[style*="background:#f0f6ff"],.article-body div[style*="background: #f0f6ff"]{border-color:#0E3B2E !important}
-    .article-body div[style*="background:#f0f6ff"] a[style*="background:#0066ff"],.article-body div[style*="background: #f0f6ff"] a[style*="background:#0066ff"]{background:#0E3B2E !important}
-    .article-body div[style*="background:#f0f6ff"] a[style*="background:#0066ff"]:hover,.article-body div[style*="background: #f0f6ff"] a[style*="background:#0066ff"]:hover{background:#1a5c45 !important}
+    .article-body div[style*="background:#f0f6ff"],.article-body div[style*="background: #f0f6ff"]{border-color:#D4623A !important}
+    .article-body div[style*="background:#f0f6ff"] a[style*="background:#0066ff"],.article-body div[style*="background: #f0f6ff"] a[style*="background:#0066ff"]{background:#D4623A !important}
+    .article-body div[style*="background:#f0f6ff"] a[style*="background:#0066ff"]:hover,.article-body div[style*="background: #f0f6ff"] a[style*="background:#0066ff"]:hover{background:#E8734A !important}
     .feedback-widget{margin:48px 0 32px;padding:28px 32px;background:var(--surface,#f8f9fa);border:1px solid rgba(14,59,46,0.12);border-radius:12px;text-align:center}
     [data-theme="dark"] .feedback-widget{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.1)}
     .feedback-widget__question{font-size:1rem;font-weight:600;color:#0E3B2E;margin-bottom:16px}
@@ -483,11 +491,11 @@ for (const file of mdFiles) {
     .feedback-widget__buttons{display:flex;gap:12px;justify-content:center;margin-bottom:12px}
     .feedback-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:8px;border:1.5px solid #0E3B2E;background:transparent;color:#0E3B2E;font-size:0.95rem;font-weight:500;cursor:pointer;transition:all 0.15s ease}
     .feedback-btn:hover{background:#0E3B2E;color:white}
-    .feedback-btn.selected{background:#0E3B2E;color:#C8E65A;border-color:#0E3B2E}
-    .feedback-btn.selected svg path{fill:#C8E65A}
+    .feedback-btn.selected{background:#D4623A;color:white;border-color:#D4623A}
+    .feedback-btn.selected svg path{fill:white}
     [data-theme="dark"] .feedback-btn{border-color:#C8E65A;color:#C8E65A}
     [data-theme="dark"] .feedback-btn:hover{background:#C8E65A;color:#0E3B2E}
-    [data-theme="dark"] .feedback-btn.selected{background:#C8E65A;color:#0E3B2E;border-color:#C8E65A}
+    [data-theme="dark"] .feedback-btn.selected{background:#E8734A;color:white;border-color:#E8734A}
     .feedback-widget__counts{font-size:0.82rem;color:rgba(14,59,46,0.55);min-height:20px}
     [data-theme="dark"] .feedback-widget__counts{color:rgba(250,246,236,0.5)}
     .feedback-widget__thanks{font-size:0.9rem;color:#0E3B2E;font-weight:500;display:none}
@@ -694,6 +702,11 @@ ${hasToc ? articleContentHtml : html}
 </div>
 </div>
 ${hasToc ? `<nav class="toc-sidebar" aria-label="Table of contents">
+  <div class="sidebar-finder-cta">
+    <p class="sidebar-finder-cta__eyebrow">FREE TOOL</p>
+    <p class="sidebar-finder-cta__label">Not sure which AI tools are right for you?</p>
+    <a href="/find-my-ai-stack" class="sidebar-finder-cta__btn">Find my AI stack →</a>
+  </div>
   <div class="toc-sticky">
     <div class="toc-heading">Contents</div>
     <ul class="toc-list">${tocListHtml}</ul>
@@ -1026,6 +1039,11 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
   <url>
     <loc>${SITE_URL}/privacy-policy.html</loc>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>${SITE_URL}/find-my-ai-stack</loc>
+    <lastmod>${today}</lastmod>
+    <priority>0.8</priority>
   </url>
 ${sitemapEntries}
 </urlset>`;

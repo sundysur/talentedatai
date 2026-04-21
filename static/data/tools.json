@@ -1,0 +1,1847 @@
+[
+  {
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "tagline": "All-purpose AI assistant for writing, coding, analysis, and image generation",
+    "category_badge": "Cross-Category",
+    "categories": [
+      "writing-content",
+      "images-video",
+      "coding-building",
+      "research-knowledge",
+      "workflow-automation",
+      "data-reporting"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free / from $20/month",
+    "has_review": true,
+    "review_url": "/content/published/chatgpt-vs-claude-2026",
+    "affiliate_url": null,
+    "try_label": "Try ChatGPT free",
+    "rating": 4.5,
+    "match_reasons": {
+      "writing-content": "Generates blog posts, emails, social copy, and marketing content with strong instruction following",
+      "images-video": "Built-in DALL-E 3 image generation and GPT-4o image editing capabilities",
+      "coding-building": "Writes, debugs, and explains code in dozens of languages with canvas mode",
+      "research-knowledge": "Browses the web for up-to-date answers with cited sources",
+      "workflow-automation": "Custom GPTs and plugins automate repetitive tasks and integrate with other services",
+      "data-reporting": "Analyzes uploaded CSVs, creates charts, and runs Python code on your data",
+      "low_technical": "Conversational interface anyone can use — just type what you need",
+      "high_technical": "API access, function calling, and fine-tuning for custom applications"
+    }
+  },
+  {
+    "id": "claude",
+    "name": "Claude",
+    "tagline": "Advanced AI assistant known for nuanced reasoning and long-document analysis",
+    "category_badge": "Cross-Category",
+    "categories": [
+      "writing-content",
+      "coding-building",
+      "research-knowledge",
+      "data-reporting"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free / from $20/month",
+    "has_review": true,
+    "review_url": "/content/published/chatgpt-vs-claude-2026",
+    "affiliate_url": null,
+    "try_label": "Try Claude free",
+    "rating": 4.6,
+    "match_reasons": {
+      "writing-content": "Excels at long-form writing with natural tone and nuanced style adjustments",
+      "coding-building": "Strong code generation, refactoring, and debugging with 200K-token context window",
+      "research-knowledge": "Processes entire documents and research papers in a single prompt for deep analysis",
+      "data-reporting": "Analyzes complex datasets and creates structured reports from uploaded files",
+      "low_technical": "Clean, simple chat interface with thoughtful explanations for any skill level",
+      "high_technical": "200K context window, API with tool use, and Claude Code for terminal-based development"
+    }
+  },
+  {
+    "id": "gemini",
+    "name": "Gemini",
+    "tagline": "Google's AI assistant with deep integration across Workspace and Search",
+    "category_badge": "Cross-Category",
+    "categories": [
+      "writing-content",
+      "research-knowledge",
+      "data-reporting",
+      "workflow-automation"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 3,
+    "price_tier": 2,
+    "price_display": "Free / from $7.99/month",
+    "has_review": true,
+    "review_url": "/content/published/claude-vs-gemini-2026",
+    "affiliate_url": null,
+    "try_label": "Try Gemini free",
+    "rating": 4.2,
+    "match_reasons": {
+      "writing-content": "Drafts and refines content with native access to Google Docs and Gmail",
+      "research-knowledge": "Grounded in Google Search for real-time, cited answers across the web",
+      "data-reporting": "Works inside Google Sheets for formula generation and data analysis",
+      "workflow-automation": "Built into Google Workspace — summarises emails, schedules meetings, creates docs",
+      "low_technical": "Familiar Google interface; works right inside the tools millions already use",
+      "high_technical": "Gemini API with multimodal input, long context, and Vertex AI integration"
+    }
+  },
+  {
+    "id": "microsoft-copilot",
+    "name": "Microsoft Copilot",
+    "tagline": "AI assistant embedded across Microsoft 365 apps for everyday productivity",
+    "category_badge": "Cross-Category",
+    "categories": [
+      "writing-content",
+      "data-reporting",
+      "workflow-automation"
+    ],
+    "technical_level": 1,
+    "focus": 4,
+    "work_style": 4,
+    "price_tier": 3,
+    "price_display": "Free / from $20/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Copilot free",
+    "rating": 4.0,
+    "match_reasons": {
+      "writing-content": "Drafts and edits documents directly inside Word with formatting intact",
+      "data-reporting": "Creates pivot tables, charts, and formulas in Excel using natural language",
+      "workflow-automation": "Summarises Teams meetings, drafts Outlook replies, and automates PowerPoint creation",
+      "low_technical": "Shows up as a sidebar in the Microsoft apps you already know",
+      "high_technical": "Microsoft Graph API and Copilot Studio for custom enterprise workflows"
+    }
+  },
+  {
+    "id": "mistral",
+    "name": "Mistral AI",
+    "tagline": "European AI platform offering open-weight models and a privacy-focused chat assistant",
+    "category_badge": "Cross-Category",
+    "categories": [
+      "writing-content",
+      "coding-building",
+      "research-knowledge"
+    ],
+    "technical_level": 3,
+    "focus": 3,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free / from $14.99/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Le Chat free",
+    "rating": 3.9,
+    "match_reasons": {
+      "writing-content": "Multilingual content generation with strong European language support",
+      "coding-building": "Codestral model specialised for code generation and developer workflows",
+      "research-knowledge": "Le Chat provides web-grounded answers with GDPR-compliant data handling",
+      "low_technical": "Le Chat is a simple, clean interface for everyday questions",
+      "high_technical": "Open-weight models you can self-host; competitive API pricing for builders"
+    }
+  },
+  {
+    "id": "jasper",
+    "name": "Jasper",
+    "tagline": "Enterprise AI writing platform for marketing teams and brand-consistent content",
+    "category_badge": "Writing & Content",
+    "categories": [
+      "writing-content",
+      "workflow-automation"
+    ],
+    "technical_level": 2,
+    "focus": 5,
+    "work_style": 4,
+    "price_tier": 4,
+    "price_display": "From $39/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Jasper free trial",
+    "rating": 4.1,
+    "match_reasons": {
+      "writing-content": "Purpose-built for marketing copy — blog posts, ads, landing pages — with brand voice training",
+      "workflow-automation": "Campaign workflows let teams plan, write, and approve content in one place",
+      "low_technical": "Template-driven interface guides you through each content type step by step"
+    }
+  },
+  {
+    "id": "copy-ai",
+    "name": "Copy.ai",
+    "tagline": "AI-powered copywriting and sales content generator for go-to-market teams",
+    "category_badge": "Writing & Content",
+    "categories": [
+      "writing-content",
+      "workflow-automation"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 3,
+    "price_tier": 2,
+    "price_display": "Free / from $49/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Copy.ai free",
+    "rating": 4.0,
+    "match_reasons": {
+      "writing-content": "Generates marketing copy, product descriptions, and social posts from brief prompts",
+      "workflow-automation": "GTM AI workflows automate prospecting emails and content pipelines",
+      "low_technical": "Pick a template, fill in the blanks, and get polished copy in seconds"
+    }
+  },
+  {
+    "id": "writesonic",
+    "name": "Writesonic",
+    "tagline": "AI writing and SEO content platform with built-in factual research",
+    "category_badge": "Writing & Content",
+    "categories": [
+      "writing-content",
+      "research-knowledge"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 3,
+    "price_display": "From $39/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Writesonic",
+    "rating": 3.9,
+    "match_reasons": {
+      "writing-content": "Produces SEO blog articles, landing pages, and ads with built-in Google Search grounding",
+      "research-knowledge": "Chatsonic feature searches the web for up-to-date facts while writing",
+      "low_technical": "Guided article wizard takes you from keyword to published draft in minutes"
+    }
+  },
+  {
+    "id": "rytr",
+    "name": "Rytr",
+    "tagline": "Budget-friendly AI writer for quick content drafts and social media copy",
+    "category_badge": "Writing & Content",
+    "categories": [
+      "writing-content"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 2,
+    "price_display": "Free / from $9/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Rytr free",
+    "rating": 3.7,
+    "match_reasons": {
+      "writing-content": "Quick, affordable content drafts for blogs, emails, and social media posts",
+      "low_technical": "Choose a use case, set a tone, and click generate — minimal learning curve"
+    }
+  },
+  {
+    "id": "sudowrite",
+    "name": "Sudowrite",
+    "tagline": "AI writing partner designed specifically for fiction authors and storytellers",
+    "category_badge": "Writing & Content",
+    "categories": [
+      "writing-content"
+    ],
+    "technical_level": 2,
+    "focus": 1,
+    "work_style": 1,
+    "price_tier": 2,
+    "price_display": "Free credits / from $10/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Sudowrite free",
+    "rating": 4.0,
+    "match_reasons": {
+      "writing-content": "Story Engine generates entire novel chapters while maintaining character and plot consistency",
+      "low_technical": "Purpose-built for creative writers — no prompting skills needed, just write"
+    }
+  },
+  {
+    "id": "grammarly",
+    "name": "Grammarly",
+    "tagline": "AI writing assistant that checks grammar, tone, and clarity across every app",
+    "category_badge": "Writing & Content",
+    "categories": [
+      "writing-content"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 3,
+    "price_tier": 2,
+    "price_display": "Free / from $12/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-writing-tools-bloggers",
+    "affiliate_url": null,
+    "try_label": "Try Grammarly free",
+    "rating": 4.4,
+    "match_reasons": {
+      "writing-content": "Real-time grammar, tone, and clarity suggestions plus AI rewriting via GrammarlyGO",
+      "low_technical": "Works everywhere — browser extension, desktop app, mobile keyboard — with zero setup",
+      "high_technical": "API and SDKs for embedding grammar checking into your own applications"
+    }
+  },
+  {
+    "id": "hemingway-editor",
+    "name": "Hemingway Editor",
+    "tagline": "AI-powered editor that makes your writing bold, clear, and concise",
+    "category_badge": "Writing & Content",
+    "categories": [
+      "writing-content"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 2,
+    "price_display": "Free online / from $8.33/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-writing-tools-bloggers",
+    "affiliate_url": null,
+    "try_label": "Try Hemingway free",
+    "rating": 4.1,
+    "match_reasons": {
+      "writing-content": "Highlights complex sentences, passive voice, and readability issues with AI rewrite suggestions",
+      "low_technical": "Paste your text, see colour-coded highlights, and click to fix — couldn't be simpler"
+    }
+  },
+  {
+    "id": "wordtune",
+    "name": "Wordtune",
+    "tagline": "AI rewriting tool that helps you say exactly what you mean in fewer words",
+    "category_badge": "Writing & Content",
+    "categories": [
+      "writing-content"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 2,
+    "price_display": "Free / from $6.99/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Wordtune free",
+    "rating": 4.0,
+    "match_reasons": {
+      "writing-content": "Rewrites sentences for clarity, brevity, or formality while preserving your meaning",
+      "low_technical": "Highlight any sentence and pick from AI-suggested alternatives — instant improvement"
+    }
+  },
+  {
+    "id": "quillbot",
+    "name": "QuillBot",
+    "tagline": "AI paraphrasing and summarising tool for students and professionals",
+    "category_badge": "Writing & Content",
+    "categories": [
+      "writing-content",
+      "research-knowledge"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 2,
+    "price_display": "Free / from $8.33/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try QuillBot free",
+    "rating": 4.0,
+    "match_reasons": {
+      "writing-content": "Paraphrases, summarises, and checks grammar with multiple rewriting modes",
+      "research-knowledge": "Summariser condenses long articles and papers into key points for research",
+      "low_technical": "Paste text, choose a mode (fluency, formal, creative), and get instant results"
+    }
+  },
+  {
+    "id": "surfer-seo",
+    "name": "Surfer SEO",
+    "tagline": "AI-powered content optimisation platform that helps articles rank on Google",
+    "category_badge": "Writing & Content",
+    "categories": [
+      "writing-content",
+      "research-knowledge"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 4,
+    "price_display": "From $49/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-seo-tools-2026",
+    "affiliate_url": null,
+    "try_label": "Try Surfer SEO",
+    "rating": 4.3,
+    "match_reasons": {
+      "writing-content": "Content Editor scores your draft against top-ranking pages and suggests improvements",
+      "research-knowledge": "SERP analyser reveals what topics and keywords competitors cover so you can fill gaps",
+      "low_technical": "Guided content editor with a real-time score — write until you hit green"
+    }
+  },
+  {
+    "id": "frase",
+    "name": "Frase",
+    "tagline": "AI SEO research and content writing tool that turns search queries into optimised articles",
+    "category_badge": "Writing & Content",
+    "categories": [
+      "writing-content",
+      "research-knowledge"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 3,
+    "price_display": "Free tier / from $39/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-seo-tools-2026",
+    "affiliate_url": null,
+    "try_label": "Try Frase free",
+    "rating": 4.1,
+    "match_reasons": {
+      "writing-content": "Generates full article drafts optimised for your target keyword from the start",
+      "research-knowledge": "Analyses top SERP results and extracts key topics so you know exactly what to cover",
+      "low_technical": "Enter a keyword and Frase builds a brief, outline, and draft for you automatically"
+    }
+  },
+  {
+    "id": "contentbot",
+    "name": "ContentBot",
+    "tagline": "AI content generator with automated blog workflows and content scheduling",
+    "category_badge": "Writing & Content",
+    "categories": [
+      "writing-content",
+      "workflow-automation"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free tier / from $9/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try ContentBot",
+    "rating": 3.6,
+    "match_reasons": {
+      "writing-content": "Automated blog post generation with scheduling and WordPress integration",
+      "workflow-automation": "Content Flows automate multi-step content creation pipelines",
+      "low_technical": "Set up a content flow once and it produces draft posts on a schedule"
+    }
+  },
+  {
+    "id": "midjourney",
+    "name": "Midjourney",
+    "tagline": "Premium AI image generator producing stunning, artistic visuals from text prompts",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video"
+    ],
+    "technical_level": 2,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 3,
+    "price_display": "From $10/month",
+    "has_review": true,
+    "review_url": "/content/published/adobe-firefly-vs-midjourney-vs-chatgpt-image-vs-flux-2026",
+    "affiliate_url": null,
+    "try_label": "Try Midjourney",
+    "rating": 4.7,
+    "match_reasons": {
+      "images-video": "Industry-leading image quality with exceptional artistic style and photorealistic output",
+      "low_technical": "Type a description and get four stunning image options in under a minute",
+      "high_technical": "Advanced parameters for aspect ratio, style tuning, and seed control"
+    }
+  },
+  {
+    "id": "adobe-firefly",
+    "name": "Adobe Firefly",
+    "tagline": "Adobe's commercially safe AI image generator integrated with Creative Cloud",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 3,
+    "price_tier": 2,
+    "price_display": "Free credits / from $9.99/month",
+    "has_review": true,
+    "review_url": "/content/published/adobe-firefly-vs-midjourney-vs-chatgpt-image-vs-flux-2026",
+    "affiliate_url": null,
+    "try_label": "Try Firefly free",
+    "rating": 4.3,
+    "match_reasons": {
+      "images-video": "Commercially safe AI images with full IP indemnity — trained only on licensed content",
+      "low_technical": "Simple web interface with style presets and one-click variations",
+      "high_technical": "Integrated into Photoshop Generative Fill and Illustrator for professional workflows"
+    }
+  },
+  {
+    "id": "dall-e-3",
+    "name": "DALL-E 3",
+    "tagline": "OpenAI's image generator built into ChatGPT for conversational image creation",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 2,
+    "price_display": "Free via ChatGPT / from $20/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-image-generators-2026",
+    "affiliate_url": null,
+    "try_label": "Try DALL-E free",
+    "rating": 4.2,
+    "match_reasons": {
+      "images-video": "Generate and iteratively refine images through natural conversation in ChatGPT",
+      "low_technical": "Just describe what you want in plain English — no special syntax needed"
+    }
+  },
+  {
+    "id": "stable-diffusion",
+    "name": "Stable Diffusion",
+    "tagline": "Open-source AI image model you can run locally or access via DreamStudio",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video"
+    ],
+    "technical_level": 4,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 1,
+    "price_display": "Free (open source) / DreamStudio pay-as-you-go",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-image-generators-2026",
+    "affiliate_url": null,
+    "try_label": "Try Stable Diffusion",
+    "rating": 4.3,
+    "match_reasons": {
+      "images-video": "Fully open-source image generation with unlimited local use and massive community of models",
+      "high_technical": "Run locally on your GPU, fine-tune on custom data, and build into apps with full control"
+    }
+  },
+  {
+    "id": "leonardo-ai",
+    "name": "Leonardo AI",
+    "tagline": "AI image generator with fine-tuned models for game art, design, and photography",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video"
+    ],
+    "technical_level": 2,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 2,
+    "price_display": "Free / from $12/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-image-generators-2026",
+    "affiliate_url": null,
+    "try_label": "Try Leonardo free",
+    "rating": 4.2,
+    "match_reasons": {
+      "images-video": "Specialised fine-tuned models for game assets, concept art, and product photography",
+      "low_technical": "Generous free daily tokens and a visual interface with style presets"
+    }
+  },
+  {
+    "id": "canva-ai",
+    "name": "Canva AI",
+    "tagline": "AI-powered design suite for creating graphics, presentations, and social media content",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video",
+      "writing-content"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 3,
+    "price_tier": 2,
+    "price_display": "Free / from $15/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Canva free",
+    "rating": 4.4,
+    "match_reasons": {
+      "images-video": "Magic Studio generates images, removes backgrounds, and resizes designs for every platform",
+      "writing-content": "Magic Write drafts social posts, headlines, and marketing copy inside your designs",
+      "low_technical": "Drag-and-drop design with thousands of templates — no design skills needed"
+    }
+  },
+  {
+    "id": "runway",
+    "name": "Runway",
+    "tagline": "AI-native creative suite for video generation, editing, and visual effects",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video",
+      "voice-audio"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 3,
+    "price_display": "Free tier / from $15/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-video-generators-2026",
+    "affiliate_url": null,
+    "try_label": "Try Runway free",
+    "rating": 4.4,
+    "match_reasons": {
+      "images-video": "Gen-3 Alpha generates cinematic video clips from text or image prompts with fine motion control",
+      "voice-audio": "AI lip sync and audio tools complement video generation for complete productions",
+      "low_technical": "Web-based interface — type a scene description and get a video in minutes"
+    }
+  },
+  {
+    "id": "pika",
+    "name": "Pika",
+    "tagline": "AI video generator that turns text and images into short animated clips",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 2,
+    "price_display": "Free / from $8/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-video-generators-2026",
+    "affiliate_url": null,
+    "try_label": "Try Pika free",
+    "rating": 4.0,
+    "match_reasons": {
+      "images-video": "Quick, fun video generation with creative effects like expand, explode, and melt",
+      "low_technical": "Upload an image or type a prompt and get an animated clip in seconds"
+    }
+  },
+  {
+    "id": "luma-ai",
+    "name": "Luma AI",
+    "tagline": "AI video and 3D generation platform for cinematic scenes and product visuals",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free / from $9.99/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-video-generators-2026",
+    "affiliate_url": null,
+    "try_label": "Try Luma free",
+    "rating": 4.1,
+    "match_reasons": {
+      "images-video": "Dream Machine generates high-quality video with realistic camera movements and physics",
+      "low_technical": "Simple text-to-video interface with preset camera motions for easy results"
+    }
+  },
+  {
+    "id": "topaz-video-ai",
+    "name": "Topaz Video AI",
+    "tagline": "Desktop AI software for upscaling, denoising, and enhancing existing video footage",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video"
+    ],
+    "technical_level": 3,
+    "focus": 4,
+    "work_style": 1,
+    "price_tier": 5,
+    "price_display": "From $299/year",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Topaz free trial",
+    "rating": 4.5,
+    "match_reasons": {
+      "images-video": "Upscales video to 4K/8K, removes noise, and stabilises shaky footage using AI models",
+      "high_technical": "Batch processing, CLI support, and multiple AI model options for fine-grained control"
+    }
+  },
+  {
+    "id": "clipchamp",
+    "name": "Clipchamp",
+    "tagline": "Microsoft's free AI video editor with text-to-speech and auto-captioning",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video",
+      "voice-audio"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 2,
+    "price_tier": 1,
+    "price_display": "Free (all features)",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Clipchamp free",
+    "rating": 3.9,
+    "match_reasons": {
+      "images-video": "Full-featured browser video editor with AI captions, text-to-speech, and stock media",
+      "voice-audio": "Built-in AI text-to-speech narration in dozens of voices and languages",
+      "low_technical": "Free, browser-based, and built into Windows 11 — no download or payment needed"
+    }
+  },
+  {
+    "id": "heygen",
+    "name": "HeyGen",
+    "tagline": "AI avatar video platform for creating professional talking-head videos at scale",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video",
+      "voice-audio"
+    ],
+    "technical_level": 1,
+    "focus": 5,
+    "work_style": 4,
+    "price_tier": 4,
+    "price_display": "Free trial / from $29/month",
+    "has_review": true,
+    "review_url": "/content/published/heygen-vs-synthesia-2026",
+    "affiliate_url": null,
+    "try_label": "Try HeyGen free",
+    "rating": 4.3,
+    "match_reasons": {
+      "images-video": "Create professional avatar videos for training, marketing, and sales in 175+ languages",
+      "voice-audio": "Realistic lip-synced voice with cloned or stock AI voices across languages",
+      "low_technical": "Type a script, pick an avatar, and export a polished video — no filming required"
+    }
+  },
+  {
+    "id": "synthesia",
+    "name": "Synthesia",
+    "tagline": "Enterprise AI video platform for scalable training and internal communications",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video",
+      "voice-audio"
+    ],
+    "technical_level": 1,
+    "focus": 5,
+    "work_style": 5,
+    "price_tier": 4,
+    "price_display": "Free trial / from $29/month",
+    "has_review": true,
+    "review_url": "/content/published/heygen-vs-synthesia-2026",
+    "affiliate_url": null,
+    "try_label": "Try Synthesia free",
+    "rating": 4.2,
+    "match_reasons": {
+      "images-video": "Enterprise-grade AI avatar videos with LMS integrations, SOC 2, and brand controls",
+      "voice-audio": "Translate and lip-sync existing videos into 140+ languages automatically",
+      "low_technical": "Template-based editor built for L&D and comms teams, not video professionals"
+    }
+  },
+  {
+    "id": "elevenlabs",
+    "name": "ElevenLabs",
+    "tagline": "Industry-leading AI voice platform with ultra-realistic text-to-speech and voice cloning",
+    "category_badge": "Voice & Audio",
+    "categories": [
+      "voice-audio",
+      "images-video"
+    ],
+    "technical_level": 2,
+    "focus": 3,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free / from $5/month",
+    "has_review": true,
+    "review_url": "/content/published/elevenlabs-review-2026",
+    "affiliate_url": "https://try.elevenlabs.io/ihsithj42jfj",
+    "try_label": "Try ElevenLabs free",
+    "rating": 4.7,
+    "match_reasons": {
+      "voice-audio": "Best-in-class voice synthesis with instant voice cloning in 30+ languages",
+      "images-video": "Add narration and character voices to videos and animations with realistic AI speech",
+      "low_technical": "Paste text, pick a voice, and download natural-sounding audio in seconds",
+      "high_technical": "Full API with streaming, voice cloning, and custom pronunciation dictionaries"
+    }
+  },
+  {
+    "id": "murf-ai",
+    "name": "Murf AI",
+    "tagline": "Professional AI voiceover platform with 200+ studio-quality voices for business content",
+    "category_badge": "Voice & Audio",
+    "categories": [
+      "voice-audio"
+    ],
+    "technical_level": 1,
+    "focus": 4,
+    "work_style": 3,
+    "price_tier": 3,
+    "price_display": "Free / from $19/month",
+    "has_review": true,
+    "review_url": "/content/published/elevenlabs-vs-murf-vs-descript-2026",
+    "affiliate_url": null,
+    "try_label": "Try Murf free",
+    "rating": 4.1,
+    "match_reasons": {
+      "voice-audio": "Studio-quality AI voiceovers with pitch, speed, and emphasis controls for professional productions",
+      "low_technical": "Timeline editor makes creating voiceovers as simple as editing a slideshow"
+    }
+  },
+  {
+    "id": "descript",
+    "name": "Descript",
+    "tagline": "All-in-one audio and video editor where you edit media by editing text",
+    "category_badge": "Voice & Audio",
+    "categories": [
+      "voice-audio",
+      "images-video"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 3,
+    "price_tier": 3,
+    "price_display": "Free / from $24/month",
+    "has_review": true,
+    "review_url": "/content/published/elevenlabs-vs-murf-vs-descript-2026",
+    "affiliate_url": null,
+    "try_label": "Try Descript free",
+    "rating": 4.4,
+    "match_reasons": {
+      "voice-audio": "Edit podcasts by editing the transcript — delete a word from text and it's gone from audio",
+      "images-video": "Full video editing suite with AI-powered filler word removal, green screen, and captions",
+      "low_technical": "Edit audio and video like a Google Doc — if you can edit text, you can use Descript"
+    }
+  },
+  {
+    "id": "adobe-podcast",
+    "name": "Adobe Podcast",
+    "tagline": "AI-powered podcast tool with studio-quality audio enhancement and recording",
+    "category_badge": "Voice & Audio",
+    "categories": [
+      "voice-audio"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free / from $9.99/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-tools-for-podcasters-2026",
+    "affiliate_url": null,
+    "try_label": "Try Adobe Podcast free",
+    "rating": 4.0,
+    "match_reasons": {
+      "voice-audio": "Enhance Speech removes background noise and makes any recording sound like a professional studio",
+      "low_technical": "Upload audio and get studio-quality output with a single click — no audio engineering needed"
+    }
+  },
+  {
+    "id": "riverside",
+    "name": "Riverside.fm",
+    "tagline": "High-quality remote recording platform with AI transcription and clip creation",
+    "category_badge": "Voice & Audio",
+    "categories": [
+      "voice-audio",
+      "images-video"
+    ],
+    "technical_level": 1,
+    "focus": 4,
+    "work_style": 3,
+    "price_tier": 3,
+    "price_display": "Free / from $19/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-tools-for-podcasters-2026",
+    "affiliate_url": null,
+    "try_label": "Try Riverside free",
+    "rating": 4.3,
+    "match_reasons": {
+      "voice-audio": "Records each guest locally in 1080p and WAV quality, then syncs — no quality loss from bandwidth",
+      "images-video": "AI clip creator automatically finds the best moments and formats them for social media",
+      "low_technical": "Share a link, guests join in the browser — no downloads or accounts needed"
+    }
+  },
+  {
+    "id": "cleanvoice",
+    "name": "Cleanvoice AI",
+    "tagline": "Automated podcast editor that removes filler words, mouth sounds, and dead air",
+    "category_badge": "Voice & Audio",
+    "categories": [
+      "voice-audio"
+    ],
+    "technical_level": 1,
+    "focus": 4,
+    "work_style": 1,
+    "price_tier": 2,
+    "price_display": "From $10/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Cleanvoice",
+    "rating": 3.9,
+    "match_reasons": {
+      "voice-audio": "Automatically strips filler words (um, uh), mouth clicks, and long silences from podcast audio",
+      "low_technical": "Upload your recording, wait a few minutes, download the cleaned version — fully automated"
+    }
+  },
+  {
+    "id": "podcastle",
+    "name": "Podcastle",
+    "tagline": "AI podcast creation platform with recording, editing, and voice synthesis in one place",
+    "category_badge": "Voice & Audio",
+    "categories": [
+      "voice-audio"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free / from $11.99/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Podcastle free",
+    "rating": 3.8,
+    "match_reasons": {
+      "voice-audio": "Record, edit, transcribe, and add AI voiceovers all in one browser-based platform",
+      "low_technical": "End-to-end podcast workflow in a single tool — no juggling multiple apps"
+    }
+  },
+  {
+    "id": "suno",
+    "name": "Suno",
+    "tagline": "AI music generator that creates complete songs with vocals from a text prompt",
+    "category_badge": "Voice & Audio",
+    "categories": [
+      "voice-audio"
+    ],
+    "technical_level": 1,
+    "focus": 2,
+    "work_style": 1,
+    "price_tier": 2,
+    "price_display": "Free / from $10/month",
+    "has_review": true,
+    "review_url": "/content/published/suno-ai-music-2026",
+    "affiliate_url": null,
+    "try_label": "Try Suno free",
+    "rating": 4.3,
+    "match_reasons": {
+      "voice-audio": "Generates full songs — lyrics, vocals, instruments — in any genre from a text description",
+      "low_technical": "Type a mood or topic, pick a style, and get a complete song in under a minute"
+    }
+  },
+  {
+    "id": "github-copilot",
+    "name": "GitHub Copilot",
+    "tagline": "AI pair programmer that suggests code completions and entire functions in your IDE",
+    "category_badge": "Coding & Building",
+    "categories": [
+      "coding-building"
+    ],
+    "technical_level": 4,
+    "focus": 4,
+    "work_style": 3,
+    "price_tier": 2,
+    "price_display": "Free tier / from $10/month",
+    "has_review": true,
+    "review_url": "/content/published/claude-code-vs-codex-vs-cursor-vs-copilot-2026",
+    "affiliate_url": null,
+    "try_label": "Try Copilot free",
+    "rating": 4.4,
+    "match_reasons": {
+      "coding-building": "Real-time code suggestions, chat, and PR reviews integrated directly into VS Code and JetBrains",
+      "high_technical": "Multi-model support (GPT-4o, Claude), workspace agent, and custom instructions for teams"
+    }
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor",
+    "tagline": "AI-first code editor that understands your entire codebase and writes features end-to-end",
+    "category_badge": "Coding & Building",
+    "categories": [
+      "coding-building"
+    ],
+    "technical_level": 4,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 3,
+    "price_display": "Free / from $20/month",
+    "has_review": true,
+    "review_url": "/content/published/claude-code-vs-codex-vs-cursor-vs-copilot-2026",
+    "affiliate_url": null,
+    "try_label": "Try Cursor free",
+    "rating": 4.6,
+    "match_reasons": {
+      "coding-building": "Indexes your full codebase for context-aware edits, multi-file refactors, and agent-mode coding",
+      "high_technical": "Composer agent writes across multiple files; supports Claude, GPT-4o, and custom models"
+    }
+  },
+  {
+    "id": "claude-code",
+    "name": "Claude Code",
+    "tagline": "Terminal-based AI coding agent that reads, writes, and runs code directly in your repo",
+    "category_badge": "Coding & Building",
+    "categories": [
+      "coding-building"
+    ],
+    "technical_level": 5,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 3,
+    "price_display": "From $20/month (Claude Pro)",
+    "has_review": true,
+    "review_url": "/content/published/claude-code-vs-codex-vs-cursor-vs-copilot-2026",
+    "affiliate_url": null,
+    "try_label": "Try Claude Code",
+    "rating": 4.5,
+    "match_reasons": {
+      "coding-building": "Agentic terminal tool that reads your repo, writes code, runs tests, and commits — all from the CLI",
+      "high_technical": "Full shell access, git integration, and multi-agent orchestration for complex development tasks"
+    }
+  },
+  {
+    "id": "openai-codex",
+    "name": "OpenAI Codex",
+    "tagline": "Cloud-based AI coding agent by OpenAI that runs tasks in sandboxed environments",
+    "category_badge": "Coding & Building",
+    "categories": [
+      "coding-building"
+    ],
+    "technical_level": 4,
+    "focus": 4,
+    "work_style": 3,
+    "price_tier": 3,
+    "price_display": "From $20/month (ChatGPT Pro)",
+    "has_review": true,
+    "review_url": "/content/published/claude-code-vs-codex-vs-cursor-vs-copilot-2026",
+    "affiliate_url": null,
+    "try_label": "Try Codex",
+    "rating": 4.2,
+    "match_reasons": {
+      "coding-building": "Assigns coding tasks to a cloud agent that works asynchronously in a sandboxed environment",
+      "high_technical": "Parallel task execution, full environment access, and GitHub PR integration"
+    }
+  },
+  {
+    "id": "replit-agent",
+    "name": "Replit Agent",
+    "tagline": "Browser-based AI agent that builds, deploys, and hosts full applications from a prompt",
+    "category_badge": "Coding & Building",
+    "categories": [
+      "coding-building"
+    ],
+    "technical_level": 2,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 3,
+    "price_display": "Free tier / from $17/month",
+    "has_review": true,
+    "review_url": "/content/published/vibe-coding-tools-2026",
+    "affiliate_url": null,
+    "try_label": "Try Replit free",
+    "rating": 4.1,
+    "match_reasons": {
+      "coding-building": "Describe what you want, and Agent builds the full app — frontend, backend, database, and deployment",
+      "low_technical": "No local setup required — everything runs in the browser with one-click deploy"
+    }
+  },
+  {
+    "id": "bolt",
+    "name": "Bolt",
+    "tagline": "Browser-based AI app builder by StackBlitz for instant full-stack web applications",
+    "category_badge": "Coding & Building",
+    "categories": [
+      "coding-building"
+    ],
+    "technical_level": 2,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 3,
+    "price_display": "Free tier / from $25/month",
+    "has_review": true,
+    "review_url": "/content/published/vibe-coding-tools-2026",
+    "affiliate_url": null,
+    "try_label": "Try Bolt free",
+    "rating": 4.0,
+    "match_reasons": {
+      "coding-building": "Generates full-stack web apps in the browser with live preview and one-click deployment",
+      "low_technical": "Describe your app idea in plain English and see it running in seconds — zero setup"
+    }
+  },
+  {
+    "id": "v0",
+    "name": "v0 by Vercel",
+    "tagline": "AI UI generator that produces production-ready React components and pages from prompts",
+    "category_badge": "Coding & Building",
+    "categories": [
+      "coding-building"
+    ],
+    "technical_level": 3,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 3,
+    "price_display": "Free credits / from $20/month",
+    "has_review": true,
+    "review_url": "/content/published/vibe-coding-tools-2026",
+    "affiliate_url": null,
+    "try_label": "Try v0 free",
+    "rating": 4.2,
+    "match_reasons": {
+      "coding-building": "Generates polished React + Tailwind components and pages ready to drop into your Next.js project",
+      "high_technical": "Export clean, production-quality code with shadcn/ui components and responsive layouts"
+    }
+  },
+  {
+    "id": "tabnine",
+    "name": "Tabnine",
+    "tagline": "Privacy-first AI code assistant for enterprise teams with on-premise deployment",
+    "category_badge": "Coding & Building",
+    "categories": [
+      "coding-building"
+    ],
+    "technical_level": 4,
+    "focus": 5,
+    "work_style": 5,
+    "price_tier": 4,
+    "price_display": "From $39/user/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Tabnine",
+    "rating": 3.8,
+    "match_reasons": {
+      "coding-building": "Enterprise-grade AI completions trained on your private codebase with zero data retention",
+      "high_technical": "Self-hosted deployment, SOC 2 compliance, and integration with all major IDEs"
+    }
+  },
+  {
+    "id": "windsurf",
+    "name": "Windsurf (Codeium)",
+    "tagline": "AI-powered IDE with code completions, chat, and agentic editing in a custom editor",
+    "category_badge": "Coding & Building",
+    "categories": [
+      "coding-building"
+    ],
+    "technical_level": 3,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free / from $15/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Windsurf free",
+    "rating": 4.1,
+    "match_reasons": {
+      "coding-building": "Cascade agent performs multi-file edits with persistent context awareness across your project",
+      "high_technical": "Flows feature combines completions, chat, and command into a unified AI coding experience"
+    }
+  },
+  {
+    "id": "sourcegraph-cody",
+    "name": "Sourcegraph Cody",
+    "tagline": "Enterprise AI code assistant with deep codebase understanding via code graph search",
+    "category_badge": "Coding & Building",
+    "categories": [
+      "coding-building"
+    ],
+    "technical_level": 5,
+    "focus": 5,
+    "work_style": 5,
+    "price_tier": 5,
+    "price_display": "From $59/user/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Cody",
+    "rating": 3.9,
+    "match_reasons": {
+      "coding-building": "Enterprise code AI backed by Sourcegraph's code graph for accurate answers across massive repositories",
+      "high_technical": "Understands cross-repo dependencies and code relationships at scale for large engineering orgs"
+    }
+  },
+  {
+    "id": "perplexity",
+    "name": "Perplexity AI",
+    "tagline": "AI-powered search engine that gives synthesised answers with numbered citations",
+    "category_badge": "Research & Knowledge",
+    "categories": [
+      "research-knowledge"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free / from $20/month",
+    "has_review": true,
+    "review_url": "/content/published/perplexity-ai-review-2026",
+    "affiliate_url": null,
+    "try_label": "Try Perplexity free",
+    "rating": 4.5,
+    "match_reasons": {
+      "research-knowledge": "Searches the web and academic sources, then synthesises cited answers you can verify",
+      "low_technical": "Ask a question in plain English and get a clear, sourced answer — like a research assistant"
+    }
+  },
+  {
+    "id": "notebooklm",
+    "name": "Google NotebookLM",
+    "tagline": "AI research assistant that analyses your documents and generates audio overviews",
+    "category_badge": "Research & Knowledge",
+    "categories": [
+      "research-knowledge",
+      "voice-audio"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 1,
+    "price_display": "Free",
+    "has_review": true,
+    "review_url": "/content/published/google-notebooklm-review-2026",
+    "affiliate_url": null,
+    "try_label": "Try NotebookLM free",
+    "rating": 4.4,
+    "match_reasons": {
+      "research-knowledge": "Upload PDFs, docs, and URLs — NotebookLM becomes an expert on your sources with cited answers",
+      "voice-audio": "Audio Overview generates a realistic two-host podcast discussion of your uploaded material",
+      "low_technical": "Upload your files and start asking questions — no configuration or prompting needed"
+    }
+  },
+  {
+    "id": "elicit",
+    "name": "Elicit",
+    "tagline": "AI research assistant that finds and summarises academic papers for literature reviews",
+    "category_badge": "Research & Knowledge",
+    "categories": [
+      "research-knowledge"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 1,
+    "price_tier": 2,
+    "price_display": "Free / from $10/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Elicit free",
+    "rating": 4.2,
+    "match_reasons": {
+      "research-knowledge": "Searches 200M+ papers, extracts key findings, and helps build structured literature reviews",
+      "low_technical": "Ask a research question and get a table of relevant papers with extracted data points"
+    }
+  },
+  {
+    "id": "consensus",
+    "name": "Consensus",
+    "tagline": "AI search engine that finds and synthesises claims from peer-reviewed research",
+    "category_badge": "Research & Knowledge",
+    "categories": [
+      "research-knowledge"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 2,
+    "price_display": "Free / from $8.99/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Consensus free",
+    "rating": 4.0,
+    "match_reasons": {
+      "research-knowledge": "Answers yes/no research questions by aggregating findings from thousands of peer-reviewed studies",
+      "low_technical": "Ask a factual question and see what the scientific literature actually says — Copilot meter included"
+    }
+  },
+  {
+    "id": "otter-ai",
+    "name": "Otter.ai",
+    "tagline": "AI meeting assistant that transcribes, summarises, and extracts action items in real time",
+    "category_badge": "Research & Knowledge",
+    "categories": [
+      "research-knowledge",
+      "workflow-automation",
+      "voice-audio"
+    ],
+    "technical_level": 1,
+    "focus": 4,
+    "work_style": 4,
+    "price_tier": 2,
+    "price_display": "Free / from $16.99/month",
+    "has_review": true,
+    "review_url": "/content/published/top-ai-tools-productivity-2026",
+    "affiliate_url": null,
+    "try_label": "Try Otter free",
+    "rating": 4.2,
+    "match_reasons": {
+      "research-knowledge": "Searchable transcripts turn every meeting into a knowledge base you can query later",
+      "workflow-automation": "Auto-joins Zoom, Meet, and Teams calls, then emails summaries and action items",
+      "voice-audio": "Real-time transcription with speaker identification for interviews and podcasts",
+      "low_technical": "Connect your calendar and Otter joins meetings automatically — zero manual work"
+    }
+  },
+  {
+    "id": "fireflies-ai",
+    "name": "Fireflies.ai",
+    "tagline": "AI meeting recorder that transcribes calls, tracks topics, and syncs with your CRM",
+    "category_badge": "Research & Knowledge",
+    "categories": [
+      "research-knowledge",
+      "workflow-automation"
+    ],
+    "technical_level": 1,
+    "focus": 5,
+    "work_style": 4,
+    "price_tier": 2,
+    "price_display": "Free / from $18/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Fireflies free",
+    "rating": 4.1,
+    "match_reasons": {
+      "research-knowledge": "Searchable meeting archive with AI-generated summaries, topics, and sentiment analysis",
+      "workflow-automation": "Auto-syncs meeting notes and action items to Salesforce, HubSpot, and Notion",
+      "low_technical": "Invite the Fireflies bot to your calendar and it handles everything automatically"
+    }
+  },
+  {
+    "id": "mem-ai",
+    "name": "Mem.ai",
+    "tagline": "AI-powered note-taking app that organises and surfaces your knowledge automatically",
+    "category_badge": "Research & Knowledge",
+    "categories": [
+      "research-knowledge"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 2,
+    "price_display": "Free / from $14.99/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Mem free",
+    "rating": 3.8,
+    "match_reasons": {
+      "research-knowledge": "Self-organising notes that surface related ideas and answer questions from your personal knowledge base",
+      "low_technical": "Just write notes — Mem's AI automatically tags, links, and retrieves them when relevant"
+    }
+  },
+  {
+    "id": "gamma",
+    "name": "Gamma",
+    "tagline": "AI presentation builder that turns ideas into polished decks, docs, and webpages",
+    "category_badge": "Research & Knowledge",
+    "categories": [
+      "research-knowledge",
+      "writing-content"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 3,
+    "price_tier": 2,
+    "price_display": "Free / from $10/month",
+    "has_review": true,
+    "review_url": "/content/published/gamma-ai-review-2026",
+    "affiliate_url": null,
+    "try_label": "Try Gamma free",
+    "rating": 4.2,
+    "match_reasons": {
+      "research-knowledge": "Turns research notes and documents into structured, visual presentations automatically",
+      "writing-content": "Generates fully designed slide decks, one-pagers, and webpages from a topic or outline",
+      "low_technical": "Type a topic and Gamma builds a complete, beautifully designed deck in under a minute"
+    }
+  },
+  {
+    "id": "zapier",
+    "name": "Zapier AI",
+    "tagline": "No-code automation platform connecting 7,000+ apps with AI-powered workflow building",
+    "category_badge": "Workflow & Automation",
+    "categories": [
+      "workflow-automation"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 3,
+    "price_tier": 3,
+    "price_display": "Free / from $19.99/month",
+    "has_review": true,
+    "review_url": "/content/published/2026-guide-ai-agents-automated-workflows",
+    "affiliate_url": null,
+    "try_label": "Try Zapier free",
+    "rating": 4.4,
+    "match_reasons": {
+      "workflow-automation": "Connect any combination of 7,000+ apps with if-this-then-that automations and AI agents",
+      "low_technical": "Describe what you want automated in plain English and Zapier builds the workflow",
+      "high_technical": "Code steps, webhooks, and API integrations for complex multi-step automations"
+    }
+  },
+  {
+    "id": "make",
+    "name": "Make",
+    "tagline": "Visual workflow automation platform with powerful branching and data transformation",
+    "category_badge": "Workflow & Automation",
+    "categories": [
+      "workflow-automation"
+    ],
+    "technical_level": 3,
+    "focus": 4,
+    "work_style": 3,
+    "price_tier": 2,
+    "price_display": "Free / from $9/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Make free",
+    "rating": 4.3,
+    "match_reasons": {
+      "workflow-automation": "Visual canvas for building complex automations with branching, loops, and data mapping",
+      "low_technical": "Drag-and-drop modules onto a visual canvas — more intuitive than writing automation rules",
+      "high_technical": "HTTP modules, JSON parsing, and iterators for handling complex API integrations"
+    }
+  },
+  {
+    "id": "n8n",
+    "name": "n8n",
+    "tagline": "Open-source workflow automation with AI agent capabilities you can self-host",
+    "category_badge": "Workflow & Automation",
+    "categories": [
+      "workflow-automation",
+      "coding-building"
+    ],
+    "technical_level": 4,
+    "focus": 4,
+    "work_style": 3,
+    "price_tier": 2,
+    "price_display": "Free (self-hosted) / from €24/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try n8n free",
+    "rating": 4.3,
+    "match_reasons": {
+      "workflow-automation": "Build complex automations with 400+ integrations and full AI agent workflows",
+      "coding-building": "Code nodes let you write custom JavaScript/Python logic inside visual workflows",
+      "high_technical": "Self-host for full data control, or use the cloud version with enterprise features"
+    }
+  },
+  {
+    "id": "bardeen",
+    "name": "Bardeen",
+    "tagline": "AI-powered browser automation that scrapes, syncs, and automates repetitive web tasks",
+    "category_badge": "Workflow & Automation",
+    "categories": [
+      "workflow-automation",
+      "data-reporting"
+    ],
+    "technical_level": 2,
+    "focus": 3,
+    "work_style": 2,
+    "price_tier": 3,
+    "price_display": "Free / from $20/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Bardeen free",
+    "rating": 3.9,
+    "match_reasons": {
+      "workflow-automation": "Chrome extension automates web tasks like scraping, data entry, and cross-app syncing",
+      "data-reporting": "Scrapes structured data from websites and syncs it to spreadsheets and CRMs",
+      "low_technical": "Show Bardeen what you do manually and it learns to repeat the task automatically"
+    }
+  },
+  {
+    "id": "relay",
+    "name": "Relay.app",
+    "tagline": "Collaborative workflow automation with built-in human-in-the-loop AI steps",
+    "category_badge": "Workflow & Automation",
+    "categories": [
+      "workflow-automation"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 4,
+    "price_tier": 3,
+    "price_display": "Free / from $19/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Relay free",
+    "rating": 3.8,
+    "match_reasons": {
+      "workflow-automation": "Automation workflows that pause for human approval or input before critical steps",
+      "low_technical": "Team-friendly interface with clear approval steps — no one gets surprised by automation"
+    }
+  },
+  {
+    "id": "lindy",
+    "name": "Lindy AI",
+    "tagline": "AI assistant builder that creates autonomous agents for email, scheduling, and sales",
+    "category_badge": "Workflow & Automation",
+    "categories": [
+      "workflow-automation"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 4,
+    "price_display": "From $49.99/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Lindy",
+    "rating": 3.7,
+    "match_reasons": {
+      "workflow-automation": "Build persistent AI agents that handle email triage, meeting scheduling, and CRM updates autonomously",
+      "low_technical": "Pre-built agent templates for common tasks — pick one and customise with natural language"
+    }
+  },
+  {
+    "id": "notion-ai",
+    "name": "Notion AI",
+    "tagline": "AI built into Notion for writing, Q&A across your workspace, and automated databases",
+    "category_badge": "Workflow & Automation",
+    "categories": [
+      "workflow-automation",
+      "writing-content",
+      "research-knowledge"
+    ],
+    "technical_level": 1,
+    "focus": 4,
+    "work_style": 4,
+    "price_tier": 3,
+    "price_display": "From $10/user/month (with AI)",
+    "has_review": true,
+    "review_url": "/content/published/notion-ai-review-2026",
+    "affiliate_url": null,
+    "try_label": "Try Notion AI",
+    "rating": 4.3,
+    "match_reasons": {
+      "workflow-automation": "AI autofills database properties, creates templates, and automates project tracking",
+      "writing-content": "Drafts, edits, and summarises content directly inside your Notion pages and docs",
+      "research-knowledge": "Q&A feature searches across your entire workspace and answers with linked sources",
+      "low_technical": "AI is built into the tool you already use — just type /ai in any Notion page"
+    }
+  },
+  {
+    "id": "monday-ai",
+    "name": "Monday AI",
+    "tagline": "AI assistant inside Monday.com for project updates, content generation, and task automation",
+    "category_badge": "Workflow & Automation",
+    "categories": [
+      "workflow-automation"
+    ],
+    "technical_level": 1,
+    "focus": 5,
+    "work_style": 5,
+    "price_tier": 3,
+    "price_display": "From $12/user/month (includes AI credits)",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Monday free",
+    "rating": 3.9,
+    "match_reasons": {
+      "workflow-automation": "AI generates project updates, writes task summaries, and automates board actions inside Monday.com",
+      "low_technical": "AI features appear right where you manage projects — no switching between tools"
+    }
+  },
+  {
+    "id": "julius-ai",
+    "name": "Julius AI",
+    "tagline": "AI data analyst that turns spreadsheets into charts, insights, and reports via chat",
+    "category_badge": "Data & Reporting",
+    "categories": [
+      "data-reporting"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 2,
+    "price_tier": 3,
+    "price_display": "Free / from $20/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Julius free",
+    "rating": 4.1,
+    "match_reasons": {
+      "data-reporting": "Upload a CSV or Excel file, ask questions in plain English, and get charts and statistical analysis",
+      "low_technical": "No formulas or code needed — just chat with your data and get visual answers"
+    }
+  },
+  {
+    "id": "chatcsv",
+    "name": "ChatCSV",
+    "tagline": "Free AI tool for asking plain-English questions about your CSV data",
+    "category_badge": "Data & Reporting",
+    "categories": [
+      "data-reporting"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 1,
+    "price_tier": 1,
+    "price_display": "Free",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try ChatCSV free",
+    "rating": 3.5,
+    "match_reasons": {
+      "data-reporting": "Upload a CSV and ask questions — get instant answers without writing SQL or Python",
+      "low_technical": "Completely free and zero-setup — just upload and ask"
+    }
+  },
+  {
+    "id": "obviously-ai",
+    "name": "Obviously AI",
+    "tagline": "No-code machine learning platform that builds predictive models from your spreadsheet data",
+    "category_badge": "Data & Reporting",
+    "categories": [
+      "data-reporting"
+    ],
+    "technical_level": 2,
+    "focus": 5,
+    "work_style": 3,
+    "price_tier": 5,
+    "price_display": "From $75/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Obviously AI",
+    "rating": 3.8,
+    "match_reasons": {
+      "data-reporting": "Upload data, pick a prediction target, and get an ML model with accuracy metrics — no code required",
+      "low_technical": "Point-and-click machine learning that makes predictions accessible to business analysts"
+    }
+  },
+  {
+    "id": "tableau-ai",
+    "name": "Tableau AI",
+    "tagline": "AI-powered analytics inside Tableau for automated insights, predictions, and natural language queries",
+    "category_badge": "Data & Reporting",
+    "categories": [
+      "data-reporting"
+    ],
+    "technical_level": 3,
+    "focus": 5,
+    "work_style": 5,
+    "price_tier": 5,
+    "price_display": "From $15/user/month + Tableau+ for AI",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Tableau",
+    "rating": 4.2,
+    "match_reasons": {
+      "data-reporting": "Tableau Pulse delivers AI-driven metric insights and natural language data exploration at enterprise scale",
+      "high_technical": "Einstein AI layer for advanced predictions, anomaly detection, and automated dashboard narratives"
+    }
+  },
+  {
+    "id": "copilot-excel",
+    "name": "Microsoft Copilot for Excel",
+    "tagline": "AI assistant inside Excel that creates formulas, pivot tables, and charts from natural language",
+    "category_badge": "Data & Reporting",
+    "categories": [
+      "data-reporting"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 4,
+    "price_tier": 3,
+    "price_display": "From $18/user/month (M365 Copilot add-on)",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Copilot for Excel",
+    "rating": 4.0,
+    "match_reasons": {
+      "data-reporting": "Ask Excel to create formulas, pivot tables, and charts in plain English — it writes them for you",
+      "low_technical": "Type what you want to know about your data and Copilot handles the spreadsheet mechanics"
+    }
+  },
+  {
+    "id": "gemini-sheets",
+    "name": "Gemini for Google Sheets",
+    "tagline": "Google's AI assistant inside Sheets for formula help, data organisation, and analysis",
+    "category_badge": "Data & Reporting",
+    "categories": [
+      "data-reporting"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 3,
+    "price_tier": 2,
+    "price_display": "Free (limited) / from $7/user/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Gemini for Sheets",
+    "rating": 3.8,
+    "match_reasons": {
+      "data-reporting": "AI sidebar in Google Sheets that generates formulas, summarises data, and creates charts",
+      "low_technical": "Works inside the Sheets you already use — ask questions in the AI sidebar"
+    }
+  },
+  {
+    "id": "rows-ai",
+    "name": "Rows AI",
+    "tagline": "AI-native spreadsheet that analyses data, builds dashboards, and generates reports from chat",
+    "category_badge": "Data & Reporting",
+    "categories": [
+      "data-reporting"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 3,
+    "price_tier": 2,
+    "price_display": "Free / from $15/user/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Rows free",
+    "rating": 4.0,
+    "match_reasons": {
+      "data-reporting": "AI Analyst chat creates charts, pivot tables, and dashboards from your spreadsheet data automatically",
+      "low_technical": "Chat with your spreadsheet data and get instant visualisations — no formulas required"
+    }
+  },
+  {
+    "id": "superhuman",
+    "name": "Superhuman",
+    "tagline": "AI-powered email client that drafts replies, triages your inbox, and keeps you at zero",
+    "category_badge": "Workflow & Automation",
+    "categories": [
+      "workflow-automation",
+      "writing-content"
+    ],
+    "technical_level": 1,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 4,
+    "price_display": "From $30/month",
+    "has_review": true,
+    "review_url": "/content/published/top-ai-tools-productivity-2026",
+    "affiliate_url": null,
+    "try_label": "Try Superhuman",
+    "rating": 4.3,
+    "match_reasons": {
+      "workflow-automation": "AI triage prioritises emails, auto-drafts replies, and learns your communication patterns",
+      "writing-content": "AI writes email replies in your tone and style based on your previous messages",
+      "low_technical": "Keyboard-driven workflow with AI suggestions that feel natural — minimal learning curve"
+    }
+  },
+  {
+    "id": "pictory",
+    "name": "Pictory",
+    "tagline": "AI video creator that turns blog posts and scripts into professional short videos",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video",
+      "writing-content"
+    ],
+    "technical_level": 1,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 4,
+    "price_display": "From $39/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-video-generators-2026",
+    "affiliate_url": null,
+    "try_label": "Try Pictory",
+    "rating": 3.9,
+    "match_reasons": {
+      "images-video": "Converts long-form articles and scripts into short, branded videos with stock footage and captions",
+      "writing-content": "Repurposes written content into video format for social media distribution",
+      "low_technical": "Paste a URL or script and Pictory creates a branded video — no editing skills required"
+    }
+  },
+  {
+    "id": "invideo",
+    "name": "InVideo",
+    "tagline": "AI video editor for creating social media videos, ads, and marketing content from prompts",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video"
+    ],
+    "technical_level": 1,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 3,
+    "price_display": "Free / from $25/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-video-generators-2026",
+    "affiliate_url": null,
+    "try_label": "Try InVideo free",
+    "rating": 4.0,
+    "match_reasons": {
+      "images-video": "AI generates complete videos with scenes, transitions, voiceover, and music from a text prompt",
+      "low_technical": "Describe your video idea and InVideo creates it with stock footage and branding in minutes"
+    }
+  },
+  {
+    "id": "opusclip",
+    "name": "OpusClip",
+    "tagline": "AI tool that finds the best moments in long videos and creates viral short clips",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video",
+      "voice-audio"
+    ],
+    "technical_level": 1,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free / from $15/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-video-editing-tools-2026",
+    "affiliate_url": null,
+    "try_label": "Try OpusClip free",
+    "rating": 4.1,
+    "match_reasons": {
+      "images-video": "AI identifies the most engaging moments in long videos and reformats them as vertical shorts",
+      "voice-audio": "Auto-generates captions and highlights key audio moments for podcast clip creation",
+      "low_technical": "Paste a YouTube link and get ready-to-post short clips in minutes — fully automated"
+    }
+  },
+  {
+    "id": "castmagic",
+    "name": "Castmagic",
+    "tagline": "AI content engine that turns podcast episodes into show notes, clips, and social posts",
+    "category_badge": "Voice & Audio",
+    "categories": [
+      "voice-audio",
+      "writing-content"
+    ],
+    "technical_level": 1,
+    "focus": 4,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "From $9/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-tools-for-podcasters-2026",
+    "affiliate_url": null,
+    "try_label": "Try Castmagic",
+    "rating": 4.0,
+    "match_reasons": {
+      "voice-audio": "Transcribes podcast episodes and generates timestamps, chapters, and key quotes automatically",
+      "writing-content": "Creates full show notes, blog posts, newsletters, and social posts from each episode",
+      "low_technical": "Upload an episode and get a complete content package — show notes, clips, and social posts"
+    }
+  }
+]
