@@ -6,4 +6,7 @@ Disallow: /scripts/
 Disallow: /node_modules/
 Disallow: /.claude/
 
+# LLMs
+LLM-Friendly: /llms.txt
+
 Sitemap: https://talentedatai.com/sitemap.xml
