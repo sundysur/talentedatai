@@ -1,0 +1,24 @@
+# Blog prefix redirects (GSC 404s)
+/blog/elevenlabs-vs-murf-vs-descript-2026 /content/published/elevenlabs-vs-murf-vs-descript-2026 301
+/blog/how-to-use-ai-for-content-marketing-2026 /content/published/how-to-use-ai-for-content-marketing-2026 301
+/blog/top-ai-tools-productivity-2026 /content/published/top-ai-tools-productivity-2026 301
+/blog/best-ai-video-generators-2026 /content/published/best-ai-video-generators-2026 301
+/blog/claude-managed-agents-2026 /content/published/claude-managed-agents-2026 301
+/blog/elevenlabs-review-2026 /content/published/elevenlabs-review-2026 301
+/blog/chatgpt-vs-claude-2026 /content/published/chatgpt-vs-claude-2026 301
+/blog/perplexity-ai-review-2026 /content/published/perplexity-ai-review-2026 301
+/blog/google-gemma-4-complete-guide-2026 /content/published/google-gemma-4-complete-guide-2026 301
+/blog/how-to-run-gemma-4-on-android-2026 /content/published/how-to-run-gemma-4-on-android-2026 301
+/blog/best-ai-writing-tools-bloggers /content/published/best-ai-writing-tools-bloggers 301
+/blog/best-ai-tools-for-students-2026 /content/published/best-ai-tools-for-students-2026 301
+/blog/how-to-get-started-with-ai-beginners-guide-2026 /content/published/how-to-get-started-with-ai-beginners-guide-2026 301
+/blog/* /content/published/:splat 301
+
+# Top-level slug redirects (missing /content/published/ prefix)
+/vibe-coding-tools-2026 /content/published/vibe-coding-tools-2026 301
+/chatgpt-vs-claude-2026 /content/published/chatgpt-vs-claude-2026 301
+/best-ai-writing-tools-bloggers /content/published/best-ai-writing-tools-bloggers 301
+
+# Affiliate placeholder redirects (crawled broken URLs)
+/content/published/CASTMAGIC_AFFILIATE_LINK /content/published/best-ai-tools-for-podcasters-2026 301
+/content/published/DESCRIPT_AFFILIATE_LINK /content/published/best-ai-video-editing-tools-2026 301
