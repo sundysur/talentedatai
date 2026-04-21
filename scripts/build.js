@@ -361,19 +361,19 @@ for (const file of mdFiles) {
     .article-body td{padding:12px 16px;border-bottom:1px solid var(--gray-200);color:#2a2a28}
     .article-body tr:last-child td{border-bottom:none}
     /* FOOTER */
-    .footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:64px 24px 32px}
+    .footer{background:#0d0d1a;color:rgba(255,255,255,0.7);padding:64px 24px 32px}
     .footer__inner{max-width:1200px;margin:0 auto}
     .footer__top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
     .footer__brand-logo{margin-bottom:14px}
     .footer__brand-desc{font-size:14px;line-height:1.7;max-width:280px}
-    .footer__col-title{font-family:var(--font-head);font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px}
+    .footer__col-title{font-family:var(--font-head);font-size:13px;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px}
     .footer__links{list-style:none;display:flex;flex-direction:column;gap:12px}
-    .footer__links a{font-size:14px;color:rgba(255,255,255,0.55);transition:color var(--transition);text-decoration:none}
-    .footer__links a:hover{color:#fff}
+    .footer__links a{font-size:14px;color:rgba(255,255,255,0.8);transition:color 200ms ease;text-decoration:none}
+    .footer__links a:hover{color:#C8E65A}
     .footer__bottom{display:flex;align-items:center;justify-content:space-between;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);font-size:13px}
     .footer__bottom-links{display:flex;gap:24px}
-    .footer__bottom-links a{color:rgba(255,255,255,0.4);transition:color var(--transition);text-decoration:none}
-    .footer__bottom-links a:hover{color:#fff}
+    .footer__bottom-links a{color:rgba(255,255,255,0.4);transition:color 200ms ease;text-decoration:none}
+    .footer__bottom-links a:hover{color:#C8E65A}
     @media(max-width:1024px){.footer__top{grid-template-columns:1fr 1fr}}
     @media(max-width:768px){.footer__top{grid-template-columns:1fr}.footer__bottom{flex-direction:column;gap:16px;text-align:center}}
     @media(max-width:640px){.article-hero{padding:40px 20px 32px}.article-body{padding:32px 20px 64px}}
