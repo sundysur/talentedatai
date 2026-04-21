@@ -17,7 +17,7 @@
   <meta name="twitter:image" content="https://talentedatai.com/static/images/articles/ai-agents-header.jpg">
   <link rel="canonical" href="https://talentedatai.com/" />
   <!-- LCP preload -->
-  <link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesrcset="/static/images/articles/best-ai-seo-tools-2026-400w.webp 400w, /static/images/articles/best-ai-seo-tools-2026-800w.webp 800w, /static/images/articles/best-ai-seo-tools-2026.webp 1600w" imagesizes="(max-width: 768px) 400px, (max-width: 1200px) 800px, 800px">
+  <link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesrcset="/static/images/articles/claude-code-vs-codex-vs-cursor-vs-copilot-2026-400w.webp 400w, /static/images/articles/claude-code-vs-codex-vs-cursor-vs-copilot-2026-800w.webp 800w, /static/images/articles/claude-code-vs-codex-vs-cursor-vs-copilot-2026.webp 1600w" imagesizes="(max-width: 768px) 400px, (max-width: 1200px) 800px, 800px">
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="64x64" href="/static/images/favicon-64.png">
   <link rel="icon" type="image/png" sizes="256x256" href="/static/images/favicon-256.png">
@@ -403,16 +403,10 @@
     [data-theme="dark"] .article-card__read-time,[data-theme="dark"] .compact-card__read-time,[data-theme="dark"] .compact-card__date,[data-theme="dark"] .secondary-card__meta,[data-theme="dark"] .feed-card__meta span,[data-theme="dark"] .sidebar-pick__meta,[data-theme="dark"] .featured-card__meta,[data-theme="dark"] .author__name{color:#9999bb}
     [data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3{color:#f0f0ff}
     body{transition:background-color 200ms ease,color 200ms ease}
-    .cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e2d4a;border-top:none;padding:16px 24px;z-index:9999;box-shadow:0 -4px 32px rgba(0,0,0,0.3);display:none}
-    .cookie-banner.visible{display:block}
-    .cookie-banner__inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-    .cookie-banner__text{font-family:var(--font-body);font-size:14px;color:#e0e0f0;margin:0}
-    .cookie-banner__text a{color:#7db8ff;text-decoration:underline}
-    .cookie-banner__actions{display:flex;gap:12px;flex-shrink:0}
-    .cookie-banner__decline{font-family:var(--font-body);font-size:13px;font-weight:400;padding:8px 16px;border-radius:var(--radius, 8px);border:none;background:transparent;color:rgba(255,255,255,0.4);cursor:pointer;text-decoration:underline;transition:color 200ms ease}
-    .cookie-banner__decline:hover{color:rgba(255,255,255,0.7)}
-    .cookie-banner__accept{font-family:var(--font-body);font-size:14px;font-weight:600;padding:8px 24px;border-radius:var(--radius, 8px);border:none;background:#0E3B2E;color:#fff;cursor:pointer;transition:opacity 200ms ease}
-    .cookie-banner__accept:hover{opacity:0.9}
+    #cookie-notice{position:fixed;bottom:0;left:0;right:0;background:#0E3B2E;color:rgba(255,255,255,0.85);font-size:0.8rem;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:9999}
+    #cookie-notice a{color:#C8E65A;text-decoration:underline}
+    #cookie-notice button{background:none;border:none;color:white;font-size:1.2rem;cursor:pointer;padding:0 4px;opacity:0.7;flex-shrink:0}
+    #cookie-notice button:hover{opacity:1}
   </style>
 <script type="application/ld+json">
 {
@@ -502,7 +496,7 @@
     <div class="hero-bar__inner">
       <h1 class="hero-bar__headline">Practical guides. Honest reviews. No hype.</h1>
       <div class="hero-stats">
-        <span class="hero-stat"><strong>34</strong> articles published</span>
+        <span class="hero-stat"><strong>35</strong> articles published</span>
         <span class="hero-stat-divider">·</span>
         <span class="hero-stat"><strong>0</strong> sponsored reviews</span>
         <span class="hero-stat-divider">·</span>
@@ -1198,71 +1192,39 @@
   document.addEventListener('DOMContentLoaded',function(){var cb=document.getElementById('theme-toggle');if(cb)cb.checked=(document.documentElement.getAttribute('data-theme')==='dark')});
 </script>
 
-<div class="cookie-banner" id="cookie-banner">
-  <div class="cookie-banner__inner">
-    <p class="cookie-banner__text">
-      We use cookies to analyse traffic and improve your experience.
-      <a href="/privacy-policy.html">Privacy Policy</a>
-    </p>
-    <div class="cookie-banner__actions">
-      <button class="cookie-banner__decline" onclick="cookieDecline()">Decline</button>
-      <button class="cookie-banner__accept" onclick="cookieAccept()">Accept</button>
-    </div>
-  </div>
+<!-- GA4 — loads unconditionally -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SYQ40F2CXQ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SYQ40F2CXQ');
+</script>
+
+<div id="cookie-notice" style="display:none;">
+  <p>We use analytics to improve this site. No personal data is sold. <a href="/privacy-policy.html">Privacy Policy</a> · <a href="#" onclick="optOutAnalytics(); return false;">Opt out</a></p>
+  <button onclick="dismissCookieNotice()" aria-label="Close">×</button>
 </div>
 <script>
-function cookieAccept() {
-  localStorage.setItem('cookie_consent', 'accepted');
-  document.getElementById('cookie-banner').classList.remove('visible');
-  loadAnalytics();
-  loadAdSense();
+function dismissCookieNotice() {
+  document.getElementById('cookie-notice').style.display = 'none';
+  localStorage.setItem('cookie-notice-dismissed', '1');
 }
-function cookieDecline() {
-  localStorage.setItem('cookie_consent', 'declined');
-  document.getElementById('cookie-banner').classList.remove('visible');
-  loadAdSenseNonPersonalised();
+function optOutAnalytics() {
+  window['ga-disable-G-SYQ40F2CXQ'] = true;
+  localStorage.setItem('ga-opt-out', '1');
+  localStorage.setItem('cookie-notice-dismissed', '1');
+  document.getElementById('cookie-notice').style.display = 'none';
+  alert('Analytics disabled for this browser.');
 }
-function loadAnalytics() {
-  const s = document.createElement('script');
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SYQ40F2CXQ';
-  s.async = true;
-  document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag = gtag;
-  gtag('js', new Date());
-  gtag('config', 'G-SYQ40F2CXQ');
-}
-function loadAdSense() {
-  const s = document.createElement('script');
-  s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3277838203710267';
-  s.async = true;
-  s.crossOrigin = 'anonymous';
-  document.head.appendChild(s);
-}
-function loadAdSenseNonPersonalised() {
-  const s = document.createElement('script');
-  s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3277838203710267';
-  s.async = true;
-  s.crossOrigin = 'anonymous';
-  document.head.appendChild(s);
-  window.adsbygoogle = window.adsbygoogle || [];
-  (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
-}
-(function() {
-  const consent = localStorage.getItem('cookie_consent');
-  if (consent === 'accepted') {
-    loadAnalytics();
-    loadAdSense();
-  } else if (consent === 'declined') {
-    loadAdSenseNonPersonalised();
-  } else {
-    document.addEventListener('DOMContentLoaded', function() {
-      const banner = document.getElementById('cookie-banner');
-      if (banner) banner.classList.add('visible');
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem('ga-opt-out') === '1') {
+    window['ga-disable-G-SYQ40F2CXQ'] = true;
   }
-})();
+  if (!localStorage.getItem('cookie-notice-dismissed')) {
+    document.getElementById('cookie-notice').style.display = 'flex';
+  }
+});
 </script>
 
 </body>
