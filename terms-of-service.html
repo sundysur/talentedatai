@@ -184,9 +184,6 @@
     [data-theme="dark"] .article-card__read-time,[data-theme="dark"] .compact-card__read-time,[data-theme="dark"] .compact-card__date,[data-theme="dark"] .secondary-card__meta,[data-theme="dark"] .feed-card__meta span,[data-theme="dark"] .sidebar-pick__meta,[data-theme="dark"] .featured-card__meta,[data-theme="dark"] .author__name{color:#9999bb}
     [data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3{color:#f0f0ff}
     body{transition:background-color 200ms ease,color 200ms ease}
-    #cookie-notice{position:fixed;bottom:0;left:0;right:0;background:#0E3B2E;color:rgba(255,255,255,0.85);font-size:0.8rem;padding:10px 24px;z-index:9999}
-    #cookie-notice a{color:#C8E65A;text-decoration:underline}
-    .cookie-notice-inner{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
     .content a{color:#0E3B2E}
     .content a:hover{color:#1a5c45}
     [data-theme="dark"] .content a{color:#C8E65A}
@@ -280,7 +277,7 @@
   <p>The Site contains links to third-party websites, products, and services. These links are provided for convenience and reference only. We do not control, endorse, or assume responsibility for the content, privacy practices, or terms of any third-party site. Visiting a linked site is at your own risk, and we encourage you to review the terms and privacy policies of any site you visit.</p>
 
   <h2>8. Privacy and Cookies</h2>
-  <p>Your use of the Site is also governed by our <a href="/privacy-policy.html">Privacy Policy</a>, which explains how we collect, use, and protect your information. We use Google Analytics for traffic analysis and Google AdSense for advertising, both subject to your cookie consent. By using the Site, you acknowledge that you have read and understood our Privacy Policy.</p>
+  <p>Your use of the Site is also governed by our <a href="/privacy-policy.html">Privacy Policy</a>, which explains how we collect, use, and protect your information. We use Google Analytics 4 in cookieless mode for traffic analysis and may use Google AdSense for advertising. By using the Site, you acknowledge that you have read and understood our Privacy Policy.</p>
 
   <h2>9. Newsletter and Communications</h2>
   <p>If you subscribe to our newsletter, you consent to receiving periodic emails from us containing articles, recommendations, and updates. Our newsletter is managed through Mailchimp. You can unsubscribe at any time using the link included in every email. We will never sell, share, or rent your email address to third parties.</p>
@@ -428,43 +425,15 @@
   document.addEventListener('DOMContentLoaded',function(){var cb=document.getElementById('theme-toggle');if(cb)cb.checked=(document.documentElement.getAttribute('data-theme')==='dark')});
 </script>
 
-<!-- GA4 — loads unconditionally -->
+<!-- GA4 — cookieless, anonymised -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYQ40F2CXQ"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-SYQ40F2CXQ');
-</script>
-
-<div id="cookie-notice" style="display:none;">
-  <div class="cookie-notice-inner">
-    <p>We use anonymous analytics to improve this site. No cookies, no tracking across sites. <a href="/privacy-policy.html">Privacy Policy</a></p>
-    <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
-      <a href="#" onclick="optOutAnalytics(); return false;" style="color:#C8E65A;font-size:0.8rem;text-decoration:underline;white-space:nowrap;">Opt out</a>
-      <button onclick="dismissCookieNotice()" style="background:#C8E65A;color:#0E3B2E;border:none;padding:6px 16px;border-radius:6px;font-size:0.8rem;font-weight:600;cursor:pointer;white-space:nowrap;">OK</button>
-    </div>
-  </div>
-</div>
-<script>
-function dismissCookieNotice() {
-  document.getElementById('cookie-notice').style.display = 'none';
-  localStorage.setItem('cookie-notice-dismissed', '1');
-}
-function optOutAnalytics() {
-  window['ga-disable-G-SYQ40F2CXQ'] = true;
-  localStorage.setItem('ga-opt-out', '1');
-  localStorage.setItem('cookie-notice-dismissed', '1');
-  document.getElementById('cookie-notice').style.display = 'none';
-  alert('Analytics disabled for this browser.');
-}
-document.addEventListener('DOMContentLoaded', function() {
-  if (localStorage.getItem('ga-opt-out') === '1') {
-    window['ga-disable-G-SYQ40F2CXQ'] = true;
-  }
-  if (!localStorage.getItem('cookie-notice-dismissed')) {
-    document.getElementById('cookie-notice').style.display = 'flex';
-  }
+gtag('config', 'G-SYQ40F2CXQ', {
+  client_storage: 'none',
+  anonymize_ip: true
 });
 </script>
 

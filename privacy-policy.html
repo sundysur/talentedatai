@@ -184,9 +184,6 @@
     [data-theme="dark"] .article-card__read-time,[data-theme="dark"] .compact-card__read-time,[data-theme="dark"] .compact-card__date,[data-theme="dark"] .secondary-card__meta,[data-theme="dark"] .feed-card__meta span,[data-theme="dark"] .sidebar-pick__meta,[data-theme="dark"] .featured-card__meta,[data-theme="dark"] .author__name{color:#9999bb}
     [data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3{color:#f0f0ff}
     body{transition:background-color 200ms ease,color 200ms ease}
-    #cookie-notice{position:fixed;bottom:0;left:0;right:0;background:#0E3B2E;color:rgba(255,255,255,0.85);font-size:0.8rem;padding:10px 24px;z-index:9999}
-    #cookie-notice a{color:#C8E65A;text-decoration:underline}
-    .cookie-notice-inner{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
     .content a{color:#0E3B2E}
     .content a:hover{color:#1a5c45}
     [data-theme="dark"] .content a{color:#C8E65A}
@@ -261,8 +258,7 @@
   <h2>1. Information we collect</h2>
   <p>We may collect the following types of information:</p>
   <ul>
-    <li><strong>Usage data:</strong> Pages visited, time spent on the Site, browser type, device type, and referring URLs — collected automatically via Google Analytics.</li>
-    <li><strong>Cookies:</strong> Small files placed on your device by us or third-party services to help operate the Site and understand how it is used.</li>
+    <li><strong>Usage data:</strong> Pages visited, time spent on the Site, browser type, device type, and referring URLs — collected automatically via cookieless Google Analytics 4. No cookies are set and IP addresses are anonymised.</li>
     <li><strong>Contact information:</strong> If you contact us via email, we collect your name and email address solely to respond to your enquiry.</li>
   </ul>
   <p>We do not collect sensitive personal data such as financial information, government ID numbers, or health data.</p>
@@ -271,12 +267,12 @@
   <ul>
     <li>To operate and improve the Site</li>
     <li>To understand how visitors use the Site via analytics</li>
-    <li>To serve relevant advertisements via Google AdSense</li>
+    <li>To display advertisements via Google AdSense (if applicable)</li>
     <li>To respond to enquiries you send us</li>
   </ul>
 
   <h2>3. Google Analytics</h2>
-  <p>We use Google Analytics to collect anonymised data about how visitors use the Site. Google Analytics uses cookies to collect this information. You can opt out by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+  <p>We use cookieless, anonymised analytics (Google Analytics 4 in cookieless mode) to understand how visitors use this site. No cookies are set, no personal data is collected, and IP addresses are anonymised. No consent is required.</p>
 
   <h2>4. Google AdSense</h2>
   <p>We use Google AdSense to display advertisements on the Site. Google may use cookies and similar technologies to show you ads based on your prior visits to this and other websites. You can opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a> or <a href="https://www.aboutads.info" target="_blank" rel="noopener">aboutads.info</a>.</p>
@@ -285,13 +281,7 @@
   <p>Some links on this Site are affiliate links. This means we may earn a commission if you click through and make a purchase, at no additional cost to you. We only recommend products and services we believe are genuinely useful. Affiliate relationships never influence our editorial content or rankings.</p>
 
   <h2>6. Cookies</h2>
-  <p>We use the following types of cookies:</p>
-  <ul>
-    <li><strong>Essential cookies:</strong> Required for the Site to function correctly.</li>
-    <li><strong>Analytics cookies:</strong> Used by Google Analytics to understand Site usage.</li>
-    <li><strong>Advertising cookies:</strong> Used by Google AdSense to serve relevant ads.</li>
-  </ul>
-  <p>You can control cookies through your browser settings. Note that disabling cookies may affect the functionality of the Site.</p>
+  <p>This Site does not set analytics cookies. Google Analytics 4 runs in cookieless mode — no tracking cookies are placed on your device. If Google AdSense is enabled in the future, it may use cookies to serve relevant ads; you can opt out of personalised advertising via <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a>. You may also use your browser settings to manage any cookies from third-party services.</p>
 
   <h2>7. Third-party links</h2>
   <p>The Site may contain links to third-party websites. We are not responsible for the privacy practices or content of those sites and encourage you to review their privacy policies before providing any personal information.</p>
@@ -445,43 +435,15 @@
   document.addEventListener('DOMContentLoaded',function(){var cb=document.getElementById('theme-toggle');if(cb)cb.checked=(document.documentElement.getAttribute('data-theme')==='dark')});
 </script>
 
-<!-- GA4 — loads unconditionally -->
+<!-- GA4 — cookieless, anonymised -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYQ40F2CXQ"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-SYQ40F2CXQ');
-</script>
-
-<div id="cookie-notice" style="display:none;">
-  <div class="cookie-notice-inner">
-    <p>We use anonymous analytics to improve this site. No cookies, no tracking across sites. <a href="/privacy-policy.html">Privacy Policy</a></p>
-    <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
-      <a href="#" onclick="optOutAnalytics(); return false;" style="color:#C8E65A;font-size:0.8rem;text-decoration:underline;white-space:nowrap;">Opt out</a>
-      <button onclick="dismissCookieNotice()" style="background:#C8E65A;color:#0E3B2E;border:none;padding:6px 16px;border-radius:6px;font-size:0.8rem;font-weight:600;cursor:pointer;white-space:nowrap;">OK</button>
-    </div>
-  </div>
-</div>
-<script>
-function dismissCookieNotice() {
-  document.getElementById('cookie-notice').style.display = 'none';
-  localStorage.setItem('cookie-notice-dismissed', '1');
-}
-function optOutAnalytics() {
-  window['ga-disable-G-SYQ40F2CXQ'] = true;
-  localStorage.setItem('ga-opt-out', '1');
-  localStorage.setItem('cookie-notice-dismissed', '1');
-  document.getElementById('cookie-notice').style.display = 'none';
-  alert('Analytics disabled for this browser.');
-}
-document.addEventListener('DOMContentLoaded', function() {
-  if (localStorage.getItem('ga-opt-out') === '1') {
-    window['ga-disable-G-SYQ40F2CXQ'] = true;
-  }
-  if (!localStorage.getItem('cookie-notice-dismissed')) {
-    document.getElementById('cookie-notice').style.display = 'flex';
-  }
+gtag('config', 'G-SYQ40F2CXQ', {
+  client_storage: 'none',
+  anonymize_ip: true
 });
 </script>
 

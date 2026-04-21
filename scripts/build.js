@@ -493,9 +493,6 @@ for (const file of mdFiles) {
     .feedback-widget__thanks{font-size:0.9rem;color:#0E3B2E;font-weight:500;display:none}
     [data-theme="dark"] .feedback-widget__thanks{color:#C8E65A}
     body{transition:background-color 200ms ease,color 200ms ease}
-    #cookie-notice{position:fixed;bottom:0;left:0;right:0;background:#0E3B2E;color:rgba(255,255,255,0.85);font-size:0.8rem;padding:10px 24px;z-index:9999}
-    #cookie-notice a{color:#C8E65A;text-decoration:underline}
-    .cookie-notice-inner{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
     </style>
 </head>
 <body>
@@ -881,43 +878,15 @@ async function submitFeedback(vote) {
 loadFeedbackCounts();
 </script>
 
-<!-- GA4 — loads unconditionally -->
+<!-- GA4 — cookieless, anonymised -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${GA_ID}');
-</script>
-
-<div id="cookie-notice" style="display:none;">
-  <div class="cookie-notice-inner">
-    <p>We use anonymous analytics to improve this site. No cookies, no tracking across sites. <a href="/privacy-policy.html">Privacy Policy</a></p>
-    <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
-      <a href="#" onclick="optOutAnalytics(); return false;" style="color:#C8E65A;font-size:0.8rem;text-decoration:underline;white-space:nowrap;">Opt out</a>
-      <button onclick="dismissCookieNotice()" style="background:#C8E65A;color:#0E3B2E;border:none;padding:6px 16px;border-radius:6px;font-size:0.8rem;font-weight:600;cursor:pointer;white-space:nowrap;">OK</button>
-    </div>
-  </div>
-</div>
-<script>
-function dismissCookieNotice() {
-  document.getElementById('cookie-notice').style.display = 'none';
-  localStorage.setItem('cookie-notice-dismissed', '1');
-}
-function optOutAnalytics() {
-  window['ga-disable-${GA_ID}'] = true;
-  localStorage.setItem('ga-opt-out', '1');
-  localStorage.setItem('cookie-notice-dismissed', '1');
-  document.getElementById('cookie-notice').style.display = 'none';
-  alert('Analytics disabled for this browser.');
-}
-document.addEventListener('DOMContentLoaded', function() {
-  if (localStorage.getItem('ga-opt-out') === '1') {
-    window['ga-disable-${GA_ID}'] = true;
-  }
-  if (!localStorage.getItem('cookie-notice-dismissed')) {
-    document.getElementById('cookie-notice').style.display = 'flex';
-  }
+gtag('config', '${GA_ID}', {
+  client_storage: 'none',
+  anonymize_ip: true
 });
 </script>
 
