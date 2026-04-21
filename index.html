@@ -403,10 +403,9 @@
     [data-theme="dark"] .article-card__read-time,[data-theme="dark"] .compact-card__read-time,[data-theme="dark"] .compact-card__date,[data-theme="dark"] .secondary-card__meta,[data-theme="dark"] .feed-card__meta span,[data-theme="dark"] .sidebar-pick__meta,[data-theme="dark"] .featured-card__meta,[data-theme="dark"] .author__name{color:#9999bb}
     [data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3{color:#f0f0ff}
     body{transition:background-color 200ms ease,color 200ms ease}
-    #cookie-notice{position:fixed;bottom:0;left:0;right:0;background:#0E3B2E;color:rgba(255,255,255,0.85);font-size:0.8rem;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:9999}
+    #cookie-notice{position:fixed;bottom:0;left:0;right:0;background:#0E3B2E;color:rgba(255,255,255,0.85);font-size:0.8rem;padding:10px 24px;z-index:9999}
     #cookie-notice a{color:#C8E65A;text-decoration:underline}
-    #cookie-notice button{background:none;border:none;color:white;font-size:1.2rem;cursor:pointer;padding:0 4px;opacity:0.7;flex-shrink:0}
-    #cookie-notice button:hover{opacity:1}
+    .cookie-notice-inner{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
   </style>
 <script type="application/ld+json">
 {
@@ -1202,8 +1201,13 @@ gtag('config', 'G-SYQ40F2CXQ');
 </script>
 
 <div id="cookie-notice" style="display:none;">
-  <p>We use analytics to improve this site. No personal data is sold. <a href="/privacy-policy.html">Privacy Policy</a> · <a href="#" onclick="optOutAnalytics(); return false;">Opt out</a></p>
-  <button onclick="dismissCookieNotice()" aria-label="Close">×</button>
+  <div class="cookie-notice-inner">
+    <p>We use analytics to improve this site. No personal data is sold. <a href="/privacy-policy.html">Privacy Policy</a></p>
+    <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+      <a href="#" onclick="optOutAnalytics(); return false;" style="color:#C8E65A;font-size:0.8rem;text-decoration:underline;white-space:nowrap;">Opt out</a>
+      <button onclick="dismissCookieNotice()" style="background:#C8E65A;color:#0E3B2E;border:none;padding:6px 16px;border-radius:6px;font-size:0.8rem;font-weight:600;cursor:pointer;white-space:nowrap;">OK</button>
+    </div>
+  </div>
 </div>
 <script>
 function dismissCookieNotice() {
