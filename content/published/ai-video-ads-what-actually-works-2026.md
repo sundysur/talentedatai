@@ -518,7 +518,7 @@ The brands handling this well share a common trait: they treat AI as a productio
   <text x="108" y="204" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" opacity="0.7">variants from prompts,</text>
   <text x="108" y="218" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" opacity="0.7">URLs, or storyboards</text>
   <!-- Arrow 1→2 -->
-  <polygon points="195,120 220,110 220,115 240,115 240,125 220,125 220,130" fill="#C8E65A" opacity="0.8"/>
+  <polygon points="195,115 215,115 215,110 240,120 215,130 215,125 195,125" fill="#C8E65A" opacity="0.8"/>
   <!-- Stage 2: AI Curation -->
   <rect x="240" y="80" width="155" height="80" rx="8" fill="#C8E65A"/>
   <text x="318" y="112" text-anchor="middle" fill="#0a1a14" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">2. Curate</text>
@@ -527,7 +527,7 @@ The brands handling this well share a common trait: they treat AI as a productio
   <text x="318" y="204" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" opacity="0.7">Kill anything with uncanny</text>
   <text x="318" y="218" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" opacity="0.7">valley tells. Keep the top 2–3.</text>
   <!-- Arrow 2→3 -->
-  <polygon points="405,120 430,110 430,115 450,115 450,125 430,125 430,130" fill="#D4623A" opacity="0.8"/>
+  <polygon points="405,115 425,115 425,110 450,120 425,130 425,125 405,125" fill="#D4623A" opacity="0.8"/>
   <!-- Stage 3: Human Polish -->
   <rect x="450" y="80" width="155" height="80" rx="8" fill="#D4623A"/>
   <text x="528" y="112" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">3. Human</text>
@@ -536,7 +536,7 @@ The brands handling this well share a common trait: they treat AI as a productio
   <text x="528" y="204" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" opacity="0.7">pacing, colour-correct,</text>
   <text x="528" y="218" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" opacity="0.7">captions, CTA overlay</text>
   <!-- Arrow 3→4 -->
-  <polygon points="615,120 640,110 640,115 660,115 660,125 640,125 640,130" fill="#FAF6EC" opacity="0.6"/>
+  <polygon points="615,115 635,115 635,110 660,120 635,130 635,125 615,125" fill="#FAF6EC" opacity="0.6"/>
   <!-- Stage 4: Final Ad -->
   <rect x="660" y="80" width="120" height="80" rx="8" fill="#FAF6EC"/>
   <text x="720" y="112" text-anchor="middle" fill="#0a1a14" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">4. Final</text>
