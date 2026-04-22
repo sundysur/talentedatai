@@ -6,7 +6,7 @@ author: "TalentedAtAI Editorial Team"
 category: "Guide"
 tags: ["AI video", "video ads", "AI marketing", "B2B marketing", "ad creative", "ROI", "brand safety"]
 filters: ["Guides"]
-image: "/static/images/articles/ai-video-ads-what-actually-works-2026.jpg"
+image: "ai-video-ads-what-actually-works-2026.jpg"
 slug: "ai-video-ads-what-actually-works-2026"
 read_time: "18 min"
 affiliate: false
