@@ -1074,7 +1074,7 @@ if (articles.length > 0 && articles[0].image) {
 
 // --- IndexNow: write key file + ping API ---
 async function pingIndexNow(urls) {
-  const key = process.env.INDEXNOW_KEY || '387e8459eb7f485c930b1d36cac02ee4';
+  const key = process.env.INDEXNOW_KEY || 'f7fda78d1e4b481b8cfe785457b0c902';
   const keyFile = key + '.txt';
 
   // Write key verification file
