@@ -326,7 +326,73 @@ The overriding principle from every source we reviewed: **execution quality matt
 
 ## The Tools Worth Using (Organised by Use Case)
 
-<!-- IMAGE: Use-case matrix — tools on one axis, use cases on the other, colour-coded by fit -->
+<svg width="100%" height="auto" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI Video Ad Tools by Use Case — matrix showing best-fit tools for each ad format">
+  <rect width="800" height="400" rx="12" fill="#0E3B2E"/>
+  <text x="400" y="38" text-anchor="middle" fill="#C8E65A" font-family="system-ui,sans-serif" font-size="18" font-weight="700">AI Video Ad Tools by Use Case</text>
+  <!-- Column headers -->
+  <text x="330" y="72" text-anchor="middle" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Creatify</text>
+  <text x="420" y="72" text-anchor="middle" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="11" font-weight="600">HeyGen</text>
+  <text x="510" y="72" text-anchor="middle" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Runway</text>
+  <text x="600" y="72" text-anchor="middle" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="11" font-weight="600">TikTok</text>
+  <text x="600" y="84" text-anchor="middle" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Symphony</text>
+  <text x="690" y="72" text-anchor="middle" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Pencil</text>
+  <text x="760" y="72" text-anchor="middle" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Descript/</text>
+  <text x="760" y="84" text-anchor="middle" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="11" font-weight="600">CapCut</text>
+  <!-- Divider -->
+  <line x1="40" y1="94" x2="780" y2="94" stroke="#C8E65A" stroke-opacity="0.3" stroke-width="1"/>
+  <!-- Row 1: Product demos -->
+  <text x="160" y="130" text-anchor="middle" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Product demos</text>
+  <circle cx="330" cy="126" r="10" fill="#C8E65A"/>
+  <circle cx="420" cy="126" r="10" fill="#D4623A"/>
+  <circle cx="510" cy="126" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="600" cy="126" r="10" fill="#D4623A"/>
+  <circle cx="690" cy="126" r="10" fill="#C8E65A"/>
+  <circle cx="760" cy="126" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <!-- Row 2: UGC talking head -->
+  <text x="160" y="180" text-anchor="middle" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="13" font-weight="600">UGC talking head</text>
+  <circle cx="330" cy="176" r="10" fill="#D4623A"/>
+  <circle cx="420" cy="176" r="10" fill="#C8E65A"/>
+  <circle cx="510" cy="176" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="600" cy="176" r="10" fill="#D4623A"/>
+  <circle cx="690" cy="176" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="760" cy="176" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <!-- Row 3: Cinematic B-roll -->
+  <text x="160" y="230" text-anchor="middle" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Cinematic B-roll</text>
+  <circle cx="330" cy="226" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="420" cy="226" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="510" cy="226" r="10" fill="#C8E65A"/>
+  <circle cx="600" cy="226" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="690" cy="226" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="760" cy="226" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <!-- Row 4: Platform native -->
+  <text x="160" y="280" text-anchor="middle" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Platform native</text>
+  <circle cx="330" cy="276" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="420" cy="276" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="510" cy="276" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="600" cy="276" r="10" fill="#C8E65A"/>
+  <circle cx="690" cy="276" r="10" fill="#D4623A"/>
+  <circle cx="760" cy="276" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <!-- Row 5: A/B testing -->
+  <text x="160" y="330" text-anchor="middle" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="13" font-weight="600">A/B testing</text>
+  <circle cx="330" cy="326" r="10" fill="#C8E65A"/>
+  <circle cx="420" cy="326" r="10" fill="#D4623A"/>
+  <circle cx="510" cy="326" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="600" cy="326" r="10" fill="#D4623A"/>
+  <circle cx="690" cy="326" r="10" fill="#C8E65A"/>
+  <circle cx="760" cy="326" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <!-- Row 6: Post-production -->
+  <text x="160" y="380" text-anchor="middle" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Post-production</text>
+  <circle cx="330" cy="376" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="420" cy="376" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="510" cy="376" r="10" fill="#D4623A"/>
+  <circle cx="600" cy="376" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="690" cy="376" r="10" fill="none" stroke="#D4623A" stroke-width="2"/>
+  <circle cx="760" cy="376" r="10" fill="#C8E65A"/>
+  <!-- Legend -->
+  <circle cx="50" cy="396" r="5" fill="#C8E65A"/><text x="62" y="400" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="10">Best fit</text>
+  <circle cx="130" cy="396" r="5" fill="#D4623A"/><text x="142" y="400" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="10">Secondary fit</text>
+  <circle cx="240" cy="396" r="5" fill="none" stroke="#D4623A" stroke-width="1.5"/><text x="252" y="400" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="10">Not recommended</text>
+</svg>
 
 This is not a ranking. The right tool depends entirely on the job you need it to do. We've organised this section by use case because that's how the decision actually works — you start with the ad format you need, then find the tool that does that format best.
 
@@ -378,7 +444,46 @@ If your AI video ad workflow doesn't include a post-production step, you are alm
 
 ## Brand Safety: The Part Everyone Is Ignoring
 
-<!-- IMAGE: Simple checklist graphic — "AI Video Ad Brand Safety Checklist" with 6-8 practical items -->
+<svg width="100%" height="auto" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI Video Ad Brand Safety Checklist — six essential safeguards before shipping AI creative">
+  <rect width="800" height="400" rx="12" fill="#0E3B2E"/>
+  <text x="400" y="42" text-anchor="middle" fill="#C8E65A" font-family="system-ui,sans-serif" font-size="20" font-weight="700">AI Video Ad Brand Safety Checklist</text>
+  <!-- Item 1 -->
+  <rect x="60" y="68" width="680" height="44" rx="8" fill="#0E3B2E" stroke="#D4623A" stroke-width="1.5"/>
+  <rect x="76" y="78" width="24" height="24" rx="4" fill="#0E3B2E" stroke="#C8E65A" stroke-width="2"/>
+  <polyline points="82,91 87,97 96,84" fill="none" stroke="#C8E65A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="114" y="83" fill="#D4623A" font-family="system-ui,sans-serif" font-size="13" font-weight="700">1</text>
+  <text x="136" y="95" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="14">Human review gate before any ad goes live</text>
+  <!-- Item 2 -->
+  <rect x="60" y="122" width="680" height="44" rx="8" fill="#0E3B2E" stroke="#D4623A" stroke-width="1.5"/>
+  <rect x="76" y="132" width="24" height="24" rx="4" fill="#0E3B2E" stroke="#C8E65A" stroke-width="2"/>
+  <polyline points="82,145 87,151 96,138" fill="none" stroke="#C8E65A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="114" y="137" fill="#D4623A" font-family="system-ui,sans-serif" font-size="13" font-weight="700">2</text>
+  <text x="136" y="149" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="14">Brand guidelines enforced in every prompt</text>
+  <!-- Item 3 -->
+  <rect x="60" y="176" width="680" height="44" rx="8" fill="#0E3B2E" stroke="#D4623A" stroke-width="1.5"/>
+  <rect x="76" y="186" width="24" height="24" rx="4" fill="#0E3B2E" stroke="#C8E65A" stroke-width="2"/>
+  <polyline points="82,199 87,205 96,192" fill="none" stroke="#C8E65A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="114" y="191" fill="#D4623A" font-family="system-ui,sans-serif" font-size="13" font-weight="700">3</text>
+  <text x="136" y="203" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="14">Disclosure policy in place for AI content</text>
+  <!-- Item 4 -->
+  <rect x="60" y="230" width="680" height="44" rx="8" fill="#0E3B2E" stroke="#D4623A" stroke-width="1.5"/>
+  <rect x="76" y="240" width="24" height="24" rx="4" fill="#0E3B2E" stroke="#C8E65A" stroke-width="2"/>
+  <polyline points="82,253 87,259 96,246" fill="none" stroke="#C8E65A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="114" y="245" fill="#D4623A" font-family="system-ui,sans-serif" font-size="13" font-weight="700">4</text>
+  <text x="136" y="257" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="14">Output logging — prompt, tool, approver recorded</text>
+  <!-- Item 5 -->
+  <rect x="60" y="284" width="680" height="44" rx="8" fill="#0E3B2E" stroke="#D4623A" stroke-width="1.5"/>
+  <rect x="76" y="294" width="24" height="24" rx="4" fill="#0E3B2E" stroke="#C8E65A" stroke-width="2"/>
+  <polyline points="82,307 87,313 96,300" fill="none" stroke="#C8E65A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="114" y="299" fill="#D4623A" font-family="system-ui,sans-serif" font-size="13" font-weight="700">5</text>
+  <text x="136" y="311" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="14">Regular quality audits after tool updates</text>
+  <!-- Item 6 -->
+  <rect x="60" y="338" width="680" height="44" rx="8" fill="#0E3B2E" stroke="#D4623A" stroke-width="1.5"/>
+  <rect x="76" y="348" width="24" height="24" rx="4" fill="#0E3B2E" stroke="#C8E65A" stroke-width="2"/>
+  <polyline points="82,361 87,367 96,354" fill="none" stroke="#C8E65A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="114" y="353" fill="#D4623A" font-family="system-ui,sans-serif" font-size="13" font-weight="700">6</text>
+  <text x="136" y="365" fill="#FAF6EC" font-family="system-ui,sans-serif" font-size="14">No raw AI output shipped without post-production</text>
+</svg>
 
 Here is a number that should alarm anyone managing an advertising budget: over 70% of marketers have already encountered an AI-related incident in their advertising, including hallucinations, bias, or off-brand content. Yet less than 35% plan to increase investment in AI governance.
 
