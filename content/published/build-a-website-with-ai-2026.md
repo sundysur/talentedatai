@@ -28,7 +28,7 @@ faq:
 
 > **TL;DR:** We gave four AI website builders the exact same brief — a portfolio site for a freelance photographer — and the results were wildly uneven. Wix ADI was the fastest but filled the site with kitchen stock photos and a colour palette nobody asked for. Squarespace AI looked polished but wouldn't let us change the layout. Framer AI nailed the structure and copy but left the image areas empty — waiting for real content instead of guessing wrong. And Bolt.new failed on the first attempt, then produced the best-looking result of all four on the second try. The tool everyone recommends isn't the tool that produces the best website. Here's what actually happened.
 
-> **How we tested this:** Every tool in this article was tested on its free tier using the same creative brief: "a portfolio site for a freelance photographer named Alex Chen, with a homepage, a portfolio gallery, and a contact page. Clean, minimal, modern. Dark background option." We evaluated each result on design quality, customisability, speed to publish, SEO setup, and cost to go live with a custom domain. No tool received preferential treatment.
+> **How we tested this:** Every tool in this article was tested on its free tier using the same creative brief: "A portfolio site for a freelance photographer. Clean, minimal design. Three pages: Home, Portfolio, Contact. Home page has a short intro and a featured image. Portfolio page is a grid of photos. Contact page has a simple form. No e-commerce. Mobile friendly." We evaluated each result on design quality, customisability, speed to publish, SEO setup, and cost to go live with a custom domain. No tool received preferential treatment.
 
 ---
 
@@ -36,9 +36,9 @@ faq:
 
 Here is the exact prompt we used, pasted identically into each tool:
 
-*"Build a portfolio website for a freelance photographer named Alex Chen. Three pages: a homepage with a headline and short bio, a portfolio gallery showing 8-12 images in a grid, and a contact page with a form. Design should be clean, minimal, and modern. Dark background preferred. The site should feel like a working photographer's portfolio, not a template."*
+*"A portfolio site for a freelance photographer. Clean, minimal design. Three pages: Home, Portfolio, Contact. Home page has a short intro and a featured image. Portfolio page is a grid of photos. Contact page has a simple form. No e-commerce. Mobile friendly."*
 
-That last line, "not a template," was deliberate. It's the thing every person building a website wants, and the thing AI website builders struggle with most. A template is what you get when the tool optimises for speed. A website that doesn't feel like a template is what you get when someone (human or AI) makes actual design decisions.
+Simple, specific, and deliberately free of style prescriptions beyond "clean" and "minimal." No colour preferences. No font requests. No named photographer. We wanted to see what creative decisions each tool would make on its own.
 
 Four tools. Same brief. Same expectations. Here's what came back.
 
@@ -92,7 +92,7 @@ Four tools. Same brief. Same expectations. Here's what came back.
 ## Wix ADI: Fast, Familiar, and Forgettable
 
 **Time to first result:** 3 minutes
-**What happened:** Wix ADI asked a handful of questions: site type, business name (we typed "Talented Photos" manually, since it doesn't extract the name from your brief), and features needed. It then generated a complete three-page site. The homepage had a hero image, a headline, a short about section, and navigation to the other two pages. The gallery page used a standard grid. The contact page had a form.
+**What happened:** Wix ADI asked a handful of questions: site type, business name, and features needed. The brief didn't include a business name, so Wix prompted us to enter one during setup. We typed "Talented Photos." It then generated a complete three-page site. The homepage had a hero image, a headline, a short about section, and navigation to the other two pages. The gallery page used a standard grid. The contact page had a form.
 
 At first glance, it delivered everything the brief asked for. The problem became apparent on closer inspection.
 
@@ -133,7 +133,7 @@ The other issue: cost. Squarespace has no free publishing tier. The cheapest pla
 **Time to first result:** 90 seconds
 **What happened:** We pasted the brief into Framer's AI generator and pressed enter. Ninety seconds later, we had a three-page site with exactly the structure we asked for: Home, Portfolio, Contact, correctly labelled in the navigation. Of all four tools, Framer followed the brief most precisely.
 
-Framer AI didn't just populate a template. It made genuine layout decisions: an asymmetric hero section with the photographer's name in an oversized serif font on the left and a placeholder shape on the right where a hero image would go. The portfolio page used a staggered grid with hover effects that revealed image titles. The contact page was minimal in the right way, not empty, just focused.
+Framer AI didn't just populate a template. It made genuine layout decisions: an asymmetric hero section with a headline in an oversized serif font on the left and a placeholder shape on the right where a hero image would go. The portfolio page used a staggered grid with hover effects that revealed image titles. The contact page was minimal in the right way, not empty, just focused.
 
 The copy was notably better than Wix's generic filler. Framer's AI referenced "minimalist compositions and candid moments," language that felt like it had actually read the brief and understood the photographer persona, not just plugged a business name into a template sentence.
 
@@ -160,7 +160,7 @@ SEO setup was also thinner than Wix or Squarespace. Meta descriptions had to be 
 
 ## Bolt.new: The Wildcard That Wrote Real Code
 
-**Time to first result:** About 4 minutes (including one failed attempt)
+**Time to first result:** Over 10 minutes (including one failed attempt)
 **What happened:** Bolt.new is not a traditional website builder. It's an AI-powered development environment. You describe what you want, and it writes actual code (React, by default), generates a live preview, and lets you deploy. We covered this tool and its peers in our [guide to vibe coding tools](/vibe-coding-tools-2026), but this test specifically evaluated it as a website builder for someone who just wants a portfolio site.
 
 We pasted the same brief. Bolt's first attempt got stuck. The generation stalled partway through, and we had to start a new session. Unlike the traditional builders, which always produce *something*, Bolt can simply fail. The second attempt, with the same brief, worked. The result was worth the retry.
@@ -327,18 +327,3 @@ The trajectory is clear: within a year or two, the distinction between "AI-built
 
 Choose accordingly.
 
----
-
-## FAQ
-
-**Can I switch tools after I've built my site?**
-Moving between platforms is possible but rarely seamless. Wix and Squarespace sites don't export cleanly to other platforms. You can extract your content (text and images) but not your design or layout. Framer exports to code, which gives you more portability. Bolt.new outputs standard React code that runs anywhere. If platform lock-in concerns you, Framer or Bolt are safer starting points than Wix or Squarespace.
-
-**Do AI website builders work for businesses, not just portfolios?**
-Yes. All four tools tested here can build business websites: landing pages, service pages, about pages, contact forms. Wix and Squarespace additionally support e-commerce (product listings, shopping carts, payment processing). Framer is strongest for marketing sites and SaaS landing pages. Bolt.new can build anything but requires more hands-on work for complex functionality. The portfolio brief in this article was a controlled test; the tools handle other site types with similar trade-offs.
-
-**Is coding knowledge required to use any of these tools?**
-Not for Wix, Squarespace, or Framer, which are all fully visual, no-code tools. Bolt.new shows you code and technically lets you edit it, but the AI handles the writing; you can use it productively by only interacting through natural language prompts. That said, knowing basic HTML and CSS makes every tool more useful, not because you need to write code, but because understanding what the AI is doing helps you ask for better results.
-
-**What about WordPress with AI plugins?**
-WordPress remains the most popular website platform globally, and AI plugins (like Jetwizard, Jetin, and various GPT-powered content generators) are increasingly capable. We didn't include WordPress in this test because the AI is a plugin layer on top of WordPress rather than a native builder, and the experience is fundamentally different. WordPress with AI is a reasonable choice for bloggers and content sites, but the setup process is more complex than any tool in this article, and the AI assistance is less integrated than what Framer or Bolt offer natively.
