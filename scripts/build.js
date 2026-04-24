@@ -333,6 +333,8 @@ for (const file of mdFiles) {
     .article-body pre{background:var(--dark);color:#e8e8e5;padding:24px;border-radius:12px;overflow-x:auto;margin:28px 0;font-size:14px;line-height:1.6;max-width:100%;white-space:pre-wrap;word-break:break-word}
     .article-body pre code{background:none;padding:0;color:inherit}
     .article-body img{max-width:100%;height:auto}
+    .article-body a{color:#D4623A;text-decoration:none}
+    .article-body a:hover{color:#E8734A}
     figure{margin:2rem 0}figcaption{font-size:0.8rem;color:#888;font-style:italic;margin-top:8px;text-align:center;line-height:1.4}
     /* AUTHOR BIO */
     .author-bio{display:flex;align-items:flex-start;gap:16px;background:var(--gray-100);border-radius:var(--radius);padding:24px;margin:0 0 0}
