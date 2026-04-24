@@ -1843,5 +1843,247 @@
       "writing-content": "Creates full show notes, blog posts, newsletters, and social posts from each episode",
       "low_technical": "Upload an episode and get a complete content package — show notes, clips, and social posts"
     }
+  },
+  {
+    "id": "creatify",
+    "name": "Creatify",
+    "tagline": "AI video ad generator that creates product demo ads from a URL in minutes",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video"
+    ],
+    "technical_level": 1,
+    "focus": 5,
+    "work_style": 2,
+    "price_tier": 3,
+    "price_display": "Free trial / from $39/month",
+    "has_review": true,
+    "review_url": "/content/published/ai-video-ads-what-actually-works-2026",
+    "affiliate_url": null,
+    "try_label": "Try Creatify",
+    "rating": 4.1,
+    "match_reasons": {
+      "images-video": "Paste a product URL and generate video ad variants with AI-selected visuals, scripts, and formats for Meta, TikTok, and YouTube",
+      "low_technical": "No video editing skills needed — paste a URL, pick a format, and get ready-to-run ad creative in minutes"
+    }
+  },
+  {
+    "id": "tiktok-symphony",
+    "name": "TikTok Symphony Creative Studio",
+    "tagline": "TikTok's native AI creative suite for generating platform-optimised video ads",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video"
+    ],
+    "technical_level": 1,
+    "focus": 5,
+    "work_style": 3,
+    "price_tier": 1,
+    "price_display": "Free (with TikTok Ads account)",
+    "has_review": true,
+    "review_url": "/content/published/ai-video-ads-what-actually-works-2026",
+    "affiliate_url": null,
+    "try_label": "Try Symphony",
+    "rating": 3.9,
+    "match_reasons": {
+      "images-video": "Generates native-feeling TikTok video ads using platform trends and formats — creative that looks like it belongs in a feed",
+      "low_technical": "Built into the TikTok Ads platform — no external tools or video editing experience required"
+    }
+  },
+  {
+    "id": "pencil",
+    "name": "Pencil",
+    "tagline": "AI ad creative platform that generates and predicts ad performance before you spend budget",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video",
+      "workflow-automation"
+    ],
+    "technical_level": 2,
+    "focus": 5,
+    "work_style": 3,
+    "price_tier": 4,
+    "price_display": "From $119/month",
+    "has_review": true,
+    "review_url": "/content/published/ai-video-ads-what-actually-works-2026",
+    "affiliate_url": null,
+    "try_label": "Try Pencil",
+    "rating": 4.0,
+    "match_reasons": {
+      "images-video": "Generates ad creative variants and predicts their performance using historical campaign data before you spend budget",
+      "workflow-automation": "Automated creative testing pipeline — generate, score, and identify top-performing variants at scale",
+      "low_technical": "Feed in your brand assets and let the AI generate and rank ad variants — no design skills needed"
+    }
+  },
+  {
+    "id": "adcreative-ai",
+    "name": "AdCreative.ai",
+    "tagline": "AI-powered ad creative generator that scores and ranks ad variants before you run them",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video",
+      "workflow-automation"
+    ],
+    "technical_level": 2,
+    "focus": 5,
+    "work_style": 3,
+    "price_tier": 3,
+    "price_display": "From $29/month",
+    "has_review": true,
+    "review_url": "/content/published/ai-video-ads-what-actually-works-2026",
+    "affiliate_url": null,
+    "try_label": "Try AdCreative.ai",
+    "rating": 4.0,
+    "match_reasons": {
+      "images-video": "Generates image and video ad variants, scores them against performance benchmarks, and recommends the top performers",
+      "workflow-automation": "Automated generate-and-score workflow for teams running high-volume performance campaigns",
+      "low_technical": "Upload brand assets, describe your campaign, and get scored creative variants ready for testing"
+    }
+  },
+  {
+    "id": "arcads",
+    "name": "Arcads",
+    "tagline": "AI-generated UGC-style video ads designed to feel like organic user content",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video"
+    ],
+    "technical_level": 1,
+    "focus": 5,
+    "work_style": 2,
+    "price_tier": 3,
+    "price_display": "From $49/month",
+    "has_review": true,
+    "review_url": "/content/published/ai-video-ads-what-actually-works-2026",
+    "affiliate_url": null,
+    "try_label": "Try Arcads",
+    "rating": 3.9,
+    "match_reasons": {
+      "images-video": "Creates UGC-style AI video ads that feel like organic user content rather than polished brand creative",
+      "low_technical": "Select an AI actor, provide your script, and get authentic-looking UGC video ads without hiring creators"
+    }
+  },
+  {
+    "id": "wix",
+    "name": "Wix",
+    "tagline": "AI website builder that generates a complete, customisable site from a few questions",
+    "category_badge": "Coding & Building",
+    "categories": [
+      "coding-building"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 3,
+    "price_tier": 3,
+    "price_display": "Free / from $17/month",
+    "has_review": true,
+    "review_url": "/content/published/build-a-website-with-ai-2026",
+    "affiliate_url": null,
+    "try_label": "Try Wix free",
+    "rating": 3.8,
+    "match_reasons": {
+      "coding-building": "AI generates a full website — pages, navigation, contact forms, and SEO setup — from a few onboarding questions",
+      "low_technical": "The fastest path from zero to a live site — answer questions and get a publishable website in under five minutes"
+    }
+  },
+  {
+    "id": "framer",
+    "name": "Framer",
+    "tagline": "AI-powered design and website builder with Figma-like flexibility and polished output",
+    "category_badge": "Coding & Building",
+    "categories": [
+      "coding-building",
+      "images-video"
+    ],
+    "technical_level": 2,
+    "focus": 3,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free / from $10/month",
+    "has_review": true,
+    "review_url": "/content/published/build-a-website-with-ai-2026",
+    "affiliate_url": null,
+    "try_label": "Try Framer free",
+    "rating": 4.3,
+    "match_reasons": {
+      "coding-building": "AI generates polished website layouts with strong visual hierarchy and typography — the best design quality of any AI builder",
+      "images-video": "Design-first builder with hover effects, scroll animations, and responsive breakpoints built into the AI output",
+      "low_technical": "Describe your site in a sentence and get a three-page design in 90 seconds — fully editable with no template constraints"
+    }
+  },
+  {
+    "id": "semrush",
+    "name": "Semrush",
+    "tagline": "All-in-one SEO and content marketing platform with AI-powered auditing and keyword strategy",
+    "category_badge": "Research & Knowledge",
+    "categories": [
+      "research-knowledge",
+      "writing-content"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 3,
+    "price_tier": 4,
+    "price_display": "From $139.95/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-seo-tools-2026",
+    "affiliate_url": null,
+    "try_label": "Try Semrush",
+    "rating": 4.3,
+    "match_reasons": {
+      "research-knowledge": "AI-powered site audit, keyword research, competitive analysis, and content gap identification in a single platform",
+      "writing-content": "Keyword Strategy Builder uses AI to turn a seed keyword into a full topical map with pillar pages and supporting articles",
+      "low_technical": "Beginner-friendly site health scoring and plain-language fix suggestions — the most accessible all-in-one SEO platform"
+    }
+  },
+  {
+    "id": "granola",
+    "name": "Granola",
+    "tagline": "AI meeting notes app that enriches your rough notes with full meeting context automatically",
+    "category_badge": "Research & Knowledge",
+    "categories": [
+      "research-knowledge",
+      "workflow-automation"
+    ],
+    "technical_level": 1,
+    "focus": 4,
+    "work_style": 3,
+    "price_tier": 2,
+    "price_display": "Free / from $18/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Granola free",
+    "rating": 4.2,
+    "match_reasons": {
+      "research-knowledge": "Listens to your meetings and enriches your rough notes with full context — combines what you wrote with what was said",
+      "workflow-automation": "Automatic meeting transcription with AI-generated summaries, action items, and structured notes",
+      "low_technical": "Just take notes like normal during the meeting — Granola fills in the gaps automatically afterward"
+    }
+  },
+  {
+    "id": "loom",
+    "name": "Loom",
+    "tagline": "Async video messaging platform with AI-powered summaries, chapters, and task extraction",
+    "category_badge": "Workflow & Automation",
+    "categories": [
+      "workflow-automation",
+      "images-video"
+    ],
+    "technical_level": 1,
+    "focus": 4,
+    "work_style": 4,
+    "price_tier": 2,
+    "price_display": "Free / from $15/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Loom free",
+    "rating": 4.2,
+    "match_reasons": {
+      "workflow-automation": "AI generates video summaries, chapters, and action items so viewers can skip to what matters",
+      "images-video": "Record screen and camera walkthroughs with automatic transcription, filler word removal, and editing",
+      "low_technical": "Click record, explain anything visually, and share a link — viewers get an AI summary without watching the whole thing"
+    }
   }
 ]

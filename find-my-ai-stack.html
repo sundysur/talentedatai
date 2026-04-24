@@ -167,6 +167,18 @@
     .section-subline{font-size:0.95rem;color:rgba(14,59,46,0.6);margin-bottom:36px}
     [data-theme="dark"] .section-subline{color:var(--gray-500)}
 
+    /* PRIVACY TOOLTIPS */
+    .slider-label-row{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+    .slider-label-text{font-size:0.82rem;font-weight:600;color:var(--brand-green-dark);text-transform:uppercase;letter-spacing:0.04em}
+    [data-theme="dark"] .slider-label-text{color:var(--dark)}
+    .privacy-tip{position:relative;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(14,59,46,0.3);font-size:11px;font-weight:700;color:rgba(14,59,46,0.45);cursor:pointer;user-select:none;flex-shrink:0;line-height:1;transition:border-color 0.2s,color 0.2s}
+    [data-theme="dark"] .privacy-tip{border-color:rgba(255,255,255,0.25);color:var(--gray-500)}
+    .privacy-tip:hover{border-color:var(--brand-coral);color:var(--brand-coral)}
+    .privacy-tip__box{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--brand-green-dark);color:var(--cream);font-size:0.78rem;font-weight:400;line-height:1.5;padding:10px 14px;border-radius:8px;width:240px;pointer-events:none;opacity:0;transition:opacity 0.2s ease;z-index:50;text-transform:none;letter-spacing:0;box-shadow:0 4px 16px rgba(0,0,0,0.25)}
+    .privacy-tip__box::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--brand-green-dark)}
+    .privacy-tip:hover .privacy-tip__box,.privacy-tip.open .privacy-tip__box{opacity:1;pointer-events:auto}
+    @media(max-width:640px){.privacy-tip__box{left:auto;right:-8px;transform:none}.privacy-tip__box::after{left:auto;right:12px;transform:none}}
+
     .slider-block{margin-bottom:32px}
     .slider-labels{display:flex;justify-content:space-between;font-size:0.85rem;color:rgba(14,59,46,0.55);margin-bottom:10px}
     [data-theme="dark"] .slider-labels{color:var(--gray-500)}
@@ -237,8 +249,11 @@
     .loading-dots span:nth-child(2){animation-delay:0.15s}
     .loading-dots span:nth-child(3){animation-delay:0.3s}
     @keyframes pulse{0%,100%{opacity:0.3;transform:scale(0.8)}50%{opacity:1;transform:scale(1)}}
-    .loading-text{font-family:var(--font-serif);font-size:1.2rem;color:var(--brand-green-dark)}
+    .loading-text{font-family:var(--font-serif);font-size:1.2rem;color:var(--brand-green-dark);min-height:2em}
     [data-theme="dark"] .loading-text{color:var(--dark)}
+    .loading-msg{opacity:0;transform:translateY(8px);transition:opacity 0.3s ease,transform 0.3s ease;display:none}
+    .loading-msg.visible{opacity:1;transform:translateY(0);display:block}
+    .loading-msg.exiting{opacity:0;transform:translateY(-8px)}
 
     /* TOOL CARDS */
     .tool-card{background:var(--white);border:1px solid rgba(14,59,46,0.1);border-radius:12px;padding:20px 24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(14,59,46,0.06);transition:box-shadow 0.2s}
@@ -249,6 +264,11 @@
     [data-theme="dark"] .tool-name{color:var(--dark)}
     .tool-reason{font-size:0.85rem;font-style:italic;color:rgba(14,59,46,0.65);margin-top:4px;line-height:1.5}
     [data-theme="dark"] .tool-reason{color:var(--gray-500)}
+    .tool-match-label{font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--brand-coral);margin-top:10px}
+    .tool-match-reasons{list-style:none;margin:6px 0 0;padding:0}
+    .tool-match-reasons li{font-size:0.84rem;color:var(--brand-green-dark);line-height:1.55;padding:3px 0 3px 18px;position:relative}
+    [data-theme="dark"] .tool-match-reasons li{color:var(--brand-green-light)}
+    .tool-match-reasons li::before{content:'';position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:50%;background:var(--brand-coral)}
     .tool-price{font-size:0.8rem;color:rgba(14,59,46,0.5);margin-top:8px}
     [data-theme="dark"] .tool-price{color:var(--gray-300)}
     .tool-buttons{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
@@ -371,6 +391,10 @@
 
       <!-- Slider 1: Technical -->
       <div class="slider-block">
+        <div class="slider-label-row">
+          <span class="slider-label-text">Technical comfort</span>
+          <span class="privacy-tip" onclick="togglePrivacyTip(this)" role="button" aria-label="Privacy info" tabindex="0">?<span class="privacy-tip__box">Filters out tools that need coding if you prefer no-code. Local only.</span></span>
+        </div>
         <div class="slider-labels"><span>Just want results</span><span>I build with AI</span></div>
         <div class="slider-track" data-slider="technical" onmousedown="startDrag(event)" ontouchstart="startDrag(event)">
           <div class="slider-fill" style="width:25%"></div>
@@ -381,6 +405,10 @@
 
       <!-- Slider 2: Focus -->
       <div class="slider-block">
+        <div class="slider-label-row">
+          <span class="slider-label-text">Work focus</span>
+          <span class="privacy-tip" onclick="togglePrivacyTip(this)" role="button" aria-label="Privacy info" tabindex="0">?<span class="privacy-tip__box">Helps us recommend tools built for personal vs. professional use. Stays in your browser.</span></span>
+        </div>
         <div class="slider-labels"><span>Personal tasks</span><span>Professional output</span></div>
         <div class="slider-track" data-slider="focus" onmousedown="startDrag(event)" ontouchstart="startDrag(event)">
           <div class="slider-fill" style="width:50%"></div>
@@ -391,6 +419,10 @@
 
       <!-- Slider 3: Workstyle -->
       <div class="slider-block">
+        <div class="slider-label-row">
+          <span class="slider-label-text">Team size</span>
+          <span class="privacy-tip" onclick="togglePrivacyTip(this)" role="button" aria-label="Privacy info" tabindex="0">?<span class="privacy-tip__box">Helps us recommend tools built for solo vs. team use. Stays in your browser.</span></span>
+        </div>
         <div class="slider-labels"><span>Solo and fast</span><span>Team and quality</span></div>
         <div class="slider-track" data-slider="workstyle" onmousedown="startDrag(event)" ontouchstart="startDrag(event)">
           <div class="slider-fill" style="width:30%"></div>
@@ -401,6 +433,10 @@
 
       <!-- Slider 4: Budget -->
       <div class="slider-block">
+        <div class="slider-label-row">
+          <span class="slider-label-text">Budget</span>
+          <span class="privacy-tip" onclick="togglePrivacyTip(this)" role="button" aria-label="Privacy info" tabindex="0">?<span class="privacy-tip__box">We use this to filter out tools outside your range. Nothing is stored or shared.</span></span>
+        </div>
         <div class="slider-labels"><span>Free tools only</span><span>Best tool wins</span></div>
         <div class="slider-track" data-slider="budget" onmousedown="startDrag(event)" ontouchstart="startDrag(event)">
           <div class="slider-fill" style="width:30%"></div>
@@ -487,7 +523,7 @@
       <!-- Loading state -->
       <div class="loading-state" id="loading-state">
         <div class="loading-dots"><span></span><span></span><span></span></div>
-        <div class="loading-text">Finding your matches...</div>
+        <div class="loading-text" id="loading-text"></div>
       </div>
       <!-- Results -->
       <div id="results-content" style="display:none">
@@ -689,6 +725,7 @@ function findStack() {
   goToScreen('results');
   document.getElementById('loading-state').style.display = 'block';
   document.getElementById('results-content').style.display = 'none';
+  startLoadingMessages();
 
   var technical = Math.round((sliders.technical / 100) * 4) + 1;
   var focus = Math.round((sliders.focus / 100) * 4) + 1;
@@ -707,7 +744,7 @@ function findStack() {
     var cats = selectedCategories.filter(function(c){ return c !== 'other'; });
     if (cats.length === 0) cats = ['writing-content']; // fallback
     var results = scoreTools(technical, focus, workstyle, budget, cats);
-    setTimeout(function(){ showResults(results, technical, focus, workstyle, budget, cats); }, 1500);
+    setTimeout(function(){ showResults(results, technical, focus, workstyle, budget, cats); }, 3500);
   }
 }
 
@@ -769,6 +806,7 @@ function callClaudeForOther(technical, focus, workstyle, budget, otherText) {
 }
 
 function showResults(results, technical, focus, workstyle, budget, cats) {
+  stopLoadingMessages();
   document.getElementById('loading-state').style.display = 'none';
   document.getElementById('results-content').style.display = 'block';
   document.getElementById('results-subline').textContent = results.length + ' tools matched to your profile';
@@ -776,7 +814,7 @@ function showResults(results, technical, focus, workstyle, budget, cats) {
   var cardsHtml = '';
   results.forEach(function(r) {
     var tool = r.tool;
-    // Find match reason
+    // Find primary match reason for tagline
     var reason = r.customReason || '';
     if (!reason) {
       for (var i = 0; i < cats.length; i++) {
@@ -791,6 +829,32 @@ function showResults(results, technical, focus, workstyle, budget, cats) {
       if (!reason) reason = tool.tagline;
     }
 
+    // Collect all relevant match_reasons for the "Why this for you" section
+    var matchBullets = [];
+    if (tool.match_reasons) {
+      // First: reasons matching user-selected categories
+      for (var j = 0; j < cats.length; j++) {
+        if (cats[j] !== 'other' && tool.match_reasons[cats[j]] && matchBullets.indexOf(tool.match_reasons[cats[j]]) === -1) {
+          matchBullets.push(tool.match_reasons[cats[j]]);
+        }
+      }
+      // Then: technical level reason
+      var techKey = technical < 3 ? 'low_technical' : 'high_technical';
+      if (tool.match_reasons[techKey] && matchBullets.indexOf(tool.match_reasons[techKey]) === -1) {
+        matchBullets.push(tool.match_reasons[techKey]);
+      }
+    }
+    // Fallback if no match_reasons found
+    if (matchBullets.length === 0) {
+      matchBullets.push(tool.tagline);
+    }
+    // Cap at 3 bullets
+    matchBullets = matchBullets.slice(0, 3);
+
+    var matchHtml = '<div class="tool-match-label">Why this for you:</div><ul class="tool-match-reasons">';
+    matchBullets.forEach(function(b) { matchHtml += '<li>' + escHtml(b) + '</li>'; });
+    matchHtml += '</ul>';
+
     var reviewBtn = '';
     if (tool.has_review && tool.review_url) {
       reviewBtn = '<a class="btn-review" href="' + tool.review_url + '">Read our review →</a>';
@@ -803,6 +867,7 @@ function showResults(results, technical, focus, workstyle, budget, cats) {
       '<span class="tool-badge">' + escHtml(tool.category_badge) + '</span>' +
       '<div class="tool-name">' + escHtml(tool.name) + '</div>' +
       '<div class="tool-reason">' + escHtml(reason) + '</div>' +
+      matchHtml +
       '<div class="tool-price">' + escHtml(tool.price_display) + '</div>' +
       '<div class="tool-buttons">' + reviewBtn +
       '<a class="btn-try" href="' + escHtml(tryUrl) + '" target="_blank" rel="noopener">' + escHtml(tryLabel) + '</a>' +
@@ -864,6 +929,72 @@ function startOver() {
   document.getElementById('email-input').value = '';
   goToScreen('hero');
 }
+
+/* ===== ANIMATED LOADING MESSAGES ===== */
+function getLoadingMessages() {
+  return [
+    "Scanning " + (allTools.length || 86) + " tools in our database\u2026",
+    "Filtering for your use case\u2026",
+    "Checking pricing against your budget\u2026",
+    "Scoring tools by your workflow\u2026",
+    "Ranking your top matches\u2026"
+  ];
+}
+var loadingMsgTimer = null;
+var loadingMsgIndex = 0;
+
+var loadingMessages = [];
+
+function startLoadingMessages() {
+  loadingMessages = getLoadingMessages();
+  loadingMsgIndex = 0;
+  var container = document.getElementById('loading-text');
+  container.innerHTML = '';
+  showNextLoadingMsg(container);
+}
+
+function showNextLoadingMsg(container) {
+  if (loadingMsgIndex >= loadingMessages.length) {
+    loadingMsgIndex = 0; // loop
+  }
+  // Clear previous
+  container.innerHTML = '';
+  var span = document.createElement('span');
+  span.className = 'loading-msg';
+  span.textContent = loadingMessages[loadingMsgIndex];
+  container.appendChild(span);
+  // Force reflow then add visible class
+  void span.offsetWidth;
+  span.classList.add('visible');
+
+  loadingMsgIndex++;
+  loadingMsgTimer = setTimeout(function() {
+    span.classList.add('exiting');
+    span.classList.remove('visible');
+    setTimeout(function() {
+      showNextLoadingMsg(container);
+    }, 300);
+  }, 700);
+}
+
+function stopLoadingMessages() {
+  clearTimeout(loadingMsgTimer);
+  loadingMsgTimer = null;
+}
+
+/* ===== PRIVACY TOOLTIP TOGGLE (MOBILE) ===== */
+function togglePrivacyTip(el) {
+  var wasOpen = el.classList.contains('open');
+  // Close all open tips
+  document.querySelectorAll('.privacy-tip.open').forEach(function(t) { t.classList.remove('open'); });
+  if (!wasOpen) el.classList.add('open');
+}
+// Close tips when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.privacy-tip')) {
+    document.querySelectorAll('.privacy-tip.open').forEach(function(t) { t.classList.remove('open'); });
+  }
+});
 
 /* ===== NAV SCRIPTS (same as site) ===== */
 function toggleMenu(){
