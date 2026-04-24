@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Find Your AI Stack — Free Personalised AI Tool Recommendations | TalentedAtAI</title>
-  <meta name="description" content="Answer 3 quick questions and get a personalised AI toolkit matched to your role, workflow and budget. 76 tools. Free, no signup required.">
+  <meta name="description" content="Answer a few quick questions and get a personalised AI toolkit matched to your role, workflow and budget. 86+ tools. Free, no signup required.">
   <link rel="canonical" href="https://talentedatai.com/find-my-ai-stack">
   <meta property="og:title" content="Find Your AI Stack | TalentedAtAI">
   <meta property="og:description" content="Get personalised AI tool recommendations in 60 seconds. Free, no signup.">
@@ -369,9 +369,9 @@
     <div class="hero-inner">
       <div class="hero-label">FREE TOOL · NO SIGNUP REQUIRED</div>
       <h1 class="hero-headline">Find your AI stack</h1>
-      <p class="hero-subline">Answer 3 quick questions. Get a personalised set of tools matched to how you actually work.</p>
+      <p class="hero-subline">Answer a few quick questions. Get a personalised set of tools matched to how you actually work.</p>
       <button class="hero-cta" onclick="goToScreen('sliders')">Let's go →</button>
-      <p class="hero-trust">Takes 60 seconds · 76 tools in our database · Updated April 2026</p>
+      <p class="hero-trust">Takes 60 seconds · <span id="tool-count-hero">86</span> tools in our database · Updated April 2026</p>
       <div class="progress-dots">
         <span class="progress-dot active" id="dot-1"></span>
         <span class="progress-dot" id="dot-2"></span>
@@ -540,11 +540,11 @@
         </div>
 
         <div class="email-section">
-          <div class="email-headline">Get your full stack report</div>
-          <div class="email-subline">We'll email your personalised recommendations plus weekly updates when better tools launch</div>
+          <div class="email-headline">Stay up to date</div>
+          <div class="email-subline">Get our weekly AI tools roundup delivered to your inbox.</div>
           <form class="email-form" id="email-form" onsubmit="submitEmail(event)">
             <input type="email" class="email-input" id="email-input" placeholder="you@example.com" required>
-            <button type="submit" class="btn-email">Send my report →</button>
+            <button type="submit" class="btn-email">Get weekly updates →</button>
           </form>
           <div class="email-success" id="email-success">Check your inbox — your report is on its way.</div>
         </div>
@@ -605,7 +605,12 @@ var currentScreen = 'hero';
 /* ===== LOAD TOOLS DATA ===== */
 fetch('/static/data/tools.json')
   .then(function(r){ return r.json(); })
-  .then(function(data){ allTools = data; console.log('Loaded ' + data.length + ' tools'); })
+  .then(function(data){
+    allTools = data;
+    console.log('Loaded ' + data.length + ' tools');
+    var heroCount = document.getElementById('tool-count-hero');
+    if (heroCount) heroCount.textContent = data.length;
+  })
   .catch(function(e){ console.error('Failed to load tools.json:', e); });
 
 /* ===== SCREEN NAVIGATION ===== */
