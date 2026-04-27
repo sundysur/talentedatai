@@ -10,3 +10,9 @@ Disallow: /.claude/
 # LLM crawler guidance: /llms.txt
 
 Sitemap: https://talentedatai.com/sitemap.xml
+Disallow: /articles?filter=
+Disallow: /tags/
+Disallow: /posts/
+Disallow: /categories/
+Disallow: /series/
+Disallow: /page/
