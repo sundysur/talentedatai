@@ -16,3 +16,4 @@ Disallow: /posts/
 Disallow: /categories/
 Disallow: /series/
 Disallow: /page/
+Disallow: /articles.html?search=
