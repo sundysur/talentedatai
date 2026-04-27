@@ -408,7 +408,19 @@ for (const file of mdFiles) {
     .toc-link{display:block;padding:4px 0 4px 16px;margin-left:-2px;border-left:2px solid transparent;font-family:var(--font-body);font-size:13px;color:var(--gray-700);text-decoration:none;line-height:1.5;margin-bottom:8px;transition:color 0.2s,border-color 0.2s,font-weight 0.2s}
     .toc-link:hover{color:var(--brand-green-dark);text-decoration:none}
     .toc-link.active{color:var(--brand-green-dark);font-weight:500;border-left-color:var(--brand-green-dark)}
-    @media(max-width:1100px){.article-toc-wrapper{display:block;max-width:760px;padding:0;grid-template-columns:1fr}.toc-sidebar{display:none}}
+    .mobile-toc{display:none}
+    @media(max-width:1100px){.article-toc-wrapper{display:block;max-width:760px;padding:0;grid-template-columns:1fr}.toc-sidebar{display:none}
+      .mobile-toc{display:block;max-width:760px;margin:0 auto;padding:0 24px}
+      .mobile-toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:var(--gray-100);border:1px solid var(--gray-200);border-radius:10px;padding:14px 18px;font-family:var(--font-head);font-size:14px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--gray-700);cursor:pointer;transition:background 0.2s}
+      .mobile-toc-toggle:hover{background:var(--gray-200)}
+      .mobile-toc-toggle .mtoc-arrow{display:inline-block;transition:transform 0.3s ease;font-size:12px}
+      .mobile-toc-toggle .mtoc-arrow.open{transform:rotate(180deg)}
+      .mobile-toc-list{list-style:none;padding:0;margin:0;max-height:0;overflow:hidden;transition:max-height 0.35s ease,opacity 0.3s ease;opacity:0}
+      .mobile-toc-list.open{max-height:600px;opacity:1;margin-top:10px;padding-bottom:8px}
+      .mobile-toc-list li{margin:0}
+      .mobile-toc-list li a{display:block;padding:10px 18px;font-family:var(--font-body);font-size:15px;color:var(--gray-700);text-decoration:none;border-left:3px solid transparent;transition:color 0.2s,border-color 0.2s}
+      .mobile-toc-list li a:hover{color:var(--brand-green-dark);border-left-color:var(--brand-green-dark)}
+    }
     /* SIDEBAR FINDER CTA */
     .sidebar-finder-cta{background:#0E3B2E;border-radius:10px;padding:20px;margin-bottom:24px;text-align:center;border-top:3px solid #D4623A}
     .sidebar-finder-cta__eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:2px;color:#D4623A;margin-bottom:8px}
@@ -466,6 +478,10 @@ for (const file of mdFiles) {
     [data-theme="dark"] .article-body ul li::before{color:var(--brand-green-light)}
     [data-theme="dark"] .article-body ol li::before{color:var(--brand-green-light)}
     [data-theme="dark"] .toc-link:hover{color:var(--brand-green-light)}
+    [data-theme="dark"] .mobile-toc-toggle{background:#1a1a2e;border-color:rgba(255,255,255,0.1);color:#c8c8e8}
+    [data-theme="dark"] .mobile-toc-toggle:hover{background:#222244}
+    [data-theme="dark"] .mobile-toc-list li a{color:#c8c8e8}
+    [data-theme="dark"] .mobile-toc-list li a:hover{color:#C8E65A;border-left-color:#C8E65A}
     [data-theme="dark"] .toc-link.active{color:#C8E65A;border-left-color:#C8E65A}
 
     [data-theme="dark"] .article-meta{color:#9999bb}
@@ -665,6 +681,13 @@ ${fm.image ? `
 </div>` : ''}
 </div>
 ${hasToc ? '<div class="article-toc-wrapper">' : ''}
+${hasToc ? `<div class="mobile-toc">
+  <button class="mobile-toc-toggle" aria-expanded="false" aria-controls="mobile-toc-list">
+    <span>Contents</span>
+    <span class="mtoc-arrow">▼</span>
+  </button>
+  <ul class="mobile-toc-list" id="mobile-toc-list">${tocListHtml.replace(/toc-link/g, 'mtoc-link').replace(/toc-item/g, 'mtoc-item')}</ul>
+</div>` : ''}
 <div class="article-body">
 ${hasToc ? articleContentHtml : html}
 <!-- RELATED_ARTICLES -->
@@ -834,6 +857,30 @@ ${hasToc ? `<nav class="toc-sidebar" aria-label="Table of contents">
     tocLinks.forEach(function(link){
       link.addEventListener('click', function(e){
         e.preventDefault();
+        var target = document.getElementById(this.getAttribute('href').slice(1));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  })();
+</script>
+<script>
+  // MOBILE TOC — collapsible toggle
+  (function(){
+    var btn = document.querySelector('.mobile-toc-toggle');
+    if (!btn) return;
+    var list = document.getElementById('mobile-toc-list');
+    var arrow = btn.querySelector('.mtoc-arrow');
+    btn.addEventListener('click', function(){
+      var open = list.classList.toggle('open');
+      arrow.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+    });
+    list.querySelectorAll('.mtoc-link').forEach(function(link){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        list.classList.remove('open');
+        arrow.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
         var target = document.getElementById(this.getAttribute('href').slice(1));
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
