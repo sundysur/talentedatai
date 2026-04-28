@@ -165,7 +165,7 @@ The marketing industry in 2026 is full of conversations about AI replacing jobs,
 
 Sarah's story is not universal. Not every experienced marketer has adapted, and not every one who tries will succeed. The learning curve is real. The discomfort of being a beginner again in your mid-40s is real. The risk of over-relying on tools you don't fully understand is real.
 
-But for those who make the transition, the math is striking. The same strategic instincts that took 20 years to develop now operate at a speed and scale that would have been impossible two years ago. The combination of deep domain expertise and AI-assisted execution is not just additive. It creates a category of work that neither the AI nor the junior marketer can produce alone.
+But for those who make the transition, the math is striking. The same strategic instincts that took 20 years to develop now operate at a speed and scale that would have been impossible two years ago. The combination of [deep domain expertise](/content/published/human-expertise-age-of-ai) and AI-assisted execution is not just additive. It creates a category of work that neither the AI nor the junior marketer can produce alone.
 
 If you're a brand marketer with years of experience and you've been watching AI from the sidelines, Sarah's story offers a specific lesson. AI didn't make her faster. It made her judgment scale. And that turned out to be the part of marketing that mattered.
 

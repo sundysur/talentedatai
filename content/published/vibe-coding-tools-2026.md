@@ -57,7 +57,7 @@ Four tools dominate vibe coding in 2026. Each has a different strength, a differ
 
 **What it is:** A code editor (forked from VS Code) with AI built into every interaction. You describe what you want in a side panel, and Cursor writes, edits, and refactors code across your entire project. It sees all your files simultaneously and can make coordinated changes across multiple files at once.
 
-**Best for:** People who want to learn as they build. Cursor doesn't hide the code — it shows you everything it writes, explains changes when asked, and lets you accept or reject each edit individually. If you want to gradually understand what's happening under the hood, Cursor is the tool that teaches while it builds.
+**Best for:** People who want to learn as they build. Cursor doesn't hide the code — it shows you everything it writes, explains changes when asked, and lets you accept or reject each edit individually. If you want to gradually understand what's happening under the hood, Cursor — one of several [AI coding assistants we've compared in depth](/content/published/claude-code-vs-codex-vs-cursor-vs-copilot-2026) — is the tool that teaches while it builds.
 
 **Pricing:** Free Hobby tier with limited requests. Pro at $20/month with credit-based billing (Auto mode unlimited, premium model picks draw from credits). Teams at $40/user/month.
 
