@@ -20,13 +20,13 @@ faq:
     a: "No — AI tools are designed to be forgiving and there are genuinely no wrong questions. The worst outcome is an answer that isn't useful, and you just ask again differently. You can't break anything, can't cause damage, can't waste the AI's time. The feeling that you might is one of the most common barriers to getting started, and it's not a real one."
 ---
 
-> **TL;DR:** The biggest barrier to starting with AI isn't technical — it's the feeling that everyone else already understands it. This guide skips the jargon and walks you through your first genuinely useful AI interaction, starting with a free ChatGPT or Claude account and one real task.
+> **TL;DR:** The biggest barrier to starting with AI isn't technical — it's the feeling that everyone else already understands it. This guide skips the jargon and walks you through your first useful AI interaction, starting with a free ChatGPT or Claude account and one real task.
 
-Not long ago, I sat in a meeting while my colleagues talked about how they were using AI to draft reports, summarise contracts, and brainstorm ideas. I nodded along. I had absolutely no idea what they were actually doing.
+Not long ago, I sat in a meeting while my colleagues talked about how they were using AI to draft reports, summarise contracts, and brainstorm ideas. I nodded along. I had no idea what they were actually doing.
 
-I wasn't alone in that feeling. A lot of smart, capable people are quietly unsure about AI right now — not because they're behind, but because the conversation around it tends to skip straight past the basics and into a kind of excited jargon that makes the whole thing feel more complicated than it probably needs to be.
+I wasn't alone in that feeling. A lot of smart, capable people are quietly unsure about AI right now, not because they're behind, but because the conversation around it tends to skip straight past the basics and into a kind of excited jargon that makes the whole thing feel more complicated than it probably needs to be.
 
-If that's you, this guide is for you. Not for developers or early adopters. For people who want to understand what the fuss is actually about — and maybe find something genuinely useful.
+If that's you, this guide is for you. Not for developers or early adopters. For people who want to understand what the fuss is actually about, and maybe find something actually useful.
 
 ---
 
@@ -48,7 +48,7 @@ Go to [chat.openai.com](https://chat.openai.com) and create a free account. Or i
 
 Now — and this is important — don't test it with some abstract prompt you read online. Ask it something you actually want to know.
 
-This week, I genuinely asked ChatGPT to explain why my energy bill was so much higher in February than January. I pasted in the numbers, described my heating situation, and asked what might account for the difference. It gave me a clear, considered answer in about thirty seconds. Not perfect, not gospel — but useful enough that I actually understood my bill better.
+This week, I asked ChatGPT to explain why my energy bill was so much higher in February than January. I pasted in the numbers, described my heating situation, and asked what might account for the difference. It gave me a clear, considered answer in about thirty seconds. Not perfect, not gospel, but useful enough that I actually understood my bill better.
 
 That's it. That's the first step. Use it for something real from your own life.
 
@@ -56,9 +56,9 @@ That's it. That's the first step. Use it for something real from your own life.
 
 ## Three Things to Try in Your First Week
 
-If you want to keep going after that first conversation, here are three tasks that will show you what these tools are actually good at — without asking much of you.
+If you want to keep going after that first conversation, here are three tasks that will show you what these tools are actually good at, without asking much of you.
 
-**Ask it to help you write a difficult message.** We all have emails or texts we've been putting off. The awkward message to a landlord, the professional follow-up you're not sure how to phrase, the tricky conversation with a colleague. Type out the situation and ask the AI to help you draft something. You won't necessarily send its exact words, but it's a great starting point — and a surprisingly good way to clarify your own thinking.
+**Ask it to help you write a difficult message.** We all have emails or texts we've been putting off. The awkward message to a landlord, the professional follow-up you're not sure how to phrase, the tricky conversation with a colleague. Type out the situation and ask the AI to help you draft something. You won't necessarily send its exact words, but it's a great starting point, and a surprisingly good way to clarify your own thinking.
 
 **Ask it to explain something confusing.** Pick anything: a legal clause in a lease, a medical term your doctor used, a news story you couldn't quite follow. Paste it in and ask for a plain-English explanation. AI tools are exceptionally good at this, and it doesn't take any prompting skill at all.
 
@@ -70,11 +70,11 @@ If you want to keep going after that first conversation, here are three tasks th
 
 Once you've played around for a few days, you'll start to notice something: the quality of what you get back depends a lot on how clearly you ask.
 
-This isn't a flaw. It's just the nature of working with any capable tool — you get better results when you're specific. Instead of "write me an email," try "write me a brief, professional email to my supplier letting them know our order will be two weeks late, and apologising without admitting fault." The second version gives the AI enough context to actually be useful.
+This isn't a flaw. It's just the nature of working with any capable tool: you get better results when you're specific. Instead of "write me an email," try "write me a brief, professional email to my supplier letting them know our order will be two weeks late, and apologising without admitting fault." The second version gives the AI enough context to actually be useful.
 
 Experienced users call this "prompting," and there's a whole industry of advice around it. You don't need any of that to start. Just think of it the way you'd think of giving instructions to a smart intern: the clearer and more specific you are, the better the result.
 
-One other thing worth knowing: AI tools don't remember your previous conversations by default. Each session usually starts fresh. Keep that in mind if you find it forgetting context — it's not confused, it just doesn't know what you talked about yesterday.
+One other thing worth knowing: AI tools don't remember your previous conversations by default. Each session usually starts fresh. Keep that in mind if you find it forgetting context. It's not confused, it just doesn't know what you talked about yesterday.
 
 ---
 
@@ -82,11 +82,11 @@ One other thing worth knowing: AI tools don't remember your previous conversatio
 
 You will encounter a lot of noise about AI. Here's what you do not need to understand in order to benefit from these tools today:
 
-**How large language models work.** Understanding the underlying technology is interesting, but irrelevant to using it well — just as you don't need to know how internal combustion works to drive a car.
+**How large language models work.** Understanding the underlying technology is interesting, but irrelevant to using it well, just as you don't need to know how internal combustion works to drive a car.
 
 **The "future of work" discourse.** There are serious questions worth thinking about, but reading ten think-pieces about AI replacing jobs won't help you write a better email today.
 
-**Which model is "the best."** ChatGPT, Gemini, Claude — they're all genuinely capable. Pick one and spend a month with it before branching out. Deep familiarity with one tool is more useful than shallow familiarity with five.
+**Which model is "the best."** ChatGPT, Gemini, Claude: they're all capable. Pick one and spend a month with it before branching out. Deep familiarity with one tool is more useful than shallow familiarity with five.
 
 **Jargon like "tokens," "temperature," or "RAG."** These are real terms with real meanings, but you won't encounter them unless you choose to go deeper. Start without them.
 
@@ -94,11 +94,11 @@ You will encounter a lot of noise about AI. Here's what you do not need to under
 
 ## Three Tools Worth Knowing About (All Free to Start)
 
-**ChatGPT** (chat.openai.com) — The most widely used AI assistant. Excellent for writing, answering questions, and general tasks. The free tier is generous enough to get a real feel for what it can do.
+**ChatGPT** (chat.openai.com): The most widely used AI assistant. Excellent for writing, answering questions, and general tasks. The free tier is generous enough to get a real feel for what it can do.
 
-**Google Gemini** (gemini.google.com) — A strong alternative, especially if you're already in the Google ecosystem. Good at research tasks and integrates neatly with Google Docs and Gmail if you have a workspace account.
+**Google Gemini** (gemini.google.com): A strong alternative, especially if you're already in the Google ecosystem. Good at research tasks and integrates neatly with Google Docs and Gmail if you have a workspace account.
 
-**Claude** (claude.ai) — Made by a company called Anthropic, Claude tends to excel at longer documents and nuanced writing tasks. It's worth trying once you have a sense of what you're using these tools for — some people find it handles complex reasoning more carefully.
+**Claude** (claude.ai): Made by a company called Anthropic, Claude tends to excel at longer documents and nuanced writing tasks. It's worth trying once you have a sense of what you're using these tools for. Some people find it handles complex reasoning more carefully.
 
 ---
 
@@ -106,11 +106,11 @@ You will encounter a lot of noise about AI. Here's what you do not need to under
 
 This is a question beginners often have but feel awkward asking. The short answer: these tools are safe to use for everyday tasks, but there are some sensible boundaries worth knowing about.
 
-**Don't share sensitive personal information.** AI tools process your inputs on remote servers. That means you shouldn't paste in your bank details, social security numbers, medical records, passwords, or anything you wouldn't type into a search engine. For general tasks — writing help, explanations, brainstorming, summarising articles — the information you're sharing is no more sensitive than what you'd share with a colleague.
+**Don't share sensitive personal information.** AI tools process your inputs on remote servers. That means you shouldn't paste in your bank details, social security numbers, medical records, passwords, or anything you wouldn't type into a search engine. For general tasks (writing help, explanations, brainstorming, summarising articles) the information you're sharing is no more sensitive than what you'd share with a colleague.
 
-**Your conversations may be used for training.** By default, most free-tier AI tools use your conversations to help improve their models. If that concerns you, both ChatGPT and Claude offer settings to opt out of data training — look for the "Data Controls" or "Privacy" section in settings. Paid plans often have stronger privacy defaults, and enterprise plans typically guarantee your data won't be used for training.
+**Your conversations may be used for training.** By default, most free-tier AI tools use your conversations to help improve their models. If that concerns you, both ChatGPT and Claude offer settings to opt out of data training. Look for the "Data Controls" or "Privacy" section in settings. Paid plans often have stronger privacy defaults, and enterprise plans typically guarantee your data won't be used for training.
 
-**AI tools can be wrong.** This is worth repeating because it's the most important safety consideration. AI produces confident, well-written responses even when the content is inaccurate. For casual use — brainstorming, drafting, general explanations — this is manageable. For anything with consequences — medical decisions, legal questions, financial choices, important factual claims — always verify the information from a trusted source. Think of AI as a starting point, not a final answer.
+**AI tools can be wrong.** This is worth repeating because it's the most important safety consideration. AI produces confident, well-written responses even when the content is inaccurate. For casual use (brainstorming, drafting, general explanations) this is manageable. For anything with consequences (medical decisions, legal questions, financial choices, important factual claims) always verify the information from a trusted source. Think of AI as a starting point, not a final answer.
 
 **Be especially careful with medical and legal questions.** AI tools can explain medical or legal concepts in helpful, accessible ways. They should not replace professional advice. If you ask an AI tool about a medical symptom and it suggests something alarming, talk to a doctor rather than acting on the AI's response. The tools are useful for understanding terminology and preparing questions for professionals, not for making diagnoses or legal judgments.
 
@@ -124,7 +124,7 @@ The biggest predictor of whether someone gets lasting value from AI tools isn't 
 
 **Keep a running note of what works.** When you find a prompt that gives you exactly what you need, save it. Over a few weeks, you'll build a small collection of go-to prompts that become part of your workflow. "Summarise this in three bullet points for a non-technical audience." "Draft a polite but firm email declining this request." "Explain this concept as if I'm hearing about it for the first time." These become muscle memory.
 
-**Graduate from one-shot questions to multi-turn conversations.** The real power of AI tools shows up when you treat them as a back-and-forth conversation rather than a search engine. Ask a question. Read the answer. Ask a follow-up. Push back on something you disagree with. Ask for a different angle. This conversational approach is where the tools become genuinely useful, because you're refining the output in real time.
+**Graduate from one-shot questions to multi-turn conversations.** The real power of AI tools shows up when you treat them as a back-and-forth conversation rather than a search engine. Ask a question. Read the answer. Ask a follow-up. Push back on something you disagree with. Ask for a different angle. This conversational approach is where the tools become most useful, because you're refining the output in real time.
 
 **Don't try to learn everything at once.** You don't need to understand "prompt engineering." You don't need to try every tool. You don't need to read articles about which AI model is best this month. Just use the one tool you've chosen, for the one task you've identified, and let your understanding develop naturally through use. Competence comes from practice, not from reading about practice.
 
@@ -132,7 +132,7 @@ The biggest predictor of whether someone gets lasting value from AI tools isn't 
 
 ## The Best Time to Start Is Today
 
-The honest truth about AI in 2026 is that the people benefiting most from it aren't technical wizards. They're people who got over their hesitation, tried a few things, and found a handful of tasks where it genuinely saved them time.
+The honest truth about AI in 2026 is that the people benefiting most from it aren't technical wizards. They're people who got over their hesitation, tried a few things, and found a handful of tasks where it actually saved them time.
 
 You don't need to understand everything. You don't need to be an early adopter. You don't need to overhaul how you work.
 
@@ -144,14 +144,14 @@ That's it. The rest follows naturally.
 
 ## When AI Isn't the Right Tool
 
-It would be dishonest to write a beginner's guide without acknowledging the things AI isn't good at — because understanding the limits makes you a better user of the tools.
+It would be dishonest to write a beginner's guide without acknowledging the things AI isn't good at, because understanding the limits makes you a better user of the tools.
 
 **Anything requiring guaranteed accuracy.** AI tools can produce plausible-sounding but factually wrong information. For medical symptoms, legal requirements, financial figures, or any domain where an error has real consequences, treat AI output as a starting point that needs verification, not a final answer. The tools are excellent at explaining concepts and generating drafts; they are not reliable sources of truth.
 
-**Emotional conversations that matter.** AI can draft a difficult message for you, but the decision about what to say — and whether to say it — should be yours. For conversations that involve real relationships, real feelings, and real stakes, use AI for preparation and framing, but keep a human at the centre of the actual exchange.
+**Emotional conversations that matter.** AI can draft a difficult message for you, but the decision about what to say, and whether to say it, should be yours. For conversations that involve real relationships, real feelings, and real stakes, use AI for preparation and framing, but keep a human at the centre of the actual exchange.
 
-**Creative work where originality is the point.** AI is useful for brainstorming, overcoming blank-page paralysis, and generating variations. It is not a substitute for genuine creative thinking. If you're writing a novel, composing music, or designing something where your unique perspective is the value, use AI as a tool in the process — not as the process itself.
+**Creative work where originality is the point.** AI is useful for brainstorming, overcoming blank-page paralysis, and generating variations. It is not a substitute for original creative thinking. If you're writing a novel, composing music, or designing something where your unique perspective is the value, use AI as a tool in the process, not as the process itself.
 
-**Tasks you need to deeply understand.** If a task is important for your own learning or understanding — studying for an exam, learning a new skill, working through a complex problem — be cautious about outsourcing too much of the thinking to AI. The act of struggling with something is often where the understanding develops. Use AI to check your work or to explain concepts you're stuck on, but don't let it skip the thinking that you need to do yourself.
+**Tasks you need to deeply understand.** If a task is important for your own learning or understanding (studying for an exam, learning a new skill, working through a complex problem), be cautious about outsourcing too much of the thinking to AI. The act of struggling with something is often where the understanding develops. Use AI to check your work or to explain concepts you're stuck on, but don't let it skip the thinking that you need to do yourself.
 
 Knowing when not to use AI is just as valuable as knowing when to use it. The best users of these tools are the ones who've developed judgment about when AI adds value and when it subtracts from what they're actually trying to accomplish.
