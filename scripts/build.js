@@ -300,7 +300,9 @@ for (const file of mdFiles) {
     .nav__mobile-menu a:hover{color:#C8E65A}
     .nav__mobile-menu.open{display:flex}
     @media(max-width:768px){
+      .nav__inner{overflow:visible;grid-template-columns:auto 1fr auto}
       .nav__links{display:none}
+      .nav__logo svg{height:50px}
       .nav__hamburger{display:flex}
       .nav-search.open .nav-search__input{width:0;opacity:0;padding:0;border-bottom-color:transparent;pointer-events:none}
       .nav-search__drawer{display:block;max-height:0;overflow:hidden;background:var(--white);border-bottom:1px solid transparent;padding:0 16px;transition:max-height 200ms ease,padding 200ms ease,border-color 200ms ease}

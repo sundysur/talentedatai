@@ -20,23 +20,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=optional" rel="stylesheet" />
 
+  <script>(function(){var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)})()</script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blue: #0066ff;
-      --blue-light: #e8f0ff;
+      --brand-green: #0E3B2E;
+      --brand-accent: #C8E65A;
       --dark: #0a0a0a;
       --text: #1a1a18;
       --gray-400: #9a9a95;
+      --gray-500: #6b6b8a;
       --gray-600: #5a5a55;
       --gray-700: #3a3a35;
       --gray-100: #f5f5f3;
       --gray-200: #e8e8e5;
+      --gray-300: #b8b8d0;
       --white: #fafaf8;
       --transition: 0.2s ease;
       --font-head: 'Syne', sans-serif;
       --font-body: 'DM Sans', sans-serif;
+      --brand-green-dark: #0E3B2E;
     }
 
     body {
@@ -50,64 +54,64 @@
       flex-direction: column;
     }
 
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a { color: inherit; text-decoration: none; }
 
     /* ── Nav ─────────────────────────────────────────────────── */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(0, 102, 255, 0.08);
+    .nav { position: sticky; top: 0; z-index: 100; background: #0E3B2E; backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .nav__inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 90px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+    .nav__logo { display: flex; align-items: center; gap: 6px; text-decoration: none; }
+    .nav__links { display: flex; gap: 24px; align-items: center; list-style: none; }
+    .nav__actions { display: flex; gap: 16px; align-items: center; justify-content: flex-end; overflow: visible; flex-shrink: 0; }
+    .nav__links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); transition: color var(--transition); }
+    .nav__links a:hover { color: #C8E65A; }
+    /* NAV SEARCH */
+    .nav-search { position: relative; display: flex; align-items: center; gap: 6px; }
+    .nav-search__input { width: 0; opacity: 0; padding: 0; margin: 0; border: none; border-bottom: 1.5px solid transparent; background: transparent; font-family: var(--font-body); font-size: 14px; font-weight: 500; color: var(--dark); outline: none; transition: width 200ms ease, opacity 200ms ease, border-color 200ms ease, padding 200ms ease; pointer-events: none; min-width: 0; }
+    .nav-search__input::placeholder { color: var(--gray-300); }
+    .nav-search.open .nav-search__input { width: 220px; opacity: 1; padding: 4px 2px; border-bottom-color: var(--brand-green-dark); pointer-events: auto; }
+    .nav-search__toggle { display: flex; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; padding: 4px; color: rgba(255,255,255,0.85); transition: color var(--transition); }
+    .nav-search__toggle:hover { color: #C8E65A; }
+    .nav-search.open .nav-search__toggle { color: #C8E65A; }
+    .nav-search__toggle svg { display: block; }
+    .nav-search__drawer { display: none; }
+    @media(max-width:768px) {
+      .nav-search.open .nav-search__input { width: 0; opacity: 0; padding: 0; border-bottom-color: transparent; pointer-events: none; }
+      .nav-search__drawer { display: block; max-height: 0; overflow: hidden; background: var(--white); border-bottom: 1px solid transparent; padding: 0 16px; transition: max-height 200ms ease, padding 200ms ease, border-color 200ms ease; }
+      .nav-search__drawer.open { max-height: 80px; padding: 12px 16px; border-bottom-color: rgba(0,102,255,0.08); }
+      .nav-search__drawer-input { width: 100%; font-family: var(--font-body); font-size: 15px; font-weight: 500; color: var(--dark); background: transparent; border: none; border-bottom: 1.5px solid var(--brand-green-dark); padding: 6px 2px; margin: 0; outline: none; -webkit-appearance: none; appearance: none; }
+      .nav-search__drawer-input::placeholder { color: var(--gray-300); }
+      .nav-search__drawer-input::-webkit-search-cancel-button { -webkit-appearance: none; display: none; }
     }
-    .nav__inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
+    .nav__hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin-left: auto; flex-shrink: 0; }
+    .nav__hamburger span { display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.9); border-radius: 2px; transition: all 0.25s ease; }
+    .nav__hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav__hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav__hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav__mobile-menu { display: none; position: absolute; top: 90px; left: 0; right: 0; background: #0E3B2E; backdrop-filter: blur(16px); border-bottom: 1px solid #0a2d22; padding: 16px 24px; flex-direction: column; gap: 0; z-index: 99; }
+    .nav__mobile-menu a { font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.85); padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: block; transition: color 0.2s; }
+    .nav__mobile-menu a:last-child { border-bottom: none; }
+    .nav__mobile-menu a:hover { color: #C8E65A; }
+    .nav__mobile-menu.open { display: flex; }
+    .nav__cta { font-size: 12px; font-weight: 600; color: #C8E65A; border: 1px solid #C8E65A; border-radius: 20px; padding: 5px 14px; white-space: nowrap; transition: all var(--transition); }
+    .nav__cta:hover { background: #C8E65A; color: #0E3B2E; }
+    @media(max-width:900px) {
+      .nav__cta { display: none; }
     }
-    .nav__logo {
-      font-family: var(--font-head);
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--dark);
-      letter-spacing: -0.02em;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-    }
-    .nav__logo span { color: var(--blue); }
-    .nav__logo-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--blue);
-      border-radius: 50%;
-      display: inline-block;
-    }
-    .nav__links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav__links a {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--gray-700);
-      transition: color var(--transition);
-    }
-    .nav__links a:hover { color: var(--blue); text-decoration: none; }
-
-    @media (max-width: 640px) {
+    @media(max-width:768px) {
+      .nav__inner { overflow: visible; grid-template-columns: auto 1fr auto; }
       .nav__links { display: none; }
+      .nav__logo svg { height: 50px; }
+      .nav__hamburger { display: flex; }
     }
+    /* DARK MODE TOGGLE */
+    .theme-toggle { position: relative; display: inline-flex; align-items: center; cursor: pointer; gap: 6px; }
+    .theme-toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .toggle-track { position: relative; width: 44px; height: 24px; background: rgba(255,255,255,0.2); border-radius: 12px; border: 1px solid rgba(255,255,255,0.3); transition: background 0.2s ease, border-color 0.2s ease; flex-shrink: 0; }
+    .toggle-thumb { position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; background: #FAF6EC; border-radius: 50%; transition: transform 0.2s ease, background 0.2s ease; }
+    input:checked ~ .toggle-track { background: #C8E65A; border-color: #C8E65A; }
+    input:checked ~ .toggle-track .toggle-thumb { transform: translateX(20px); background: #0E3B2E; }
+    .toggle-icon { font-size: 14px; line-height: 1; opacity: 0.8; }
+    [data-theme="dark"] .toggle-track { background: rgba(200,230,90,0.3); border-color: rgba(200,230,90,0.5); }
 
     /* ── 404 Hero ─────────────────────────────────────────────── */
     .error-section {
@@ -128,7 +132,7 @@
       font-weight: 800;
       letter-spacing: -0.05em;
       line-height: 1;
-      background: linear-gradient(135deg, var(--blue) 0%, #3385ff 100%);
+      background: linear-gradient(135deg, #0E3B2E 0%, #1a5c45 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -162,7 +166,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--blue);
+      background: #0E3B2E;
       color: #fff;
       font-family: var(--font-body);
       font-size: 15px;
@@ -171,12 +175,12 @@
       border-radius: 100px;
       text-decoration: none;
       transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-      box-shadow: 0 4px 16px rgba(0, 102, 255, 0.25);
+      box-shadow: 0 4px 16px rgba(14, 59, 46, 0.25);
     }
     .btn-primary:hover {
-      background: #0052cc;
+      background: #1a5c45;
       transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(0, 102, 255, 0.35);
+      box-shadow: 0 6px 20px rgba(14, 59, 46, 0.35);
       text-decoration: none;
     }
     .btn-secondary {
@@ -193,8 +197,8 @@
       transition: color var(--transition), border-color var(--transition);
     }
     .btn-secondary:hover {
-      color: var(--blue);
-      border-color: var(--blue);
+      color: #0E3B2E;
+      border-color: #0E3B2E;
       text-decoration: none;
     }
 
@@ -213,8 +217,8 @@
       color: #fff;
       margin-bottom: 8px;
     }
-    .footer__logo span { color: var(--blue); }
-    .footer a { color: var(--blue); }
+    .footer__logo span { color: #C8E65A; }
+    .footer a { color: #C8E65A; }
 
     @media (max-width: 480px) {
       .error-actions { flex-direction: column; align-items: stretch; }
@@ -227,15 +231,51 @@
 
   <nav class="nav">
     <div class="nav__inner">
-      <a href="https://talentedatai.com" class="nav__logo">
-        Talented<span>At</span>AI
-        <span class="nav__logo-dot"></span>
-      </a>
       <ul class="nav__links">
-        <li><a href="https://talentedatai.com/articles.html">Articles</a></li>
-        <li><a href="https://talentedatai.com/about.html">About</a></li>
-        <li><a href="https://talentedatai.com/contact.html">Contact</a></li>
+        <li><a href="https://talentedatai.com/articles">Articles</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
       </ul>
+      <a href="/" class="nav__logo">
+        <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" height="90" style="width:auto;display:block;" aria-label="Talented at AI">
+          <defs><style>.nav-word{font-family:'DM Serif Display','Instrument Serif',Georgia,serif;font-size:128px;fill:#FAF6EC;letter-spacing:-2px}.nav-word-it{font-style:italic}.nav-word-ai{fill:oklch(0.86 0.19 115);font-style:normal}.nav-sub{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:18px;letter-spacing:6px;fill:#FAF6EC;fill-opacity:0.72;font-weight:500}</style></defs>
+          <text class="nav-word nav-word-it" x="110" y="170">Talented</text>
+          <g transform="translate(550, 148)" stroke="oklch(0.86 0.19 115)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="0" y1="0" x2="72" y2="0"/><polyline points="54,-10 74,0 54,10"/></g>
+          <text class="nav-word nav-word-ai" x="650" y="170">AI</text>
+          <line x1="200" y1="210" x2="700" y2="210" stroke="#FAF6EC" stroke-opacity="0.28" stroke-width="0.8"/>
+          <text class="nav-sub" x="450" y="245" text-anchor="middle">AN INDEPENDENT PUBLICATION · EST. 2024</text>
+        </svg>
+      </a>
+      <div class="nav__actions">
+        <label class="theme-toggle" aria-label="Toggle dark mode">
+          <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+          <span class="toggle-icon">☀️</span>
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+          </span>
+          <span class="toggle-icon">🌙</span>
+        </label>
+        <div class="nav-search" id="nav-search">
+          <input type="search" id="nav-search-input" class="nav-search__input" placeholder="Search articles..." aria-label="Search articles" autocomplete="off" spellcheck="false" tabindex="-1" oninput="onNavSearchInput(event)" onkeydown="onNavSearchKeydown(event)" onblur="onNavSearchBlur(event)">
+          <button type="button" class="nav-search__toggle" aria-label="Search" onclick="toggleNavSearch()">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M14 14l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <a href="#newsletter" class="nav__cta">Get free guide →</a>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav__mobile-menu" id="nav-mobile-menu">
+        <a href="https://talentedatai.com/articles">Articles</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="nav-search__drawer" id="nav-search-drawer">
+      <input type="search" id="nav-search-drawer-input" class="nav-search__drawer-input" placeholder="Search articles..." aria-label="Search articles" autocomplete="off" spellcheck="false" oninput="onNavSearchInput(event)" onkeydown="onNavSearchKeydown(event)">
     </div>
   </nav>
 
@@ -248,7 +288,7 @@
         <a href="https://talentedatai.com/" class="btn-primary">
           ← Back to Home
         </a>
-        <a href="https://talentedatai.com/articles.html" class="btn-secondary">
+        <a href="https://talentedatai.com/articles" class="btn-secondary">
           Browse all articles →
         </a>
       </div>
@@ -260,10 +300,82 @@
     <p style="margin-top: 8px;">
       &copy; 2026 TalentedAtAI. All rights reserved.
       &nbsp;·&nbsp; <a href="https://talentedatai.com">Home</a>
-      &nbsp;·&nbsp; <a href="https://talentedatai.com/about.html">About</a>
-      &nbsp;·&nbsp; <a href="https://talentedatai.com/privacy-policy.html">Privacy</a>
+      &nbsp;·&nbsp; <a href="https://talentedatai.com/about">About</a>
+      &nbsp;·&nbsp; <a href="https://talentedatai.com/privacy-policy">Privacy</a>
     </p>
   </footer>
 
+<script>
+  function toggleMenu() {
+    const btn = document.getElementById('nav-hamburger');
+    const menu = document.getElementById('nav-mobile-menu');
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', menu.classList.contains('open') ? 'true' : 'false');
+  }
+  let navSearchRedirectTimer = null;
+  let navSearchBlurTimer = null;
+  function isMobileNavViewport() {
+    return typeof window.matchMedia === 'function' && window.matchMedia('(max-width: 768px)').matches;
+  }
+  function toggleNavSearch() {
+    if (isMobileNavViewport()) { toggleMobileDrawer(); } else { toggleInlineSearch(); }
+  }
+  function toggleInlineSearch() {
+    const wrap = document.getElementById('nav-search');
+    const input = document.getElementById('nav-search-input');
+    if (!wrap || !input) return;
+    if (wrap.classList.contains('open')) { closeNavSearch(); } else { wrap.classList.add('open'); setTimeout(function() { input.focus(); }, 10); }
+  }
+  function toggleMobileDrawer() {
+    const drawer = document.getElementById('nav-search-drawer');
+    const drawerInput = document.getElementById('nav-search-drawer-input');
+    if (!drawer || !drawerInput) return;
+    if (drawer.classList.contains('open')) { closeNavSearch(); } else { drawer.classList.add('open'); setTimeout(function() { drawerInput.focus(); }, 10); }
+  }
+  function closeNavSearch() {
+    const wrap = document.getElementById('nav-search');
+    const input = document.getElementById('nav-search-input');
+    const drawer = document.getElementById('nav-search-drawer');
+    const drawerInput = document.getElementById('nav-search-drawer-input');
+    if (wrap) wrap.classList.remove('open');
+    if (input) input.value = '';
+    if (drawer) drawer.classList.remove('open');
+    if (drawerInput) drawerInput.value = '';
+    clearTimeout(navSearchRedirectTimer);
+    clearTimeout(navSearchBlurTimer);
+  }
+  function submitNavSearch(q) {
+    const trimmed = (q || '').trim();
+    if (!trimmed) return;
+    window.location.href = '/articles?search=' + encodeURIComponent(trimmed);
+  }
+  function onNavSearchInput(e) { clearTimeout(navSearchRedirectTimer); }
+  function onNavSearchKeydown(e) {
+    if (e.key === 'Enter' || e.keyCode === 13) { e.preventDefault(); clearTimeout(navSearchRedirectTimer); if (e.target.value.trim()) submitNavSearch(e.target.value); }
+    else if (e.key === 'Escape' || e.keyCode === 27) { e.preventDefault(); closeNavSearch(); }
+  }
+  function onNavSearchBlur(e) {
+    clearTimeout(navSearchBlurTimer);
+    const input = e.target;
+    navSearchBlurTimer = setTimeout(function() { if (!input.value) { const wrap = document.getElementById('nav-search'); if (wrap) wrap.classList.remove('open'); } }, 200);
+  }
+  document.addEventListener('click', function(e) {
+    const btn = document.getElementById('nav-hamburger');
+    const menu = document.getElementById('nav-mobile-menu');
+    if (btn && menu && !btn.contains(e.target) && !menu.contains(e.target)) { btn.classList.remove('open'); menu.classList.remove('open'); }
+  });
+</script>
+<script>
+  function toggleTheme(){
+    var html=document.documentElement;
+    var next=html.getAttribute('data-theme')==='dark'?'light':'dark';
+    html.setAttribute('data-theme',next);
+    localStorage.setItem('theme',next);
+    var cb=document.getElementById('theme-toggle');
+    if(cb)cb.checked=(next==='dark');
+  }
+  document.addEventListener('DOMContentLoaded',function(){var cb=document.getElementById('theme-toggle');if(cb)cb.checked=(document.documentElement.getAttribute('data-theme')==='dark')});
+</script>
 </body>
 </html>
