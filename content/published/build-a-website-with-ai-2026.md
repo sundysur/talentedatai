@@ -161,7 +161,7 @@ SEO setup was also thinner than Wix or Squarespace. Meta descriptions had to be 
 ## Bolt.new: The Wildcard That Wrote Real Code
 
 **Time to first result:** Over 10 minutes (including one failed attempt)
-**What happened:** Bolt.new is not a traditional website builder. It's an AI-powered development environment. You describe what you want, and it writes actual code (React, by default), generates a live preview, and lets you deploy. We covered this tool and its peers in our [guide to vibe coding tools](/vibe-coding-tools-2026), but this test specifically evaluated it as a website builder for someone who just wants a portfolio site.
+**What happened:** Bolt.new is not a traditional website builder. It's an AI-powered development environment. You describe what you want, and it writes actual code (React, by default), generates a live preview, and lets you deploy. We covered this tool and its peers in our [guide to vibe coding tools](/content/published/vibe-coding-tools-2026), but this test specifically evaluated it as a website builder for someone who just wants a portfolio site.
 
 We pasted the same brief. Bolt's first attempt got stuck. The generation stalled partway through, and we had to start a new session. Unlike the traditional builders, which always produce *something*, Bolt can simply fail. The second attempt, with the same brief, worked. The result was worth the retry.
 
@@ -286,7 +286,7 @@ The right tool depends on one question: **how much do you want to understand abo
 
 **"I want to understand what I'm building and I'm willing to learn."** → **Bolt.new.** The result is the most distinctive and the most flexible, but you're working in a code environment and it may take more than one attempt. If you're curious about web development, or if you're already comfortable with it, Bolt gives you something the template-based tools never will: complete ownership of every line of your site. Just budget for the possibility that the first generation stalls.
 
-If you're completely new to AI tools and not sure where to start, our [beginner's guide to getting started with AI](/how-to-get-started-with-ai-beginners-guide-2026) covers the basics without assuming any technical background.
+If you're completely new to AI tools and not sure where to start, our [beginner's guide to getting started with AI](/content/published/how-to-get-started-with-ai-beginners-guide-2026) covers the basics without assuming any technical background.
 
 ---
 
@@ -313,7 +313,7 @@ This approach isn't for everyone. If you need a website this week, use one of th
 
 And it illustrates the distinction this entire article is making: there's a difference between an **AI website builder** — a tool that builds a website for you — and **AI-assisted building** — using AI as a collaborator while you make the decisions. Both are valid. The first is faster. The second is yours.
 
-For a broader look at how AI content tools fit into a marketing workflow beyond just building the site, see our [guide to AI for content marketing in 2026](/how-to-use-ai-for-content-marketing-2026).
+For a broader look at how AI content tools fit into a marketing workflow beyond just building the site, see our [guide to AI for content marketing in 2026](/content/published/how-to-use-ai-for-content-marketing-2026).
 
 ---
 
