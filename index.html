@@ -71,7 +71,7 @@
   .nav__logo { display: flex; align-items: center; gap: 6px; text-decoration: none; }
   .nav__logo-img { display: block; }
   .nav__links { display: flex; gap: 24px; align-items: center; list-style: none; }
-  .nav__actions { display: flex; gap: 16px; align-items: center; justify-content: flex-end; }
+  .nav__actions { display: flex; gap: 16px; align-items: center; justify-content: flex-end; overflow: visible; flex-shrink: 0; }
   .nav__links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); transition: color var(--transition); }
   .nav__links a:hover { color: #C8E65A; }
   /* NAV SEARCH */
@@ -191,7 +191,7 @@
     .articles-grid { grid-template-columns: repeat(2,1fr); }
     .footer__top { grid-template-columns: 1fr 1fr; }
   }
-  .nav__hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin-left: auto; }
+  .nav__hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin-left: auto; flex-shrink: 0; }
   .nav__hamburger span { display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.9); border-radius: 2px; transition: all 0.25s ease; }
   .nav__hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav__hamburger.open span:nth-child(2) { opacity: 0; }
@@ -207,6 +207,7 @@
     .nav__cta { display: none; }
   }
   @media(max-width:768px) {
+    .nav__inner { overflow: visible; }
     .nav__links { display: none; }
     .nav__hamburger { display: flex; }
     .content-area { min-height: 4800px; }
@@ -448,10 +449,10 @@
   <nav class="nav">
     <div class="nav__inner">
       <ul class="nav__links">
-        <li><a href="https://talentedatai.com/articles.html">Articles</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="https://talentedatai.com/articles">Articles</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
       </ul>
       <a href="/" class="nav__logo">
         <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" height="90" style="width:auto;display:block;" aria-label="Talented at AI">
@@ -484,10 +485,10 @@
         </button>
       </div>
       <div class="nav__mobile-menu" id="nav-mobile-menu">
-        <a href="https://talentedatai.com/articles.html">Articles</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="https://talentedatai.com/articles">Articles</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy-policy">Privacy Policy</a>
       </div>
     </div>
     <!-- Mobile-only search drawer. Hidden via CSS on desktop. Opens from below the
@@ -1152,7 +1153,7 @@
   function submitNavSearch(q) {
     const trimmed = (q || '').trim();
     if (!trimmed) return;
-    window.location.href = '/articles.html?search=' + encodeURIComponent(trimmed);
+    window.location.href = '/articles?search=' + encodeURIComponent(trimmed);
   }
 
   function onNavSearchInput(e) {
