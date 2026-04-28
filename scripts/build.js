@@ -1074,20 +1074,20 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>${SITE_URL}/articles.html</loc>
+    <loc>${SITE_URL}/articles</loc>
     <lastmod>${today}</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>${SITE_URL}/about.html</loc>
+    <loc>${SITE_URL}/about</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>${SITE_URL}/contact.html</loc>
+    <loc>${SITE_URL}/contact</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>${SITE_URL}/privacy-policy.html</loc>
+    <loc>${SITE_URL}/privacy-policy</loc>
     <priority>0.4</priority>
   </url>
   <url>
