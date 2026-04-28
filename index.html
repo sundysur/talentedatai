@@ -207,8 +207,9 @@
     .nav__cta { display: none; }
   }
   @media(max-width:768px) {
-    .nav__inner { overflow: visible; }
+    .nav__inner { overflow: visible; grid-template-columns: auto 1fr auto; }
     .nav__links { display: none; }
+    .nav__logo svg { height: 50px; }
     .nav__hamburger { display: flex; }
     .content-area { min-height: 4800px; }
     .featured-card-wrap { min-height: 500px; }
