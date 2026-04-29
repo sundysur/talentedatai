@@ -240,6 +240,8 @@ If you are reading this with no AI tools in your workflow, start here:
 
 The businesses that get the most from AI are not the ones with the biggest budgets or the most tools. They are the ones that picked the right two or three tools for their specific work and used them every day until the habits stuck. Start small. Go deep before you go wide.
 
+If you want to see what this looks like in practice, read how [a mid-career brand marketer rebuilt her entire workflow around AI tools](/content/published/brand-marketer-ai-reinvention-2026).
+
 ---
 
 **Related guides:**
