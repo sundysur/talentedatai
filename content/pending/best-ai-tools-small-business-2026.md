@@ -38,82 +38,89 @@ Before you sign up for anything, identify your three biggest time drains. Not va
 Match each bottleneck to a tool category. Then start with one tool, use it daily for 30 days, and only add a second once the first is producing consistent results. Going wide before going deep is how you end up with six unused subscriptions.
 
 <figure>
-<svg viewBox="0 0 800 400" width="100%" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="400" rx="8" fill="#FAF6EC"/>
-  <text x="400" y="28" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" fill="#0E3B2E">Which Tools Does Your Business Type Actually Need?</text>
-  <!-- Header row -->
-  <rect x="0" y="40" width="800" height="50" fill="#0E3B2E"/>
-  <text x="75" y="69" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#C8E65A">Business Type</text>
-  <text x="200" y="61" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#fff">Claude /</text>
-  <text x="200" y="75" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#fff">ChatGPT</text>
-  <text x="293" y="69" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#fff">Notion AI</text>
-  <text x="386" y="69" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#fff">Canva AI</text>
-  <text x="479" y="69" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#fff">ElevenLabs</text>
-  <text x="572" y="69" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#fff">Perplexity</text>
-  <text x="665" y="69" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#fff">Gamma</text>
-  <text x="754" y="69" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#fff">Buffer</text>
-  <!-- Row 1: Service Business -->
-  <rect x="0" y="90" width="800" height="65" fill="#FAF6EC"/>
-  <text x="20" y="120" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">Service Business</text>
-  <text x="20" y="136" font-family="system-ui, sans-serif" font-size="9" fill="#777">plumber, salon, accountant</text>
-  <text x="200" y="125" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <text x="293" y="125" text-anchor="middle" font-size="20" fill="#999">&#x25CB;</text>
-  <text x="386" y="125" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <text x="479" y="125" text-anchor="middle" font-size="14" fill="#bbb">&#x2014;</text>
-  <text x="572" y="125" text-anchor="middle" font-size="20" fill="#999">&#x25CB;</text>
-  <text x="665" y="125" text-anchor="middle" font-size="14" fill="#bbb">&#x2014;</text>
-  <text x="754" y="125" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <line x1="15" y1="155" x2="785" y2="155" stroke="#C8E65A" stroke-width="1.5"/>
-  <!-- Row 2: E-commerce -->
-  <rect x="0" y="155" width="800" height="65" fill="#F4F1E4"/>
-  <text x="20" y="185" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">E-commerce</text>
-  <text x="20" y="201" font-family="system-ui, sans-serif" font-size="9" fill="#777">online store, DTC brand</text>
-  <text x="200" y="190" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <text x="293" y="190" text-anchor="middle" font-size="20" fill="#999">&#x25CB;</text>
-  <text x="386" y="190" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <text x="479" y="190" text-anchor="middle" font-size="20" fill="#999">&#x25CB;</text>
-  <text x="572" y="190" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <text x="665" y="190" text-anchor="middle" font-size="14" fill="#bbb">&#x2014;</text>
-  <text x="754" y="190" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <line x1="15" y1="220" x2="785" y2="220" stroke="#C8E65A" stroke-width="1.5"/>
-  <!-- Row 3: Consulting -->
-  <rect x="0" y="220" width="800" height="65" fill="#FAF6EC"/>
-  <text x="20" y="250" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">Consulting</text>
-  <text x="20" y="266" font-family="system-ui, sans-serif" font-size="9" fill="#777">freelance, advisory, agency</text>
-  <text x="200" y="255" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <text x="293" y="255" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <text x="386" y="255" text-anchor="middle" font-size="20" fill="#999">&#x25CB;</text>
-  <text x="479" y="255" text-anchor="middle" font-size="14" fill="#bbb">&#x2014;</text>
-  <text x="572" y="255" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <text x="665" y="255" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <text x="754" y="255" text-anchor="middle" font-size="20" fill="#999">&#x25CB;</text>
-  <line x1="15" y1="285" x2="785" y2="285" stroke="#C8E65A" stroke-width="1.5"/>
-  <!-- Row 4: Creative Agency -->
-  <rect x="0" y="285" width="800" height="65" fill="#F4F1E4"/>
-  <text x="20" y="315" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">Creative Agency</text>
-  <text x="20" y="331" font-family="system-ui, sans-serif" font-size="9" fill="#777">design, content, marketing</text>
-  <text x="200" y="320" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <text x="293" y="320" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <text x="386" y="320" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <text x="479" y="320" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <text x="572" y="320" text-anchor="middle" font-size="20" fill="#999">&#x25CB;</text>
-  <text x="665" y="320" text-anchor="middle" font-size="20" fill="#999">&#x25CB;</text>
-  <text x="754" y="320" text-anchor="middle" font-size="20" fill="#0E3B2E">&#x25CF;</text>
-  <line x1="15" y1="350" x2="785" y2="350" stroke="#0E3B2E" stroke-width="1"/>
-  <!-- Legend -->
-  <text x="200" y="378" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#0E3B2E">&#x25CF; Essential</text>
-  <text x="400" y="378" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#999">&#x25CB; Useful but optional</text>
-  <text x="600" y="378" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#bbb">&#x2014; Probably not needed</text>
-  <!-- Column dividers -->
-  <line x1="154" y1="40" x2="154" y2="350" stroke="#0E3B2E" stroke-opacity="0.1" stroke-width="1"/>
-  <line x1="247" y1="40" x2="247" y2="350" stroke="#0E3B2E" stroke-opacity="0.1" stroke-width="1"/>
-  <line x1="340" y1="40" x2="340" y2="350" stroke="#0E3B2E" stroke-opacity="0.1" stroke-width="1"/>
-  <line x1="433" y1="40" x2="433" y2="350" stroke="#0E3B2E" stroke-opacity="0.1" stroke-width="1"/>
-  <line x1="526" y1="40" x2="526" y2="350" stroke="#0E3B2E" stroke-opacity="0.1" stroke-width="1"/>
-  <line x1="619" y1="40" x2="619" y2="350" stroke="#0E3B2E" stroke-opacity="0.1" stroke-width="1"/>
-  <line x1="712" y1="40" x2="712" y2="350" stroke="#0E3B2E" stroke-opacity="0.1" stroke-width="1"/>
+<svg viewBox="0 0 800 420" width="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="420" rx="8" fill="#FAF6EC"/>
+  <!-- Central question box -->
+  <rect x="175" y="12" width="450" height="46" rx="8" fill="#0E3B2E"/>
+  <text x="400" y="41" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#C8E65A">What's slowing your business down most?</text>
+  <!-- Connector lines: question to bottleneck boxes -->
+  <line x1="400" y1="58" x2="112" y2="88" stroke="#C8E65A" stroke-width="2"/>
+  <line x1="400" y1="58" x2="304" y2="88" stroke="#C8E65A" stroke-width="2"/>
+  <line x1="400" y1="58" x2="496" y2="88" stroke="#C8E65A" stroke-width="2"/>
+  <line x1="400" y1="58" x2="688" y2="88" stroke="#C8E65A" stroke-width="2"/>
+  <!-- Bottleneck boxes -->
+  <rect x="25" y="88" width="175" height="52" rx="6" fill="#C8E65A"/>
+  <text x="112" y="110" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0E3B2E">Writing &amp;</text>
+  <text x="112" y="125" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0E3B2E">communication</text>
+  <rect x="217" y="88" width="175" height="52" rx="6" fill="#C8E65A"/>
+  <text x="304" y="110" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0E3B2E">Looking unprofessional</text>
+  <text x="304" y="125" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0E3B2E">visually</text>
+  <rect x="409" y="88" width="175" height="52" rx="6" fill="#C8E65A"/>
+  <text x="496" y="110" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0E3B2E">Can't find reliable</text>
+  <text x="496" y="125" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0E3B2E">information fast</text>
+  <rect x="601" y="88" width="175" height="52" rx="6" fill="#C8E65A"/>
+  <text x="688" y="110" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0E3B2E">Presentations eating</text>
+  <text x="688" y="125" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0E3B2E">your time</text>
+  <!-- Connector lines: bottleneck to tool boxes -->
+  <line x1="112" y1="140" x2="112" y2="168" stroke="#0E3B2E" stroke-width="2"/>
+  <line x1="304" y1="140" x2="304" y2="168" stroke="#0E3B2E" stroke-width="2"/>
+  <line x1="496" y1="140" x2="496" y2="168" stroke="#0E3B2E" stroke-width="2"/>
+  <line x1="688" y1="140" x2="688" y2="168" stroke="#0E3B2E" stroke-width="2"/>
+  <!-- Arrow tips -->
+  <polygon points="106,168 112,178 118,168" fill="#0E3B2E"/>
+  <polygon points="298,168 304,178 310,168" fill="#0E3B2E"/>
+  <polygon points="490,168 496,178 502,168" fill="#0E3B2E"/>
+  <polygon points="682,168 688,178 694,168" fill="#0E3B2E"/>
+  <!-- Tool box 1: Claude or ChatGPT -->
+  <rect x="25" y="178" width="175" height="195" rx="8" fill="#0E3B2E"/>
+  <text x="112" y="208" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#fff">Claude</text>
+  <text x="112" y="226" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#C8E65A">or ChatGPT</text>
+  <line x1="55" y1="240" x2="170" y2="240" stroke="#C8E65A" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="112" y="262" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">Drafts proposals, emails,</text>
+  <text x="112" y="276" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">and summaries. Analyses</text>
+  <text x="112" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">contracts and documents.</text>
+  <text x="112" y="304" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">Your general-purpose</text>
+  <text x="112" y="318" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">thinking partner.</text>
+  <rect x="52" y="336" width="120" height="24" rx="12" fill="#C8E65A"/>
+  <text x="112" y="352" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0E3B2E">Free to start</text>
+  <!-- Tool box 2: Canva AI -->
+  <rect x="217" y="178" width="175" height="195" rx="8" fill="#0E3B2E"/>
+  <text x="304" y="208" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#fff">Canva AI</text>
+  <text x="304" y="226" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#C8E65A">Design without a designer</text>
+  <line x1="247" y1="240" x2="362" y2="240" stroke="#C8E65A" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="304" y="262" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">Social graphics, brand</text>
+  <text x="304" y="276" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">materials, presentations,</text>
+  <text x="304" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">and short videos. AI handles</text>
+  <text x="304" y="304" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">layout, background removal,</text>
+  <text x="304" y="318" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">and text-to-design.</text>
+  <rect x="244" y="336" width="120" height="24" rx="12" fill="#C8E65A"/>
+  <text x="304" y="352" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0E3B2E">Free to start</text>
+  <!-- Tool box 3: Perplexity -->
+  <rect x="409" y="178" width="175" height="195" rx="8" fill="#0E3B2E"/>
+  <text x="496" y="208" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#fff">Perplexity</text>
+  <text x="496" y="226" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#C8E65A">Research with citations</text>
+  <line x1="439" y1="240" x2="554" y2="240" stroke="#C8E65A" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="496" y="262" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">Answers business questions</text>
+  <text x="496" y="276" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">with real-time web research.</text>
+  <text x="496" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">Every claim links to a</text>
+  <text x="496" y="304" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">source you can verify</text>
+  <text x="496" y="318" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">before acting on it.</text>
+  <rect x="436" y="336" width="120" height="24" rx="12" fill="#C8E65A"/>
+  <text x="496" y="352" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0E3B2E">Free to start</text>
+  <!-- Tool box 4: Gamma -->
+  <rect x="601" y="178" width="175" height="195" rx="8" fill="#0E3B2E"/>
+  <text x="688" y="208" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#fff">Gamma</text>
+  <text x="688" y="226" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#C8E65A">Presentations in minutes</text>
+  <line x1="631" y1="240" x2="746" y2="240" stroke="#C8E65A" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="688" y="262" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">Generates complete slide</text>
+  <text x="688" y="276" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">decks from a text prompt.</text>
+  <text x="688" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">Professional layouts and</text>
+  <text x="688" y="304" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">design in under two</text>
+  <text x="688" y="318" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ddd">minutes.</text>
+  <rect x="628" y="336" width="120" height="24" rx="12" fill="#C8E65A"/>
+  <text x="688" y="352" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0E3B2E">Free to start</text>
 </svg>
-<figcaption>Not every business needs every tool. Find your row, then start with the filled circles.</figcaption>
+<figcaption>Start with one tool. Go deep before you go wide.</figcaption>
 </figure>
 
 ## 1. Claude or ChatGPT: Your General-Purpose AI Assistant
@@ -218,75 +225,6 @@ Here is a realistic budget for a small business AI stack in 2026:
 That is the maximum if you subscribe to everything. Most businesses need three to five of these, putting the realistic monthly spend at $45-70. Start with Claude and Canva ($35/month combined), add one more based on your next biggest bottleneck, and expand only when you have a clear reason.
 
 Compare that to hiring even a part-time marketing assistant or freelance designer. The tools do not replace people, but they extend what a small team can produce by a meaningful margin.
-
-<figure>
-<svg viewBox="0 0 800 360" width="100%" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="360" rx="8" fill="#FAF6EC"/>
-  <text x="400" y="28" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" fill="#0E3B2E">Monthly Cost: Free Tier vs Paid Tier</text>
-  <!-- Header row -->
-  <rect x="0" y="38" width="800" height="36" fill="#0E3B2E"/>
-  <text x="30" y="61" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#C8E65A">Tool</text>
-  <text x="340" y="61" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#C8E65A">Free Tier</text>
-  <text x="620" y="61" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#C8E65A">Paid Tier</text>
-  <!-- Row 1: Claude/ChatGPT -->
-  <rect x="0" y="74" width="800" height="32" fill="#FAF6EC"/>
-  <text x="30" y="95" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">Claude / ChatGPT</text>
-  <text x="340" y="95" font-family="system-ui, sans-serif" font-size="11" fill="#555">Limited messages per day</text>
-  <text x="620" y="95" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">$20/mo</text>
-  <text x="700" y="95" font-family="system-ui, sans-serif" font-size="10" fill="#777">Pro</text>
-  <line x1="15" y1="106" x2="785" y2="106" stroke="#C8E65A" stroke-width="1"/>
-  <!-- Row 2: Notion AI -->
-  <rect x="0" y="106" width="800" height="32" fill="#F4F1E4"/>
-  <text x="30" y="127" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">Notion AI</text>
-  <text x="340" y="127" font-family="system-ui, sans-serif" font-size="11" fill="#555">Free for 1 user, no AI features</text>
-  <text x="620" y="127" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">$18/mo</text>
-  <text x="700" y="127" font-family="system-ui, sans-serif" font-size="10" fill="#777">Business</text>
-  <line x1="15" y1="138" x2="785" y2="138" stroke="#C8E65A" stroke-width="1"/>
-  <!-- Row 3: Canva AI -->
-  <rect x="0" y="138" width="800" height="32" fill="#FAF6EC"/>
-  <text x="30" y="159" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">Canva AI</text>
-  <text x="340" y="159" font-family="system-ui, sans-serif" font-size="11" fill="#555">Basic templates and editing</text>
-  <text x="620" y="159" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">$15/mo</text>
-  <text x="700" y="159" font-family="system-ui, sans-serif" font-size="10" fill="#777">Pro</text>
-  <line x1="15" y1="170" x2="785" y2="170" stroke="#C8E65A" stroke-width="1"/>
-  <!-- Row 4: ElevenLabs -->
-  <rect x="0" y="170" width="800" height="32" fill="#F4F1E4"/>
-  <text x="30" y="191" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">ElevenLabs</text>
-  <text x="340" y="191" font-family="system-ui, sans-serif" font-size="11" fill="#555">Limited characters per month</text>
-  <text x="620" y="191" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">$5/mo</text>
-  <text x="700" y="191" font-family="system-ui, sans-serif" font-size="10" fill="#777">Starter</text>
-  <line x1="15" y1="202" x2="785" y2="202" stroke="#C8E65A" stroke-width="1"/>
-  <!-- Row 5: Perplexity -->
-  <rect x="0" y="202" width="800" height="32" fill="#FAF6EC"/>
-  <text x="30" y="223" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">Perplexity</text>
-  <text x="340" y="223" font-family="system-ui, sans-serif" font-size="11" fill="#555">Basic search, limited Pro queries</text>
-  <text x="620" y="223" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">$20/mo</text>
-  <text x="700" y="223" font-family="system-ui, sans-serif" font-size="10" fill="#777">Pro</text>
-  <line x1="15" y1="234" x2="785" y2="234" stroke="#C8E65A" stroke-width="1"/>
-  <!-- Row 6: Gamma -->
-  <rect x="0" y="234" width="800" height="32" fill="#F4F1E4"/>
-  <text x="30" y="255" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">Gamma</text>
-  <text x="340" y="255" font-family="system-ui, sans-serif" font-size="11" fill="#555">400 credits (~10 presentations)</text>
-  <text x="620" y="255" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">$10/mo</text>
-  <text x="700" y="255" font-family="system-ui, sans-serif" font-size="10" fill="#777">Plus</text>
-  <line x1="15" y1="266" x2="785" y2="266" stroke="#C8E65A" stroke-width="1"/>
-  <!-- Row 7: Buffer -->
-  <rect x="0" y="266" width="800" height="32" fill="#FAF6EC"/>
-  <text x="30" y="287" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">Buffer</text>
-  <text x="340" y="287" font-family="system-ui, sans-serif" font-size="11" fill="#555">3 channels, basic scheduling</text>
-  <text x="620" y="287" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0E3B2E">$18/mo</text>
-  <text x="700" y="287" font-family="system-ui, sans-serif" font-size="10" fill="#777">Essentials x3</text>
-  <!-- Total row -->
-  <rect x="0" y="302" width="800" height="40" fill="#0E3B2E"/>
-  <text x="30" y="328" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#C8E65A">TOTAL</text>
-  <text x="340" y="328" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#C8E65A">$0/mo</text>
-  <text x="620" y="328" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#C8E65A">$106/mo</text>
-  <text x="700" y="328" font-family="system-ui, sans-serif" font-size="10" fill="#FAF6EC">all 7 paid</text>
-  <!-- Footer note -->
-  <text x="400" y="352" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#777">Most businesses need 3-5 tools. Realistic spend: $45-70/mo.</text>
-</svg>
-<figcaption>You can start every tool on a free tier. Upgrade only the ones you use three or more times a week.</figcaption>
-</figure>
 
 ## Where to Start
 
