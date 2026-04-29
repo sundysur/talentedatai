@@ -6,7 +6,7 @@ date: "2026-04-29T09:00:00"
 author: "TalentedAtAI Editorial Team"
 read_time: "10 min"
 tags: ["AI tools", "small business", "productivity", "marketing", "2026"]
-image: "best-ai-tools-small-business-2026-header.jpg"
+image: "best-ai-tools-small-business-2026.jpg"
 slug: "best-ai-tools-small-business-2026"
 affiliate: true
 filters: ["Guides", "Beginners"]
