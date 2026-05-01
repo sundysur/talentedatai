@@ -20,7 +20,7 @@ faq:
     a: "The informational component of these roles — looking up precedents, diagnosing from a checklist, researching regulations — is being significantly commoditised. What isn't being replaced is the judgment, the accountability, and the relationship layers: a patient in front of you, a client depending on advice, a name on the recommendation. Those professions will change substantially and some work will be automated, but 'replaced' overstates what's actually happening in practice."
 ---
 
-> **TL;DR:** AI hasn't made expertise worthless — it's made the information-holding part cheap. What remains valuable is judgment, context, relationships, and the ability to act on knowledge rather than merely possess it — and those things are harder to automate than anyone is admitting.
+> **TL;DR:** AI hasn't made expertise worthless. It's made the information-holding part cheap. What remains valuable is judgment, context, relationships, and the ability to act on knowledge rather than merely possess it. Those things are harder to automate than anyone is admitting.
 
 There is a conversation happening right now in workplaces, universities, and living rooms that tends to get framed in exactly the wrong way. The question people are asking is: *which jobs will AI take?* The question worth asking is different: *what does it mean to know something, now that knowing is almost free?*
 
@@ -34,7 +34,7 @@ For most of human history, expertise was expensive to acquire and expensive to a
 
 This wasn't incidental to how expertise worked. It was constitutive of it. The value of being an expert was partly the value of being rare. A doctor knew what a patient didn't know. A lawyer understood a system the client couldn't navigate alone. A financial advisor held information that wasn't available elsewhere, or at least wasn't available in a synthesised, usable form.
 
-What AI has done — and continues to do, rapidly — is make the information component of expertise cheap. Not free, not perfect, not without risks of hallucination or misjudgement, but cheap enough that the architecture of traditional expertise is genuinely in question. Anyone with a decent AI assistant can now ask complex medical, legal, or financial questions and receive responses that, in terms of raw informational content, rival what a junior professional would produce.
+What AI has done — and continues to do, rapidly — is make the information component of expertise cheap. Not free, not perfect, not without risks of hallucination or misjudgement, but cheap enough that the architecture of traditional expertise is in question. Anyone with a decent AI assistant can now ask complex medical, legal, or financial questions and receive responses that, in terms of raw informational content, rival what a junior professional would produce.
 
 This is not a threat on the horizon. It is the current reality for anyone who has actually used these tools seriously.
 
@@ -44,7 +44,7 @@ This is not a threat on the horizon. It is the current reality for anyone who ha
 
 Here is the thing that gets missed in most of these conversations: expertise was never just about holding information. It was always made of several things at once, and information was only one of them.
 
-The others are harder to name but easy to recognise. There's judgment — the ability to know which piece of information matters in a specific situation, when the textbook answer doesn't apply, when something feels wrong before you can say why. There's what you might call integrated attention — the capacity of a skilled diagnostician, editor, or engineer to perceive a whole and notice the detail that doesn't fit, not by running through a checklist but because pattern recognition has become unconscious and fast. There's accountability — the weight of standing behind a decision, of having your name on the recommendation, of caring about the outcome because it connects to your identity and your record. And there's relationship — the part of expertise that is expressed not in information but in timing, in the right question, in knowing when not to speak.
+The others are harder to name but easy to recognise. There's judgment — the ability to know which piece of information matters in a specific situation, when the textbook answer doesn't apply, when something feels wrong before you can say why. There's what you might call integrated attention: the capacity of a skilled diagnostician, editor, or engineer to perceive a whole and notice the detail that doesn't fit, not by running through a checklist but because pattern recognition has become unconscious and fast. There's accountability, the weight of standing behind a decision, of having your name on the recommendation, of caring about the outcome because it connects to your identity and your record. And there's relationship, the part of expertise that is expressed not in information but in timing, in the right question, in knowing when not to speak.
 
 AI has commoditised the first component. It cannot, in any meaningful sense, replicate the others.
 
@@ -68,13 +68,13 @@ This is the quiet paradox of the moment: AI makes expertise more accessible to n
 
 ## What We're Actually Losing
 
-It would be dishonest not to acknowledge what is genuinely at risk.
+It would be dishonest not to acknowledge what is at risk.
 
-The traditional pathway to expertise involved doing a lot of work that AI now renders unnecessary. Writing the memo that took three hours when a junior lawyer was figuring out how to structure an argument. Doing the literature review that a researcher spent a week on before they understood the landscape well enough to contribute to it. These tasks were partly about the output and partly — arguably mainly — about the process of developing capability through difficulty.
+The traditional pathway to expertise involved doing a lot of work that AI now renders unnecessary. Writing the memo that took three hours when a junior lawyer was figuring out how to structure an argument. Doing the literature review that a researcher spent a week on before they understood the landscape well enough to contribute to it. These tasks were partly about the output and partly, arguably mainly, about the process of developing capability through difficulty.
 
 If AI handles all of that scaffolding, the question becomes: how do novices develop into experts? What is the path from knowing nothing to knowing enough to ask the right questions?
 
-This is a real problem and no one should pretend otherwise. The answer isn't to avoid AI tools — that's neither realistic nor desirable. But it does require a shift in how learning is structured. The emphasis needs to move from information retrieval to application, from recall to evaluation, from answering questions correctly to interrogating whether the question itself is the right one.
+This is a real problem and no one should pretend otherwise. The answer isn't to avoid AI tools; that's neither realistic nor desirable. But it does require a shift in how learning is structured. The emphasis needs to move from information retrieval to application, from recall to evaluation, from answering questions correctly to interrogating whether the question itself is the right one.
 
 Educational institutions are slowly recognising this. Workplaces are learning it more urgently, through experience. The adaptation is happening, but unevenly, and with considerable friction.
 
@@ -98,12 +98,12 @@ The conversation worth having isn't about which jobs survive AI. Most jobs will 
 
 The more interesting question is about what we choose to keep doing ourselves, and why.
 
-Some tasks will be fully automated and should be. The hours junior staff used to spend on routine research and initial drafts can be recovered for things that genuinely require human attention. This is a gain, not a loss, if the freed capacity is used for something that needs it.
+Some tasks will be fully automated and should be. The hours junior staff used to spend on routine research and initial drafts can be recovered for things that require human attention. This is a gain, not a loss, if the freed capacity is used for something that needs it.
 
-But there is a version of AI adoption where the automation keeps expanding inward — where we keep delegating the next layer of judgment, the next layer of evaluation, the next layer of decision — until the human in the loop is mostly just approving AI outputs without the depth of understanding to know when they're wrong.
+But there is a version of AI adoption where the automation keeps expanding inward — where we keep delegating the next layer of judgment, the next layer of evaluation, the next layer of decision, until the human in the loop is mostly just approving AI outputs without the depth of understanding to know when they're wrong.
 
 That version is worth resisting. Not because AI is bad, but because the slow erosion of the capacity to judge is hard to notice and hard to reverse. The endpoint is not expertise augmented by AI. It's the appearance of expertise, built on a foundation that isn't there.
 
-The tools are genuinely impressive. Use them. But stay curious about what you still don't understand. Keep asking questions you don't already know the answer to. And notice when you're thinking alongside the AI versus when you've stopped thinking and started approving.
+The tools are impressive. Use them. But stay curious about what you still don't understand. Keep asking questions you don't already know the answer to. And notice when you're thinking alongside the AI versus when you've stopped thinking and started approving.
 
 That distinction, maintained deliberately, is what the age of AI actually requires of human experts. It's more demanding than it sounds. It's also, perhaps, more interesting.
