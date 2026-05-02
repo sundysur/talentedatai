@@ -12,7 +12,7 @@ slug: "canva-ai-review-2026"
 affiliate: false
 faq:
   - q: "Is Canva AI free to use in 2026?"
-    a: "Canva offers limited free access to most AI features: 10 Magic Design uses per month, 25 Magic Write queries, and 5 Dream Lab image generations. Background Remover, Magic Eraser, Magic Expand, and Translate require Canva Pro ($15/month) for full access. The free tier is enough to evaluate the tools but not enough for regular production use."
+    a: "Canva offers limited free access to some AI features: 10 Magic Design uses per month, 25 Magic Write queries, and 5 Dream Lab image generations. Background Remover and Magic Expand are Pro-only features with no permanent free access, though you can try them during Canva's 30-day free trial of Pro or Business plans. Magic Eraser, Magic Grab, and Translate also require Pro for meaningful use. The free tier covers enough features to get a feel for the platform but not enough to build a production workflow."
   - q: "Is Canva Pro worth it for the AI features alone?"
     a: "Not on their own. Canva Pro at $15/month is worth it if you already use Canva for design and want AI as a bonus. If your primary need is AI image generation, a dedicated tool like Midjourney or Adobe Firefly will give you better results. If your primary need is AI writing, ChatGPT or Claude are stronger. Canva AI is best as a convenience layer on top of a tool you already pay for."
   - q: "How does Canva Dream Lab compare to Midjourney?"
@@ -57,11 +57,11 @@ AI 2.0 introduces a conversational design mode (describe what you want and itera
   <text x="700" y="136" fill="#555" font-size="12">500/mo</text>
   <text x="30" y="170" fill="#1a1a1a" font-size="13" font-weight="600">Magic Expand</text>
   <rect x="330" y="156" width="86" height="22" rx="4" fill="#0E3B2E"/><text x="373" y="172" text-anchor="middle" fill="#C8E65A" font-size="11" font-weight="700">Excellent</text>
-  <text x="530" y="170" fill="#555" font-size="12">Limited</text>
+  <text x="530" y="170" fill="#555" font-size="10">Pro only (trial)</text>
   <text x="700" y="170" fill="#555" font-size="12">Full</text>
   <text x="30" y="204" fill="#1a1a1a" font-size="13" font-weight="600">Background Remover</text>
   <rect x="330" y="190" width="86" height="22" rx="4" fill="#0E3B2E"/><text x="373" y="206" text-anchor="middle" fill="#C8E65A" font-size="11" font-weight="700">Excellent</text>
-  <text x="530" y="204" fill="#555" font-size="12">1 use only</text>
+  <text x="530" y="204" fill="#555" font-size="10">Pro only (trial)</text>
   <text x="700" y="204" fill="#555" font-size="12">Unlimited</text>
   <text x="30" y="238" fill="#1a1a1a" font-size="13" font-weight="600">Dream Lab (Text to Image)</text>
   <rect x="330" y="224" width="86" height="22" rx="4" fill="#d4a017"/><text x="373" y="240" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Mediocre</text>
@@ -113,7 +113,7 @@ The core problem is that ChatGPT and Claude both produce better copy for free, a
 
 ### Magic Expand | Verdict: Excellent
 
-You have a photo that is the right image for your design but the wrong aspect ratio. Cropping cuts out something important. Resizing distorts it. This is the specific problem Magic Expand solves, and it solves it well. Note that Magic Expand is a Pro-only feature with limited free access, so you will need a paid account to use it in any production workflow.
+You have a photo that is the right image for your design but the wrong aspect ratio. Cropping cuts out something important. Resizing distorts it. This is the specific problem Magic Expand solves, and it solves it well. Note that Magic Expand is a Pro-only feature with no permanent free-tier access. You can test it during Canva's 30-day free trial of Pro or Business plans, but you will need a paid account to use it beyond that.
 
 <!-- IMAGE: Canva edit panel showing Magic Expand in the tools list alongside Magic Eraser and BG Remover -->
 
@@ -121,7 +121,7 @@ Select your image, drag the edges outward, and Magic Expand fills the new space 
 
 For social media creators who regularly reformat content across platforms (square to landscape, portrait to story), this is the single most useful AI feature in Canva. It replaces what used to be a manual Photoshop job or a compromise on framing.
 
-**Free:** Limited uses. **Pro:** Full access.
+**Free:** Not available (30-day Pro trial only). **Pro:** Full access.
 
 ### Background Remover | Verdict: Excellent
 
@@ -129,9 +129,9 @@ Product photographers and social media managers know this pain: you have a great
 
 Canva's Background Remover does it in one click, and the edge quality is consistently good. Hair edges, semi-transparent objects, and complex outlines all handle well. We tested it on twelve images with varying backgrounds and complexity. Ten produced clean, usable cutouts. Two needed minor edge cleanup.
 
-The catch: this is a Pro-only feature. Free users get a single trial use. If background removal is your primary need and you don't want to pay for Pro, tools like remove.bg offer a free alternative with comparable quality. But if you already have Pro, the Background Remover alone saves enough time to justify a meaningful portion of the subscription.
+The catch: this is a Pro-only feature with no permanent free-tier access. You can try it during Canva's 30-day free trial of Pro or Business plans, but after that trial ends you lose access entirely. If background removal is your primary need and you don't want to pay for Pro, tools like remove.bg offer a free alternative with comparable quality. But if you already have Pro, the Background Remover alone saves enough time to justify a meaningful portion of the subscription.
 
-**Free:** 1 trial use. **Pro:** Unlimited.
+**Free:** Not available (30-day Pro trial only). **Pro:** Unlimited.
 
 ### Dream Lab (Text to Image) | Verdict: Mediocre
 
@@ -191,7 +191,7 @@ Canva reports over nine million uses since launch, which suggests this solves a 
 
 Canva Pro costs $15/month (monthly billing) or $10/month on the annual plan at $120/year. The AI features that require Pro for meaningful use are Background Remover, Magic Expand, Magic Eraser, Magic Grab, Translate, and Magic Layers. Dream Lab, Magic Design, and Magic Write offer free-tier access with tight monthly limits (5, 10, and 25 uses respectively). Beat Sync is available on both tiers.
 
-The practical reality: the free tier gives you enough uses to evaluate each feature but not enough to build a production workflow around any of them. If you try Magic Expand three times and find it useful, you will hit the free limit within a week.
+The practical reality: the free tier gives you enough uses to evaluate some features but not enough to build a production workflow around any of them. Background Remover and Magic Expand are not available on the free tier at all and require a 30-day Pro trial or paid subscription to access.
 
 ## Canva AI vs Dedicated AI Tools
 
