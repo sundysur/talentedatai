@@ -101,7 +101,7 @@
   .featured-card-wrap { margin: 24px 0 0; min-height: 320px; }
   .featured-card { display: grid; grid-template-columns: 1.2fr 1fr; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(0,0,0,0.07); cursor: pointer; transition: box-shadow var(--transition); }
   .featured-card:hover { box-shadow: 0 8px 40px rgba(0,102,255,0.12); }
-  .featured-card__img { position: relative; min-height: 280px; overflow: hidden; background: var(--gray-100); }
+  .featured-card__img { position: relative; aspect-ratio: 16/9; overflow: hidden; background: var(--gray-100); }
   .featured-card__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .featured-card__img-fallback { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 64px; background: linear-gradient(135deg, #0a1628, #1e3a5f); }
   .featured-card__body { padding: 32px 28px; display: flex; flex-direction: column; justify-content: center; gap: 12px; border-left: 1px solid rgba(0,0,0,0.07); background: var(--white); }
@@ -215,7 +215,7 @@
     .featured-card-wrap { min-height: 500px; }
     .secondary-row { min-height: 300px; }
     .featured-card { grid-template-columns: 1fr; }
-    .featured-card__img { min-height: 200px; }
+    .featured-card__img { aspect-ratio: 16/9; }
     .featured-card__body { border-left: none; border-top: 1px solid rgba(0,0,0,0.07); }
     .secondary-row { grid-template-columns: 1fr; }
     .articles-grid { grid-template-columns: 1fr; }
