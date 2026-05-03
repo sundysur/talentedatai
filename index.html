@@ -101,7 +101,7 @@
   .featured-card-wrap { margin: 24px 0 0; min-height: 320px; }
   .featured-card { display: grid; grid-template-columns: 1.2fr 1fr; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(0,0,0,0.07); cursor: pointer; transition: box-shadow var(--transition); }
   .featured-card:hover { box-shadow: 0 8px 40px rgba(0,102,255,0.12); }
-  .featured-card__img { position: relative; aspect-ratio: 16/9; overflow: hidden; background: var(--gray-100); }
+  .featured-card__img { position: relative; aspect-ratio: 16/9; overflow: hidden; background: var(--gray-100); align-self: start; }
   .featured-card__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .featured-card__img-fallback { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 64px; background: linear-gradient(135deg, #0a1628, #1e3a5f); }
   .featured-card__body { padding: 32px 28px; display: flex; flex-direction: column; justify-content: center; gap: 12px; border-left: 1px solid rgba(0,0,0,0.07); background: var(--white); }
@@ -728,12 +728,8 @@
         sizes="(max-width: 768px) 400px, (max-width: 1200px) 800px, 800px">
       <img
       src="${article.image}"
-      srcset="${article.image.replace(/\.[^/.]+$/, '-400w.jpg')} 400w,
-              ${article.image.replace(/\.[^/.]+$/, '-800w.jpg')} 800w,
-              ${article.image} 1600w"
-      sizes="(max-width: 768px) 400px, (max-width: 1200px) 800px, 800px"
       alt="${escAttr(article.title)}"
-      width="800" height="380"
+      width="800" height="450"
       loading="eager"
       fetchpriority="high"
       style="width:100%;height:100%;object-fit:cover;display:block;">
