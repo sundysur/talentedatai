@@ -26,7 +26,7 @@ faq:
 
 Most AI tools in 2026 work the same way: your question travels to a server somewhere, a model processes it, and the answer comes back. That means your queries are logged, your data goes to a third party, and the whole thing stops working when you lose signal.
 
-**Gemma 4** changes that equation on Android. It's a capable AI model from Google that runs entirely on your phone — offline, private, free. No monthly fee. No data sent anywhere. No internet required after the initial download. In 2026, thanks to advances in model compression and the improved chips in mid-range Android phones, this is genuinely practical for everyday use.
+**Gemma 4** changes that equation on Android. It's a capable AI model from Google that runs entirely on your phone — offline, private, free. No monthly fee. No data sent anywhere. No internet required after the initial download. In 2026, thanks to advances in model compression and the improved chips in mid-range Android phones, this is practical for everyday use.
 
 This guide covers everything you need: what your phone needs to handle it, how to install it in two ways, what you can actually use it for, and what it can't do. No technical knowledge required.
 
@@ -57,36 +57,36 @@ You do not need to root your phone, enable developer mode, or have any coding kn
 
 **Google AI Edge Gallery** is the easiest way to run Gemma 4 on Android. It's a free app from Google that handles the download, installation, and chat interface. If you want to be up and running in ten minutes without touching any settings, start here.
 
-### Step 1 — Download Google AI Edge Gallery
+### Step 1: Download Google AI Edge Gallery
 
-Open the **Google Play Store** on your Android phone. Search for "AI Edge Gallery" or go directly to g.co/aiedgegallery in your browser, which will redirect to the Play Store listing. Tap Install. The app itself is small — under 50MB — and downloads in under a minute.
+Open the **Google Play Store** on your Android phone. Search for "AI Edge Gallery" or go directly to g.co/aiedgegallery in your browser, which will redirect to the Play Store listing. Tap Install. The app itself is small (under 50MB) and downloads in under a minute.
 
-### Step 2 — Open the app and go to the model library
+### Step 2: Open the app and go to the model library
 
 On first launch, AI Edge Gallery shows you a home screen with a list of available tasks. Tap **AI Chat**, then tap **Add model** in the top right corner. This opens the model library.
 
-### Step 3 — Select Gemma 4
+### Step 3: Select Gemma 4
 
 Scroll through the model list until you find Gemma 4. You will see two versions:
 
-- **Gemma 4 1B** — the smaller model. Faster responses, lower quality. Works on phones with 4GB RAM. Download size approximately 800MB.
-- **Gemma 4 4B** — the more capable model. Better answers, slightly slower. Needs 6GB RAM or more. Download size approximately 2.2GB.
+- **Gemma 4 1B:** the smaller model. Faster responses, lower quality. Works on phones with 4GB RAM. Download size approximately 800MB.
+- **Gemma 4 4B:** the more capable model. Better answers, slightly slower. Needs 6GB RAM or more. Download size approximately 2.2GB.
 
-If your phone has 6GB RAM or more, choose the 4B. If you're unsure, start with 1B — you can always download 4B later. Tap the version you want, then tap **Download**.
+If your phone has 6GB RAM or more, choose the 4B. If you're unsure, start with 1B. You can always download 4B later. Tap the version you want, then tap **Download**.
 
-**Which Gemma 4 variant should you pick: E2B or E4B?** E2B is the recommended model for standard Android devices — it runs roughly 3x faster than E4B and works on mid-range phones from 2022 onwards with 4GB RAM, which covers the large majority of Android users. E4B offers better reasoning and produces noticeably stronger answers on complex tasks, but it requires a flagship device with 6GB+ RAM and will drain battery faster. If you're not sure which you have, default to E2B; you can always install E4B later if your phone can handle it.
+**Which Gemma 4 variant should you pick: E2B or E4B?** E2B is the recommended model for standard Android devices. It runs roughly 3x faster than E4B and works on mid-range phones from 2022 onwards with 4GB RAM, which covers the large majority of Android users. E4B offers better reasoning and produces noticeably stronger answers on complex tasks, but it requires a flagship device with 6GB+ RAM and will drain battery faster. If you're not sure which you have, default to E2B; you can always install E4B later if your phone can handle it.
 
 Make sure you are on WiFi before tapping Download. Downloading 2GB over mobile data is slow and will eat into your data allowance.
 
-### Step 4 — Wait for the download to complete
+### Step 4: Wait for the download to complete
 
-The download takes 5 to 15 minutes depending on your connection speed. Keep the app open during this time — closing it may interrupt the download. You'll see a progress bar on the model entry in the library. When it completes, the button changes from Download to Launch.
+The download takes 5 to 15 minutes depending on your connection speed. Keep the app open during this time, as closing it can interrupt the download. You'll see a progress bar on the model entry in the library. When it completes, the button changes from Download to Launch.
 
-### Step 5 — Start chatting
+### Step 5: Start chatting
 
 Tap **Launch**. A simple chat interface opens. Type your first message and press send.
 
-The very first response takes 10 to 15 seconds as the model loads into memory. This is normal — the model is unpacking itself for the first time. After that initial load, responses come faster.
+The very first response takes 10 to 15 seconds as the model loads into memory. This is normal. The model is unpacking itself for the first time. After that initial load, responses come faster.
 
 > **Tip:** The first time you open Gemma 4 after downloading, give it 10–15 seconds to initialise. After the first load it stays in memory and responds faster for the rest of the session. If you close the app fully and reopen it, the initial load happens again.
 
@@ -98,17 +98,17 @@ You're now running a capable AI model entirely on your Android phone, offline, w
 
 The setup requires **Android Studio**, familiarity with Kotlin or Java, and basic experience with adding dependencies to an Android project. You add the MediaPipe LLM Inference library to your Gradle build file, download the Gemma 4 model weights, and call the API to generate responses from within your app's code.
 
-Google's official MediaPipe documentation at developers.google.com/mediapipe walks through the full integration with code samples. For developers who want fine-grained control over how the model is invoked — streaming tokens, adjusting temperature, integrating with custom UI — this is the path to take.
+Google's official MediaPipe documentation at developers.google.com/mediapipe walks through the full integration with code samples. For developers who want fine-grained control over how the model is invoked (streaming tokens, adjusting temperature, integrating with custom UI), this is the path to take.
 
 For everyone else, Method 1 is faster and requires no coding at all.
 
 ## What Gemma 4 Can Do on Your Phone
 
-Running on a phone, Gemma 4 is genuinely useful across a range of everyday tasks. Here are five practical use cases with example prompts.
+Running on a phone, Gemma 4 is surprisingly useful across a range of everyday tasks. Here are five practical use cases with example prompts.
 
 ### Answering questions privately
 
-Some questions you don't want logged by a cloud AI — medical symptoms, financial situations, personal decisions. With Gemma 4 running locally, your query never leaves the device.
+Some questions you don't want logged by a cloud AI: medical symptoms, financial situations, personal decisions. With Gemma 4 running locally, your query never leaves the device.
 
 *Example prompt:* "I've been having headaches every afternoon for the past week. What are the most common causes and which ones would warrant seeing a doctor?"
 
@@ -126,7 +126,7 @@ Draft a message, improve a paragraph's clarity, fix grammar, or adjust the tone 
 
 ### Brainstorming
 
-Generate ideas without an internet connection — useful when you're on a plane, in a meeting, or somewhere without signal.
+Generate ideas without an internet connection, which is useful when you're on a plane, in a meeting, or somewhere without signal.
 
 *Example prompt:* "I'm planning a weekend trip with two friends who like hiking and good food. We're based in the UK. Give me five destination ideas with one specific reason each."
 
@@ -138,7 +138,7 @@ Ask Gemma 4 to explain a concept you're trying to understand, or to quiz you on 
 
 ## Thinking Mode: Getting Better Answers on Complex Tasks
 
-Gemma 4 supports chain-of-thought reasoning via **Thinking Mode**. To switch it on, add the `<|think|>` token to your system prompt before your question — most Android chat interfaces, including AI Edge Gallery, expose a system prompt field in the chat settings. With Thinking Mode active, the model works through its reasoning step by step before producing a final answer, which measurably improves accuracy on maths problems, multi-step logic, and any task where the right answer depends on several linked pieces of information. The tradeoff is speed: responses take longer because the model is doing more work, so leave it off for simple queries and switch it on when a question actually needs the extra thinking.
+Gemma 4 supports chain-of-thought reasoning via **Thinking Mode**. To switch it on, add the `<|think|>` token to your system prompt before your question. Most Android chat interfaces, including AI Edge Gallery, expose a system prompt field in the chat settings. With Thinking Mode active, the model works through its reasoning step by step before producing a final answer, which measurably improves accuracy on maths problems, multi-step logic, and any task where the right answer depends on several linked pieces of information. The tradeoff is speed: responses take longer because the model is doing more work, so leave it off for simple queries and switch it on when a question actually needs the extra thinking.
 
 ## Honest Limitations
 
@@ -172,15 +172,15 @@ Check that you have at least 3GB of free storage on your phone. Go to Settings �
 
 ### The app crashes when launching the model
 
-This almost always means the phone doesn't have enough free RAM at the moment of launch. Close any other apps running in the background — especially browsers, games, and streaming apps — and try again. If it still crashes, switch to the Gemma 4 1B model rather than 4B. The 1B model has a lower RAM requirement and is more forgiving on older hardware.
+This almost always means the phone doesn't have enough free RAM at the moment of launch. Close any other apps running in the background (especially browsers, games, and streaming apps) and try again. If it still crashes, switch to the Gemma 4 1B model rather than 4B. The 1B model has a lower RAM requirement and is more forgiving on older hardware.
 
 ### Responses are very slow
 
-Some slowness on first load is normal. If responses are consistently slow throughout a session (more than 30 seconds per short answer), try the 1B model instead of 4B. Processing speed is directly tied to the phone's chip — older phones will always be slower than newer flagships.
+Some slowness on first load is normal. If responses are consistently slow throughout a session (more than 30 seconds per short answer), try the 1B model instead of 4B. Processing speed is directly tied to the phone's chip, and older phones will always be slower than newer flagships.
 
 ### The phone gets hot during use
 
-This is normal. Running a language model pushes the phone's CPU and GPU harder than typical apps. If the phone gets uncomfortably warm, take a break — most phones will throttle performance when they overheat to protect the hardware. For long sessions, keeping the phone plugged in and on a hard flat surface (not a pillow or blanket) helps with heat dissipation.
+This is normal. Running a language model pushes the phone's CPU and GPU harder than typical apps. If the phone gets uncomfortably warm, take a break. Most phones will throttle performance when they overheat to protect the hardware. For long sessions, keeping the phone plugged in and on a hard flat surface (not a pillow or blanket) helps with heat dissipation.
 
 ## Conclusion
 
@@ -190,4 +190,4 @@ It won't replace a cloud AI assistant for complex tasks, but that's not what it'
 
 Download **Google AI Edge Gallery** from the Play Store, install Gemma 4 4B if your phone supports it, and you're up and running in a single session.
 
-For everything Gemma 4 can do beyond Android — including running it on iPhone, laptop, and Raspberry Pi — see our [complete Google Gemma 4 guide](/content/published/google-gemma-4-complete-guide-2026.html). If you're new to AI tools and want a broader starting point, our [beginner's guide to AI in 2026](/content/published/how-to-get-started-with-ai-beginners-guide-2026.html) covers the full landscape.
+For everything Gemma 4 can do beyond Android, including running it on iPhone, laptop, and Raspberry Pi, see our [complete Google Gemma 4 guide](/content/published/google-gemma-4-complete-guide-2026.html). If you're new to AI tools and want a broader starting point, our [beginner's guide to AI in 2026](/content/published/how-to-get-started-with-ai-beginners-guide-2026.html) covers the full picture.
