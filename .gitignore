@@ -11,3 +11,4 @@ content/published/*.html
 content/articles.json
 .claude/
 Obsidian/
+.buffer-posted.json

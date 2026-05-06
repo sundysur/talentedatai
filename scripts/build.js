@@ -1160,6 +1160,101 @@ async function pingIndexNow(urls) {
 const articleUrls = articles.map(a => SITE_URL + '/content/published/' + a.slug);
 await pingIndexNow(articleUrls);
 
+// --- Buffer draft posts for new articles ---
+async function createBufferDrafts(allArticles) {
+  const apiKey = process.env.BUFFER_API_KEY;
+  const channelId = process.env.BUFFER_CHANNEL_ID;
+
+  if (!apiKey || !channelId) {
+    console.log('Buffer: BUFFER_API_KEY or BUFFER_CHANNEL_ID not set — skipping draft creation.');
+    return;
+  }
+
+  const trackingPath = path.join(__dirname, '..', '.buffer-posted.json');
+  let postedSlugs = [];
+  if (fs.existsSync(trackingPath)) {
+    try {
+      postedSlugs = JSON.parse(fs.readFileSync(trackingPath, 'utf8'));
+      if (!Array.isArray(postedSlugs)) postedSlugs = [];
+    } catch (e) {
+      postedSlugs = [];
+    }
+  }
+
+  const postedSet = new Set(postedSlugs);
+  const newArticles = allArticles.filter(a => !postedSet.has(a.slug));
+
+  if (newArticles.length === 0) {
+    console.log('Buffer: No new articles to draft.');
+    return;
+  }
+
+  console.log(`Buffer: ${newArticles.length} new article(s) to draft.`);
+
+  const fetchFn = typeof fetch === 'function' ? fetch : (...args) => import('node-fetch').then(({default: f}) => f(...args));
+
+  for (const article of newArticles) {
+    const firstSentence = (article.description || '').split(/(?<=[.!?])\s+/)[0] || '';
+    const articleUrl = `${SITE_URL}/content/published/${article.slug}`;
+    const postText = `${article.title}\n\n${firstSentence}\n\nRead: ${articleUrl}`;
+
+    const mutation = `mutation CreateDraftPost {
+  createPost(input: {
+    text: ${JSON.stringify(postText)},
+    channelId: ${JSON.stringify(channelId)},
+    schedulingType: automatic,
+    mode: addToQueue,
+    saveToDraft: true
+  }) {
+    ... on PostActionSuccess {
+      post {
+        id
+        text
+      }
+    }
+    ... on MutationError {
+      message
+    }
+  }
+}`;
+
+    try {
+      const response = await fetchFn('https://api.buffer.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({ query: mutation })
+      });
+
+      const result = await response.json();
+
+      if (result.errors) {
+        console.log(`Buffer API error for ${article.slug}: ${result.errors.map(e => e.message).join(', ')}`);
+        continue;
+      }
+
+      const postData = result.data && result.data.createPost;
+      if (postData && postData.post) {
+        console.log(`Buffer draft created for: ${article.slug}`);
+        postedSlugs.push(article.slug);
+      } else if (postData && postData.message) {
+        console.log(`Buffer API error for ${article.slug}: ${postData.message}`);
+      } else {
+        console.log(`Buffer API error for ${article.slug}: unexpected response`);
+      }
+    } catch (err) {
+      console.log(`Buffer API error for ${article.slug}: ${err.message}`);
+    }
+  }
+
+  fs.writeFileSync(trackingPath, JSON.stringify(postedSlugs, null, 2));
+  console.log(`Buffer: tracking file updated (${postedSlugs.length} total slugs).`);
+}
+
+await createBufferDrafts(articles);
+
 console.log('\nBuild complete. ' + mdFiles.length + ' article(s) built.');
 } catch (error) {
   console.error('Build failed:', error.message);
