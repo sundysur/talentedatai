@@ -2,7 +2,7 @@
 title: "How to Turn One Blog Post Into a Week of Content Using AI (90-Minute Workflow)"
 description: "A step-by-step workflow for turning a single blog post into 13 pieces of content across LinkedIn, X, Instagram, email, video, and audio — in under 90 minutes using AI."
 category: "Guide"
-date: "2026-05-03"
+date: "2026-05-03T10:00:00"
 author: "TalentedAtAI Editorial Team"
 read_time: "11 min"
 tags: ["content repurposing", "AI workflow", "content marketing", "AI tools", "social media", "content creation"]
