@@ -45,3 +45,6 @@
 /contact.html /contact 301
 /about.html /about 301
 /content/pending/* /404 404
+/tags/* /404 404
+/posts/* /404 404
+/categories/* /404 404
