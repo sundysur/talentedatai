@@ -2,7 +2,6 @@
   {
     "id": "chatgpt",
     "name": "ChatGPT",
-    "status": "active",
     "tagline": "All-purpose AI assistant for writing, coding, analysis, and image generation",
     "category_badge": "Cross-Category",
     "categories": [
@@ -37,7 +36,6 @@
   {
     "id": "claude",
     "name": "Claude",
-    "status": "active",
     "tagline": "Advanced AI assistant known for nuanced reasoning and long-document analysis",
     "category_badge": "Cross-Category",
     "categories": [
@@ -68,7 +66,6 @@
   {
     "id": "gemini",
     "name": "Gemini",
-    "status": "active",
     "tagline": "Google's AI assistant with deep integration across Workspace and Search",
     "category_badge": "Cross-Category",
     "categories": [
@@ -99,7 +96,6 @@
   {
     "id": "microsoft-copilot",
     "name": "Microsoft Copilot",
-    "status": "active",
     "tagline": "AI assistant embedded across Microsoft 365 apps for everyday productivity",
     "category_badge": "Cross-Category",
     "categories": [
@@ -128,7 +124,6 @@
   {
     "id": "mistral",
     "name": "Mistral AI",
-    "status": "active",
     "tagline": "European AI platform offering open-weight models and a privacy-focused chat assistant",
     "category_badge": "Cross-Category",
     "categories": [
@@ -157,7 +152,6 @@
   {
     "id": "jasper",
     "name": "Jasper",
-    "status": "active",
     "tagline": "Enterprise AI writing platform for marketing teams and brand-consistent content",
     "category_badge": "Writing & Content",
     "categories": [
@@ -169,8 +163,8 @@
     "work_style": 4,
     "price_tier": 4,
     "price_display": "From $39/month",
-    "has_review": true,
-    "review_url": "/content/published/best-ai-writing-tools-bloggers",
+    "has_review": false,
+    "review_url": null,
     "affiliate_url": null,
     "try_label": "Try Jasper free trial",
     "rating": 4.1,
@@ -183,7 +177,6 @@
   {
     "id": "copy-ai",
     "name": "Copy.ai",
-    "status": "active",
     "tagline": "AI-powered copywriting and sales content generator for go-to-market teams",
     "category_badge": "Writing & Content",
     "categories": [
@@ -195,8 +188,8 @@
     "work_style": 3,
     "price_tier": 2,
     "price_display": "Free / from $49/month",
-    "has_review": true,
-    "review_url": "/content/published/best-ai-writing-tools-bloggers",
+    "has_review": false,
+    "review_url": null,
     "affiliate_url": null,
     "try_label": "Try Copy.ai free",
     "rating": 4.0,
@@ -209,7 +202,6 @@
   {
     "id": "writesonic",
     "name": "Writesonic",
-    "status": "active",
     "tagline": "AI writing and SEO content platform with built-in factual research",
     "category_badge": "Writing & Content",
     "categories": [
@@ -221,8 +213,8 @@
     "work_style": 2,
     "price_tier": 3,
     "price_display": "From $39/month",
-    "has_review": true,
-    "review_url": "/content/published/best-ai-writing-tools-bloggers",
+    "has_review": false,
+    "review_url": null,
     "affiliate_url": null,
     "try_label": "Try Writesonic",
     "rating": 3.9,
@@ -235,7 +227,6 @@
   {
     "id": "rytr",
     "name": "Rytr",
-    "status": "active",
     "tagline": "Budget-friendly AI writer for quick content drafts and social media copy",
     "category_badge": "Writing & Content",
     "categories": [
@@ -246,8 +237,8 @@
     "work_style": 1,
     "price_tier": 2,
     "price_display": "Free / from $9/month",
-    "has_review": true,
-    "review_url": "/content/published/best-ai-writing-tools-bloggers",
+    "has_review": false,
+    "review_url": null,
     "affiliate_url": null,
     "try_label": "Try Rytr free",
     "rating": 3.7,
@@ -259,7 +250,6 @@
   {
     "id": "sudowrite",
     "name": "Sudowrite",
-    "status": "active",
     "tagline": "AI writing partner designed specifically for fiction authors and storytellers",
     "category_badge": "Writing & Content",
     "categories": [
@@ -270,8 +260,8 @@
     "work_style": 1,
     "price_tier": 2,
     "price_display": "Free credits / from $10/month",
-    "has_review": true,
-    "review_url": "/content/published/best-ai-writing-tools-bloggers",
+    "has_review": false,
+    "review_url": null,
     "affiliate_url": null,
     "try_label": "Try Sudowrite free",
     "rating": 4.0,
@@ -283,7 +273,6 @@
   {
     "id": "grammarly",
     "name": "Grammarly",
-    "status": "active",
     "tagline": "AI writing assistant that checks grammar, tone, and clarity across every app",
     "category_badge": "Writing & Content",
     "categories": [
@@ -308,7 +297,6 @@
   {
     "id": "hemingway-editor",
     "name": "Hemingway Editor",
-    "status": "active",
     "tagline": "AI-powered editor that makes your writing bold, clear, and concise",
     "category_badge": "Writing & Content",
     "categories": [
@@ -332,7 +320,6 @@
   {
     "id": "wordtune",
     "name": "Wordtune",
-    "status": "active",
     "tagline": "AI rewriting tool that helps you say exactly what you mean in fewer words",
     "category_badge": "Writing & Content",
     "categories": [
@@ -356,7 +343,6 @@
   {
     "id": "quillbot",
     "name": "QuillBot",
-    "status": "active",
     "tagline": "AI paraphrasing and summarising tool for students and professionals",
     "category_badge": "Writing & Content",
     "categories": [
@@ -382,7 +368,6 @@
   {
     "id": "surfer-seo",
     "name": "Surfer SEO",
-    "status": "active",
     "tagline": "AI-powered content optimisation platform that helps articles rank on Google",
     "category_badge": "Writing & Content",
     "categories": [
@@ -393,7 +378,7 @@
     "focus": 4,
     "work_style": 2,
     "price_tier": 4,
-    "price_display": "From $69/month (annual) / $89/month",
+    "price_display": "From $49/month",
     "has_review": true,
     "review_url": "/content/published/best-ai-seo-tools-2026",
     "affiliate_url": null,
@@ -408,7 +393,6 @@
   {
     "id": "frase",
     "name": "Frase",
-    "status": "active",
     "tagline": "AI SEO research and content writing tool that turns search queries into optimised articles",
     "category_badge": "Writing & Content",
     "categories": [
@@ -434,7 +418,6 @@
   {
     "id": "contentbot",
     "name": "ContentBot",
-    "status": "active",
     "tagline": "AI content generator with automated blog workflows and content scheduling",
     "category_badge": "Writing & Content",
     "categories": [
@@ -460,7 +443,6 @@
   {
     "id": "midjourney",
     "name": "Midjourney",
-    "status": "active",
     "tagline": "Premium AI image generator producing stunning, artistic visuals from text prompts",
     "category_badge": "Images & Video",
     "categories": [
@@ -485,7 +467,6 @@
   {
     "id": "adobe-firefly",
     "name": "Adobe Firefly",
-    "status": "active",
     "tagline": "Adobe's commercially safe AI image generator integrated with Creative Cloud",
     "category_badge": "Images & Video",
     "categories": [
@@ -510,7 +491,6 @@
   {
     "id": "dall-e-3",
     "name": "DALL-E 3",
-    "status": "active",
     "tagline": "OpenAI's image generator built into ChatGPT for conversational image creation",
     "category_badge": "Images & Video",
     "categories": [
@@ -534,7 +514,6 @@
   {
     "id": "stable-diffusion",
     "name": "Stable Diffusion",
-    "status": "active",
     "tagline": "Open-source AI image model you can run locally or access via DreamStudio",
     "category_badge": "Images & Video",
     "categories": [
@@ -558,7 +537,6 @@
   {
     "id": "leonardo-ai",
     "name": "Leonardo AI",
-    "status": "active",
     "tagline": "AI image generator with fine-tuned models for game art, design, and photography",
     "category_badge": "Images & Video",
     "categories": [
@@ -582,7 +560,6 @@
   {
     "id": "canva-ai",
     "name": "Canva AI",
-    "status": "active",
     "tagline": "AI-powered design suite for creating graphics, presentations, and social media content",
     "category_badge": "Images & Video",
     "categories": [
@@ -594,8 +571,8 @@
     "work_style": 3,
     "price_tier": 2,
     "price_display": "Free / from $15/month",
-    "has_review": true,
-    "review_url": "/content/published/canva-ai-review-2026",
+    "has_review": false,
+    "review_url": null,
     "affiliate_url": null,
     "try_label": "Try Canva free",
     "rating": 4.4,
@@ -608,7 +585,6 @@
   {
     "id": "runway",
     "name": "Runway",
-    "status": "active",
     "tagline": "AI-native creative suite for video generation, editing, and visual effects",
     "category_badge": "Images & Video",
     "categories": [
@@ -634,7 +610,6 @@
   {
     "id": "pika",
     "name": "Pika",
-    "status": "active",
     "tagline": "AI video generator that turns text and images into short animated clips",
     "category_badge": "Images & Video",
     "categories": [
@@ -658,7 +633,6 @@
   {
     "id": "luma-ai",
     "name": "Luma AI",
-    "status": "active",
     "tagline": "AI video and 3D generation platform for cinematic scenes and product visuals",
     "category_badge": "Images & Video",
     "categories": [
@@ -682,7 +656,6 @@
   {
     "id": "topaz-video-ai",
     "name": "Topaz Video AI",
-    "status": "active",
     "tagline": "Desktop AI software for upscaling, denoising, and enhancing existing video footage",
     "category_badge": "Images & Video",
     "categories": [
@@ -706,7 +679,6 @@
   {
     "id": "clipchamp",
     "name": "Clipchamp",
-    "status": "active",
     "tagline": "Microsoft's free AI video editor with text-to-speech and auto-captioning",
     "category_badge": "Images & Video",
     "categories": [
@@ -732,7 +704,6 @@
   {
     "id": "heygen",
     "name": "HeyGen",
-    "status": "active",
     "tagline": "AI avatar video platform for creating professional talking-head videos at scale",
     "category_badge": "Images & Video",
     "categories": [
@@ -758,7 +729,6 @@
   {
     "id": "synthesia",
     "name": "Synthesia",
-    "status": "active",
     "tagline": "Enterprise AI video platform for scalable training and internal communications",
     "category_badge": "Images & Video",
     "categories": [
@@ -784,7 +754,6 @@
   {
     "id": "elevenlabs",
     "name": "ElevenLabs",
-    "status": "active",
     "tagline": "Industry-leading AI voice platform with ultra-realistic text-to-speech and voice cloning",
     "category_badge": "Voice & Audio",
     "categories": [
@@ -811,7 +780,6 @@
   {
     "id": "murf-ai",
     "name": "Murf AI",
-    "status": "active",
     "tagline": "Professional AI voiceover platform with 200+ studio-quality voices for business content",
     "category_badge": "Voice & Audio",
     "categories": [
@@ -835,7 +803,6 @@
   {
     "id": "descript",
     "name": "Descript",
-    "status": "active",
     "tagline": "All-in-one audio and video editor where you edit media by editing text",
     "category_badge": "Voice & Audio",
     "categories": [
@@ -861,7 +828,6 @@
   {
     "id": "adobe-podcast",
     "name": "Adobe Podcast",
-    "status": "active",
     "tagline": "AI-powered podcast tool with studio-quality audio enhancement and recording",
     "category_badge": "Voice & Audio",
     "categories": [
@@ -885,7 +851,6 @@
   {
     "id": "riverside",
     "name": "Riverside.fm",
-    "status": "active",
     "tagline": "High-quality remote recording platform with AI transcription and clip creation",
     "category_badge": "Voice & Audio",
     "categories": [
@@ -911,7 +876,6 @@
   {
     "id": "cleanvoice",
     "name": "Cleanvoice AI",
-    "status": "active",
     "tagline": "Automated podcast editor that removes filler words, mouth sounds, and dead air",
     "category_badge": "Voice & Audio",
     "categories": [
@@ -935,7 +899,6 @@
   {
     "id": "podcastle",
     "name": "Podcastle",
-    "status": "active",
     "tagline": "AI podcast creation platform with recording, editing, and voice synthesis in one place",
     "category_badge": "Voice & Audio",
     "categories": [
@@ -959,7 +922,6 @@
   {
     "id": "suno",
     "name": "Suno",
-    "status": "active",
     "tagline": "AI music generator that creates complete songs with vocals from a text prompt",
     "category_badge": "Voice & Audio",
     "categories": [
@@ -983,7 +945,6 @@
   {
     "id": "github-copilot",
     "name": "GitHub Copilot",
-    "status": "active",
     "tagline": "AI pair programmer that suggests code completions and entire functions in your IDE",
     "category_badge": "Coding & Building",
     "categories": [
@@ -1007,7 +968,6 @@
   {
     "id": "cursor",
     "name": "Cursor",
-    "status": "active",
     "tagline": "AI-first code editor that understands your entire codebase and writes features end-to-end",
     "category_badge": "Coding & Building",
     "categories": [
@@ -1031,7 +991,6 @@
   {
     "id": "claude-code",
     "name": "Claude Code",
-    "status": "active",
     "tagline": "Terminal-based AI coding agent that reads, writes, and runs code directly in your repo",
     "category_badge": "Coding & Building",
     "categories": [
@@ -1055,7 +1014,6 @@
   {
     "id": "openai-codex",
     "name": "OpenAI Codex",
-    "status": "active",
     "tagline": "Cloud-based AI coding agent by OpenAI that runs tasks in sandboxed environments",
     "category_badge": "Coding & Building",
     "categories": [
@@ -1079,7 +1037,6 @@
   {
     "id": "replit-agent",
     "name": "Replit Agent",
-    "status": "active",
     "tagline": "Browser-based AI agent that builds, deploys, and hosts full applications from a prompt",
     "category_badge": "Coding & Building",
     "categories": [
@@ -1103,7 +1060,6 @@
   {
     "id": "bolt",
     "name": "Bolt",
-    "status": "active",
     "tagline": "Browser-based AI app builder by StackBlitz for instant full-stack web applications",
     "category_badge": "Coding & Building",
     "categories": [
@@ -1127,7 +1083,6 @@
   {
     "id": "v0",
     "name": "v0 by Vercel",
-    "status": "active",
     "tagline": "AI UI generator that produces production-ready React components and pages from prompts",
     "category_badge": "Coding & Building",
     "categories": [
@@ -1151,7 +1106,6 @@
   {
     "id": "tabnine",
     "name": "Tabnine",
-    "status": "active",
     "tagline": "Privacy-first AI code assistant for enterprise teams with on-premise deployment",
     "category_badge": "Coding & Building",
     "categories": [
@@ -1175,7 +1129,6 @@
   {
     "id": "windsurf",
     "name": "Windsurf (Codeium)",
-    "status": "active",
     "tagline": "AI-powered IDE with code completions, chat, and agentic editing in a custom editor",
     "category_badge": "Coding & Building",
     "categories": [
@@ -1199,7 +1152,6 @@
   {
     "id": "sourcegraph-cody",
     "name": "Sourcegraph Cody",
-    "status": "active",
     "tagline": "Enterprise AI code assistant with deep codebase understanding via code graph search",
     "category_badge": "Coding & Building",
     "categories": [
@@ -1223,7 +1175,6 @@
   {
     "id": "perplexity",
     "name": "Perplexity AI",
-    "status": "active",
     "tagline": "AI-powered search engine that gives synthesised answers with numbered citations",
     "category_badge": "Research & Knowledge",
     "categories": [
@@ -1247,7 +1198,6 @@
   {
     "id": "notebooklm",
     "name": "Google NotebookLM",
-    "status": "active",
     "tagline": "AI research assistant that analyses your documents and generates audio overviews",
     "category_badge": "Research & Knowledge",
     "categories": [
@@ -1273,7 +1223,6 @@
   {
     "id": "elicit",
     "name": "Elicit",
-    "status": "active",
     "tagline": "AI research assistant that finds and summarises academic papers for literature reviews",
     "category_badge": "Research & Knowledge",
     "categories": [
@@ -1297,7 +1246,6 @@
   {
     "id": "consensus",
     "name": "Consensus",
-    "status": "active",
     "tagline": "AI search engine that finds and synthesises claims from peer-reviewed research",
     "category_badge": "Research & Knowledge",
     "categories": [
@@ -1321,7 +1269,6 @@
   {
     "id": "otter-ai",
     "name": "Otter.ai",
-    "status": "active",
     "tagline": "AI meeting assistant that transcribes, summarises, and extracts action items in real time",
     "category_badge": "Research & Knowledge",
     "categories": [
@@ -1349,7 +1296,6 @@
   {
     "id": "fireflies-ai",
     "name": "Fireflies.ai",
-    "status": "active",
     "tagline": "AI meeting recorder that transcribes calls, tracks topics, and syncs with your CRM",
     "category_badge": "Research & Knowledge",
     "categories": [
@@ -1375,7 +1321,6 @@
   {
     "id": "mem-ai",
     "name": "Mem.ai",
-    "status": "active",
     "tagline": "AI-powered note-taking app that organises and surfaces your knowledge automatically",
     "category_badge": "Research & Knowledge",
     "categories": [
@@ -1399,7 +1344,6 @@
   {
     "id": "gamma",
     "name": "Gamma",
-    "status": "active",
     "tagline": "AI presentation builder that turns ideas into polished decks, docs, and webpages",
     "category_badge": "Research & Knowledge",
     "categories": [
@@ -1425,7 +1369,6 @@
   {
     "id": "zapier",
     "name": "Zapier AI",
-    "status": "active",
     "tagline": "No-code automation platform connecting 7,000+ apps with AI-powered workflow building",
     "category_badge": "Workflow & Automation",
     "categories": [
@@ -1450,7 +1393,6 @@
   {
     "id": "make",
     "name": "Make",
-    "status": "active",
     "tagline": "Visual workflow automation platform with powerful branching and data transformation",
     "category_badge": "Workflow & Automation",
     "categories": [
@@ -1475,7 +1417,6 @@
   {
     "id": "n8n",
     "name": "n8n",
-    "status": "active",
     "tagline": "Open-source workflow automation with AI agent capabilities you can self-host",
     "category_badge": "Workflow & Automation",
     "categories": [
@@ -1501,7 +1442,6 @@
   {
     "id": "bardeen",
     "name": "Bardeen",
-    "status": "active",
     "tagline": "AI-powered browser automation that scrapes, syncs, and automates repetitive web tasks",
     "category_badge": "Workflow & Automation",
     "categories": [
@@ -1527,7 +1467,6 @@
   {
     "id": "relay",
     "name": "Relay.app",
-    "status": "active",
     "tagline": "Collaborative workflow automation with built-in human-in-the-loop AI steps",
     "category_badge": "Workflow & Automation",
     "categories": [
@@ -1551,7 +1490,6 @@
   {
     "id": "lindy",
     "name": "Lindy AI",
-    "status": "active",
     "tagline": "AI assistant builder that creates autonomous agents for email, scheduling, and sales",
     "category_badge": "Workflow & Automation",
     "categories": [
@@ -1575,7 +1513,6 @@
   {
     "id": "notion-ai",
     "name": "Notion AI",
-    "status": "active",
     "tagline": "AI built into Notion for writing, Q&A across your workspace, and automated databases",
     "category_badge": "Workflow & Automation",
     "categories": [
@@ -1603,7 +1540,6 @@
   {
     "id": "monday-ai",
     "name": "Monday AI",
-    "status": "active",
     "tagline": "AI assistant inside Monday.com for project updates, content generation, and task automation",
     "category_badge": "Workflow & Automation",
     "categories": [
@@ -1627,7 +1563,6 @@
   {
     "id": "julius-ai",
     "name": "Julius AI",
-    "status": "active",
     "tagline": "AI data analyst that turns spreadsheets into charts, insights, and reports via chat",
     "category_badge": "Data & Reporting",
     "categories": [
@@ -1651,7 +1586,6 @@
   {
     "id": "chatcsv",
     "name": "ChatCSV",
-    "status": "active",
     "tagline": "Free AI tool for asking plain-English questions about your CSV data",
     "category_badge": "Data & Reporting",
     "categories": [
@@ -1675,7 +1609,6 @@
   {
     "id": "obviously-ai",
     "name": "Obviously AI",
-    "status": "active",
     "tagline": "No-code machine learning platform that builds predictive models from your spreadsheet data",
     "category_badge": "Data & Reporting",
     "categories": [
@@ -1699,7 +1632,6 @@
   {
     "id": "tableau-ai",
     "name": "Tableau AI",
-    "status": "active",
     "tagline": "AI-powered analytics inside Tableau for automated insights, predictions, and natural language queries",
     "category_badge": "Data & Reporting",
     "categories": [
@@ -1721,9 +1653,54 @@
     }
   },
   {
+    "id": "copilot-excel",
+    "name": "Microsoft Copilot for Excel",
+    "tagline": "AI assistant inside Excel that creates formulas, pivot tables, and charts from natural language",
+    "category_badge": "Data & Reporting",
+    "categories": [
+      "data-reporting"
+    ],
+    "technical_level": 2,
+    "focus": 4,
+    "work_style": 4,
+    "price_tier": 3,
+    "price_display": "From $18/user/month (M365 Copilot add-on)",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Copilot for Excel",
+    "rating": 4.0,
+    "match_reasons": {
+      "data-reporting": "Ask Excel to create formulas, pivot tables, and charts in plain English — it writes them for you",
+      "low_technical": "Type what you want to know about your data and Copilot handles the spreadsheet mechanics"
+    }
+  },
+  {
+    "id": "gemini-sheets",
+    "name": "Gemini for Google Sheets",
+    "tagline": "Google's AI assistant inside Sheets for formula help, data organisation, and analysis",
+    "category_badge": "Data & Reporting",
+    "categories": [
+      "data-reporting"
+    ],
+    "technical_level": 1,
+    "focus": 3,
+    "work_style": 3,
+    "price_tier": 2,
+    "price_display": "Free (limited) / from $7/user/month",
+    "has_review": false,
+    "review_url": null,
+    "affiliate_url": null,
+    "try_label": "Try Gemini for Sheets",
+    "rating": 3.8,
+    "match_reasons": {
+      "data-reporting": "AI sidebar in Google Sheets that generates formulas, summarises data, and creates charts",
+      "low_technical": "Works inside the Sheets you already use — ask questions in the AI sidebar"
+    }
+  },
+  {
     "id": "rows-ai",
     "name": "Rows AI",
-    "status": "active",
     "tagline": "AI-native spreadsheet that analyses data, builds dashboards, and generates reports from chat",
     "category_badge": "Data & Reporting",
     "categories": [
@@ -1747,7 +1724,6 @@
   {
     "id": "superhuman",
     "name": "Superhuman",
-    "status": "active",
     "tagline": "AI-powered email client that drafts replies, triages your inbox, and keeps you at zero",
     "category_badge": "Workflow & Automation",
     "categories": [
@@ -1773,7 +1749,6 @@
   {
     "id": "pictory",
     "name": "Pictory",
-    "status": "active",
     "tagline": "AI video creator that turns blog posts and scripts into professional short videos",
     "category_badge": "Images & Video",
     "categories": [
@@ -1799,7 +1774,6 @@
   {
     "id": "invideo",
     "name": "InVideo",
-    "status": "active",
     "tagline": "AI video editor for creating social media videos, ads, and marketing content from prompts",
     "category_badge": "Images & Video",
     "categories": [
@@ -1823,7 +1797,6 @@
   {
     "id": "opusclip",
     "name": "OpusClip",
-    "status": "active",
     "tagline": "AI tool that finds the best moments in long videos and creates viral short clips",
     "category_badge": "Images & Video",
     "categories": [
@@ -1849,7 +1822,6 @@
   {
     "id": "castmagic",
     "name": "Castmagic",
-    "status": "active",
     "tagline": "AI content engine that turns podcast episodes into show notes, clips, and social posts",
     "category_badge": "Voice & Audio",
     "categories": [
@@ -1875,7 +1847,6 @@
   {
     "id": "creatify",
     "name": "Creatify",
-    "status": "active",
     "tagline": "AI video ad generator that creates product demo ads from a URL in minutes",
     "category_badge": "Images & Video",
     "categories": [
@@ -1899,7 +1870,6 @@
   {
     "id": "tiktok-symphony",
     "name": "TikTok Symphony Creative Studio",
-    "status": "active",
     "tagline": "TikTok's native AI creative suite for generating platform-optimised video ads",
     "category_badge": "Images & Video",
     "categories": [
@@ -1923,7 +1893,6 @@
   {
     "id": "pencil",
     "name": "Pencil",
-    "status": "active",
     "tagline": "AI ad creative platform that generates and predicts ad performance before you spend budget",
     "category_badge": "Images & Video",
     "categories": [
@@ -1949,7 +1918,6 @@
   {
     "id": "adcreative-ai",
     "name": "AdCreative.ai",
-    "status": "active",
     "tagline": "AI-powered ad creative generator that scores and ranks ad variants before you run them",
     "category_badge": "Images & Video",
     "categories": [
@@ -1975,7 +1943,6 @@
   {
     "id": "arcads",
     "name": "Arcads",
-    "status": "active",
     "tagline": "AI-generated UGC-style video ads designed to feel like organic user content",
     "category_badge": "Images & Video",
     "categories": [
@@ -1999,7 +1966,6 @@
   {
     "id": "wix",
     "name": "Wix",
-    "status": "active",
     "tagline": "AI website builder that generates a complete, customisable site from a few questions",
     "category_badge": "Coding & Building",
     "categories": [
@@ -2023,7 +1989,6 @@
   {
     "id": "framer",
     "name": "Framer",
-    "status": "active",
     "tagline": "AI-powered design and website builder with Figma-like flexibility and polished output",
     "category_badge": "Coding & Building",
     "categories": [
@@ -2049,7 +2014,6 @@
   {
     "id": "semrush",
     "name": "Semrush",
-    "status": "active",
     "tagline": "All-in-one SEO and content marketing platform with AI-powered auditing and keyword strategy",
     "category_badge": "Research & Knowledge",
     "categories": [
@@ -2075,7 +2039,6 @@
   {
     "id": "granola",
     "name": "Granola",
-    "status": "active",
     "tagline": "AI meeting notes app that enriches your rough notes with full meeting context automatically",
     "category_badge": "Research & Knowledge",
     "categories": [
@@ -2101,7 +2064,6 @@
   {
     "id": "loom",
     "name": "Loom",
-    "status": "active",
     "tagline": "Async video messaging platform with AI-powered summaries, chapters, and task extraction",
     "category_badge": "Workflow & Automation",
     "categories": [
@@ -2122,188 +2084,6 @@
       "workflow-automation": "AI generates video summaries, chapters, and action items so viewers can skip to what matters",
       "images-video": "Record screen and camera walkthroughs with automatic transcription, filler word removal, and editing",
       "low_technical": "Click record, explain anything visually, and share a link — viewers get an AI summary without watching the whole thing"
-    }
-  },
-  {
-    "id": "lovable",
-    "name": "Lovable",
-    "status": "active",
-    "tagline": "Browser-based AI app builder that turns plain-English descriptions into working web apps",
-    "category_badge": "Coding & Building",
-    "categories": [
-      "coding-building",
-      "workflow-automation"
-    ],
-    "technical_level": 1,
-    "focus": 3,
-    "work_style": 1,
-    "price_tier": 3,
-    "price_display": "Free tier / from $20/month",
-    "has_review": true,
-    "review_url": "/content/published/vibe-coding-tools-2026",
-    "affiliate_url": null,
-    "try_label": "Try Lovable free",
-    "rating": 4.3,
-    "match_reasons": {
-      "coding-building": "Describe what you want in plain English and Lovable builds a working web app with a database, authentication, and deployable code. No setup required.",
-      "workflow-automation": "Useful for building internal tools and dashboards without engineering involvement, especially when paired with API connectors.",
-      "low_technical": "The entire workflow is conversational. No code knowledge required for the first version of most apps."
-    }
-  },
-  {
-    "id": "sora",
-    "name": "Sora",
-    "status": "active",
-    "tagline": "OpenAI's text-to-video model for generating short, high-fidelity video clips from prompts",
-    "category_badge": "Images & Video",
-    "categories": [
-      "images-video"
-    ],
-    "technical_level": 1,
-    "focus": 4,
-    "work_style": 1,
-    "price_tier": 4,
-    "price_display": "Included with ChatGPT Plus ($20/month) / ChatGPT Pro for higher limits",
-    "has_review": false,
-    "review_url": null,
-    "affiliate_url": null,
-    "try_label": "Try Sora",
-    "rating": 4.2,
-    "match_reasons": {
-      "images-video": "Generates photorealistic and stylised video clips up to 20 seconds from text prompts. Currently the highest-fidelity text-to-video output available to consumers.",
-      "low_technical": "Prompt-based interface. Anyone who can describe a scene can use it."
-    }
-  },
-  {
-    "id": "flux",
-    "name": "Flux",
-    "status": "active",
-    "tagline": "Open-weights image generation model with strong photorealism and text rendering",
-    "category_badge": "Images & Video",
-    "categories": [
-      "images-video"
-    ],
-    "technical_level": 2,
-    "focus": 3,
-    "work_style": 1,
-    "price_tier": 2,
-    "price_display": "Free via Black Forest Labs API tier / paid via partner platforms",
-    "has_review": true,
-    "review_url": "/content/published/adobe-firefly-vs-midjourney-vs-chatgpt-image-vs-flux-2026",
-    "affiliate_url": null,
-    "try_label": "Try Flux",
-    "rating": 4.2,
-    "match_reasons": {
-      "images-video": "Strong at photorealism and rendering legible text within images. Available through multiple hosted platforms (Replicate, fal.ai, Together AI) and as open weights for self-hosting.",
-      "low_technical": "Most platforms offering Flux provide a simple prompt-and-generate interface."
-    }
-  },
-  {
-    "id": "gemma-4",
-    "name": "Gemma 4",
-    "status": "active",
-    "tagline": "Google's open-source family of small, efficient language models for local and on-device use",
-    "category_badge": "Cross-Category",
-    "categories": [
-      "writing-content",
-      "coding-building",
-      "research-knowledge"
-    ],
-    "technical_level": 3,
-    "focus": 4,
-    "work_style": 1,
-    "price_tier": 1,
-    "price_display": "Free (open source)",
-    "has_review": true,
-    "review_url": "/content/published/google-gemma-4-complete-guide-2026",
-    "affiliate_url": null,
-    "try_label": "Download Gemma 4",
-    "rating": 4.2,
-    "match_reasons": {
-      "writing-content": "Capable enough for drafting, summarisation, and rewriting when run locally. Privacy-friendly for sensitive content.",
-      "coding-building": "Smaller variants handle code completion and explanation tasks well. Larger variants approach commercial model quality on coding benchmarks.",
-      "research-knowledge": "Useful for offline research assistance and document Q&A without sending data to cloud APIs.",
-      "high_technical": "Best results require comfort with model runners like Ollama, LM Studio, or llama.cpp. Quantisation and hardware selection matter."
-    }
-  },
-  {
-    "id": "llama-4",
-    "name": "Llama 4",
-    "status": "active",
-    "tagline": "Meta's open-source large language model family, competitive with leading commercial models",
-    "category_badge": "Cross-Category",
-    "categories": [
-      "writing-content",
-      "coding-building",
-      "research-knowledge",
-      "data-reporting"
-    ],
-    "technical_level": 3,
-    "focus": 4,
-    "work_style": 1,
-    "price_tier": 1,
-    "price_display": "Free (open source) / hosted access via Together AI, Groq, Fireworks at usage rates",
-    "has_review": true,
-    "review_url": "/content/published/gemma-4-vs-llama-4-2026",
-    "affiliate_url": null,
-    "try_label": "Try Llama 4",
-    "rating": 4.3,
-    "match_reasons": {
-      "writing-content": "Long-form writing performance comparable to mid-tier commercial models. Self-hosted deployment removes per-token costs.",
-      "coding-building": "Strong code generation and reasoning. Used as the base for many specialised fine-tuned coding models.",
-      "research-knowledge": "Large context windows in newer variants make it useful for working with long documents.",
-      "data-reporting": "Capable of structured data extraction and chart interpretation when paired with the right tooling.",
-      "high_technical": "Running Llama 4 locally requires substantial hardware. Hosted inference (Together, Groq, Fireworks) is the practical path for most users."
-    }
-  },
-  {
-    "id": "kling",
-    "name": "Kling",
-    "status": "active",
-    "tagline": "Chinese-developed text-to-video model with strong motion realism and long-clip generation",
-    "category_badge": "Images & Video",
-    "categories": [
-      "images-video"
-    ],
-    "technical_level": 1,
-    "focus": 4,
-    "work_style": 1,
-    "price_tier": 3,
-    "price_display": "Free credits weekly / paid plans from around $10/month",
-    "has_review": false,
-    "review_url": null,
-    "affiliate_url": null,
-    "try_label": "Try Kling",
-    "rating": 4.0,
-    "match_reasons": {
-      "images-video": "Generates video clips up to 2 minutes, longer than most competitors. Strong physics and motion handling. Notable strength with human movement and complex camera work.",
-      "low_technical": "Web-based interface, prompt and generate. Account creation is the only setup."
-    }
-  },
-  {
-    "id": "ollama",
-    "name": "Ollama",
-    "status": "active",
-    "tagline": "Open-source runner for running large language models locally on your own machine",
-    "category_badge": "Coding & Building",
-    "categories": [
-      "coding-building",
-      "writing-content"
-    ],
-    "technical_level": 3,
-    "focus": 4,
-    "work_style": 1,
-    "price_tier": 1,
-    "price_display": "Free (open source)",
-    "has_review": true,
-    "review_url": "/content/published/how-to-run-gemma-4-on-android-2026",
-    "affiliate_url": null,
-    "try_label": "Download Ollama",
-    "rating": 4.4,
-    "match_reasons": {
-      "coding-building": "The standard way to run open-source models like Llama, Gemma, Mistral, and DeepSeek on local hardware. Simple CLI plus a growing ecosystem of GUI front-ends.",
-      "writing-content": "Pair Ollama with any open-source writing model for fully offline content drafting.",
-      "high_technical": "Command-line installation and model management. Hardware constraints (RAM, GPU) shape which models run smoothly."
     }
   }
 ]
