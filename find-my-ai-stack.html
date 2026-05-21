@@ -262,6 +262,14 @@
     [data-theme="dark"] .tool-card{background:#1a1a2e;border-color:rgba(255,255,255,0.08);box-shadow:none}
     .tool-card:hover{box-shadow:0 4px 16px rgba(14,59,46,0.1)}
     .tool-badge{display:inline-block;background:var(--brand-coral);color:#FAF6EC;font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border-radius:4px;padding:3px 10px}
+    .tool-badge[data-badge="writing-content"]{background:#0E3B2E;color:#FAF6EC}
+    .tool-badge[data-badge="images-video"]{background:#D4623A;color:#FAF6EC}
+    .tool-badge[data-badge="coding-building"]{background:#C8E65A;color:#0E3B2E}
+    .tool-badge[data-badge="workflow-automation"]{background:#FAF6EC;color:#0E3B2E;border:1px solid #0E3B2E}
+    .tool-badge[data-badge="research-knowledge"]{background:#EDE4D3;color:#0E3B2E}
+    .tool-badge[data-badge="voice-audio"]{background:#9CAE8E;color:#FAF6EC}
+    .tool-badge[data-badge="data-reporting"]{background:#D4A84B;color:#0E3B2E}
+    .tool-badge[data-badge="cross-category"]{background:#B8896B;color:#FAF6EC}
     .tool-name{font-size:1.2rem;font-weight:700;color:var(--brand-green-dark);margin-top:6px}
     [data-theme="dark"] .tool-name{color:var(--dark)}
     .tool-reason{font-size:0.85rem;font-style:italic;color:rgba(14,59,46,0.65);margin-top:4px;line-height:1.5}
@@ -756,7 +764,7 @@ function findStack() {
 }
 
 function scoreTools(technical, focus, workstyle, budget, cats) {
-  var scored = allTools.map(function(tool) {
+  function scoreOne(tool) {
     var score = 0;
     score += (5 - Math.abs(tool.technical_level - technical)) * 2;
     score += (5 - Math.abs(tool.focus - focus)) * 1.5;
@@ -767,10 +775,66 @@ function scoreTools(technical, focus, workstyle, budget, cats) {
     });
     if (tool.has_review) score += 1;
     if (tool.affiliate_url) score += 0.5;
-    return { tool: tool, score: score };
+    return score;
+  }
+  function crossBoost(tool, ownCat) {
+    var hits = 0;
+    cats.forEach(function(c) {
+      if (c !== ownCat && tool.categories.indexOf(c) !== -1) hits += 1;
+    });
+    return hits * 2;
+  }
+  function primaryCatFor(tool) {
+    for (var ci = 0; ci < cats.length; ci++) {
+      if (tool.categories.indexOf(cats[ci]) !== -1) return cats[ci];
+    }
+    return cats[0];
+  }
+
+  if (cats.length < 2) {
+    return allTools.map(function(t){ return { tool:t, score:scoreOne(t), primaryCat:cats[0] }; })
+      .sort(function(a,b){ return b.score - a.score; })
+      .slice(0, 5);
+  }
+
+  // Multi-category: guarantee representation from each selected category
+  var perCatTop = cats.map(function(cat) {
+    return allTools
+      .filter(function(t){ return t.categories.indexOf(cat) !== -1; })
+      .map(function(t){ return { tool:t, score:scoreOne(t) + crossBoost(t, cat), primaryCat:cat }; })
+      .sort(function(a,b){ return b.score - a.score; });
   });
-  scored.sort(function(a, b){ return b.score - a.score; });
-  return scored.slice(0, 5);
+
+  var picked = [], seen = {};
+  var perCatQuota = Math.ceil(5 / cats.length);
+  for (var i = 0; i < perCatQuota; i++) {
+    for (var ci = 0; ci < cats.length; ci++) {
+      var list = perCatTop[ci];
+      for (var k = 0; k < list.length; k++) {
+        if (!seen[list[k].tool.id]) {
+          picked.push(list[k]);
+          seen[list[k].tool.id] = true;
+          break;
+        }
+      }
+    }
+  }
+
+  // Graceful degradation: if a category was undersized, fill remaining slots
+  // by global score across all tools (preferring selected-category matches).
+  if (picked.length < 5) {
+    var globalRanked = allTools
+      .map(function(t){ return { tool:t, score:scoreOne(t), primaryCat:primaryCatFor(t) }; })
+      .sort(function(a,b){ return b.score - a.score; });
+    for (var gi = 0; gi < globalRanked.length && picked.length < 5; gi++) {
+      if (!seen[globalRanked[gi].tool.id]) {
+        picked.push(globalRanked[gi]);
+        seen[globalRanked[gi].tool.id] = true;
+      }
+    }
+  }
+
+  return picked.slice(0, 5).sort(function(a,b){ return b.score - a.score; });
 }
 
 function callClaudeForOther(technical, focus, workstyle, budget, otherText) {
@@ -821,31 +885,26 @@ function showResults(results, technical, focus, workstyle, budget, cats) {
   var cardsHtml = '';
   results.forEach(function(r) {
     var tool = r.tool;
-    // Find primary match reason for tagline
-    var reason = r.customReason || '';
-    if (!reason) {
-      for (var i = 0; i < cats.length; i++) {
-        if (tool.match_reasons && tool.match_reasons[cats[i]]) {
-          reason = tool.match_reasons[cats[i]];
-          break;
-        }
-      }
-      if (!reason && tool.match_reasons) {
-        reason = technical < 3 ? (tool.match_reasons.low_technical || '') : (tool.match_reasons.high_technical || '');
-      }
-      if (!reason) reason = tool.tagline;
-    }
+    // Italic line: real product tagline (or AI-generated reason for "other" path)
+    var reason = r.customReason || tool.tagline || '';
 
-    // Collect all relevant match_reasons for the "Why this for you" section
+    // "Why this for you" bullets: lead with the category this tool was picked for,
+    // then add any other user-selected category the tool also matches.
     var matchBullets = [];
     if (tool.match_reasons) {
-      // First: reasons matching user-selected categories
+      var pc = r.primaryCat;
+      if (pc && pc !== 'other' && tool.match_reasons[pc]) {
+        matchBullets.push(tool.match_reasons[pc]);
+      }
       for (var j = 0; j < cats.length; j++) {
-        if (cats[j] !== 'other' && tool.match_reasons[cats[j]] && matchBullets.indexOf(tool.match_reasons[cats[j]]) === -1) {
-          matchBullets.push(tool.match_reasons[cats[j]]);
+        var c = cats[j];
+        if (c !== 'other' && c !== pc &&
+            tool.match_reasons[c] &&
+            tool.categories.indexOf(c) !== -1 &&
+            matchBullets.indexOf(tool.match_reasons[c]) === -1) {
+          matchBullets.push(tool.match_reasons[c]);
         }
       }
-      // Then: technical level reason
       var techKey = technical < 3 ? 'low_technical' : 'high_technical';
       if (tool.match_reasons[techKey] && matchBullets.indexOf(tool.match_reasons[techKey]) === -1) {
         matchBullets.push(tool.match_reasons[techKey]);
@@ -870,8 +929,9 @@ function showResults(results, technical, focus, workstyle, budget, cats) {
     var tryUrl = tool.affiliate_url || '#';
     var tryLabel = tool.try_label || 'Try ' + tool.name;
 
+    var badgeSlug = (tool.category_badge || '').toLowerCase().replace(/\s*&\s*/g, '-').replace(/[^a-z0-9-]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
     cardsHtml += '<div class="tool-card">' +
-      '<span class="tool-badge">' + escHtml(tool.category_badge) + '</span>' +
+      '<span class="tool-badge" data-badge="' + escHtml(badgeSlug) + '">' + escHtml(tool.category_badge) + '</span>' +
       '<div class="tool-name">' + escHtml(tool.name) + '</div>' +
       '<div class="tool-reason">' + escHtml(reason) + '</div>' +
       matchHtml +
@@ -940,7 +1000,7 @@ function startOver() {
 /* ===== ANIMATED LOADING MESSAGES ===== */
 function getLoadingMessages() {
   return [
-    "Scanning " + (allTools.length || 86) + " tools in our database\u2026",
+    "Scanning " + (allTools.length || 91) + " tools in our database\u2026",
     "Filtering for your use case\u2026",
     "Checking pricing against your budget\u2026",
     "Scoring tools by your workflow\u2026",
