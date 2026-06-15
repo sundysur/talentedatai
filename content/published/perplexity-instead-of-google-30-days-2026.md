@@ -63,7 +63,7 @@ None of those are failures, exactly. They're category mismatches. Perplexity is 
 
 On the money question, I spent nearly the whole month on the free tier and rarely felt the wall. Perplexity gives unlimited basic searches and a daily allowance of deeper Pro searches, and for someone doing a normal amount of research that allowance stretched further than I assumed it would. The day I was hammering a single topic, I hit the cap and felt the pinch, which is exactly the day that the $20 Pro plan would pay for itself. That's the honest line for cost: if research is a daily part of your work, Pro removes a real friction; if it isn't, the free tier is more than most people will ever need. Where Perplexity fits in [a wider stack of everyday AI tools](/content/published/top-ai-tools-productivity-2026) depends entirely on which of those two people you are.
 
-<svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Decision map: keep a query in Perplexity or send it back to Google">
+<svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Decision map: keep a query in Perplexity or send it back to Google">
   <style>
     .t{font-size:15px;font-weight:600;fill:#0E3B2E;}
     .lbl{font-size:13px;fill:#6b6357;}
@@ -73,24 +73,26 @@ On the money question, I spent nearly the whole month on the free tier and rarel
     .p{fill:#E7F0D6;stroke:#0E3B2E;stroke-width:1.5;}
     .g{fill:#FBE5DA;stroke:#D4623A;stroke-width:1.5;}
   </style>
-  <rect class="card" x="10" y="10" width="740" height="320" rx="16"/>
-  <path class="ln" d="M360 86 L165 158"/>
-  <path class="ln" d="M400 86 L595 158"/>
-  <rect class="q" x="250" y="30" width="260" height="56" rx="8"/>
-  <text class="t" x="380" y="56" text-anchor="middle">Am I asking a question,</text>
-  <text class="t" x="380" y="76" text-anchor="middle">or going somewhere?</text>
-  <text class="lbl" x="230" y="126" text-anchor="middle">a question</text>
-  <text class="lbl" x="565" y="126" text-anchor="middle">a destination / a fact / a place</text>
-  <rect class="p" x="50" y="158" width="230" height="128" rx="8"/>
-  <text class="t" x="165" y="190" text-anchor="middle">Keep it in Perplexity</text>
-  <text class="lbl" x="165" y="218" text-anchor="middle">research &amp; comparisons</text>
-  <text class="lbl" x="165" y="240" text-anchor="middle">understanding a topic</text>
-  <text class="lbl" x="165" y="262" text-anchor="middle">fact-checking with sources</text>
-  <rect class="g" x="480" y="158" width="230" height="128" rx="8"/>
-  <text class="t" x="595" y="190" text-anchor="middle">Send it back to Google</text>
-  <text class="lbl" x="595" y="218" text-anchor="middle">navigation &amp; logins</text>
-  <text class="lbl" x="595" y="240" text-anchor="middle">local, hours, directions</text>
-  <text class="lbl" x="595" y="262" text-anchor="middle">instant facts &amp; shopping</text>
+  <rect class="card" x="10" y="10" width="740" height="340" rx="16"/>
+  <path class="ln" d="M380 90 V128"/>
+  <path class="ln" d="M165 128 H595"/>
+  <path class="ln" d="M165 128 V172"/>
+  <path class="ln" d="M595 128 V172"/>
+  <rect class="q" x="250" y="30" width="260" height="60" rx="8"/>
+  <text class="t" x="380" y="58" text-anchor="middle">Am I asking a question,</text>
+  <text class="t" x="380" y="78" text-anchor="middle">or going somewhere?</text>
+  <text class="lbl" x="270" y="116" text-anchor="middle">a question</text>
+  <text class="lbl" x="490" y="116" text-anchor="middle">a destination / a fact / a place</text>
+  <rect class="p" x="50" y="172" width="230" height="128" rx="8"/>
+  <text class="t" x="165" y="204" text-anchor="middle">Keep it in Perplexity</text>
+  <text class="lbl" x="165" y="232" text-anchor="middle">research &amp; comparisons</text>
+  <text class="lbl" x="165" y="256" text-anchor="middle">understanding a topic</text>
+  <text class="lbl" x="165" y="280" text-anchor="middle">fact-checking with sources</text>
+  <rect class="g" x="480" y="172" width="230" height="128" rx="8"/>
+  <text class="t" x="595" y="204" text-anchor="middle">Send it back to Google</text>
+  <text class="lbl" x="595" y="232" text-anchor="middle">navigation &amp; logins</text>
+  <text class="lbl" x="595" y="256" text-anchor="middle">local, hours, directions</text>
+  <text class="lbl" x="595" y="280" text-anchor="middle">instant facts &amp; shopping</text>
 </svg>
 
 So what did I actually stop using Perplexity for? Navigation, local search, instant single-fact lookups, and shopping. Roughly half of what I'd lazily called "searching" turned out to be tasks an answer engine makes slower, not faster, and I handed all of them back to Google before the month was out. What I kept it for is the half that always made Google feel like work: understanding something, comparing options, checking whether a claim holds up, and pulling current information with a source attached. That half, it does better than Google ever did.
