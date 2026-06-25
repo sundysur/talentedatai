@@ -1123,6 +1123,24 @@ if (articles.length > 0 && articles[0].image) {
   console.log('Injected LCP preload for: ' + featImg);
 }
 
+// Inject live tool count from tools.json into index.html
+try {
+  const toolsPath = path.join(__dirname, '../static/data/tools.json');
+  const tools = JSON.parse(fs.readFileSync(toolsPath, 'utf8'));
+  const toolCount = Array.isArray(tools) ? tools.length : (Array.isArray(tools.tools) ? tools.tools.length : 0);
+  if (toolCount > 0) {
+    const indexPath = path.join(__dirname, '../index.html');
+    let indexHtml = fs.readFileSync(indexPath, 'utf8');
+    indexHtml = indexHtml.replace(/\d+ tools in our database/, `${toolCount} tools in our database`);
+    fs.writeFileSync(indexPath, indexHtml);
+    console.log('Injected tool count into index.html: ' + toolCount + ' tools.');
+  } else {
+    console.warn('Tool count injection skipped: could not determine count from tools.json.');
+  }
+} catch (err) {
+  console.warn('Tool count injection failed (non-fatal): ' + err.message);
+}
+
 // --- IndexNow: write key file + ping API ---
 async function pingIndexNow(urls) {
   const key = process.env.INDEXNOW_KEY || 'f7fda78d1e4b481b8cfe785457b0c902';
