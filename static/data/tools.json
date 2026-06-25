@@ -2305,5 +2305,223 @@
       "writing-content": "Pair Ollama with any open-source writing model for fully offline content drafting.",
       "high_technical": "Command-line installation and model management. Hardware constraints (RAM, GPU) shape which models run smoothly."
     }
+  },
+  {
+    "id": "lofty",
+    "name": "Lofty",
+    "status": "active",
+    "tagline": "AI-powered real estate CRM, IDX websites, and automated lead nurture in one platform",
+    "category_badge": "Workflow & Automation",
+    "categories": [
+      "workflow-automation"
+    ],
+    "technical_level": 2,
+    "focus": 5,
+    "work_style": 4,
+    "price_tier": 5,
+    "price_display": "From $449/month (quote-based)",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-tools-real-estate-2026",
+    "affiliate_url": null,
+    "try_label": "Request a Lofty demo",
+    "rating": 4.0,
+    "match_reasons": {
+      "workflow-automation": "Combines CRM, IDX site, and an AI Sales Agent that texts and emails leads to qualify them automatically",
+      "low_technical": "Guided setup and a unified dashboard built for agents, not developers"
+    }
+  },
+  {
+    "id": "structurely",
+    "name": "Structurely",
+    "status": "active",
+    "tagline": "AI inside-sales assistant that texts, qualifies, and nurtures real estate leads",
+    "category_badge": "Workflow & Automation",
+    "categories": [
+      "workflow-automation"
+    ],
+    "technical_level": 2,
+    "focus": 5,
+    "work_style": 4,
+    "price_tier": 4,
+    "price_display": "From $179/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-tools-real-estate-2026",
+    "affiliate_url": null,
+    "try_label": "Try Structurely",
+    "rating": 3.9,
+    "match_reasons": {
+      "workflow-automation": "Runs long SMS and chat nurture campaigns, qualifies leads, and hands warm prospects to a human agent",
+      "low_technical": "Layers onto an existing CRM with no code and a conversational setup"
+    }
+  },
+  {
+    "id": "ylopo",
+    "name": "Ylopo",
+    "status": "active",
+    "tagline": "AI-driven real estate advertising and lead generation with the Raiya text and voice assistant",
+    "category_badge": "Workflow & Automation",
+    "categories": [
+      "workflow-automation"
+    ],
+    "technical_level": 2,
+    "focus": 5,
+    "work_style": 4,
+    "price_tier": 5,
+    "price_display": "From ~$395/month + ad spend (quote-based)",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-tools-real-estate-2026",
+    "affiliate_url": null,
+    "try_label": "Request a Ylopo demo",
+    "rating": 4.0,
+    "match_reasons": {
+      "workflow-automation": "Generates leads through paid ads and an IDX site, then nurtures and reactivates them with AI text and voice",
+      "low_technical": "Managed advertising and branded site setup handled for you"
+    }
+  },
+  {
+    "id": "propstream",
+    "name": "PropStream",
+    "status": "active",
+    "tagline": "Nationwide property data, comps, and lead lists for real estate investors",
+    "category_badge": "Data & Reporting",
+    "categories": [
+      "data-reporting",
+      "research-knowledge"
+    ],
+    "technical_level": 2,
+    "focus": 5,
+    "work_style": 2,
+    "price_tier": 3,
+    "price_display": "From $99/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-tools-real-estate-2026",
+    "affiliate_url": null,
+    "try_label": "Try PropStream free",
+    "rating": 4.2,
+    "match_reasons": {
+      "data-reporting": "Builds targeted prospect lists from 100-plus filters across ownership, equity, and distress data",
+      "research-knowledge": "Pulls comparable sales, ownership records, and property history for fast deal analysis",
+      "low_technical": "Point-and-click filters and a mobile driving-for-dollars app, no analyst required"
+    }
+  },
+  {
+    "id": "eliseai",
+    "name": "EliseAI",
+    "status": "active",
+    "tagline": "Conversational AI that automates leasing and resident communication for property managers",
+    "category_badge": "Workflow & Automation",
+    "categories": [
+      "workflow-automation"
+    ],
+    "technical_level": 2,
+    "focus": 5,
+    "work_style": 5,
+    "price_tier": 5,
+    "price_display": "Custom / enterprise quote",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-tools-real-estate-2026",
+    "affiliate_url": null,
+    "try_label": "Request an EliseAI demo",
+    "rating": 4.1,
+    "match_reasons": {
+      "workflow-automation": "Answers prospect and resident messages across text, email, chat, and voice 24/7 and schedules tours automatically",
+      "high_technical": "Integrates with property management systems and includes a CRM for onsite teams"
+    }
+  },
+  {
+    "id": "listingai",
+    "name": "ListingAI",
+    "status": "active",
+    "tagline": "AI listing descriptions, social posts, and market reports for real estate agents",
+    "category_badge": "Writing & Content",
+    "categories": [
+      "writing-content"
+    ],
+    "technical_level": 1,
+    "focus": 5,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free / from $14/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-tools-real-estate-2026",
+    "affiliate_url": null,
+    "try_label": "Try ListingAI free",
+    "rating": 4.1,
+    "match_reasons": {
+      "writing-content": "Generates MLS descriptions, social captions, and email campaigns from property details in seconds",
+      "low_technical": "Fill-in property fields and get publishable copy, no prompting skill needed"
+    }
+  },
+  {
+    "id": "write-homes",
+    "name": "Write.Homes",
+    "status": "active",
+    "tagline": "AI generator for real estate listing copy, neighborhood guides, and email campaigns",
+    "category_badge": "Writing & Content",
+    "categories": [
+      "writing-content"
+    ],
+    "technical_level": 1,
+    "focus": 5,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free tier / paid (quote-based)",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-tools-real-estate-2026",
+    "affiliate_url": null,
+    "try_label": "Try Write.Homes free",
+    "rating": 4.0,
+    "match_reasons": {
+      "writing-content": "Turns MLS data into compliance-aware listing descriptions, social posts, and email templates",
+      "low_technical": "Free listing generator produces ready-to-publish copy from basic inputs"
+    }
+  },
+  {
+    "id": "virtual-staging-ai",
+    "name": "Virtual Staging AI",
+    "status": "active",
+    "tagline": "AI virtual staging that furnishes empty room photos in under a minute",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video"
+    ],
+    "technical_level": 1,
+    "focus": 5,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free trial / from $16/month (~$1/photo)",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-tools-real-estate-2026",
+    "affiliate_url": null,
+    "try_label": "Try Virtual Staging AI",
+    "rating": 4.0,
+    "match_reasons": {
+      "images-video": "Adds realistic furniture and decor to photos of vacant rooms and removes existing furniture fast",
+      "low_technical": "Upload a photo, pick a style, download the staged image, no design tools needed"
+    }
+  },
+  {
+    "id": "reimaginehome",
+    "name": "ReimagineHome",
+    "status": "active",
+    "tagline": "AI virtual staging and renovation visualization for listings and redesigns",
+    "category_badge": "Images & Video",
+    "categories": [
+      "images-video"
+    ],
+    "technical_level": 1,
+    "focus": 5,
+    "work_style": 2,
+    "price_tier": 2,
+    "price_display": "Free trial / from $14/month",
+    "has_review": true,
+    "review_url": "/content/published/best-ai-tools-real-estate-2026",
+    "affiliate_url": null,
+    "try_label": "Try ReimagineHome free",
+    "rating": 4.1,
+    "match_reasons": {
+      "images-video": "Stages empty rooms and visualizes renovations or redesigns to show a property's potential",
+      "low_technical": "Conversational design flow and credit-based generations made for non-designers"
+    }
   }
 ]
