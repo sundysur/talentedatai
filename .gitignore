@@ -12,3 +12,6 @@ content/articles.json
 .claude/
 Obsidian/
 .buffer-posted.json
+
+# Local-only tools.json backups (never commit)
+static/data/tools.json.bak.*
